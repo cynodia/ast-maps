@@ -50,7 +50,7 @@ const trails = {
     },
     "ast_tungvekter_ostbredden": {
         url: 'data/trails/tungvekter/ostbredden.gpx',
-        title: 'Ostbredden',
+        title: 'Østbredden',
         color: '#a47700',
         images: {
             main: 'image3.jpeg'
