@@ -210,9 +210,9 @@ map.on('click', function(evt) {
                                         let alt = $(this).text();
                                         data.add({
                                             id: counter++,
-                                            x: parseFloat(lon), // lat
-                                            y: parseFloat(lat), // lon
-                                            z: parseFloat(alt), // altitude
+                                            x: parseFloat(lon),
+                                            y: parseFloat(lat),
+                                            z: parseFloat(alt),
                                             style: 50
                                         });
                                     });
@@ -227,17 +227,18 @@ map.on('click', function(evt) {
                         height: '550px',
                         style: 'bar-size',
                         showPerspective: true,
-                        showGrid: true,
-                        showShadow: false,
+                        showGrid: false,
+                        showShadow: true,
                         keepAspectRatio: true,
                         verticalRatio: 0.2,
                         xBarWidth: 0.0003,
                         yBarWidth: 0.0003,
-                        xLabel: 'lat',
-                        yLabel: 'lon',
+                        xLabel: 'lon',
+                        yLabel: 'lat',
                         zLabel: 'altitude',
                     };
 
+                    $("#trailinfotext").hide();
                     $("#elevationchart").show();
                     // Instantiate our graph object.
                     new vis.Graph3d(document.getElementById('elevationchart'), data, options);
@@ -251,6 +252,7 @@ map.on('click', function(evt) {
             "background-image": "url('data/pics/image2.jpeg')"
         });
         $("#trailinfoheader").html("Tungvekter");
+        $("#trailinfotext").show();
         $("#elevationchart").hide();
         lastActive = null;
     }
