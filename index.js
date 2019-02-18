@@ -109,7 +109,7 @@ function buildVector(item) {
                     return new Style({
                         stroke: new Stroke({
                             color: item.color,
-                            width: 3
+                            width: 6
                         })
                     });
             }
@@ -210,8 +210,8 @@ map.on('click', function(evt) {
                                         let alt = $(this).text();
                                         data.add({
                                             id: counter++,
-                                            x: parseFloat(lat), // lat
-                                            y: parseFloat(lon), // lon
+                                            x: parseFloat(lon), // lat
+                                            y: parseFloat(lat), // lon
                                             z: parseFloat(alt), // altitude
                                             style: 50
                                         });
