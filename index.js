@@ -6,6 +6,7 @@ import BingMaps from 'ol/source/BingMaps.js';
 import VectorSource from 'ol/source/Vector.js';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style.js';
 import {fromLonLat} from 'ol/proj';
+import {getLength} from 'ol/sphere.js';
 
 const raster = new TileLayer({
     source: new BingMaps({
@@ -14,48 +15,69 @@ const raster = new TileLayer({
     })
 });
 
-const trails = [
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/halvfire.gpx',
+const trails = {
+    "ast_tungvekter_halvfire": {
+        url: 'data/trails/tungvekter/halvfire.gpx',
         title: 'Halv Fire',
-        color: '#000000'
+        color: '#000000',
+        images: {
+            main: 'image1.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/kunto.gpx',
+    "ast_tungvekter_kunto": {
+        url: 'data/trails/tungvekter/kunto.gpx',
         title: 'Kun To',
-        color: '#00ff00'
+        color: '#00ff00',
+        images: {
+            main: 'image2.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/hundetoppen.gpx',
+    "ast_tungvekter_hundetoppen": {
+        url: 'data/trails/tungvekter/hundetoppen.gpx',
         title: 'Hundetoppen',
-        color: '#f0e000'
+        color: '#f0e000',
+        images: {
+            main: 'image4.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/vestbredden.gpx',
+    "ast_tungvekter_vestbredden": {
+        url: 'data/trails/tungvekter/vestbredden.gpx',
         title: 'Vestbredden',
-        color: '#a47700'
+        color: '#a47700',
+        images: {
+            main: 'image2.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/ostbredden.gpx',
+    "ast_tungvekter_ostbredden": {
+        url: 'data/trails/tungvekter/ostbredden.gpx',
         title: 'Ostbredden',
-        color: '#a47700'
+        color: '#a47700',
+        images: {
+            main: 'image3.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/sworks.gpx',
+    "ast_tungvekter_sworks": {
+        url: 'data/trails/tungvekter/sworks.gpx',
         title: 'S-Works',
-        color: '#00a477'
+        color: '#00a477',
+        images: {
+            main: 'image4.jpeg'
+        }
     },
-    {
-        url: 'http://localhost:1234/data/trails/tungvekter/xkjerringene.gpx',
+    "ast_tungvekter_xkjerringene": {
+        url: 'data/trails/tungvekter/xkjerringene.gpx',
         title: 'X-Kjærringene',
-        color: '#0a4770'
+        color: '#0a4770',
+        images: {
+            main: 'image5.jpeg'
+        }
     }
-];
+};
 
 function buildVector(item) {
     return new VectorLayer({
         source: new VectorSource({
-            url: item.url,
+            url: /* "http://localhost:1234/" + */ item.url,
             format: new GPX(),
             attributions: item.title
         }),
@@ -97,11 +119,14 @@ function buildVector(item) {
 let layers = [ raster ];
 let vectors = [];
 
-for(let i = 0; i < trails.length; i++) {
-    const item = buildVector(trails[i]);
-    item.set("title", trails[i].title);
-    layers.push(item);
-    vectors.push(item);
+for(let key in trails) {
+    if(trails.hasOwnProperty(key)) {
+        console.log("Add " + key);
+        const item = buildVector(trails[key]);
+        item.set("title", trails[key].title);
+        layers.push(item);
+        vectors.push(item);
+    }
 }
 
 const map = new Map({
@@ -113,33 +138,60 @@ const map = new Map({
     })
 });
 
-const displayFeatureInfo = function(pixel) {
-    const features = [];
-    map.forEachFeatureAtPixel(pixel, function(feature) {
-        features.push(feature);
-    });
-    if (features.length > 0) {
-        const info = [];
-        let i, ii;
-        for (i = 0, ii = features.length; i < ii; ++i) {
-            info.push(features[i].getProperties().name);
-        }
-        document.getElementById('info').innerHTML = info.join(', ') || '(unknown)';
-        map.getTarget().style.cursor = 'pointer';
-    } else {
-        document.getElementById('info').innerHTML = '&nbsp;';
-        map.getTarget().style.cursor = '';
-    }
-};
+
+function updateHoverInfo(feature, data) {
+    let content = "Trail: " + data.title + "<br>";
+    content += "Length: " + Math.floor(getLength(feature.getGeometry())) + "m<br>";
+    content += "<br>Click for more info...";
+
+    document.getElementById('hoverinfo').innerHTML = content;
+}
 
 map.on('pointermove', function(evt) {
     if (evt.dragging) {
         return;
     }
     const pixel = map.getEventPixel(evt.originalEvent);
-    displayFeatureInfo(pixel);
+    let found = false;
+    map.forEachFeatureAtPixel(pixel, function(feature) {
+        const name = feature.getProperties().name;
+        if(trails.hasOwnProperty(name)) {
+            updateHoverInfo(feature, trails[name]);
+            $("#hoverinfo").css({
+                top: evt.originalEvent.pageY + 10 + "px",
+                left: evt.originalEvent.pageX + 10 + "px"
+            }).show();
+            map.getTarget().style.cursor = 'pointer';
+            found = true;
+        }
+    });
+    if(!found) {
+        $("#hoverinfo").hide();
+        map.getTarget().style.cursor = '';
+    }
 });
 
 map.on('click', function(evt) {
-    displayFeatureInfo(evt.pixel);
+    if (evt.dragging) {
+        return;
+    }
+    const pixel = map.getEventPixel(evt.originalEvent);
+    let found = false;
+    map.forEachFeatureAtPixel(pixel, function(feature) {
+        const name = feature.getProperties().name;
+        if(trails.hasOwnProperty(name)) {
+            $("#trailinfo").css({
+                "background-image": "url('data/pics/" +trails[name].images.main + "')"
+            });
+            $("#trailinfoheader").html(trails[name].title);
+            found = true;
+        }
+    });
+    if(!found) {
+        $("#trailinfo").css({
+            "background-image": "url('data/pics/image2.jpeg')"
+        });
+        $("#trailinfoheader").html("Tungvekter");
+
+    }
 });
