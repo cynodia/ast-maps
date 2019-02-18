@@ -3,6 +3,14 @@
  <metadata>
   <time>2018-12-14T17:30:40Z</time>
  </metadata>
+ <wpt lat="58.4790040" lon="8.7943230">
+  <ele>44.586548</ele>
+  <time>2018-12-14T17:30:40Z</time>
+  <name>START</name>
+  <desc><![CDATA[START]]></desc>
+  <sym>Crossing</sym>
+  <type><![CDATA[Crossing]]></type>
+ </wpt>
  <trk>
   <name>TEST1</name>
   <type>18</type>
@@ -16443,4 +16451,12 @@
    </trkpt>
   </trkseg>
  </trk>
+ <wpt lat="58.4790470" lon="8.7942230">
+   <ele>44.586548</ele>
+   <time>2018-12-14T17:30:40Z</time>
+   <name>STOP</name>
+   <desc><![CDATA[STOP]]></desc>
+   <sym>Crossing</sym>
+   <type><![CDATA[Crossing]]></type>
+  </wpt>
 </gpx>
