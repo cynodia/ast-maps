@@ -37,8 +37,15 @@
         #trailinfoheader {
             background: rgba(0, 0, 0, .5);
             font-size: 36px;
-            padding: 4px 8px;
+            padding: 5px 8px;
             color: white;
+            height: 40px;
+        }
+        #elevationchart {
+            width: 550px;
+            height: 550px;
+            display: none;
+            background: rgba(255,255,255, .8);
         }
     </style>
 </head>
@@ -46,7 +53,11 @@
 <h1>Arendal Singletrack</h1>
 <div id="outer">
     <div id="map"></div>
-    <div id="trailinfo"><div id="trailinfoheader">Tungvekter</div></div>
+    <div id="trailinfo">
+        <div id="trailinfoheader">Tungvekter</div>
+        <div style="flex: 1;"></div>
+        <div id="elevationchart"></div>
+    </div>
 </div>
 <div id="hoverinfo">&nbsp;</div>
 <script src="./index.js"></script>

@@ -7,6 +7,7 @@ import VectorSource from 'ol/source/Vector.js';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style.js';
 import {fromLonLat} from 'ol/proj';
 import {getLength} from 'ol/sphere.js';
+import vis from 'vis';
 
 const raster = new TileLayer({
     source: new BingMaps({
@@ -118,6 +119,7 @@ function buildVector(item) {
 
 let layers = [ raster ];
 let vectors = [];
+let lastActive = null;
 
 for(let key in trails) {
     if(trails.hasOwnProperty(key)) {
@@ -181,10 +183,67 @@ map.on('click', function(evt) {
         const name = feature.getProperties().name;
         if(trails.hasOwnProperty(name)) {
             $("#trailinfo").css({
-                "background-image": "url('data/pics/" +trails[name].images.main + "')"
+                "background-image": "url('data/pics/" + trails[name].images.main + "')"
             });
             $("#trailinfoheader").html(trails[name].title);
             found = true;
+            lastActive = feature;
+
+            let counter = 0;
+
+            $.ajax({
+                type: "GET",
+                url: trails[name].url,
+                cache: false,
+                dataType: "xml",
+                success: function(xml) {
+                    // Create and populate a data table.
+                    const data = new vis.DataSet();
+
+                    $(xml).find('gpx').each(function(){
+                        $(this).find('trk').each(function(){
+                            $(this).find('trkseg').each(function(){
+                                $(this).find('trkpt').each(function() {
+                                    let lat = $(this).attr('lat');
+                                    let lon = $(this).attr('lon');
+                                    $(this).find('ele').each(function() {
+                                        let alt = $(this).text();
+                                        data.add({
+                                            id: counter++,
+                                            x: parseFloat(lat), // lat
+                                            y: parseFloat(lon), // lon
+                                            z: parseFloat(alt), // altitude
+                                            style: 50
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+
+                    // specify options
+                    const options = {
+                        width:  '100%',
+                        height: '550px',
+                        style: 'bar-size',
+                        showPerspective: true,
+                        showGrid: true,
+                        showShadow: false,
+                        keepAspectRatio: true,
+                        verticalRatio: 0.2,
+                        xBarWidth: 0.0001,
+                        yBarWidth: 0.0001,
+                        xLabel: 'lat',
+                        yLabel: 'lon',
+                        zLabel: 'altitude',
+                    };
+
+                    // Instantiate our graph object.
+                    new vis.Graph3d(document.getElementById('elevationchart'), data, options);
+                    $("#elevationchart").show();
+                }
+            });
+
         }
     });
     if(!found) {
@@ -192,6 +251,7 @@ map.on('click', function(evt) {
             "background-image": "url('data/pics/image2.jpeg')"
         });
         $("#trailinfoheader").html("Tungvekter");
-
+        $("#elevationchart").hide();
+        lastActive = null;
     }
 });
