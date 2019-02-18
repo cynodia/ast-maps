@@ -231,16 +231,16 @@ map.on('click', function(evt) {
                         showShadow: false,
                         keepAspectRatio: true,
                         verticalRatio: 0.2,
-                        xBarWidth: 0.0001,
-                        yBarWidth: 0.0001,
+                        xBarWidth: 0.0003,
+                        yBarWidth: 0.0003,
                         xLabel: 'lat',
                         yLabel: 'lon',
                         zLabel: 'altitude',
                     };
 
+                    $("#elevationchart").show();
                     // Instantiate our graph object.
                     new vis.Graph3d(document.getElementById('elevationchart'), data, options);
-                    $("#elevationchart").show();
                 }
             });
 
