@@ -228,14 +228,16 @@ map.on('click', function(evt) {
                         style: 'bar-size',
                         showPerspective: true,
                         showGrid: false,
-                        showShadow: true,
+                        showShadow: false,
                         keepAspectRatio: true,
                         verticalRatio: 0.2,
                         xBarWidth: 0.0003,
                         yBarWidth: 0.0003,
-                        xLabel: 'lon',
-                        yLabel: 'lat',
-                        zLabel: 'altitude',
+                        xLabel: '',
+                        yLabel: '',
+                        zLabel: 'moh',
+                        xValueLabel: function(x) { return ""; },
+                        yValueLabel: function(y) { return ""; }
                     };
 
                     $("#trailinfotext").hide();
