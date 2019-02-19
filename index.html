@@ -13,6 +13,11 @@
 
         body {
             font-family: 'Ubuntu', sans-serif;
+            background-image: url('data/pics/image2.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
         }
         #outer {
             display: flex;
@@ -25,15 +30,18 @@
         #hoverinfo {
             position: absolute;
             border: 1px solid black;
-            background: white;
+            background: black;
         }
-        #trailinfo {
+        #maininfo {
             flex: 1;
             transition: background-image 1.0s ease-in-out;
-            background-image: url('data/pics/image2.jpeg');
+            background-image: none;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+        #trailinfo {
+            display: none;
         }
         #trailinfoheader {
             background: rgba(0, 0, 0, .5);
@@ -49,16 +57,22 @@
         }
         #trailinfoleft {
             width: 500px;
-            display: none;
         }
         #trailfacts {
             color: white;
             padding: 8px;
             width: 484px;
-            height: 174px;
+            /*height: 174px;*/
             background: rgba(0, 0, 0, .5);
         }
         #trailinfotext {
+            font-size: 18px;
+            flex: 1;
+            color: white;
+            padding: 10px;
+            background: rgba(0, 0, 0, .5);
+        }
+        #maintext {
             font-size: 22px;
             color: white;
             padding: 10px;
@@ -70,15 +84,18 @@
 <h1>Arendal Singletrack</h1>
 <div id="outer">
     <div id="map"></div>
-    <div id="trailinfo">
+    <div id="maininfo">
         <div id="trailinfoheader">Tungvekter</div>
-        <div style="display:flex;">
-            <div id="trailinfoleft">
-                <div id="elevationchart"></div>
-                <div id="trailfacts"></div>
+        <div id="trailinfo">
+            <div style="display:flex;">
+                <div id="trailinfoleft">
+                    <div id="elevationchart"></div>
+                    <div id="trailfacts"></div>
+                </div>
+                <div id="trailinfotext"></div>
             </div>
         </div>
-        <div id="trailinfotext">Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær. </div>
+        <div id="maintext">Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær. </div>
     </div>
 </div>
 <div id="hoverinfo">&nbsp;</div>

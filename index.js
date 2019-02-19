@@ -21,6 +21,7 @@ const trails = {
         url: 'data/trails/tungvekter/halvfire.gpx',
         title: 'Halv Fire',
         color: '#000000',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image1.jpeg'
         }
@@ -29,6 +30,7 @@ const trails = {
         url: 'data/trails/tungvekter/kunto.gpx',
         title: 'Kun To',
         color: '#00ff00',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
         }
@@ -37,6 +39,7 @@ const trails = {
         url: 'data/trails/tungvekter/hundetoppen.gpx',
         title: 'Hundetoppen',
         color: '#f0e000',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
         }
@@ -45,6 +48,7 @@ const trails = {
         url: 'data/trails/tungvekter/vestbredden.gpx',
         title: 'Vestbredden',
         color: '#a47700',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
         }
@@ -53,6 +57,7 @@ const trails = {
         url: 'data/trails/tungvekter/ostbredden.gpx',
         title: 'Østbredden',
         color: '#a47700',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image3.jpeg'
         }
@@ -61,6 +66,7 @@ const trails = {
         url: 'data/trails/tungvekter/sworks.gpx',
         title: 'S-Works',
         color: '#00a477',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
         }
@@ -69,6 +75,7 @@ const trails = {
         url: 'data/trails/tungvekter/xkjerringene.gpx',
         title: 'X-Kjærringene',
         color: '#0a4770',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
         }
@@ -190,7 +197,7 @@ map.on('click', function(evt) {
     map.forEachFeatureAtPixel(pixel, function(feature) {
         const name = feature.getProperties().name;
         if(trails.hasOwnProperty(name)) {
-            $("#trailinfo").css({
+            $("#maininfo").css({
                 "background-image": "url('data/pics/" + trails[name].images.main + "')"
             });
             $("#trailinfoheader").html(trails[name].title);
@@ -260,8 +267,9 @@ map.on('click', function(evt) {
                         yValueLabel: function(y) { return ""; }
                     };
 
-                    $("#trailinfotext").hide();
-                    $("#trailinfoleft").show();
+                    $("#maintext").hide();
+                    $("#trailinfotext").html(trails[name].infotext);
+                    $("#trailinfo").show();
                     $("#trailfacts").html("Lengde: " + Math.floor(getLength(feature.getGeometry()) * 10) / 10 + "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10  + "m");
                     // Instantiate our graph object.
                     new vis.Graph3d(document.getElementById('elevationchart'), data, options);
@@ -275,8 +283,8 @@ map.on('click', function(evt) {
             "background-image": "url('data/pics/image2.jpeg')"
         });
         $("#trailinfoheader").html("Tungvekter");
-        $("#trailinfotext").show();
-        $("#trailinfoleft").hide();
+        $("#maintext").show();
+        $("#trailinfo").hide();
         lastActive = null;
     }
 });
