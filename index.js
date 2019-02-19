@@ -78,7 +78,7 @@ const trails = {
 function buildVector(item) {
     return new VectorLayer({
         source: new VectorSource({
-            url: /* "http://localhost:1234/" + */ item.url,
+            url: item.url,
             format: new GPX(),
             attributions: item.title
         }),
