@@ -75,6 +75,8 @@ const trails = {
     }
 };
 
+
+
 function buildVector(item) {
     return new VectorLayer({
         source: new VectorSource({
@@ -128,6 +130,12 @@ for(let key in trails) {
         item.set("title", trails[key].title);
         layers.push(item);
         vectors.push(item);
+        for(let imagekey in trails[key].images) {
+            if(trails[key].images.hasOwnProperty(imagekey)) {
+                console.log("Preloading: " + trails[key].images[imagekey]);
+                $('<img/>')[0].src = "data/pics/" + trails[key].images[imagekey];
+            }
+        }
     }
 }
 
@@ -186,6 +194,8 @@ map.on('click', function(evt) {
                 "background-image": "url('data/pics/" + trails[name].images.main + "')"
             });
             $("#trailinfoheader").html(trails[name].title);
+            $("#elevationchart").empty();
+
             found = true;
             lastActive = feature;
 
@@ -199,6 +209,8 @@ map.on('click', function(evt) {
                 success: function(xml) {
                     // Create and populate a data table.
                     const data = new vis.DataSet();
+                    let lowest = null;
+                    let highest = null;
 
                     $(xml).find('gpx').each(function(){
                         $(this).find('trk').each(function(){
@@ -207,12 +219,19 @@ map.on('click', function(evt) {
                                     let lat = $(this).attr('lat');
                                     let lon = $(this).attr('lon');
                                     $(this).find('ele').each(function() {
-                                        let alt = $(this).text();
+                                        let alt = parseFloat($(this).text());
+                                        if(lowest === null) {
+                                            lowest = highest = alt;
+                                        } else if(lowest > alt) {
+                                            lowest = alt;
+                                        } else if(highest < alt) {
+                                            highest = alt;
+                                        }
                                         data.add({
                                             id: counter++,
                                             x: parseFloat(lon),
                                             y: parseFloat(lat),
-                                            z: parseFloat(alt),
+                                            z: alt,
                                             style: 50
                                         });
                                     });
@@ -220,17 +239,18 @@ map.on('click', function(evt) {
                             });
                         });
                     });
+                    let diff = highest - lowest;
 
                     // specify options
                     const options = {
                         width:  '100%',
-                        height: '550px',
+                        height: '100%',
                         style: 'bar-size',
                         showPerspective: true,
                         showGrid: false,
                         showShadow: false,
                         keepAspectRatio: true,
-                        verticalRatio: 0.2,
+                        verticalRatio: diff < 10 ? 0.1 : 0.2,
                         xBarWidth: 0.0003,
                         yBarWidth: 0.0003,
                         xLabel: '',
@@ -241,7 +261,8 @@ map.on('click', function(evt) {
                     };
 
                     $("#trailinfotext").hide();
-                    $("#elevationchart").show();
+                    $("#trailinfoleft").show();
+                    $("#trailfacts").html("Lengde: " + Math.floor(getLength(feature.getGeometry()) * 10) / 10 + "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10  + "m");
                     // Instantiate our graph object.
                     new vis.Graph3d(document.getElementById('elevationchart'), data, options);
                 }
@@ -255,7 +276,7 @@ map.on('click', function(evt) {
         });
         $("#trailinfoheader").html("Tungvekter");
         $("#trailinfotext").show();
-        $("#elevationchart").hide();
+        $("#trailinfoleft").hide();
         lastActive = null;
     }
 });

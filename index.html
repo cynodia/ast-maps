@@ -43,13 +43,23 @@
             height: 40px;
         }
         #elevationchart {
-            width: 550px;
-            height: 550px;
-            display: none;
+            width: 500px;
+            height: 360px;
             background: rgba(255,255,255, .8);
         }
+        #trailinfoleft {
+            width: 500px;
+            display: none;
+        }
+        #trailfacts {
+            color: white;
+            padding: 8px;
+            width: 484px;
+            height: 174px;
+            background: rgba(0, 0, 0, .5);
+        }
         #trailinfotext {
-            font-size: 28px;
+            font-size: 22px;
             color: white;
             padding: 10px;
             background: rgba(0, 0, 0, .5);
@@ -62,8 +72,13 @@
     <div id="map"></div>
     <div id="trailinfo">
         <div id="trailinfoheader">Tungvekter</div>
-        <div id="trailinfotext">Trykk på en sti for mer informasjon...</div>
-        <div id="elevationchart"></div>
+        <div style="display:flex;">
+            <div id="trailinfoleft">
+                <div id="elevationchart"></div>
+                <div id="trailfacts"></div>
+            </div>
+        </div>
+        <div id="trailinfotext">Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær. </div>
     </div>
 </div>
 <div id="hoverinfo">&nbsp;</div>
