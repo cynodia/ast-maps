@@ -20,7 +20,8 @@ const trails = {
     "ast_tungvekter_halvfire": {
         url: 'data/trails/tungvekter/halvfire.gpx',
         title: 'Halv Fire',
-        color: '#000000',
+        level: 'Middles',
+        color: '#4444ee',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image1.jpeg'
@@ -29,7 +30,8 @@ const trails = {
     "ast_tungvekter_kunto": {
         url: 'data/trails/tungvekter/kunto.gpx',
         title: 'Kun To',
-        color: '#00ff00',
+        level: 'Lav',
+        color: '#00bb00',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
@@ -38,7 +40,8 @@ const trails = {
     "ast_tungvekter_hundetoppen": {
         url: 'data/trails/tungvekter/hundetoppen.gpx',
         title: 'Hundetoppen',
-        color: '#f0e000',
+        level: 'Høy',
+        color: '#000000',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
@@ -47,7 +50,8 @@ const trails = {
     "ast_tungvekter_vestbredden": {
         url: 'data/trails/tungvekter/vestbredden.gpx',
         title: 'Vestbredden',
-        color: '#a47700',
+        level: 'Høy',
+        color: '#000000',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
@@ -56,7 +60,8 @@ const trails = {
     "ast_tungvekter_ostbredden": {
         url: 'data/trails/tungvekter/ostbredden.gpx',
         title: 'Østbredden',
-        color: '#a47700',
+        level: 'Middels',
+        color: '#4444ee',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image3.jpeg'
@@ -65,7 +70,8 @@ const trails = {
     "ast_tungvekter_sworks": {
         url: 'data/trails/tungvekter/sworks.gpx',
         title: 'S-Works',
-        color: '#00a477',
+        level: 'Middels',
+        color: '#4444ee',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
@@ -74,7 +80,48 @@ const trails = {
     "ast_tungvekter_xkjerringene": {
         url: 'data/trails/tungvekter/xkjerringene.gpx',
         title: 'X-Kjærringene',
-        color: '#0a4770',
+        level: 'Middels',
+        color: '#4444ee',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        images: {
+            main: 'image5.jpeg'
+        }
+    },
+    "ast_tungvekter_diagonalen": {
+        url: 'data/trails/tungvekter/diagonalen.gpx',
+        title: 'Diagonalen',
+        level: 'Middels',
+        color: '#4444ee',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        images: {
+            main: 'image5.jpeg'
+        }
+    },
+    "ast_tungvekter_eventyrskogen": {
+        url: 'data/trails/tungvekter/eventyrskogen.gpx',
+        title: 'Eventyrskogen',
+        level: 'Lav',
+        color: '#00bb00',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        images: {
+            main: 'image5.jpeg'
+        }
+    },
+    "ast_tungvekter_lilleribbervann": {
+        url: 'data/trails/tungvekter/lilleribbervann.gpx',
+        title: 'Lille Ribbervann',
+        level: 'Lav',
+        color: '#00bb00',
+        infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        images: {
+            main: 'image5.jpeg'
+        }
+    },
+    "ast_tungvekter_ribberveggen": {
+        url: 'data/trails/tungvekter/ribberveggen.gpx',
+        title: 'Ribberveggen',
+        level: 'Høy',
+        color: '#000000',
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
@@ -82,6 +129,13 @@ const trails = {
     }
 };
 
+$.backstretch([
+    "data/pics/image1.jpeg",
+    "data/pics/image2.jpeg",
+    "data/pics/image3.jpeg",
+    "data/pics/image4.jpeg",
+    "data/pics/image5.jpeg"
+], {duration: 8000, fade: 750});
 
 
 function buildVector(item) {
@@ -155,15 +209,6 @@ const map = new Map({
     })
 });
 
-
-function updateHoverInfo(feature, data) {
-    let content = "Trail: " + data.title + "<br>";
-    content += "Length: " + Math.floor(getLength(feature.getGeometry())) + "m<br>";
-    content += "<br>Click for more info...";
-
-    document.getElementById('hoverinfo').innerHTML = content;
-}
-
 map.on('pointermove', function(evt) {
     if (evt.dragging) {
         return;
@@ -188,6 +233,23 @@ map.on('pointermove', function(evt) {
     }
 });
 
+$('#closetrailinfo').click(closeTrailInfo);
+
+function updateHoverInfo(feature, data) {
+    let content = "Trail: " + data.title + "<br>";
+    content += "Length: " + Math.floor(getLength(feature.getGeometry())) + "m<br>";
+    content += "<br>Click for more info...";
+
+    document.getElementById('hoverinfo').innerHTML = content;
+}
+
+function closeTrailInfo() {
+    $("#maininfo").css("background-image", "none");
+    $("#trailinfoheader").html("Tungvekter");
+    $("#maintext").show();
+    $("#trailinfo").hide();
+}
+
 map.on('click', function(evt) {
     if (evt.dragging) {
         return;
@@ -197,9 +259,9 @@ map.on('click', function(evt) {
     map.forEachFeatureAtPixel(pixel, function(feature) {
         const name = feature.getProperties().name;
         if(trails.hasOwnProperty(name)) {
-            $("#maininfo").css({
-                "background-image": "url('data/pics/" + trails[name].images.main + "')"
-            });
+            // $("#maininfo").css({
+            //     "background-image": "url('data/pics/" + trails[name].images.main + "')"
+            // });
             $("#trailinfoheader").html(trails[name].title);
             $("#elevationchart").empty();
 
@@ -268,9 +330,13 @@ map.on('click', function(evt) {
                     };
 
                     $("#maintext").hide();
-                    $("#trailinfotext").html(trails[name].infotext);
+                    let info = "<img width=\"90%\" align=\"center\" src=\"data/pics/" + trails[name].images.main + "\"/><br>";
+                    info += trails[name].infotext;
+                    $("#trailinfotext").html(info);
                     $("#trailinfo").show();
-                    $("#trailfacts").html("Lengde: " + Math.floor(getLength(feature.getGeometry()) * 10) / 10 + "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10  + "m");
+                    $("#trailfacts").html("Lengde: " + Math.floor(getLength(feature.getGeometry()) * 10) / 10 +
+                            "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10  + "m<br></br>" +
+                            "Vanskelighetsgrad: " + trails[name].level);
                     // Instantiate our graph object.
                     new vis.Graph3d(document.getElementById('elevationchart'), data, options);
                 }
@@ -279,12 +345,11 @@ map.on('click', function(evt) {
         }
     });
     if(!found) {
-        $("#trailinfo").css({
-            "background-image": "url('data/pics/image2.jpeg')"
-        });
-        $("#trailinfoheader").html("Tungvekter");
-        $("#maintext").show();
-        $("#trailinfo").hide();
+        closeTrailInfo();
         lastActive = null;
     }
 });
+
+function addPoint(olmap, lat, lon, color) {
+
+}

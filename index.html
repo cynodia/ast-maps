@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Arendal Singletrack</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css">
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
@@ -13,11 +14,11 @@
 
         body {
             font-family: 'Ubuntu', sans-serif;
-            background-image: url('data/pics/image2.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             color: white;
+            /*background-image: url('data/pics/image2.jpeg');*/
+            /*background-size: cover;*/
+            /*background-position: center;*/
+            /*background-repeat: no-repeat;*/
         }
         #outer {
             display: flex;
@@ -34,17 +35,19 @@
         }
         #maininfo {
             flex: 1;
+            height: 600px;
+            overflow: hidden;
             transition: background-image 1.0s ease-in-out;
             background-image: none;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background: rgba(0, 0, 0, .5);
         }
         #trailinfo {
             display: none;
         }
         #trailinfoheader {
-            background: rgba(0, 0, 0, .5);
             font-size: 36px;
             padding: 5px 8px;
             color: white;
@@ -63,20 +66,19 @@
             padding: 8px;
             width: 484px;
             /*height: 174px;*/
-            background: rgba(0, 0, 0, .5);
         }
         #trailinfotext {
             font-size: 18px;
             flex: 1;
             color: white;
             padding: 10px;
-            background: rgba(0, 0, 0, .5);
+            overflow-y: scroll;
+            height: 500px;
         }
         #maintext {
             font-size: 22px;
             color: white;
             padding: 10px;
-            background: rgba(0, 0, 0, .5);
         }
     </style>
 </head>
@@ -94,8 +96,13 @@
                 </div>
                 <div id="trailinfotext"></div>
             </div>
+            <div><button id="closetrailinfo">Lukk</button></div>
         </div>
-        <div id="maintext">Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær. </div>
+        <div id="maintext">
+            Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
+            På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i ommrådet, samt forslag til ruter du kan ta.<br><br>
+            Om du ankommer med bil er parkeringsplassen på Dråbelia(hvit sirkel) et naturlig utgangspunkt.
+        </div>
     </div>
 </div>
 <div id="hoverinfo">&nbsp;</div>
