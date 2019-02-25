@@ -135,7 +135,7 @@ $.backstretch([
     "data/pics/image3.jpeg",
     "data/pics/image4.jpeg",
     "data/pics/image5.jpeg"
-], {duration: 8000, fade: 750});
+], {duration: 8000, fade: 2000});
 
 
 function buildVector(item) {
@@ -245,9 +245,7 @@ function updateHoverInfo(feature, data) {
 
 function closeTrailInfo() {
     $("#maininfo").css("background-image", "none");
-    $("#trailinfoheader").html("Tungvekter");
-    $("#maintext").show();
-    $("#trailinfo").hide();
+    $("#trailwindow").hide();
 }
 
 map.on('click', function(evt) {
@@ -329,11 +327,10 @@ map.on('click', function(evt) {
                         yValueLabel: function(y) { return ""; }
                     };
 
-                    $("#maintext").hide();
                     let info = "<img width=\"90%\" align=\"center\" src=\"data/pics/" + trails[name].images.main + "\"/><br>";
                     info += trails[name].infotext;
                     $("#trailinfotext").html(info);
-                    $("#trailinfo").show();
+                    $("#trailwindow").show();
                     $("#trailfacts").html("Lengde: " + Math.floor(getLength(feature.getGeometry()) * 10) / 10 +
                             "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10  + "m<br></br>" +
                             "Vanskelighetsgrad: " + trails[name].level);
