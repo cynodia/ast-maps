@@ -32,6 +32,14 @@ function initMap() {
         return dist;
     };
 
+    google.maps.Polyline.prototype.getBounds = function() {
+        var bounds = new google.maps.LatLngBounds();
+        this.getPath().forEach(function(item, index) {
+            bounds.extend(new google.maps.LatLng(item.lat(), item.lng()));
+        });
+        return bounds;
+    };
+
     const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
         center: {lat: 58.483684, lng: 8.785733},
@@ -212,14 +220,15 @@ function onPathClicked(key, path) {
                 };
 
                 window.trailMap.setCenter(new google.maps.LatLng(coordinates[0].lat, coordinates[0].lng));
+
                 if(window.lastMapStart) {
-                    windowlastMapStart.setMap(null);
+                    window.lastMapStart.setMap(null);
                 }
                 if(window.lastMapStop) {
-                    windowlastMapStop.setMap(null);
+                    window.lastMapStop.setMap(null);
                 }
                 if(window.lastMapPath) {
-                    windowlastMapPath.setMap(null);
+                    window.lastMapPath.setMap(null);
                 }
                 window.lastMapStart = new google.maps.Marker({
                     position: coordinates[0],
@@ -251,6 +260,10 @@ function onPathClicked(key, path) {
                     strokeOpacity: 0.8,
                     strokeWeight: 6
                 });
+
+                //window.trailMap.setCenter(window.lastMapPath.getBounds().getCenter());
+                //window.trailMap.fitBounds(window.lastMapPath.getBounds());
+
 
                 let info = "<img width=\"200px\" align=\"center\" src=\"data/pics/" + trailData[key].images.main + "\"/><br>";
                 info += trailData[key].entrancetext;
