@@ -244,7 +244,6 @@ function updateHoverInfo(feature, data) {
 }
 
 function closeTrailInfo() {
-    $("#maininfo").css("background-image", "none");
     $("#trailwindow").hide();
 }
 
@@ -252,6 +251,8 @@ map.on('click', function(evt) {
     if (evt.dragging) {
         return;
     }
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("#hoverinfo").hide();
     const pixel = map.getEventPixel(evt.originalEvent);
     let found = false;
     map.forEachFeatureAtPixel(pixel, function(feature) {
