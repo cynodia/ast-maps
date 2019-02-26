@@ -4,7 +4,7 @@ const trailData = {
         title: 'Halv Fire',
         level: 'Middles',
         color: '#4444ee',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image1.jpeg'
@@ -15,7 +15,7 @@ const trailData = {
         title: 'Kun To',
         level: 'Lav',
         color: '#00bb00',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
@@ -26,7 +26,7 @@ const trailData = {
         title: 'Hundetoppen',
         level: 'Høy',
         color: '#000000',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
@@ -37,7 +37,7 @@ const trailData = {
         title: 'Vestbredden',
         level: 'Høy',
         color: '#000000',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image2.jpeg'
@@ -48,7 +48,7 @@ const trailData = {
         title: 'Østbredden',
         level: 'Middels',
         color: '#4444ee',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image3.jpeg'
@@ -59,7 +59,7 @@ const trailData = {
         title: 'S-Works',
         level: 'Middels',
         color: '#4444ee',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image4.jpeg'
@@ -70,7 +70,7 @@ const trailData = {
         title: 'X-Kjærringene',
         level: 'Middels',
         color: '#4444ee',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
@@ -81,7 +81,7 @@ const trailData = {
         title: 'Diagonalen',
         level: 'Middels',
         color: '#4444ee',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
@@ -92,7 +92,7 @@ const trailData = {
         title: 'Eventyrskogen',
         level: 'Lav',
         color: '#00bb00',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
@@ -103,7 +103,7 @@ const trailData = {
         title: 'Lille Ribbervann',
         level: 'Lav',
         color: '#00bb00',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'
@@ -114,7 +114,7 @@ const trailData = {
         title: 'Ribberveggen',
         level: 'Høy',
         color: '#000000',
-        entrancetext: "Like ved sinsenkrysset finner du inngangen til Halv fire.",
+        entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
             main: 'image5.jpeg'

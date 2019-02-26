@@ -265,7 +265,8 @@ function onPathClicked(key, path) {
                 //window.trailMap.fitBounds(window.lastMapPath.getBounds());
 
 
-                let info = "<img width=\"200px\" align=\"center\" src=\"data/pics/" + trailData[key].images.main + "\"/><br>";
+                //let info = "<img width=\"200px\" align=\"center\" src=\"data/pics/" + trailData[key].images.main + "\"/><br>";
+                let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
                 info += trailData[key].entrancetext;
                 $('#trailentrance').html(info);
                 $("#trailinfotext").html(trailData[key].infotext);
