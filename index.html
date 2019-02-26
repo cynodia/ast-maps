@@ -73,11 +73,18 @@
         }
         #trailinfotext {
             font-size: 18px;
-            flex: 1;
-            padding: 10px;
+            padding: 8px;
+        }
+        #trailentrance {
+            font-size: 18px;
+            padding: 8px;
         }
         #maintext {
             font-size: 22px;
+        }
+        .trailinfosection {
+            flex: 1;
+            padding: 10px;
         }
         button {
             background: #dddddd;
@@ -112,10 +119,19 @@
         <div style="display:flex;">
             <div id="trailinfoleft">
                 <div style="font-size: 28px;"><i class="fa fa-chart-area"></i> Tekniske data</div>
-                <div id="elevationchart"></div>
                 <div id="trailfacts"></div>
+                <div id="elevationchart"></div>
             </div>
-            <div id="trailinfotext"></div>
+            <div class="trailinfosection">
+                <div style="font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
+                <div id="trailentrance">
+                </div>
+            </div>
+            <div class="trailinfosection">
+                <div style="font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
+                <div id="trailinfotext">
+                </div>
+            </div>
         </div>
     </div>
 </div>

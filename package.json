@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build": "rm dist/*; ln -s ../data dist/data; parcel build --public-url . index.html data"
+    "build": "rm dist/*; ln -s ../data dist/data; parcel build --public-url . index.html data",
+    "release": "rm -rf build/*; cp -r data build; cp dist/*.js build; cp dist/*.html build"
   },
   "author": "Andreas Tønnesen",
   "license": "ISC",
