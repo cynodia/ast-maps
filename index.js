@@ -142,6 +142,8 @@ function geolocationFail(e) {
 }
 
 function updatePosition(pos) {
+    alert('Position OK');
+
     const data = { lat: pos.coords.latitude, lng: pos.coords.longitude };
     if(window.mainLocationMarker) {
         window.mainLocationMarker.setPosition(data);
