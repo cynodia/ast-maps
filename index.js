@@ -161,6 +161,18 @@ function initMap() {
             });
         }
     }
+
+    // Create the DIV to hold the control and call the CenterControl()
+    // constructor passing in this DIV.
+    const infoDiv = document.createElement('div');
+    infoDiv.style.background = "rgba(255,255,255,.6)";
+    infoDiv.style.padding = "6px";
+    infoDiv.style.fontSize = "16px";
+    infoDiv.index = 1;
+    infoDiv.innerHTML = "<i style='color: #0f0;' class=\"fa fa-circle\"></i> Start<br><i style='color: #00f;' class=\"fa fa-circle\"></i> Slutt";
+
+    window.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoDiv);
+
     hideInfo();
 }
 
