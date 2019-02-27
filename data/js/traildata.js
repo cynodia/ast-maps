@@ -15,7 +15,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image1.jpeg'
+            trailStart: 'image1.jpeg'
         }
     },
     "ast_tungvekter_kunto": {
@@ -26,7 +26,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image2.jpeg'
+            trailStart: 'image2.jpeg'
         }
     },
     "ast_tungvekter_hundetoppen": {
@@ -37,7 +37,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image4.jpeg'
+            trailStart: 'image4.jpeg'
         }
     },
     "ast_tungvekter_vestbredden": {
@@ -48,7 +48,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image2.jpeg'
+            trailStart: 'image2.jpeg'
         }
     },
     "ast_tungvekter_ostbredden": {
@@ -59,7 +59,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image3.jpeg'
+            trailStart: 'image3.jpeg'
         }
     },
     "ast_tungvekter_tungvekter": {
@@ -70,7 +70,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image4.jpeg'
+            trailStart: 'image4.jpeg'
         }
     },
     "ast_tungvekter_xkjerringene": {
@@ -81,7 +81,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image5.jpeg'
+            trailStart: 'image5.jpeg'
         }
     },
     "ast_tungvekter_diagonalen": {
@@ -92,7 +92,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image5.jpeg'
+            trailStart: 'image5.jpeg'
         }
     },
     "ast_tungvekter_eventyrskogen": {
@@ -103,7 +103,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image5.jpeg'
+            trailStart: 'image5.jpeg'
         }
     },
     "ast_tungvekter_lilleribbervann": {
@@ -114,7 +114,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image5.jpeg'
+            trailStart: 'image5.jpeg'
         }
     },
     "ast_tungvekter_ribberveggen": {
@@ -125,7 +125,7 @@ const trailData = {
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
         infotext: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         images: {
-            main: 'image5.jpeg'
+            trailStart: 'image5.jpeg'
         }
     }
 };

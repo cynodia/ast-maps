@@ -269,9 +269,6 @@ function onPathClicked(key, path) {
     $("#hoverinfo").hide();
 
     if(trailData.hasOwnProperty(key)) {
-        // $("#maininfo").css({
-        //     "background-image": "url('data/pics/" + trailData[key].images.main + "')"
-        // });
         $("#trailinfoheader").html(trailData[key].title);
         $("#chart3d").empty();
         $("#elevationchart").empty();
@@ -392,7 +389,7 @@ function onPathClicked(key, path) {
                     displayPathElevation(coordinates, elevator, window.trailMap);
                 }
 
-                //let info = "<img width=\"200px\" align=\"center\" src=\"data/pics/" + trailData[key].images.main + "\"/><br>";
+                //let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/" + trailData[key].images.trailStart + "\"/><br>";
                 let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
                 info += trailData[key].entrancetext;
                 $('#trailentrance').html(info);
