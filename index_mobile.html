@@ -59,12 +59,8 @@
             min-width: 18.75em;
         }
         #mainheader {
-            /* this should match the min-width in app-container. Recommend setting using a common variable (eg with Sass) */
-            min-width: 300px;
-
-            /* just arbitrary values */
-            height: 4em;
-            padding: 1em;
+            padding: 8px;
+            height: 64px;
 
             /* internal layout, centered vertically - flex layout is great for this */
             display: flex;
@@ -72,7 +68,7 @@
             align-items: center;
 
             /* just so we can tell the header apart */
-            background-color: #cccccc;
+            background-color: white;
             color: black;
         }
         #mainheader h1 {
@@ -88,16 +84,16 @@
             flex: 1;
         }
         #trailinfo {
-            padding-top: 50px;
+            padding-top: 64px;
         }
         #infotextcontent {
-            padding-top: 50px;
+            padding: 70px 8px 8px 8px;
         }
         .windowheader {
             z-index: 1;
             font-size: 36px;
-            padding: 5px 8px;
-            height: 50px;
+            padding: 8px;
+            height: 64px;
             border-bottom: 1px solid gray;
             background: white;
             position: fixed;
@@ -131,7 +127,6 @@
         }
         #trailentrance {
             font-size: 18px;
-            padding: 8px;
         }
         #trailmap {
             height: 300px;
@@ -184,28 +179,34 @@
 <body onload="init()">
 <div id="outer">
     <div id="mainheader">
-        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 32px;" class="fa fa-info-circle"></i></button>
+        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 40px;" class="fa fa-info-circle"></i></button>
         <h1>Tungvekteren</h1>
-        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 32px;" class="fa fa-crosshairs"></i></button>
+        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 40px;" class="fa fa-crosshairs"></i></button>
     </div>
     <div id="map"></div>
 </div>
 <div id="infotext">
     <div class="windowheader">
-        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 30px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="infotextcontent">
     Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
     På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i området, samt forslag til ruter du kan ta.<br><br>
-    Om du ankommer med bil er parkeringsplassen på Dråbelia(<img src="data/imgs/marker_parking.png">) et naturlig utgangspunkt.
+        <h2>Adkomst</h2>
+    Om du ankommer med bil er parkeringsplassen på Dråbelia, marker med <img src="data/imgs/marker_parking.png">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nnåes fra alle kanter.
+        <h2>mtbmaps.net</h2>
+        Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter. Det er fokus åp å kunne finne inngangen på stiene.<br>
+        Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>
+        Du kan forke prosjektet på <a href="https://github.com/cynodia/ast-maps">GitHub</a>.<br>
+        Du ser nå på mobilutgaven av webapplikasjonen.
     </div>
 </div>
 <div id="trailwindow">
     <div class="windowheader">
-        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 30px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="trailinfo">
-            <div id="trailinfoleft">
+            <div class="trailinfosection">
                 <div style="font-size: 28px;"><i class="fa fa-chart-area"></i> Tekniske data</div>
                 <div id="trailfacts"></div>
                 <div id="elevationchart"></div>
