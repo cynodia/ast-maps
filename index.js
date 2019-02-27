@@ -129,8 +129,7 @@ function initMap() {
 }
 
 
-function startLocationTracking() {
-    alert("TRYING");
+function mapUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(updatePosition, geolocationFail);
     } else {
