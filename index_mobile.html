@@ -192,8 +192,9 @@
     <script>
         function init() {
             $('#maininfobtn').click(function() {
-                $("html, body").animate({ scrollTop: 0 }, "slow");
-                $('#infotext').fadeIn(750);
+                $('#infotext').fadeIn(750, function() {
+                    $("html, body").animate({scrollTop: 0}, "slow");
+                });
             });
             $('#closeinfobtn').click(function() {
                 $('#infotext').fadeOut(750);
@@ -217,23 +218,23 @@
 </div>
 <div id="infotext">
     <div class="windowheader">
-        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="infotextcontent">
     </div>
 </div>
 <div id="trailwindow">
     <div class="windowheader">
-        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+        <span id="trailinfoheader"></span><button id="closetrailinfo" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="trailinfo">
-        <div id="trailmap"></div>
-        <!--div id="elevationchart"></div-->
-        <div id="trailfactsmain">
-            <div id="trailfacts"></div>
-            <div id="chart3d"></div>
-        </div>
         <div class="trailinfosection">
+            <div id="trailmap"></div>
+            <!--div id="elevationchart"></div-->
+            <div id="trailfactsmain">
+                <div id="trailfacts"></div>
+                <div id="chart3d"></div>
+            </div>
             <div style="font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
             <div id="trailentrance">
             </div>
