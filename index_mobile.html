@@ -131,6 +131,18 @@
         #trailmap {
             height: 300px;
         }
+        #infopopup {
+            position: absolute;
+            z-index: 20;
+            display: none;
+            top: 40%;
+            width: 60%;
+            margin: 0 20%;
+            background: #fbfbff;
+            padding: 8px;
+            border: 1px solid black;
+            font-size: 24px;
+        }
         #infotext {
             z-index: 10;
             font-size: 18px;
@@ -190,15 +202,6 @@
         <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="infotextcontent">
-    Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
-    På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i området, samt forslag til ruter du kan ta.<br><br>
-        <h2>Adkomst</h2>
-    Om du ankommer med bil er parkeringsplassen på Dråbelia, marker med <img src="data/imgs/marker_parking.png">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nnåes fra alle kanter.
-        <h2>mtbmaps.net</h2>
-        Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter. Det er fokus åp å kunne finne inngangen på stiene.<br>
-        Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>
-        Du kan forke prosjektet på <a href="https://github.com/cynodia/ast-maps">GitHub</a>.<br>
-        Du ser nå på mobilutgaven av webapplikasjonen.
     </div>
 </div>
 <div id="trailwindow">
@@ -225,6 +228,7 @@
             </div>
     </div>
 </div>
+<div id="infopopup">Laster kartdata...</div>
 
 </body>
 </html>
