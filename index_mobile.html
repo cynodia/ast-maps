@@ -176,7 +176,7 @@
                 $('#infotext').hide();
             });
             $('#mainlocationbtn').click(function() {
-                mapUserLocation();
+                setTimeout(mapUserLocation, 100);
             });
 
             initTrails();
