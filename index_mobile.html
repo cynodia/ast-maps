@@ -47,7 +47,6 @@
             width: 100%;
             height: 100%;
             display: flex;
-            /* fix the header to the top of the viewport. */
             position: fixed;
             top: 0;
             left: 0;
@@ -91,12 +90,22 @@
             flex: 1;
         }
         #trailinfo {
+            padding-top: 50px;
+        }
+        #infotextcontent {
+            padding-top: 50px;
         }
         .windowheader {
+            z-index: 1;
             font-size: 36px;
             padding: 5px 8px;
             height: 50px;
             border-bottom: 1px solid gray;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
         }
         #elevationchart {
             width: 100%;
@@ -109,11 +118,9 @@
             position: absolute;
             display: none;
             width: 100%;
-            height: 100%;
-            top: 0px;
-            /*left: 0px;*/
+            top: 0;
+            left: 0;
             background: #fbfbff;
-            overflow-y: scroll;
         }
         #trailfacts {
             padding: 8px;
@@ -189,9 +196,11 @@
     <div class="windowheader">
         <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 30px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
+    <div id="infotextcontent">
     Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
     På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i området, samt forslag til ruter du kan ta.<br><br>
     Om du ankommer med bil er parkeringsplassen på Dråbelia(<img src="data/imgs/marker_parking.png">) et naturlig utgangspunkt.
+    </div>
 </div>
 <div id="trailwindow">
     <div class="windowheader">
