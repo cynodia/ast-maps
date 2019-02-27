@@ -47,6 +47,11 @@
             width: 100%;
             height: 100%;
             display: flex;
+            /* fix the header to the top of the viewport. */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             flex-direction: column;
             /* Set block height using the viewport height unit, and force it to be full height, even if the containing content does not require it */
             min-height: 100vh;
