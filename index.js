@@ -252,6 +252,7 @@ function onPathClicked(key, path) {
         //     "background-image": "url('data/pics/" + trailData[key].images.main + "')"
         // });
         $("#trailinfoheader").html(trailData[key].title);
+        $("#chart3d").empty();
         $("#elevationchart").empty();
 
         let counter = 0;
@@ -365,9 +366,10 @@ function onPathClicked(key, path) {
                     strokeWeight: 6
                 });
 
-                //window.trailMap.setCenter(window.lastMapPath.getBounds().getCenter());
-                //window.trailMap.fitBounds(window.lastMapPath.getBounds());
-
+                if(0) {
+                    const elevator = new google.maps.ElevationService;
+                    displayPathElevation(coordinates, elevator, window.trailMap);
+                }
 
                 //let info = "<img width=\"200px\" align=\"center\" src=\"data/pics/" + trailData[key].images.main + "\"/><br>";
                 let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
@@ -379,8 +381,52 @@ function onPathClicked(key, path) {
                         "m<br>Høydeforskjell: " + Math.floor(diff * 10) / 10 + "m<br></br>" +
                         "Vanskelighetsgrad: " + trailData[key].level);
                 // Instantiate our graph object.
-                new vis.Graph3d(document.getElementById('elevationchart'), data, options);
+                new vis.Graph3d(document.getElementById('chart3d'), data, options);
             }
         });
     }
 };
+
+
+function displayPathElevation(path, elevator, map) {
+
+    // Create a PathElevationRequest object using this array.
+    // Ask for 256 samples along that path.
+    // Initiate the path request.
+    elevator.getElevationAlongPath({
+        'path': path,
+        'samples': 256
+    }, plotElevation);
+}
+
+// Takes an array of ElevationResult objects, draws the path on the map
+// and plots the elevation profile on a Visualization API ColumnChart.
+function plotElevation(elevations, status) {
+    const chartDiv = document.getElementById('elevationchart');
+    if (status !== 'OK') {
+        // Show the error code inside the chartDiv.
+        chartDiv.innerHTML = 'Cannot show elevation: request failed because ' +
+                status;
+        return;
+    }
+    // Create a new chart in the elevation_chart DIV.
+    const chart = new google.visualization.ColumnChart(chartDiv);
+
+    // Extract the data from which to populate the chart.
+    // Because the samples are equidistant, the 'Sample'
+    // column here does double duty as distance along the
+    // X axis.
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'Sample');
+    data.addColumn('number', 'Elevation');
+    for (let i = 0; i < elevations.length; i++) {
+        data.addRow(['', elevations[i].elevation]);
+    }
+
+    // Draw the chart using the data within its DIV.
+    chart.draw(data, {
+        height: 150,
+        legend: 'none',
+        titleY: 'Elevation (m)'
+    });
+}

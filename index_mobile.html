@@ -103,9 +103,12 @@
         }
         #elevationchart {
             width: 100%;
+            height: 200px;
+        }
+        #chart3d {
+            width: 100%;
             height: 300px;
             background: #dddddd;
-            border: 1px solid black;
         }
         #trailwindow {
             z-index: 10;
@@ -129,7 +132,7 @@
             font-size: 18px;
         }
         #trailmap {
-            height: 300px;
+            height: 380px;
         }
         #infopopup {
             position: absolute;
@@ -154,6 +157,10 @@
             /*left: 0px;*/
             background: #fbfbff;
             overflow-y: scroll;
+        }
+        #trailfactsmain {
+            font-weight: bold;
+            font-size: 22px;
         }
         .trailinfosection {
             width: 100%;
@@ -209,23 +216,22 @@
         <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="trailinfo">
-            <div class="trailinfosection">
-                <div style="font-size: 28px;"><i class="fa fa-chart-area"></i> Tekniske data</div>
-                <div id="trailfacts"></div>
-                <div id="elevationchart"></div>
+        <div id="trailmap"></div>
+        <!--div id="elevationchart"></div-->
+        <div id="trailfactsmain">
+            <div id="trailfacts"></div>
+            <div id="chart3d"></div>
+        </div>
+        <div class="trailinfosection">
+            <div style="font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
+            <div id="trailentrance">
             </div>
-            <div class="trailinfosection">
-                <div style="font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
-                <div id="trailentrance">
-                </div>
+        </div>
+        <div class="trailinfosection">
+            <div style="font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
+            <div id="trailinfotext">
             </div>
-            <div class="trailinfosection">
-                <div style="font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
-                <div id="trailmap">
-                </div>
-                <div id="trailinfotext">
-                </div>
-            </div>
+        </div>
     </div>
 </div>
 <div id="infopopup">Laster kartdata...</div>
