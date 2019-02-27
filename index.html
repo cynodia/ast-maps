@@ -9,11 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="data/js/traildata.js"></script>
     <script src="index.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSIzHM-xchwZyZ_H0qj0f_bWiCoYBch4&callback=initMap"></script>
 
     <style>
 
@@ -117,23 +115,35 @@
 
     function init() {
         if(mobilecheck()) {
+            showInfo("Laster mobilversjon...", 5);
             location.assign("index_mobile.html");
-        }
-        $.backstretch([
-            "data/pics/image1.jpeg",
-            "data/pics/image2.jpeg",
-            "data/pics/image3.jpeg",
-            "data/pics/image4.jpeg",
-            "data/pics/image5.jpeg"
-        ], {duration: 8000, fade: 2000});
+        } else {
+            /* Prevent loading ggolemaps API/data twice when redirecting to mobile */
+            const headID = document.getElementsByTagName("head")[0];
+            const newScript = document.createElement('script');
+            newScript.type = 'text/javascript';
+            newScript.language = 'javascript';
+            newScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSIzHM-xchwZyZ_H0qj0f_bWiCoYBch4&callback=initMap";
+            newScript.defer = true;
+            newScript.async = true;
+            headID.appendChild(newScript);
 
-        initTrails();
+            $.backstretch([
+                "data/pics/image1.jpeg",
+                "data/pics/image2.jpeg",
+                "data/pics/image3.jpeg",
+                "data/pics/image4.jpeg",
+                "data/pics/image5.jpeg"
+            ], {duration: 8000, fade: 2000});
+
+            initTrails();
+        }
     }
 </script>
 </head>
 <body onload="init()">
 <div id="outer">
-    <div style="font-size: 42px; text-align:  center;">Arendal Singletrack - Tungvekteren</div>
+    <div id="headertext" style="font-size: 42px; text-align:  center;"></div>
     <hr>
     <div id="map"></div>
     <hr>

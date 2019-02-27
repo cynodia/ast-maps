@@ -15,8 +15,8 @@ function initTrails() {
         "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>" +
         "Du kan forke prosjektet på <a href=\"https://github.com/cynodia/ast-maps\">GitHub</a>.<br>" +
             (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
-
-);
+    );
+    $('#headertext').html(mobilecheck() ? mainConfig.mainHeaderMobile : mainConfig.mainHeaderDesktop);
     $('#closetrailinfo').click(closeTrailInfo);
 }
 
