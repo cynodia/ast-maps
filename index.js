@@ -133,7 +133,7 @@ function startLocationTracking() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(updatePosition, geolocationFail);
     } else {
-        return;
+        alert("Geolocation not available!");
     }
 }
 
