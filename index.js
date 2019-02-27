@@ -236,8 +236,6 @@ function updatePosition(pos) {
     if(geolocationWatchId === null) {
         geolocationWatchId = navigator.geolocation.watchPosition(updatePosition);
         window.mainMap.setCenter(data);
-    } else {
-        hideInfo();
     }
 }
 
