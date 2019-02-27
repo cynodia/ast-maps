@@ -64,7 +64,7 @@ const trailData = {
     },
     "ast_tungvekter_sworks": {
         url: 'data/trails/tungvekter/sworks.gpx',
-        title: 'S-Works',
+        title: 'Tungvekteren',
         level: 'Middels',
         color: '#4444ee',
         entrancetext: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
