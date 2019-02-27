@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="application/ce-html+xml; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <meta charset="utf-8">
+    <title>MTBMaps</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="data/js/traildata.js"></script>
+    <script src="index.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSIzHM-xchwZyZ_H0qj0f_bWiCoYBch4&callback=initMap"></script>
+
+    <style>
+
+        html,body {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after { box-sizing: inherit; }
+
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            color: black;
+            margin: 0;
+            /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
+            min-height: 100%;
+
+            /* needed to prevent unwanted scroll-bars */
+            padding: 0;
+        }
+
+        #outer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* Set block height using the viewport height unit, and force it to be full height, even if the containing content does not require it */
+            min-height: 100vh;
+            /* center this block for larger viewports */
+            margin: 0 auto;
+            /*Use max-width for better browser handling of small windows
+            http://www.w3schools.com/css/css_max-width.asp
+            */
+            max-width: 31.25em;
+            /* Use min-width to prevent your design from being scrunched up in tiny viewports (and instead be replaced with horizontal scroll bars)
+            */
+            min-width: 18.75em;
+        }
+        #mainheader {
+            /* fix the header to the top of the viewport. */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            /* this should match the min-width in app-container. Recommend setting using a common variable (eg with Sass) */
+            min-width: 300px;
+
+            /* just arbitrary values */
+            height: 4em;
+            padding: 1em;
+
+            /* internal layout, centered vertically - flex layout is great for this */
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            /* just so we can tell the header apart */
+            background-color: #cccccc;
+            color: black;
+        }
+        #mainheader h1 {
+            /* set the h1 block as the main flex block - it will fill all unused space in the block */
+            flex: 1;
+
+            /* center content inside the block */
+            text-align: center;
+        }
+        #map {
+            width: 100%;
+            flex: 1;
+        }
+        #trailinfo {
+        }
+        .windowheader {
+            font-size: 36px;
+            padding: 5px 8px;
+            height: 50px;
+            border-bottom: 1px solid gray;
+        }
+        #elevationchart {
+            width: 100%;
+            height: 300px;
+            background: #dddddd;
+            border: 1px solid black;
+        }
+        #trailwindow {
+            z-index: 10;
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            /*left: 0px;*/
+            background: #fbfbff;
+            overflow-y: scroll;
+        }
+        #trailfacts {
+            padding: 8px;
+            width: 484px;
+            /*height: 174px;*/
+        }
+        #trailinfotext {
+            font-size: 18px;
+            padding: 8px;
+        }
+        #trailentrance {
+            font-size: 18px;
+            padding: 8px;
+        }
+        #trailmap {
+            height: 300px;
+        }
+        #infotext {
+            z-index: 10;
+            font-size: 18px;
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            /*left: 0px;*/
+            background: #fbfbff;
+            overflow-y: scroll;
+        }
+        .trailinfosection {
+            width: 100%;
+            padding: 10px;
+        }
+        button {
+            background: #dddddd;
+            border: 1px solid #eeeeee;
+            cursor: pointer;
+        }
+        hr {
+            margin: 10px 0;
+            height: 1px;
+            border: 0;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        function init() {
+            $('#maininfobtn').click(function() {
+                $('#infotext').show();
+            });
+            $('#closeinfobtn').click(function() {
+                $('#infotext').hide();
+            });
+            $('#mainlocationbtn').click(function() {
+                startLocationTracking();
+            });
+
+            initTrails();
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="outer">
+    <div id="mainheader">
+        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="font-size: 32px;" class="fa fa-info-circle"></i></button>
+        <h1>Tungvekteren</h1>
+        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="font-size: 32px;" class="fa fa-crosshairs"></i></button>
+    </div>
+    <div id="map"></div>
+</div>
+<div id="infotext">
+    <div class="windowheader">
+        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 30px; border: none; background: transparent; float: right;"><i class="fa fa-times-circle"></i></button>
+    </div>
+    Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
+    På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i området, samt forslag til ruter du kan ta.<br><br>
+    Om du ankommer med bil er parkeringsplassen på Dråbelia(<img src="data/imgs/marker_parking.png">) et naturlig utgangspunkt.
+</div>
+<div id="trailwindow">
+    <div class="windowheader">
+        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 30px; border: none; background: transparent; float: right;"><i class="fa fa-times-circle"></i></button>
+    </div>
+    <div id="trailinfo">
+            <div id="trailinfoleft">
+                <div style="font-size: 28px;"><i class="fa fa-chart-area"></i> Tekniske data</div>
+                <div id="trailfacts"></div>
+                <div id="elevationchart"></div>
+            </div>
+            <div class="trailinfosection">
+                <div style="font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
+                <div id="trailentrance">
+                </div>
+            </div>
+            <div class="trailinfosection">
+                <div style="font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
+                <div id="trailmap">
+                </div>
+                <div id="trailinfotext">
+                </div>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>

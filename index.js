@@ -1,14 +1,7 @@
 
 
 
-function init() {
-    $.backstretch([
-        "data/pics/image1.jpeg",
-        "data/pics/image2.jpeg",
-        "data/pics/image3.jpeg",
-        "data/pics/image4.jpeg",
-        "data/pics/image5.jpeg"
-    ], {duration: 8000, fade: 2000});
+function initTrails() {
 
     $('#closetrailinfo').click(closeTrailInfo);
 }
@@ -40,7 +33,7 @@ function initMap() {
         return bounds;
     };
 
-    const map = new google.maps.Map(document.getElementById('map'), {
+    window.mainMap = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
         center: {lat: 58.483684, lng: 8.785733},
         mapTypeId: 'satellite',
@@ -60,7 +53,7 @@ function initMap() {
 
     const parkingMarker = new google.maps.Marker({
         position: { lat: 58.478971, lng: 8.794247 },
-        map: map,
+        map: window.mainMap,
         title: 'Parkering - Dråbelia',
         icon: parkingImage
     });
@@ -90,7 +83,7 @@ function initMap() {
                     });
                     const startMarker = new google.maps.Marker({
                         position: coordinates[0],
-                        map: map,
+                        map: window.mainMap,
                         icon: {
                             path: google.maps.SymbolPath.CIRCLE,
                             scale: 5,
@@ -101,7 +94,7 @@ function initMap() {
 
                     const stopMarker = new google.maps.Marker({
                         position: coordinates[coordinates.length - 1],
-                        map: map,
+                        map: window.mainMap,
                         icon: {
                             path: google.maps.SymbolPath.CIRCLE,
                             scale: 5,
@@ -113,7 +106,7 @@ function initMap() {
                     const path = new google.maps.Polyline({
                         path: coordinates,
                         geodesic: true,
-                        map: map,
+                        map: window.mainMap,
                         strokeColor: trailData[key].color,
                         strokeOpacity: 0.8,
                         strokeWeight: 6
@@ -133,6 +126,47 @@ function initMap() {
         }
     }
 
+}
+
+
+function startLocationTracking() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(updatePosition);
+    } else {
+        return;
+    }
+}
+
+function updatePosition(pos) {
+    const data = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+    if(window.mainLocationMarker) {
+        window.mainLocationMarker.setPosition(data);
+    } else {
+        window.mainLocationMarker = new google.maps.Marker({
+            position: data,
+            map: window.mainMap,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 6,
+                strokeColor: '#F00',
+            }
+        });
+        window.mainMap.setCenter(data);
+    }
+
+    if(window.trailLocationMarker) {
+        window.trailLocationMarker.setPosition(data);
+    } else {
+        window.trailLocationMarker = new google.maps.Marker({
+            position: data,
+            map: window.trailMap,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 6,
+                strokeColor: '#F00',
+            }
+        });
+    }
 }
 
 function closeTrailInfo() {
