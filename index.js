@@ -394,8 +394,8 @@ function onPathClicked(key, path) {
                 $('#trailentrance').html(info);
                 $("#trailinfotext").html(trailData[key].infotext);
                 $("#trailwindow").fadeIn(750);
-                $("#trailfacts").html("Lengde: " + Math.floor(path.inKm() * 10000) / 10 + "m" +
-                        "Høydefor.: " + Math.floor(diff * 10) / 10 + "m<br>" +
+                $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(path.inKm() * 10000) / 10 + "m" +
+                        "<span style=\"float:right;\">Høydefor.: " + Math.floor(diff * 10) / 10 + "m</span></p>" +
                         "Vanskelighetsgrad: " + trailData[key].level);
                 // Instantiate our graph object.
                 new vis.Graph3d(document.getElementById('chart3d'), data, options);
