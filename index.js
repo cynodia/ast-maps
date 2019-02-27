@@ -130,6 +130,7 @@ function initMap() {
 
 
 function startLocationTracking() {
+    alert("TRYING");
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(updatePosition, geolocationFail);
     } else {
@@ -142,7 +143,6 @@ function geolocationFail(e) {
 }
 
 function updatePosition(pos) {
-    alert('Position OK');
 
     const data = { lat: pos.coords.latitude, lng: pos.coords.longitude };
     if(window.mainLocationMarker) {
