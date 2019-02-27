@@ -62,7 +62,7 @@ const trailData = {
             main: 'image3.jpeg'
         }
     },
-    "ast_tungvekter_sworks": {
+    "ast_tungvekter_tungvekter": {
         url: 'data/trails/tungvekter/sworks.gpx',
         title: 'Tungvekteren',
         level: 'Middels',
