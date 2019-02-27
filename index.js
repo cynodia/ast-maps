@@ -164,14 +164,23 @@ function initMap() {
 
     // Create the DIV to hold the control and call the CenterControl()
     // constructor passing in this DIV.
-    const infoDiv = document.createElement('div');
-    infoDiv.style.background = "rgba(255,255,255,.6)";
-    infoDiv.style.padding = "6px";
-    infoDiv.style.fontSize = "16px";
-    infoDiv.index = 1;
-    infoDiv.innerHTML = "<i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt";
+    const infoDiv1 = document.createElement('div');
+    infoDiv1.style.background = "rgba(255,255,255,.6)";
+    infoDiv1.style.padding = "6px";
+    infoDiv1.style.fontSize = "16px";
+    infoDiv1.index = 1;
+    infoDiv1.innerHTML = "<i style='color: #00bb00;' class=\"fa fa-minus\"></i> Lett<br><i style='color: #4444ee;' class=\"fa fa-minus\"></i> Middels<br><i style='color: #000000;' class=\"fa fa-minus\"></i> Vanskelig";
 
-    window.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoDiv);
+    window.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
+
+    const infoDiv2 = document.createElement('div');
+    infoDiv2.style.background = "rgba(255,255,255,.6)";
+    infoDiv2.style.padding = "6px";
+    infoDiv2.style.fontSize = "16px";
+    infoDiv2.index = 1;
+    infoDiv2.innerHTML = "<i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt";
+
+    window.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoDiv2);
 
     hideInfo();
 }
