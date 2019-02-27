@@ -50,11 +50,7 @@
             /* Set block height using the viewport height unit, and force it to be full height, even if the containing content does not require it */
             min-height: 100vh;
             /* center this block for larger viewports */
-            margin: 0 auto;
-            /*Use max-width for better browser handling of small windows
-            http://www.w3schools.com/css/css_max-width.asp
-            */
-            max-width: 31.25em;
+            margin: 0;
             /* Use min-width to prevent your design from being scrunched up in tiny viewports (and instead be replaced with horizontal scroll bars)
             */
             min-width: 18.75em;
@@ -91,6 +87,7 @@
         }
         #map {
             width: 100%;
+            padding: 0;
             flex: 1;
         }
         #trailinfo {
@@ -181,15 +178,15 @@
 <body onload="init()">
 <div id="outer">
     <div id="mainheader">
-        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="font-size: 32px;" class="fa fa-info-circle"></i></button>
+        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 32px;" class="fa fa-info-circle"></i></button>
         <h1>Tungvekteren</h1>
-        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="font-size: 32px;" class="fa fa-crosshairs"></i></button>
+        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 32px;" class="fa fa-crosshairs"></i></button>
     </div>
     <div id="map"></div>
 </div>
 <div id="infotext">
     <div class="windowheader">
-        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 30px; border: none; background: transparent; float: right;"><i class="fa fa-times-circle"></i></button>
+        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="font-size: 30px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>
     På denne siden Kan du finne detaljert informasjon om de fleste kjendte stier i området, samt forslag til ruter du kan ta.<br><br>
@@ -197,7 +194,7 @@
 </div>
 <div id="trailwindow">
     <div class="windowheader">
-        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 30px; border: none; background: transparent; float: right;"><i class="fa fa-times-circle"></i></button>
+        <span id="trailinfoheader"></span><button id="closetrailinfo" style="font-size: 30px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="trailinfo">
             <div id="trailinfoleft">
