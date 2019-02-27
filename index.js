@@ -138,7 +138,7 @@ function mapUserLocation() {
 }
 
 function geolocationFail(e) {
-    alert('Can\'t retrieve position.\nError: ' + e);
+    alert('Can\'t retrieve position.\nError: ' + e.code);
 }
 
 function updatePosition(pos) {
