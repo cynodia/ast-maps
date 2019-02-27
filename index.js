@@ -131,10 +131,14 @@ function initMap() {
 
 function startLocationTracking() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(updatePosition);
+        navigator.geolocation.getCurrentPosition(updatePosition, geolocationFail);
     } else {
         return;
     }
+}
+
+function geolocationFail(e) {
+    alert('Can\'t retrieve position.\nError: ' + e);
 }
 
 function updatePosition(pos) {

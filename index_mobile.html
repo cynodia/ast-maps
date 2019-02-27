@@ -162,6 +162,7 @@
     <script>
         function init() {
             $('#maininfobtn').click(function() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
                 $('#infotext').show();
             });
             $('#closeinfobtn').click(function() {
