@@ -71,7 +71,7 @@ function initMap() {
 
     window.mainMap = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
-        center: {lat: 58.483684, lng: 8.785733},
+        center: {lat: 58.483684, lng: 8.787000},
         mapTypeId: 'satellite',
         mapTypeControl: false,
         disableDefaultUI: true
@@ -79,7 +79,7 @@ function initMap() {
 
     window.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
         zoom: 16,
-        center: {lat: 58.483684, lng: 8.785733},
+        center: {lat: 58.483684, lng: 8.787000},
         mapTypeId: 'satellite',
         mapTypeControl: false,
         disableDefaultUI: true
