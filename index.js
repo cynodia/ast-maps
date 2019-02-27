@@ -169,7 +169,7 @@ function initMap() {
     infoDiv.style.padding = "6px";
     infoDiv.style.fontSize = "16px";
     infoDiv.index = 1;
-    infoDiv.innerHTML = "<i style='color: #0f0;' class=\"fa fa-circle\"></i> Start<br><i style='color: #00f;' class=\"fa fa-circle\"></i> Slutt";
+    infoDiv.innerHTML = "<i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt";
 
     window.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoDiv);
 
