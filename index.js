@@ -169,7 +169,7 @@ function initMap() {
     infoDiv1.style.padding = "6px";
     infoDiv1.style.fontSize = "16px";
     infoDiv1.index = 1;
-    infoDiv1.innerHTML = "<i style='color: #00bb00;' class=\"fa fa-minus\"></i> Lett<br><i style='color: #4444ee;' class=\"fa fa-minus\"></i> Middels<br><i style='color: #000000;' class=\"fa fa-minus\"></i> Vanskelig";
+    infoDiv1.innerHTML = "<i style='font-weight:bold; color: #00bb00;' class=\"fa fa-minus\"></i> Lett<br><i style='font-weight:bold; color: #4444ee;' class=\"fa fa-minus\"></i> Middels<br><i style='font-weight:bold; color: #000000;' class=\"fa fa-minus\"></i> Vanskelig";
 
     window.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
 
