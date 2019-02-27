@@ -26,7 +26,7 @@ function hideInfo() {
     if(infoTimeout != null) {
         clearTimeout(infoTimeout);
     }
-    $('#infopopup').hide();
+    $('#infopopup').fadeOut(750);
 }
 
 function showInfo(message, timeout) {
@@ -35,9 +35,9 @@ function showInfo(message, timeout) {
     }
 
     $('#infopopup').html(message);
-    $('#infopopup').show();
+    $('#infopopup').fadeIn(750);
     infoTimeout = setTimeout(function() {
-        $('#infopopup').hide();
+        $('#infopopup').fadeOut(750);
         infoTimeout = null;
     }, timeout * 1000)
 }
@@ -261,12 +261,11 @@ function updatePosition(pos) {
 }
 
 function closeTrailInfo() {
-    $("#trailwindow").hide();
+    $("#trailwindow").fadeOut(750);
 }
 
 function onPathClicked(key, path) {
     $("html, body").animate({ scrollTop: 0 }, "slow");
-    $("#hoverinfo").hide();
 
     if(trailData.hasOwnProperty(key)) {
         $("#trailinfoheader").html(trailData[key].title);
@@ -394,7 +393,7 @@ function onPathClicked(key, path) {
                 info += trailData[key].entrancetext;
                 $('#trailentrance').html(info);
                 $("#trailinfotext").html(trailData[key].infotext);
-                $("#trailwindow").show();
+                $("#trailwindow").fadeIn(750);
                 $("#trailfacts").html("Lengde: " + Math.floor(path.inKm() * 10000) / 10 + "m<br>" +
                         "Høydeforskjell: " + Math.floor(diff * 10) / 10 + "m<br>" +
                         "Vanskelighetsgrad: " + trailData[key].level);

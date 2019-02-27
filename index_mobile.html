@@ -193,10 +193,10 @@
         function init() {
             $('#maininfobtn').click(function() {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
-                $('#infotext').show();
+                $('#infotext').fadeIn(750);
             });
             $('#closeinfobtn').click(function() {
-                $('#infotext').hide();
+                $('#infotext').fadeOut(750);
             });
             $('#mainlocationbtn').click(function() {
                 setTimeout(mapUserLocation, 100);
