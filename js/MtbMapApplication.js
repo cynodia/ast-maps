@@ -195,11 +195,12 @@ class MtbMapApplication {
         info += trail.getFindStartText();
         $('#trailentrance').html(info);
         $("#trailinfotext").html(trail.getInfoText());
-        $("#trailwindow").fadeIn(750);
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
                 "<span style=\"float:right;\">Høydefor.: " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "Vanskelighetsgrad: " + trail.getLevelAsText());
+        $("#trailwindow").fadeIn(750);
         // Instantiate our graph object.
         new vis.Graph3d(document.getElementById('chart3d'), data, options);
+
     }
 }
