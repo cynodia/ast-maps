@@ -37,7 +37,7 @@ class MtbMapApplication {
     }
 
     closeTrailInfo() {
-        this.currDetailTrail.renderTo(this.mainMap);
+        this.currDetailTrail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(750);
     }
