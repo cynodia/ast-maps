@@ -105,9 +105,6 @@ class MtbMapApplication {
     }
 
     resetMainMap() {
-        if(mobilecheck()) {
-            this.showInfo("Tilbakestiller posisjon", 3);
-        }
         this.mainMap.setZoom(this.config.main.mapZoom);
         this.mainMap.setCenter(this.config.main.mapCenter);
     }
@@ -129,6 +126,7 @@ class MtbMapApplication {
         reloadButton.setAttribute('id','mapResetBtn');
         reloadButton.style.background = "rgba(255,255,255,.6)";
         reloadButton.style.padding = "12px";
+        reloadButton.style.marginTop = "40px";
         reloadButton.style.fontSize = "16px";
         reloadButton.style.cursor = "pointer";
         reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
