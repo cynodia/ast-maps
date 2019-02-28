@@ -117,7 +117,10 @@ class MtbMapApplication {
         const infoDiv1 = document.createElement('div');
         infoDiv1.style.background = "rgba(255,255,255,.6)";
         infoDiv1.style.padding = "6px";
+        infoDiv1.style.borderRight = "1px solid white";
+        infoDiv1.style.borderBottom = "1px solid white";
         infoDiv1.style.fontSize = "16px";
+        infoDiv1.style.borderRadius = "0 0 6px 0";
         infoDiv1.index = 1;
         infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
@@ -138,6 +141,7 @@ class MtbMapApplication {
             infoButton.style.marginRight = "10px";
             infoButton.style.fontSize = "16px";
             infoButton.style.cursor = "pointer";
+            infoButton.setAttribute("class", "topButton");
             infoButton.index = 3;
             infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
             infoButton.onclick = function() {
@@ -155,6 +159,7 @@ class MtbMapApplication {
             locationButton.style.marginRight = "10px";
             locationButton.style.fontSize = "16px";
             locationButton.style.cursor = "pointer";
+            locationButton.setAttribute("class", "topButton");
             locationButton.index = 2;
             locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
             locationButton.onclick = function () {
@@ -170,6 +175,7 @@ class MtbMapApplication {
         reloadButton.style.background = "rgba(255,255,255,.6)";
         reloadButton.style.padding = "12px";
         //reloadButton.style.marginTop = "40px";
+        reloadButton.setAttribute("class", "topButton");
         reloadButton.style.fontSize = "16px";
         reloadButton.style.cursor = "pointer";
         reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
