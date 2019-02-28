@@ -1,11 +1,7 @@
 class MtbMapApplication {
 
-    constructor(config, markers, trails) {
-        this.config = {
-            main: config,
-            markers: markers,
-            trails: trails
-        };
+    constructor(config) {
+        this.config = config;
         this.mainMap = null;
         this.trailMap = null;
         this.infoTimeout = null;
@@ -93,15 +89,13 @@ class MtbMapApplication {
         }
 
         /** Add trails */
-        for (let key in this.config.trails) {
-            if (this.config.trails.hasOwnProperty(key)) {
-                let t = new Trail(this.config.trails[key]);
-                t.loadTrail(function (trail) {
-                    trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
-                }.bind(this));
-                this.trails.push(t);
-                console.log("Added trail " + key);
-            }
+        for (let i = 0; i < this.config.trails.length; i++) {
+            let t = new Trail(this.config.trails[i]);
+            t.loadTrail(function (trail) {
+                trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
+            }.bind(this));
+            this.trails.push(t);
+            console.log("Added trail " + t.getTitle());
         }
 
         this.addHelpOverlays();

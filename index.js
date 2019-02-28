@@ -19,7 +19,10 @@ function initTrails() {
     newScript.async = true;
     headID.appendChild(newScript);
 
-    window.application = new MtbMapApplication(mainConfig, markerData, trailData);
+    let config = "tungvekter";
+
+    console.log("Using configuration: " + config);
+    window.application = new MtbMapApplication(mmConfigurations[config]);
 }
 
 /* GMaps callback */
