@@ -198,7 +198,7 @@ class MtbMapApplication {
         $('#trailentrance').html(info);
         $("#trailinfotext").html(trail.getInfoText());
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
-                "<span style=\"float:right;\">Høydefor.: " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
+                "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "Vanskelighetsgrad: " + trail.getLevelAsText());
         $("#trailwindow").fadeIn(750);
         // Instantiate our graph object.
