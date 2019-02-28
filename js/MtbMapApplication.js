@@ -162,7 +162,7 @@ class MtbMapApplication {
             infoButton.style.marginRight = "10px";
             infoButton.style.fontSize = "16px";
             infoButton.style.cursor = "pointer";
-            infoButton.index = 2;
+            infoButton.index = 3;
             infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
             infoButton.onclick = function() {
                 $('#infotext').fadeIn(750, function() {
