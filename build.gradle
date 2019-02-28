@@ -1,0 +1,33 @@
+/**
+ * Run with -PRELEASETAG=TAG to build a release
+ */
+
+apply plugin: 'base'
+
+defaultTasks 'clean', 'build'
+
+ext.appVersion = "1.0.0"
+ext.packageName = ""
+ext.testEnv = false
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+task minify(type: Exec) {
+    commandLine = ['/bin/bash', '-c', "rm -f mtbmaps.min.js; java -jar ./compiler.jar --compilation_level SIMPLE_OPTIMIZATIONS " +
+            "--js_output_file=mtbmaps.min.js " +
+            "js/*" +
+            ";"
+    ]
+}
+
+
+task build(dependsOn: [ 'minify' ]) {
+    doLast {
+        exec {
+            commandLine = [ '/bin/bash', '-c', "echo \"DONE!\";"
+            ]
+        }
+    }
+}

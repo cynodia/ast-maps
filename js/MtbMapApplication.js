@@ -122,7 +122,7 @@ class MtbMapApplication {
         infoDiv1.style.fontSize = "16px";
         infoDiv1.index = 1;
         infoDiv1.innerHTML = "<i style='font-weight:bold; color: #00bb00;' class=\"fa fa-minus\"></i> Lett<br><i style='font-weight:bold; color: #4444ee;' class=\"fa fa-minus\"></i> Middels<br><i style='font-weight:bold; color: #000000;' class=\"fa fa-minus\"></i> Vanskelig" +
-                "<hr><i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt";
+                "<hr><i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt<br><i style='color: #f00;' class=\"fa fa-circle\"></i> Deg";
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
 
