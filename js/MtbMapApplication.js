@@ -90,7 +90,7 @@ class MtbMapApplication {
 
         /** Add trails */
         for (let i = 0; i < this.config.trails.length; i++) {
-            let t = new Trail(this.config.trails[i]);
+            let t = new Trail(this.config.trails[i], this.config.main.levelColors);
             t.loadTrail(function (trail) {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
             }.bind(this));
@@ -115,7 +115,9 @@ class MtbMapApplication {
         infoDiv1.style.padding = "6px";
         infoDiv1.style.fontSize = "16px";
         infoDiv1.index = 1;
-        infoDiv1.innerHTML = "<i style='font-weight:bold; color: #00bb00;' class=\"fa fa-minus\"></i> Lett<br><i style='font-weight:bold; color: #4444ee;' class=\"fa fa-minus\"></i> Middels<br><i style='font-weight:bold; color: #000000;' class=\"fa fa-minus\"></i> Vanskelig" +
+        infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
+                "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                 "<hr><i style='color: #00f;' class=\"fa fa-circle\"></i> Start<br><i style='color: #0f0;' class=\"fa fa-circle\"></i> Slutt";
         if(mobilecheck()) {
             infoDiv1.innerHTML += "<br><i style='color: #f00;' class='fa fa-circle'></i> Deg";

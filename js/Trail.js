@@ -1,7 +1,6 @@
 class Trail {
-    constructor(config, map) {
+    constructor(config, levelColors) {
         this.config = config;
-        this.gMap = map;
         this.heightDiff = 0;
         this.coordinates = [];
         this.altitudes = [];
@@ -9,6 +8,7 @@ class Trail {
         this.stopMarker = null;
         this.path = null;
         this.clickCb = null;
+        this.levelColors = levelColors;
     }
 
     getInfoText() {
@@ -48,13 +48,8 @@ class Trail {
 
 
     getTrailColor() {
-        switch(this.config.level) {
-            case 2:
-                return '#00ff00';
-            case 3:
-                return '#000000';
-            default:
-                return '#0000ff';
+        if(this.levelColors.hasOwnProperty(this.config.level)) {
+            return this.levelColors[this.config.level];
         }
     }
 
