@@ -12,6 +12,11 @@ class MtbMapApplication {
         this.trails = [];
         this.currDetailTrail = null;
 
+        this.updateStaticText();
+        $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
+    }
+
+    updateStaticText() {
         $('#infotextcontent').html(
                 this.config.main.infoText +
                 "<h2>mtbmaps.net</h2>" +
@@ -21,7 +26,6 @@ class MtbMapApplication {
                 (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
         );
         $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
-        $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
     }
 
     getMainMap() {
