@@ -22,7 +22,7 @@ const mmConfigurations = {
             levelColors: {
                 1: '#0f0',
                 2: '#00f',
-                3: '#222222'
+                3: '#f00'
             }
         },
 
