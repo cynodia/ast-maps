@@ -73,26 +73,6 @@
             */
             min-width: 18.75em;
         }
-        #mainheader {
-            padding: 8px;
-            height: 64px;
-
-            /* internal layout, centered vertically - flex layout is great for this */
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-
-            /* just so we can tell the header apart */
-            background-color: white;
-            color: black;
-        }
-        #mainheader h1 {
-            /* set the h1 block as the main flex block - it will fill all unused space in the block */
-            flex: 1;
-
-            /* center content inside the block */
-            text-align: center;
-        }
         #map {
             width: 100%;
             padding: 0;
@@ -205,9 +185,6 @@
             $('#closeinfobtn').click(function() {
                 $('#infotext').fadeOut(750);
             });
-            $('#mainlocationbtn').click(function() {
-                setTimeout(mapUserLocation, 100);
-            });
 
             initTrails();
         }
@@ -215,11 +192,6 @@
 </head>
 <body onload="init()">
 <div id="outer">
-    <div id="mainheader">
-        <button id="maininfobtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 40px;" class="fa fa-info-circle"></i></button>
-        <h1 id="headertext"></h1>
-        <button id="mainlocationbtn" style="font-size: 32px; border: none; background: transparent; float: right;"><i style="cursor:pointer; font-size: 40px;" class="fa fa-crosshairs"></i></button>
-    </div>
     <div id="map"></div>
 </div>
 <div id="infotext">

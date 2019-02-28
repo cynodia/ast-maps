@@ -55,7 +55,6 @@ function initMap() {
     };
 
     window.application.initMap();
-    window.geoLocator = new GeoLocator(window.application);
 }
 
 function mapUserLocation() {

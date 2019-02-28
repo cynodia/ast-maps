@@ -8,6 +8,8 @@ class MtbMapApplication {
         this.trails = [];
         this.currDetailTrail = null;
 
+        this.geoLocator = new GeoLocator(this);
+
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
     }
@@ -21,7 +23,9 @@ class MtbMapApplication {
                 "Du kan forke prosjektet på <a href=\"https://github.com/cynodia/ast-maps\">GitHub</a>.<br>" +
                 (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
         );
-        $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
+        if(!mobilecheck()) {
+            $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
+        }
     }
 
     getMainMap() {
@@ -126,16 +130,48 @@ class MtbMapApplication {
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
 
         const reloadButton = document.createElement('button');
-        reloadButton.setAttribute('id','mapResetBtn');
         reloadButton.style.background = "rgba(255,255,255,.6)";
         reloadButton.style.padding = "12px";
-        reloadButton.style.marginTop = "40px";
+        //reloadButton.style.marginTop = "40px";
         reloadButton.style.fontSize = "16px";
         reloadButton.style.cursor = "pointer";
+        reloadButton.index = 1;
         reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
         reloadButton.onclick = this.resetMainMap.bind(this);
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(reloadButton);
+
+        if(mobilecheck()) {
+            const locationButton = document.createElement('button');
+            locationButton.style.background = "rgba(255,255,255,.6)";
+            locationButton.style.padding = "12px";
+            locationButton.style.marginRight = "10px";
+            locationButton.style.fontSize = "16px";
+            locationButton.style.cursor = "pointer";
+            locationButton.index = 2;
+            locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+            locationButton.onclick = function () {
+                this.geoLocator.mapUserLocation();
+            }.bind(this);
+
+            this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
+
+            const infoButton = document.createElement('button');
+            infoButton.style.background = "rgba(255,255,255,.6)";
+            infoButton.style.padding = "12px";
+            infoButton.style.marginRight = "10px";
+            infoButton.style.fontSize = "16px";
+            infoButton.style.cursor = "pointer";
+            infoButton.index = 2;
+            infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
+            infoButton.onclick = function() {
+                $('#infotext').fadeIn(750, function() {
+                    $("html, body").animate({scrollTop: 0}, "slow");
+                });
+            };
+
+            this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoButton);
+        }
     }
 
     onMapElemClicked(trail) {
