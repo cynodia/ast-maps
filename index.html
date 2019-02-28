@@ -21,8 +21,9 @@
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="data/js/traildata.js"></script>
-    <script src="Trail.js"></script>
-    <script src="index.js"></script>
+    <script src="js/Trail.js"></script>
+    <script src="js/MtbMapApplication.js"></script>
+    <script src="js/index.js"></script>
 
     <style>
 
@@ -131,15 +132,6 @@
             showInfo("Laster mobilversjon...", 5);
             location.assign("index_mobile.html");
         } else {
-            /* Prevent loading ggolemaps API/data twice when redirecting to mobile */
-            const headID = document.getElementsByTagName("head")[0];
-            const newScript = document.createElement('script');
-            newScript.type = 'text/javascript';
-            newScript.language = 'javascript';
-            newScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSIzHM-xchwZyZ_H0qj0f_bWiCoYBch4&callback=initMap";
-            newScript.defer = true;
-            newScript.async = true;
-            headID.appendChild(newScript);
 
             $.backstretch([
                 "data/pics/image1.jpeg",
