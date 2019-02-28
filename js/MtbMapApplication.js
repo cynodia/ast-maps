@@ -129,33 +129,9 @@ class MtbMapApplication {
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
 
-        const reloadButton = document.createElement('button');
-        reloadButton.style.background = "rgba(255,255,255,.6)";
-        reloadButton.style.padding = "12px";
-        //reloadButton.style.marginTop = "40px";
-        reloadButton.style.fontSize = "16px";
-        reloadButton.style.cursor = "pointer";
-        reloadButton.index = 1;
-        reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
-        reloadButton.onclick = this.resetMainMap.bind(this);
-
-        this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(reloadButton);
+        const btnDiv = document.createElement('div');
 
         if(mobilecheck()) {
-            const locationButton = document.createElement('button');
-            locationButton.style.background = "rgba(255,255,255,.6)";
-            locationButton.style.padding = "12px";
-            locationButton.style.marginRight = "10px";
-            locationButton.style.fontSize = "16px";
-            locationButton.style.cursor = "pointer";
-            locationButton.index = 2;
-            locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-            locationButton.onclick = function () {
-                this.geoLocator.mapUserLocation();
-            }.bind(this);
-
-            this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
-
             const infoButton = document.createElement('button');
             infoButton.style.background = "rgba(255,255,255,.6)";
             infoButton.style.padding = "12px";
@@ -170,8 +146,39 @@ class MtbMapApplication {
                 });
             };
 
-            this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoButton);
+            //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoButton);
+            btnDiv.appendChild(infoButton);
+
+            const locationButton = document.createElement('button');
+            locationButton.style.background = "rgba(255,255,255,.6)";
+            locationButton.style.padding = "12px";
+            locationButton.style.marginRight = "10px";
+            locationButton.style.fontSize = "16px";
+            locationButton.style.cursor = "pointer";
+            locationButton.index = 2;
+            locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+            locationButton.onclick = function () {
+                this.geoLocator.mapUserLocation();
+            }.bind(this);
+
+            //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
+            btnDiv.appendChild(locationButton);
         }
+
+
+        const reloadButton = document.createElement('button');
+        reloadButton.style.background = "rgba(255,255,255,.6)";
+        reloadButton.style.padding = "12px";
+        //reloadButton.style.marginTop = "40px";
+        reloadButton.style.fontSize = "16px";
+        reloadButton.style.cursor = "pointer";
+        reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
+        reloadButton.onclick = this.resetMainMap.bind(this);
+
+        //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(reloadButton);
+        btnDiv.appendChild(reloadButton);
+
+        this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
     }
 
     onMapElemClicked(trail) {
