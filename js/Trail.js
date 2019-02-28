@@ -126,30 +126,14 @@ class Trail {
                 map: gMap,
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
-                    scale: 5,
-                    strokeColor: '#00F',
+                    scale: 4,
+                    strokeColor: '#ffffff',
                 },
                 title: "START " + this.getTitle()
             });
             this.startMarker.addListener('click', this.patchClicked.bind(this));
         } else {
             this.startMarker.setMap(gMap);
-        }
-
-        if(!this.stopMarker) {
-            this.stopMarker = new google.maps.Marker({
-                position: this.coordinates[this.coordinates.length - 1],
-                map: gMap,
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 5,
-                    strokeColor: '#0F0',
-                },
-                title: "FINISH " + this.getTitle()
-            });
-            this.stopMarker.addListener('click', this.patchClicked.bind(this));
-        } else {
-            this.stopMarker.setMap(gMap);
         }
 
         if(!this.path) {
