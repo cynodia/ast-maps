@@ -24,6 +24,14 @@ class MtbMapApplication {
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
     }
 
+    getMainMap() {
+        return this.mainMap;
+    }
+
+    getTrailMap() {
+        return this.trailMap;
+    }
+
     closeTrailInfo() {
         this.currDetailTrail.renderTo(this.mainMap);
         this.currDetailTrail = null;

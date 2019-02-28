@@ -101,7 +101,7 @@ function updatePosition(pos) {
         application.showInfo("Posisjon mottat<hr>Din posisjon vil etter dette oppdateres automatisk", 6);
         window.mainLocationMarker = new google.maps.Marker({
             position: data,
-            map: window.mainMap,
+            map: application.getMainMap(),
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
                 scale: 6,
@@ -115,7 +115,7 @@ function updatePosition(pos) {
     } else {
         window.trailLocationMarker = new google.maps.Marker({
             position: data,
-            map: window.trailMap,
+            map: application.getTrailMap(),
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
                 scale: 6,
@@ -125,7 +125,7 @@ function updatePosition(pos) {
     }
     if(geolocationWatchId === null) {
         geolocationWatchId = navigator.geolocation.watchPosition(updatePosition);
-        window.mainMap.setCenter(data);
+        application.getMainMap().setCenter(data);
     }
 }
 
