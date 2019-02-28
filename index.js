@@ -20,6 +20,7 @@ function initTrails() {
     $('#closetrailinfo').click(closeTrailInfo);
 }
 
+let currDetailTrail = null;
 let infoTimeout = null;
 
 function hideInfo() {
@@ -70,8 +71,8 @@ function initMap() {
     };
 
     window.mainMap = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: {lat: 58.483684, lng: 8.787000},
+        zoom: mainConfig.mapZoom,
+        center: mainConfig.mapCenter,
         mapTypeId: 'hybrid',
         mapTypeControl: false,
         disableDefaultUI: true
@@ -79,86 +80,35 @@ function initMap() {
 
     window.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
         zoom: 16,
-        center: {lat: 58.483684, lng: 8.787000},
+        center: mainConfig.mapCenter,
         mapTypeId: 'hybrid',
         mapTypeControl: false,
         disableDefaultUI: true
     });
 
-    const parkingImage = 'data/imgs/marker_parking.png';
+    /** Add markers */
+    for(let key in markerData) {
+        if (markerData.hasOwnProperty(key)) {
+            new google.maps.Marker({
+                position: markerData[key].position,
+                map: window.mainMap,
+                title: markerData[key].title,
+                icon: markerData[key].icon
+            });
+        }
+    }
 
-    const parkingMarker = new google.maps.Marker({
-        position: { lat: 58.478971, lng: 8.794247 },
-        map: window.mainMap,
-        title: 'Parkering - Dråbelia',
-        icon: parkingImage
-    });
-
+    /** Add trails */
     for(let key in trailData) {
         if(trailData.hasOwnProperty(key)) {
+            let t = new Trail(trailData[key]);
+
+            t.loadTrail(function(trail) {
+                trail.renderTo(window.mainMap, onMapElemClicked);
+            });
+
             console.log("Add " + key);
 
-            $.ajax({
-                type: "GET",
-                url: trailData[key].url,
-                cache: false,
-                dataType: "xml",
-                success: function(xml) {
-                    // Create and populate a data table.
-                    let coordinates = [];
-
-                    $(xml).find('gpx').each(function(){
-                        $(this).find('trk').each(function(){
-                            $(this).find('trkseg').each(function(){
-                                $(this).find('trkpt').each(function() {
-                                    coordinates.push({ lat: parseFloat($(this).attr('lat')),
-                                        lng: parseFloat($(this).attr('lon'))});
-                                });
-                            });
-                        });
-                    });
-                    const startMarker = new google.maps.Marker({
-                        position: coordinates[0],
-                        map: window.mainMap,
-                        icon: {
-                            path: google.maps.SymbolPath.CIRCLE,
-                            scale: 5,
-                            strokeColor: '#00F',
-                        },
-                        title: "START " + trailData[key].title
-                    });
-
-                    const stopMarker = new google.maps.Marker({
-                        position: coordinates[coordinates.length - 1],
-                        map: window.mainMap,
-                        icon: {
-                            path: google.maps.SymbolPath.CIRCLE,
-                            scale: 5,
-                            strokeColor: '#0F0',
-                        },
-                        title: "FINISH " + trailData[key].title
-                    });
-
-                    const path = new google.maps.Polyline({
-                        path: coordinates,
-                        geodesic: true,
-                        map: window.mainMap,
-                        strokeColor: trailData[key].color,
-                        strokeOpacity: 0.8,
-                        strokeWeight: 6
-                    });
-                    path.addListener('click', function() {
-                        onPathClicked(key, path);
-                    });
-                    startMarker.addListener('click', function() {
-                        onPathClicked(key, path);
-                    });
-                    stopMarker.addListener('click', function() {
-                        onPathClicked(key, path);
-                    });
-
-                }
-            });
         }
     }
 
@@ -261,189 +211,74 @@ function updatePosition(pos) {
 }
 
 function closeTrailInfo() {
+    currDetailTrail.renderTo(window.mainMap);
+    currDetailTrail = null;
     $("#trailwindow").fadeOut(750);
 }
 
-function onPathClicked(key, path) {
+function onMapElemClicked(trail) {
+    currDetailTrail = trail;
+
     $("html, body").animate({ scrollTop: 0 }, "slow");
 
-    if(trailData.hasOwnProperty(key)) {
-        $("#trailinfoheader").html(trailData[key].title);
-        $("#chart3d").empty();
-        $("#elevationchart").empty();
+    $("#trailinfoheader").html(trail.getTitle());
+    $("#chart3d").empty();
+    $("#elevationchart").empty();
 
-        let counter = 0;
+    let counter = 0;
 
-        $.ajax({
-            type: "GET",
-            url: trailData[key].url,
-            cache: false,
-            dataType: "xml",
-            success: function (xml) {
-                // Create and populate a data table.
-                const data = new vis.DataSet();
-                let lowest = null;
-                let highest = null;
-                let coordinates = [];
+    const data = new vis.DataSet();
+    const coords = trail.getCoords();
+    const alts = trail.getAltitudes();
 
-                $(xml).find('gpx').each(function () {
-                    $(this).find('trk').each(function () {
-                        $(this).find('trkseg').each(function () {
-                            $(this).find('trkpt').each(function () {
-                                let lat = $(this).attr('lat');
-                                let lon = $(this).attr('lon');
-                                $(this).find('ele').each(function () {
-                                    let alt = parseFloat($(this).text());
-                                    if (lowest === null) {
-                                        lowest = highest = alt;
-                                    } else if (lowest > alt) {
-                                        lowest = alt;
-                                    } else if (highest < alt) {
-                                        highest = alt;
-                                    }
-                                    coordinates.push({ lat: parseFloat(lat),
-                                        lng: parseFloat(lon)});
-
-                                    data.add({
-                                        id: counter++,
-                                        x: parseFloat(lon),
-                                        y: parseFloat(lat),
-                                        z: alt,
-                                        style: 50
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-                let diff = highest - lowest;
-
-                // specify options
-                const options = {
-                    width: '100%',
-                    height: '100%',
-                    style: 'bar-size',
-                    showPerspective: true,
-                    showGrid: false,
-                    showShadow: false,
-                    keepAspectRatio: true,
-                    verticalRatio: diff < 10 ? 0.1 : 0.2,
-                    xBarWidth: 0.0003,
-                    yBarWidth: 0.0003,
-                    xLabel: '',
-                    yLabel: '',
-                    zLabel: 'moh',
-                    xValueLabel: function (x) {
-                        return "";
-                    },
-                    yValueLabel: function (y) {
-                        return "";
-                    }
-                };
-
-                window.trailMap.setCenter(new google.maps.LatLng(coordinates[0].lat, coordinates[0].lng));
-
-                if(window.lastMapStart) {
-                    window.lastMapStart.setMap(null);
-                }
-                if(window.lastMapStop) {
-                    window.lastMapStop.setMap(null);
-                }
-                if(window.lastMapPath) {
-                    window.lastMapPath.setMap(null);
-                }
-                window.lastMapStart = new google.maps.Marker({
-                    position: coordinates[0],
-                    map: window.trailMap,
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 5,
-                        strokeColor: '#00F',
-                    },
-                    title: "START " + trailData[key].title
-                });
-
-                window.lastMapStop = new google.maps.Marker({
-                    position: coordinates[coordinates.length - 1],
-                    map: window.trailMap,
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 5,
-                        strokeColor: '#0F0',
-                    },
-                    title: "FINISH " + trailData[key].title
-                });
-
-                window.lastMapPath = new google.maps.Polyline({
-                    path: coordinates,
-                    geodesic: true,
-                    map: window.trailMap,
-                    strokeColor: trailData[key].color,
-                    strokeOpacity: 0.8,
-                    strokeWeight: 6
-                });
-
-                if(0) {
-                    const elevator = new google.maps.ElevationService;
-                    displayPathElevation(coordinates, elevator, window.trailMap);
-                }
-
-                //let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/" + trailData[key].images.trailStart + "\"/><br>";
-                let info = "<img class=\"shadowed\" width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
-                info += trailData[key].entrancetext;
-                $('#trailentrance').html(info);
-                $("#trailinfotext").html(trailData[key].infotext);
-                $("#trailwindow").fadeIn(750);
-                $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(path.inKm() * 10000) / 10 + "m" +
-                        "<span style=\"float:right;\">Høydefor.: " + Math.floor(diff * 10) / 10 + "m</span></p>" +
-                        "Vanskelighetsgrad: " + trailData[key].level);
-                // Instantiate our graph object.
-                new vis.Graph3d(document.getElementById('chart3d'), data, options);
-            }
+    for(let i = 0; i < coords.length; i++) {
+        data.add({
+            id: counter++,
+            x: coords[i].lng,
+            y: coords[i].lat,
+            z: alts[i],
+            style: 50
         });
     }
-};
 
+    // specify options
+    const options = {
+        width: '100%',
+        height: '100%',
+        style: 'bar-size',
+        showPerspective: true,
+        showGrid: false,
+        showShadow: false,
+        keepAspectRatio: true,
+        verticalRatio: trail.getHeightDiff() < 10 ? 0.1 : 0.2,
+        xBarWidth: 0.0003,
+        yBarWidth: 0.0003,
+        xLabel: '',
+        yLabel: '',
+        zLabel: 'moh',
+        xValueLabel: function (x) {
+            return "";
+        },
+        yValueLabel: function (y) {
+            return "";
+        }
+    };
 
-function displayPathElevation(path, elevator, map) {
+    /** TODO: REUSE map path and markers from main map in trail object */
 
-    // Create a PathElevationRequest object using this array.
-    // Ask for 256 samples along that path.
-    // Initiate the path request.
-    elevator.getElevationAlongPath({
-        'path': path,
-        'samples': 256
-    }, plotElevation);
-}
+    window.trailMap.setCenter(new google.maps.LatLng(coords[0].lat, coords[0].lng));
 
-// Takes an array of ElevationResult objects, draws the path on the map
-// and plots the elevation profile on a Visualization API ColumnChart.
-function plotElevation(elevations, status) {
-    const chartDiv = document.getElementById('elevationchart');
-    if (status !== 'OK') {
-        // Show the error code inside the chartDiv.
-        chartDiv.innerHTML = 'Cannot show elevation: request failed because ' +
-                status;
-        return;
-    }
-    // Create a new chart in the elevation_chart DIV.
-    const chart = new google.visualization.ColumnChart(chartDiv);
+    trail.renderTo(window.trailMap);
 
-    // Extract the data from which to populate the chart.
-    // Because the samples are equidistant, the 'Sample'
-    // column here does double duty as distance along the
-    // X axis.
-    const data = new google.visualization.DataTable();
-    data.addColumn('string', 'Sample');
-    data.addColumn('number', 'Elevation');
-    for (let i = 0; i < elevations.length; i++) {
-        data.addRow(['', elevations[i].elevation]);
-    }
-
-    // Draw the chart using the data within its DIV.
-    chart.draw(data, {
-        height: 150,
-        legend: 'none',
-        titleY: 'Elevation (m)'
-    });
+    //let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/" + trailData[key].images.trailStart + "\"/><br>";
+    let info = "<img class=\"shadowed\" width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
+    info += trail.getFindStartText();
+    $('#trailentrance').html(info);
+    $("#trailinfotext").html(trail.getInfoText());
+    $("#trailwindow").fadeIn(750);
+    $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
+            "<span style=\"float:right;\">Høydefor.: " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
+            "Vanskelighetsgrad: " + trail.getLevelAsText());
+    // Instantiate our graph object.
+    new vis.Graph3d(document.getElementById('chart3d'), data, options);
 }
