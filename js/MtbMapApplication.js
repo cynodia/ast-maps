@@ -317,7 +317,7 @@ class MtbMapApplication {
                 "Vanskelighetsgrad: " + trail.getLevelAsText());
         $("#trailwindow").fadeIn(500, function() {
             trail.renderTo(this.trailMap);
-            this.trailMap.fitBounds(trail.getBounds(), 0);
+            this.trailMap.fitBounds(trail.getBounds(), 6);
             /* graph container must be visible */
             if(this.show3d) {
                 this.generateGraph3d(trail);
