@@ -7,11 +7,14 @@ class MtbMapApplication {
         this.infoTimeout = null;
         this.trails = [];
         this.currDetailTrail = null;
+        this.show3d = false;
 
         this.geoLocator = new GeoLocator(this);
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
+        $('#trail3dBtn').click(this.showTrail3d.bind(this));
+        $('#trail2dBtn').click(this.showTrail2d.bind(this));
     }
 
     updateStaticText() {
@@ -150,7 +153,6 @@ class MtbMapApplication {
                 });
             };
 
-            //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(infoButton);
             btnDiv.appendChild(infoButton);
 
             const locationButton = document.createElement('button');
@@ -166,7 +168,6 @@ class MtbMapApplication {
                 this.geoLocator.mapUserLocation();
             }.bind(this);
 
-            //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
             btnDiv.appendChild(locationButton);
         }
 
@@ -174,33 +175,38 @@ class MtbMapApplication {
         const reloadButton = document.createElement('button');
         reloadButton.style.background = "rgba(255,255,255,.6)";
         reloadButton.style.padding = "12px";
-        //reloadButton.style.marginTop = "40px";
         reloadButton.setAttribute("class", "topButton");
         reloadButton.style.fontSize = "16px";
         reloadButton.style.cursor = "pointer";
         reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
         reloadButton.onclick = this.resetMainMap.bind(this);
 
-        //this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(reloadButton);
         btnDiv.appendChild(reloadButton);
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
     }
 
-    onMapElemClicked(trail) {
-        this.currDetailTrail = trail;
+    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    calcCrow(lat1, lon1, lat2, lon2) {
+        function toRad(v) { return (v * Math.PI / 180); }
 
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        const R = 6371; // km
+        const dLat = toRad(lat2-lat1);
+        const dLon = toRad(lon2-lon1);
+        lat1 = toRad(lat1);
+        lat2 = toRad(lat2);
 
-        $("#trailinfoheader").html(trail.getTitle());
-        $("#chart3d").empty();
-        $("#elevationchart").empty();
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return ((R * c) * 1000);
+    }
 
-        let counter = 0;
-
+    generateGraph3d(trail) {
         const data = new vis.DataSet();
         const coords = trail.getCoords();
         const alts = trail.getAltitudes();
+        let counter = 0;
 
         for(let i = 0; i < coords.length; i++) {
             data.add({
@@ -235,7 +241,69 @@ class MtbMapApplication {
             }
         };
 
-        /** TODO: REUSE map path and markers from main map in trail object */
+        new vis.Graph3d(document.getElementById('trailchart'), data, options);
+    }
+
+    generateGraph2d(trail) {
+        const data = new vis.DataSet();
+        const alts = trail.getAltitudes();
+        const coords = trail.getCoords();
+        let curr = 0;
+
+        for(let i = 0; i < alts.length; i++) {
+            curr += (i === 0) ? 0 : this.calcCrow(coords[i - 1].lat, coords[i - 1].lng, coords[i].lat, coords[i].lng);
+            data.add({
+                x: curr,
+                y: alts[i]
+            });
+        }
+
+        const options = {
+            width: '100%',
+            height: '100%',
+            moveable: false,
+            zoomable: false,
+            drawPoints: false,
+            style: 'bar',
+            showMajorLabels: false
+            // start: '0',
+            // end: alts.length
+        };
+        new vis.Graph2d(document.getElementById('trailchart'), data, options);
+    }
+
+    showTrail3d() {
+        this.show3d = true;
+        $('#trail3dBtn').hide();
+        $('#trail2dBtn').show();
+        if(!this.currDetailTrail) {
+            return;
+        }
+        $("#trailchart").empty();
+        this.generateGraph3d(this.currDetailTrail);
+    }
+
+    showTrail2d() {
+        this.show3d = false;
+        $('#trail3dBtn').show();
+        $('#trail2dBtn').hide();
+        if(!this.currDetailTrail) {
+            return;
+        }
+        $("#trailchart").empty();
+        this.generateGraph2d(this.currDetailTrail);
+    }
+
+    onMapElemClicked(trail) {
+        this.currDetailTrail = trail;
+
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+
+        $("#trailinfoheader").html(trail.getTitle());
+        $("#trailchart").empty();
+
+        const coords = trail.getCoords();
+
 
         this.trailMap.setCenter(new google.maps.LatLng(coords[0].lat, coords[0].lng));
 
@@ -249,9 +317,14 @@ class MtbMapApplication {
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
                 "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "Vanskelighetsgrad: " + trail.getLevelAsText());
-        $("#trailwindow").fadeIn(750);
+        $("#trailwindow").fadeIn(750, function() {
+            /* grpah container must be visible */
+            if(this.show3d) {
+                this.generateGraph3d(trail);
+            } else {
+                this.generateGraph2d(trail);
+            }
+        }.bind(this));
         // Instantiate our graph object.
-        new vis.Graph3d(document.getElementById('chart3d'), data, options);
-
     }
 }

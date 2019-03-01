@@ -26,16 +26,16 @@ class GeoLocator {
     geolocationFail(error) {
         switch(error.code) {
             case error.PERMISSION_DENIED:
-                this.app.showInfo("User denied the request for Geolocation.");
+                this.app.showInfo("Brukeren avsol forespørsel om posisjon.");
                 break;
             case error.POSITION_UNAVAILABLE:
-                this.app.showInfo("Location information is unavailable.");
+                this.app.showInfo("Posisjonsinformasjon ikke tilgjengelig.");
                 break;
             case error.TIMEOUT:
-                this.app.showInfo("The request to get user location timed out.");
+                this.app.showInfo("Tidsavbrudd i forspørsel om posisjon.");
                 break;
             default:
-                this.app.showInfo("An unknown error occurred.");
+                this.app.showInfo("Posisjonsforespørsel: ukjent feil.");
                 break;
         }
     }
