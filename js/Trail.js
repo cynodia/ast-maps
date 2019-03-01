@@ -4,6 +4,7 @@ class Trail {
         this.heightDiff = 0;
         this.coordinates = [];
         this.altitudes = [];
+        this.distances = [];
         this.startMarker = null;
         this.stopMarker = null;
         this.path = null;
@@ -39,6 +40,10 @@ class Trail {
         return this.altitudes;
     }
 
+    getDistances() {
+        return this.distances;
+    }
+
     getLength() {
         if (this.path) {
             return this.path.inKm();
@@ -64,6 +69,22 @@ class Trail {
         }
     }
 
+    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    calcCrow(lat1, lon1, lat2, lon2) {
+        function toRad(v) { return (v * Math.PI / 180); }
+
+        const R = 6371; // km
+        const dLat = toRad(lat2-lat1);
+        const dLon = toRad(lon2-lon1);
+        lat1 = toRad(lat1);
+        lat2 = toRad(lat2);
+
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return ((R * c) * 1000);
+    }
+
     loadTrail(cb) {
         const self = this;
         $.ajax({
@@ -74,17 +95,24 @@ class Trail {
             success: function(xml) {
                 let lowest = null;
                 let highest = null;
+                let lastLat = null;
+                let lastLng = null;
                 // Create and populate a data table.
                 $(xml).find('gpx').each(function(){
                     $(this).find('trk').each(function(){
                         $(this).find('trkseg').each(function(){
                             $(this).find('trkpt').each(function() {
+                                const lat = parseFloat($(this).attr('lat'));
+                                const lng = parseFloat($(this).attr('lon'));
                                 self.coordinates.push(
                                         {
-                                            lat: parseFloat($(this).attr('lat')),
-                                            lng: parseFloat($(this).attr('lon'))
+                                            lat: lat,
+                                            lng: lng
                                         }
                                 );
+                                self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
+                                lastLat = lat;
+                                lastLng = lng;
                                 let alt = 0.0;
                                 $(this).find('ele').each(function () {
                                     alt = parseFloat($(this).text());

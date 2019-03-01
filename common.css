@@ -13,6 +13,16 @@ body {
     cursor: pointer;
 }
 
+.leftButton {
+    background: #dddddd;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
 .chartBtn {
     position: absolute;
     right: 10px;

@@ -186,22 +186,6 @@ class MtbMapApplication {
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
     }
 
-    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
-    calcCrow(lat1, lon1, lat2, lon2) {
-        function toRad(v) { return (v * Math.PI / 180); }
-
-        const R = 6371; // km
-        const dLat = toRad(lat2-lat1);
-        const dLon = toRad(lon2-lon1);
-        lat1 = toRad(lat1);
-        lat2 = toRad(lat2);
-
-        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        return ((R * c) * 1000);
-    }
-
     generateGraph3d(trail) {
         const data = new vis.DataSet();
         const coords = trail.getCoords();
@@ -247,11 +231,11 @@ class MtbMapApplication {
     generateGraph2d(trail) {
         const data = new vis.DataSet();
         const alts = trail.getAltitudes();
-        const coords = trail.getCoords();
+        const dists = trail.getDistances();
         let curr = 0;
 
         for(let i = 0; i < alts.length; i++) {
-            curr += (i === 0) ? 0 : this.calcCrow(coords[i - 1].lat, coords[i - 1].lng, coords[i].lat, coords[i].lng);
+            curr += dists[i];
             data.add({
                 x: curr,
                 y: alts[i]
