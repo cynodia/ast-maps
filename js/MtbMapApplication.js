@@ -8,7 +8,7 @@ class MtbMapApplication {
         this.trails = [];
         this.currDetailTrail = null;
         this.show3d = false;
-
+        this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
 
         this.updateStaticText();
@@ -23,6 +23,10 @@ class MtbMapApplication {
                 "<h2>mtbmaps.net</h2>" +
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
                 "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>" +
+                // "Tilgjengelige områder: <br><ul>" +
+                // "<li><a href=\"https://tungvekter.mtbmaps.net\">Arendal - Tungvekteren</a></li>" +
+                // "<li><a href=\"https://asbie.mtbmaps.net\">Arendal - Åsbieskogen</a></li>" +
+                // "</ul>" +
                 "Du kan forke prosjektet på <a href=\"https://github.com/cynodia/ast-maps\">GitHub</a>.<br>" +
                 (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
         );
@@ -42,14 +46,14 @@ class MtbMapApplication {
     closeTrailInfo() {
         this.currDetailTrail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
-        $("#trailwindow").fadeOut(750);
+        $("#trailwindow").fadeOut(500);
     }
 
     hideInfo() {
         if (this.infoTimeout != null) {
             clearTimeout(this.infoTimeout);
         }
-        $('#infopopup').fadeOut(750);
+        $('#infopopup').fadeOut(500);
     }
 
     showInfo(message, timeout) {
@@ -58,26 +62,29 @@ class MtbMapApplication {
         }
 
         $('#infopopup').html(message);
-        $('#infopopup').fadeIn(750);
+        $('#infopopup').fadeIn(500);
         this.infoTimeout = setTimeout(function () {
-            $('#infopopup').fadeOut(750);
+            $('#infopopup').fadeOut(500);
             this.infoTimeout = null;
         }.bind(this), timeout * 1000)
     }
 
     initMap() {
         console.log("Setting up maps...");
+
+        this.mainBounds = new google.maps.LatLngBounds();
+
         this.mainMap = new google.maps.Map(document.getElementById('map'), {
-            zoom: this.config.main.mapZoom,
-            center: this.config.main.mapCenter,
+            // zoom: this.config.main.mapZoom,
+            // center: this.config.main.mapCenter,
             mapTypeId: 'hybrid',
             mapTypeControl: false,
             disableDefaultUI: true
         });
 
         this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
-            zoom: 16,
-            center: this.config.main.mapCenter,
+            // zoom: 16,
+            // center: this.config.main.mapCenter,
             mapTypeId: 'hybrid',
             mapTypeControl: false,
             disableDefaultUI: true
@@ -92,17 +99,26 @@ class MtbMapApplication {
                     title: this.config.markers[key].title,
                     icon: this.config.markers[key].icon
                 });
+                this.mainBounds.extend(new google.maps.LatLng(this.config.markers[key].position.lat, this.config.markers[key].position.lng));
+
             }
         }
 
         /** Add trails */
+        let trailsToLoad = this.config.trails.length;
         for (let i = 0; i < this.config.trails.length; i++) {
             let t = new Trail(this.config.trails[i], this.config.main.levelColors);
             t.loadTrail(function (trail) {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
+                this.mainBounds.union(trail.getBounds());
             }.bind(this));
             this.trails.push(t);
             console.log("Added trail " + t.getTitle());
+            trailsToLoad--;
+            if(trailsToLoad === 0) {
+                console.log("DONE - fit map...");
+                this.mainMap.fitBounds(this.mainBounds, 0);
+            }
         }
 
         this.addHelpOverlays();
@@ -110,8 +126,10 @@ class MtbMapApplication {
     }
 
     resetMainMap() {
-        this.mainMap.setZoom(this.config.main.mapZoom);
-        this.mainMap.setCenter(this.config.main.mapCenter);
+        this.mainMap.fitBounds(this.mainBounds, 0);
+        //
+        // this.mainMap.setZoom(this.config.main.mapZoom);
+        // this.mainMap.setCenter(this.config.main.mapCenter);
     }
 
     addHelpOverlays() {
@@ -148,7 +166,7 @@ class MtbMapApplication {
             infoButton.index = 3;
             infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
             infoButton.onclick = function() {
-                $('#infotext').fadeIn(750, function() {
+                $('#infotext').fadeIn(500, function() {
                     $("html, body").animate({scrollTop: 0}, "slow");
                 });
             };
@@ -281,17 +299,13 @@ class MtbMapApplication {
     onMapElemClicked(trail) {
         this.currDetailTrail = trail;
 
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        //$("html, body").animate({ scrollTop: 0 }, "slow");
 
         $("#trailinfoheader").html(trail.getTitle());
         $("#trailchart").empty();
 
-        const coords = trail.getCoords();
-
-
-        this.trailMap.setCenter(new google.maps.LatLng(coords[0].lat, coords[0].lng));
-
-        trail.renderTo(this.trailMap);
+        //const coords = trail.getCoords();
+        //this.trailMap.setCenter(new google.maps.LatLng(coords[0].lat, coords[0].lng));
 
         //let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/" + trailData[key].images.trailStart + "\"/><br>";
         let info = "<img class=\"shadowed\" width=\"100%\" align=\"center\" src=\"data/pics/start.jpg" + "\"/><br>";
@@ -301,8 +315,10 @@ class MtbMapApplication {
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
                 "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "Vanskelighetsgrad: " + trail.getLevelAsText());
-        $("#trailwindow").fadeIn(750, function() {
-            /* grpah container must be visible */
+        $("#trailwindow").fadeIn(500, function() {
+            trail.renderTo(this.trailMap);
+            this.trailMap.fitBounds(trail.getBounds(), 0);
+            /* graph container must be visible */
             if(this.show3d) {
                 this.generateGraph3d(trail);
             } else {

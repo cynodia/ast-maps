@@ -46,14 +46,6 @@ function initMap() {
         return dist;
     };
 
-    google.maps.Polyline.prototype.getBounds = function () {
-        var bounds = new google.maps.LatLngBounds();
-        this.getPath().forEach(function (item, index) {
-            bounds.extend(new google.maps.LatLng(item.lat(), item.lng()));
-        });
-        return bounds;
-    };
-
     window.application.initMap();
 }
 

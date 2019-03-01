@@ -7,8 +7,6 @@ const mmConfigurations = {
          * mainHeaderDesktop: The main page-header on the desktop version
          * infoText: The infomation text that is shown on desktop front-page and when pressing 'i' on mobile
          *           a generic mtbmaps.net text will be appended to this text.
-         * mapCenter: The center of the main-page map when loading the page
-         * mapZoom: The default map zoom level,
          * levelColors: color-mappings for trail levels
          */
         main: {
@@ -17,8 +15,6 @@ const mmConfigurations = {
             infoText: "<h2>Tungvekter</h2>Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>" +
                     "På denne siden Kan du finne detaljert informasjon om de fleste kjente stier i området, samt forslag til ruter du kan ta.<h2>Adkomst</h2>Om du ankommer med bil er parkeringsplassen på Dråbelia, markert med <img height=\"18\" width=\"18\" src=\"data/imgs/marker_parking.png\">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nås fra alle kanter." +
                     "<h2>Arendal Singletrack</h2>Arendal Singletrack(AST) er en stisykkelklubb med ca. 100 medlemmer. Mer info på <a href='https://www.arendalsingletrack.com/'>arendalsingletrack.com</a>",
-            mapCenter: {lat: 58.483684, lng: 8.787000},
-            mapZoom: 15,
             levelColors: {
                 1: '#0f0',
                 2: '#00f',

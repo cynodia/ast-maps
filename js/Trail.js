@@ -10,6 +10,7 @@ class Trail {
         this.path = null;
         this.clickCb = null;
         this.levelColors = levelColors;
+        this.bounds = null;
     }
 
     getInfoText() {
@@ -69,6 +70,10 @@ class Trail {
         }
     }
 
+    getBounds() {
+        return this.bounds;
+    }
+
     //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
     calcCrow(lat1, lon1, lat2, lon2) {
         function toRad(v) { return (v * Math.PI / 180); }
@@ -87,6 +92,9 @@ class Trail {
 
     loadTrail(cb) {
         const self = this;
+
+        this.bounds = new google.maps.LatLngBounds();
+
         $.ajax({
             type: "GET",
             url: this.config.url,
@@ -111,6 +119,7 @@ class Trail {
                                         }
                                 );
                                 self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
+                                self.bounds.extend(new google.maps.LatLng(lat, lng));
                                 lastLat = lat;
                                 lastLng = lng;
                                 let alt = 0.0;
@@ -133,7 +142,6 @@ class Trail {
                 cb(self);
             }
         });
-
     }
 
     patchClicked() {
