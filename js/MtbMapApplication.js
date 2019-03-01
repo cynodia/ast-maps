@@ -111,14 +111,14 @@ class MtbMapApplication {
             t.loadTrail(function (trail) {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
                 this.mainBounds.union(trail.getBounds());
+                trailsToLoad--;
+                if(trailsToLoad === 0) {
+                    console.log("DONE - fit map...");
+                    this.mainMap.fitBounds(this.mainBounds, 0);
+                }
             }.bind(this));
             this.trails.push(t);
             console.log("Added trail " + t.getTitle());
-            trailsToLoad--;
-            if(trailsToLoad === 0) {
-                console.log("DONE - fit map...");
-                this.mainMap.fitBounds(this.mainBounds, 0);
-            }
         }
 
         this.addHelpOverlays();
