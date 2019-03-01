@@ -125,6 +125,19 @@ class MtbMapApplication {
         this.hideInfo();
     }
 
+    getClosestTrailStart(lat, lng) {
+        let closestDist = this.trails[0].distanceToStart(lat, lng);
+        let closestTrail = this.trails[0];
+        for(let i = 1; i < this.trails.length; i++) {
+            const dist = this.trails[i].distanceToStart(lat, lng);
+            if(dist < closestDist) {
+                closestDist = dist;
+                closestTrail = this.trails[i];
+            }
+        }
+        return closestTrail;
+    }
+
     resetMainMap() {
         this.mainMap.fitBounds(this.mainBounds, 0);
         //

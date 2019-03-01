@@ -144,6 +144,10 @@ class Trail {
         });
     }
 
+    distanceToStart(lat, lng) {
+        return this.calcCrow(lat, lng, this.coordinates[0].lat, this.coordinates[0].lng);
+    }
+
     patchClicked() {
         if(this.clickCb) {
             this.clickCb(this);

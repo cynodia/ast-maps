@@ -47,10 +47,12 @@ class GeoLocator {
         if(this.mainLocationMarker) {
             this.mainLocationMarker.setPosition(this.lastData);
             if(this.geoId === null) {
-                this.app.showInfo("Posisjon oppdatert<hr>Din posisjon oppdateres også automatisk", 5);
+                const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
+                this.app.showInfo("Posisjon oppdatert<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Din posisjon oppdateres også automatisk", 6);
             }
         } else {
-            this.app.showInfo("Posisjon mottat<hr>Din posisjon vil etter dette oppdateres automatisk", 6);
+            const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
+            this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Din posisjon vil etter dette oppdateres automatisk", 6);
             this.mainLocationMarker = new google.maps.Marker({
                 position: this.lastData,
                 map: this.app.getMainMap(),
