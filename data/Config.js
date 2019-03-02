@@ -131,8 +131,8 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/eventyrskogen.gpx',
                 title: 'Eventyrskogen',
                 level: 1,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                findStartText: "Du finner et piknikkbord langs lysløypa. Her går det en sti paralellt med lysløypa inn like veld piknikkbordet.",
+                infoText: "Dette er en relativt enkel sti som starter ut med en nedoverbakke som ender i en krapp øyresving. Så sakl en over en liten bro før stien fortsetter i en vakker furuskog.",
                 images: {
                     trailStart: 'image5.jpeg'
                 }
@@ -151,7 +151,7 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/ribberveggen.gpx',
                 title: 'Ribberveggen',
                 level: 3,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "Følg lysløypa ca 30 meter fra sørenden av Store Ribbervann med bebyggelsen på høyre hånd. Stien tar mot venstre rett opp i Ribberåsen.",
                 infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 images: {
                     trailStart: 'image5.jpeg'

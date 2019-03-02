@@ -10,11 +10,13 @@ class MtbMapApplication {
         this.show3d = false;
         this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
+        this.closestTrail = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
         $('#trail3dBtn').click(this.showTrail3d.bind(this));
         $('#trail2dBtn').click(this.showTrail2d.bind(this));
+        $('#infopopup').click(this.infoPopupClicked.bind(this));
     }
 
     updateStaticText() {
@@ -33,6 +35,16 @@ class MtbMapApplication {
         if(!mobilecheck()) {
             $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
         }
+    }
+
+    infoPopupClicked() {
+        if(this.closestTrail) {
+            this.onMapElemClicked(this.closestTrail);
+        }
+    }
+
+    setClosestTrail(trail) {
+        this.closestTrail = trail;
     }
 
     getMainMap() {
@@ -59,6 +71,9 @@ class MtbMapApplication {
     showInfo(message, timeout) {
         if (!timeout) {
             timeout = 4;
+        }
+        if (this.infoTimeout != null) {
+            clearTimeout(this.infoTimeout);
         }
 
         $('#infopopup').html(message);

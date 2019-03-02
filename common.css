@@ -35,6 +35,22 @@ body {
     border-radius: 0 0 0 6px;
     border-top: none;
     background: rgba(150, 150, 150, .7);
+    cursor: pointer;
+}
+
+#infopopup {
+    position: absolute;
+    z-index: 20;
+    display: none;
+    bottom: 30px;
+    left: 10%;
+    width: 80%;
+    background: rgba(255,255,255,.75);
+    padding: 8px;
+    font-size: 24px;
+    border-radius: 6px;
+    border: 1px solid white;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {

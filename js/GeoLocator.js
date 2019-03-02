@@ -48,11 +48,13 @@ class GeoLocator {
             this.mainLocationMarker.setPosition(this.lastData);
             if(this.geoId === null) {
                 const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
-                this.app.showInfo("Posisjon oppdatert<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Din posisjon oppdateres også automatisk", 6);
+                this.app.setClosestTrail(closestTrail);
+                this.app.showInfo("Posisjon oppdatert<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Klikk her for å åpne.", 6);
             }
         } else {
             const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
-            this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Din posisjon vil etter dette oppdateres automatisk", 6);
+            this.app.setClosestTrail(closestTrail);
+            this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Klikk her for å åpne.<br>Din posisjon oppdateres heretter automatisk", 6);
             this.mainLocationMarker = new google.maps.Marker({
                 position: this.lastData,
                 map: this.app.getMainMap(),
