@@ -38,21 +38,6 @@ body {
     cursor: pointer;
 }
 
-#infopopup {
-    position: absolute;
-    z-index: 20;
-    display: none;
-    bottom: 30px;
-    left: 10%;
-    width: 80%;
-    background: rgba(255,255,255,.75);
-    padding: 8px;
-    font-size: 24px;
-    border-radius: 6px;
-    border: 1px solid white;
-    cursor: pointer;
-}
-
 ::-webkit-scrollbar {
     width: 12px;
 }

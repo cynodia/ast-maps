@@ -163,6 +163,19 @@
             border: 0;
             background-color: #ccc;
         }
+        #infopopup {
+            position: absolute;
+            z-index: 20;
+            bottom: 30px;
+            left: 10%;
+            width: 80%;
+            background: rgba(255,255,255,.75);
+            padding: 8px;
+            font-size: 24px;
+            border-radius: 6px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
     </style>
     <script>
         function init() {
@@ -205,6 +218,7 @@
                 <div class="shadowed" id="trailchart"></div>
             </div>
             <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
+            <img id="entranceimg" class="shadowed" width="100%" align="center" src=""/>
             <div id="trailentrance">
             </div>
         </div>
