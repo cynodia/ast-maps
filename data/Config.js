@@ -239,7 +239,7 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/vibeveien.gpx',
                 title: 'Vibeveien downhill',
-                level: 2,
+                level: 3,
                 findStartText: "",
                 infoText: "",
                 images: {
@@ -269,7 +269,7 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/vedlaget.gpx',
                 title: 'Opp vedlaget',
-                level: 1,
+                level: 2,
                 findStartText: "",
                 infoText: "",
                 images: {
@@ -279,7 +279,7 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/polititoppen.gpx',
                 title: 'Polititoppen',
-                level: 1,
+                level: 2,
                 findStartText: "",
                 infoText: "",
                 images: {
