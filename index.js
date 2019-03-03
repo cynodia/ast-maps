@@ -6,6 +6,21 @@ function mobilecheck() {
     return check;
 }
 
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+
 function initTrails() {
     console.log("Init app");
 
@@ -21,6 +36,10 @@ function initTrails() {
 
     let config = "tungvekter";
 
+    let urlParam = getUrlParameter("c");
+    if(urlParam && mmConfigurations.hasOwnProperty(urlParam)) {
+        config = urlParam;
+    }
     console.log("Using configuration: " + config);
     window.application = new MtbMapApplication(mmConfigurations[config]);
 }

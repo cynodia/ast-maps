@@ -198,5 +198,84 @@ const mmConfigurations = {
                 }
             }
         ]
+    },
+
+    'asbie': {
+        main: {
+            mainHeaderMobile: "Åsbieskogen",
+            mainHeaderDesktop: "Åsbieskogen",
+            infoText: "TBD",
+            levelColors: {
+                1: '#0f0',
+                2: '#00f',
+                3: '#f00'
+            }
+        },
+
+        markers: {
+            "parking_stoa": {
+                title: 'Parkering - Stoa',
+                icon: 'data/imgs/marker_parking.png',
+                position: {lat: 58.457065, lng: 8.722429}
+            },
+            "parkering_bjonnes": {
+                title: 'Parkering - Bjønnes',
+                icon: 'data/imgs/marker_parking.png',
+                position: {lat: 58.461755, lng: 8.743530}
+            }
+        },
+
+        trails: [
+            {
+                url: 'data/trails/asbie/jordvepsen.gpx',
+                title: 'Jordvepsen',
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/vibeveien.gpx',
+                title: 'Vibeveien downhill',
+                level: 2,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/hogstfeltet1.gpx',
+                title: 'Hogstfeltet Downhill 1',
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/scott1.gpx',
+                title: 'Scottløypa del1',
+                level: 1,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/vedlaget.gpx',
+                title: 'Opp vedlaget',
+                level: 1,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            }
+        ]
     }
 };

@@ -140,6 +140,10 @@ class Trail {
                 });
                 self.heightDiff = highest - lowest;
                 cb(self);
+            },
+            error: function() {
+                console.error("Could not load trail info from " + this.config.url);
+                cb(self);
             }
         });
     }
