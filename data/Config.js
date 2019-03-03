@@ -275,6 +275,16 @@ const mmConfigurations = {
                 images: {
                     trailStart: 'image1.jpeg'
                 }
+            },
+            {
+                url: 'data/trails/asbie/polititoppen.gpx',
+                title: 'Polititoppen',
+                level: 1,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
             }
         ]
     }
