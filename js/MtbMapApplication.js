@@ -29,7 +29,7 @@ class MtbMapApplication {
                 "<li><a href=\"https://tungvekter.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
                 "<li><a href=\"https://tungvekter.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
                 "</ul>" +
-                "Du kan forke prosjektet på <a href=\"https://github.com/cynodia/ast-maps\">GitHub</a>.<br>" +
+                "<br>" +
                 (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
         );
         if(!mobilecheck()) {
