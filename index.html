@@ -137,15 +137,6 @@
         if(mobilecheck()) {
             location.assign("index_mobile.html?c=" + (getUrlParameter("c") ? getUrlParameter("c") : ""));
         } else {
-
-            $.backstretch([
-                "data/pics/image1.jpeg",
-                "data/pics/image2.jpeg",
-                "data/pics/image3.jpeg",
-                "data/pics/image4.jpeg",
-                "data/pics/image5.jpeg"
-            ], {duration: 8000, fade: 2000});
-
             initTrails();
         }
     }

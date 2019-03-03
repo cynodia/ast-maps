@@ -19,7 +19,14 @@ const mmConfigurations = {
                 1: '#0f0',
                 2: '#00f',
                 3: '#f00'
-            }
+            },
+            bgPics: [
+                "data/pics/tungvekter/image1.jpeg",
+                "data/pics/tungvekter/image2.jpeg",
+                "data/pics/tungvekter/image3.jpeg",
+                "data/pics/tungvekter/image4.jpeg",
+                "data/pics/tungvekter/image5.jpeg"
+            ]
         },
 
         /**
@@ -204,12 +211,21 @@ const mmConfigurations = {
         main: {
             mainHeaderMobile: "Åsbieskogen",
             mainHeaderDesktop: "Åsbieskogen",
-            infoText: "TBD",
+            infoText: "<h2>Åsbieskogen</h2>Åsbieskogen er et turområde som brukes mye av mange, og det er derfor stier på kryss og tvers. Det er knapt mulig å kjøre seg bort her, så det er bare å utforske det viste sporet eller andre stier som virker interessante. Men ta hensyn til andre du måtte møte på din vei." +
+                    "<h2>Adkomst</h2>Et godt utgangspunkt er parkeringsplassen på Industritoppen. Ta av fra E-18 ved skiltet avkjøring til FV-42, men kjør i motsatt retning (mot syd) rundt brannstasjon og nytt politihus og opp til toppen.<br>" +
+                    "Det er også mulig å parkere på Bjønnes og sykle inn til Biejordene derfra.",
             levelColors: {
                 1: '#0f0',
                 2: '#00f',
                 3: '#f00'
-            }
+            },
+            bgPics: [
+                "data/pics/asbie/img2.jpg",
+                "data/pics/asbie/img3.jpg",
+                "data/pics/asbie/img4.jpg",
+                "data/pics/asbie/img5.jpg",
+                "data/pics/asbie/img1.jpg"
+            ]
         },
 
         markers: {

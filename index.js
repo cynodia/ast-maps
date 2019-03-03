@@ -42,6 +42,9 @@ function initTrails() {
     }
     console.log("Using configuration: " + config);
     window.application = new MtbMapApplication(mmConfigurations[config]);
+    if(!mobilecheck()) {
+        $.backstretch(mmConfigurations[config].main.bgPics, {duration: 8000, fade: 2000});
+    }
 }
 
 /* GMaps callback */
