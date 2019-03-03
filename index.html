@@ -135,7 +135,7 @@
 
     function init() {
         if(mobilecheck()) {
-            location.assign("index_mobile.html");
+            location.assign("index_mobile.html?c=" + (getUrlParameter("c") ? getUrlParameter("c") : ""));
         } else {
 
             $.backstretch([
