@@ -10,13 +10,11 @@ function mobilecheck() {
 }
 
 function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
+    const sPageURL = window.location.search.substring(1);
+    let sURLVariables = sPageURL.split('&');
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+    for (let i = 0; i < sURLVariables.length; i++) {
+        const sParameterName = sURLVariables[i].split('=');
 
         if (sParameterName[0] === sParam) {
             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
@@ -27,7 +25,7 @@ function getUrlParameter(sParam) {
 function initTrails() {
     console.log("Init app");
 
-    /* Wait until app is ready to ensyre the right sequence */
+    /* Wait until app is ready to ensure the right sequence */
     const headID = document.getElementsByTagName("head")[0];
     const newScript = document.createElement('script');
     newScript.type = 'text/javascript';
