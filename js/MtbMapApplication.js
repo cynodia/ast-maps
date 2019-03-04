@@ -26,8 +26,8 @@ class MtbMapApplication {
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
                 "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>" +
                 "Tilgjengelige områder: <br><ul>" +
-                "<li><a href=\"https://tungvekter.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
-                "<li><a href=\"https://tungvekter.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
+                "<li><a href=\"https://www.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
+                "<li><a href=\"https://www.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
                 "</ul>" +
                 "<br>" +
                 (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")

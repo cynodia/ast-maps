@@ -211,7 +211,7 @@ const mmConfigurations = {
         main: {
             mainHeaderMobile: "Åsbieskogen",
             mainHeaderDesktop: "Åsbieskogen",
-            infoText: "<h2>Åsbieskogen</h2>Åsbieskogen er et turområde som brukes mye av mange, og det er derfor stier på kryss og tvers. Det er knapt mulig å kjøre seg bort her, så det er bare å utforske det viste sporet eller andre stier som virker interessante. Men ta hensyn til andre du måtte møte på din vei." +
+            infoText: "<h2>Åsbieskogen</h2>Åsbieskogen er et turområde som brukes mye av mange, og det er derfor stier på kryss og tvers. Det er knapt mulig å kjøre seg bort her, så det er bare å utforske. Men ta hensyn til andre du måtte møte på din vei." +
                     "<h2>Adkomst</h2>Et godt utgangspunkt er parkeringsplassen på Industritoppen. Ta av fra E-18 ved skiltet avkjøring til FV-42, men kjør i motsatt retning (mot syd) rundt brannstasjon og nytt politihus og opp til toppen.<br>" +
                     "Det er også mulig å parkere på Bjønnes og sykle inn til Biejordene derfra.",
             levelColors: {
