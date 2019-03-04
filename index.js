@@ -74,8 +74,4 @@ function initMap() {
     window.application.initMap();
 }
 
-function mapUserLocation() {
-    window.geoLocator.mapUserLocation();
-}
-
 
