@@ -90,6 +90,48 @@ class Trail {
         return ((R * c) * 1000);
     }
 
+    parseGxp(xml) {
+        const self = this;
+        let lowest = null;
+        let highest = null;
+
+        $(xml).find('gpx').each(function(){
+            $(this).find('trk').each(function(){
+                let lastLat = null;
+                let lastLng = null;
+                $(this).find('trkseg').each(function(){
+                    $(this).find('trkpt').each(function() {
+                        const lat = parseFloat($(this).attr('lat'));
+                        const lng = parseFloat($(this).attr('lon'));
+                        self.coordinates.push(
+                                {
+                                    lat: lat,
+                                    lng: lng
+                                }
+                        );
+                        self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
+                        self.bounds.extend(new google.maps.LatLng(lat, lng));
+                        lastLat = lat;
+                        lastLng = lng;
+                        let alt = 0.0;
+                        $(this).find('ele').each(function () {
+                            alt = parseFloat($(this).text());
+                            if (lowest === null) {
+                                lowest = highest = alt;
+                            } else if (lowest > alt) {
+                                lowest = alt;
+                            } else if (highest < alt) {
+                                highest = alt;
+                            }
+                        });
+                        self.altitudes.push(alt);
+                    });
+                });
+            });
+        });
+        this.heightDiff = highest - lowest;
+    }
+
     loadTrail(cb) {
         const self = this;
 
@@ -101,44 +143,7 @@ class Trail {
             cache: false,
             dataType: "xml",
             success: function(xml) {
-                let lowest = null;
-                let highest = null;
-                let lastLat = null;
-                let lastLng = null;
-                // Create and populate a data table.
-                $(xml).find('gpx').each(function(){
-                    $(this).find('trk').each(function(){
-                        $(this).find('trkseg').each(function(){
-                            $(this).find('trkpt').each(function() {
-                                const lat = parseFloat($(this).attr('lat'));
-                                const lng = parseFloat($(this).attr('lon'));
-                                self.coordinates.push(
-                                        {
-                                            lat: lat,
-                                            lng: lng
-                                        }
-                                );
-                                self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
-                                self.bounds.extend(new google.maps.LatLng(lat, lng));
-                                lastLat = lat;
-                                lastLng = lng;
-                                let alt = 0.0;
-                                $(this).find('ele').each(function () {
-                                    alt = parseFloat($(this).text());
-                                    if (lowest === null) {
-                                        lowest = highest = alt;
-                                    } else if (lowest > alt) {
-                                        lowest = alt;
-                                    } else if (highest < alt) {
-                                        highest = alt;
-                                    }
-                                });
-                                self.altitudes.push(alt);
-                            });
-                        });
-                    });
-                });
-                self.heightDiff = highest - lowest;
+                self.parseGxp(xml);
                 cb(self);
             },
             error: function() {
