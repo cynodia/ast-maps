@@ -30,7 +30,8 @@ class MtbMapApplication {
                 "<li><a href=\"https://www.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
                 "</ul>" +
                 "<br>" +
-                (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html\">Mobilversjon</a>")
+                (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html?c=" +
+                                (getUrlParameter("c") ? getUrlParameter("c") : "tungvekter") + "&mobile=true\">Mobilversjon</a>")
         );
         if(!mobilecheck()) {
             $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
