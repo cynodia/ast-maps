@@ -43,7 +43,8 @@ task deploy(dependsOn: [ 'build' ]) {
                                     "aws s3 cp mtbmaps.min.js s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp data s3://mtbmaps.net/data --recursive --acl public-read;" +
                                     "aws s3 cp lib s3://mtbmaps.net/lib --recursive --acl public-read;" +
-                                    "aws cloudfront create-invalidation --distribution-id E1XAG5EBVMQWWB --paths \"/*\";"
+                                    "aws cloudfront create-invalidation --distribution-id E1XAG5EBVMQWWB --paths \"/*\";" +
+                                    "aws cloudfront create-invalidation --distribution-id E32C96K56BB5FT --paths \"/*\";"
             ]
         }
     }
