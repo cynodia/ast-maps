@@ -18,6 +18,105 @@
 		<name>ast_tungvekter_eventyrskogen</name>
 		<number>1</number>
 		<trkseg>
+		   <trkpt lat="58.4886910" lon="8.7862640">
+            <ele>49.1</ele>
+            <time>2018-12-14T17:51:02Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>140</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4886720" lon="8.7862310">
+            <ele>49.1</ele>
+            <time>2018-12-14T17:51:08Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>140</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4887100" lon="8.7860110">
+            <ele>49.2</ele>
+            <time>2018-12-14T17:52:06Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>140</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4886920" lon="8.7859310">
+            <ele>48.6</ele>
+            <time>2018-12-14T17:52:08Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>140</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4886760" lon="8.7858810">
+            <ele>48.5</ele>
+            <time>2018-12-14T17:52:09Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>114</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4886580" lon="8.7858220">
+            <ele>47.7</ele>
+            <time>2018-12-14T17:52:10Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>114</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4886320" lon="8.7857750">
+            <ele>47.0</ele>
+            <time>2018-12-14T17:52:11Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>114</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4885880" lon="8.7857120">
+            <ele>45.2</ele>
+            <time>2018-12-14T17:52:12Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>114</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4885750" lon="8.7856340">
+            <ele>44.3</ele>
+            <time>2018-12-14T17:52:13Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>114</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4885450" lon="8.7855560">
+            <ele>43.2</ele>
+            <time>2018-12-14T17:52:14Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>115</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
+           <trkpt lat="58.4885170" lon="8.7854970">
+            <ele>42.3</ele>
+            <time>2018-12-14T17:52:15Z</time>
+            <extensions>
+             <gpxtpx:TrackPointExtension>
+              <gpxtpx:hr>115</gpxtpx:hr>
+             </gpxtpx:TrackPointExtension>
+            </extensions>
+           </trkpt>
    <trkpt lat="58.4885110" lon="8.7854080">
     <ele>41.9</ele>
     <time>2018-12-14T17:52:17Z</time>
