@@ -11,6 +11,9 @@ class MtbMapApplication {
         this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
+        this.mapBg = null;
+        this.mapBgActive = false;
+        this.toggleButton = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -101,7 +104,7 @@ class MtbMapApplication {
 
         if(this.config.hasOwnProperty('background') &&
                 this.config.background.hasOwnProperty('pos')) {
-            let overlay = new google.maps.GroundOverlay(
+            this.mapBg = new google.maps.GroundOverlay(
                     this.config.background.src,
                     this.config.background.pos,
                     {
@@ -109,6 +112,7 @@ class MtbMapApplication {
                         map: this.mainMap
                     }
             );
+            this.mapBgActive = true;
         }
 
         this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
@@ -228,6 +232,19 @@ class MtbMapApplication {
             btnDiv.appendChild(locationButton);
         }
 
+        if(this.mapBg) {
+            this.toggleButton = document.createElement('button');
+            this.toggleButton.style.background = "rgba(255,255,255,.6)";
+            this.toggleButton.style.padding = "12px";
+            this.toggleButton.style.marginRight = "10px";
+            this.toggleButton.setAttribute("class", "topButton");
+            this.toggleButton.style.fontSize = "16px";
+            this.toggleButton.style.cursor = "pointer";
+            this.toggleButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>";
+            this.toggleButton.onclick = this.toggleBackground.bind(this);
+
+            btnDiv.appendChild(this.toggleButton);
+        }
 
         const reloadButton = document.createElement('button');
         reloadButton.style.background = "rgba(255,255,255,.6)";
@@ -241,6 +258,12 @@ class MtbMapApplication {
         btnDiv.appendChild(reloadButton);
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
+    }
+
+    toggleBackground(btn) {
+        this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
+        this.mapBgActive = !this.mapBgActive;
+        this.toggleButton.innerHTML = (this.mapBgActive ? "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>" : "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-off\"></i>");
     }
 
     generateGraph3d(trail) {
