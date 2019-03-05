@@ -102,13 +102,19 @@ class MtbMapApplication {
 
         let bounds = {
             north: 58.496152,
-            south: 58.474954,
+            south: 58.474754,
             east: 8.805641,
             west:8.770476
         };
 
-        let overlay = new google.maps.GroundOverlay('data/pics/tungvekter/kart_bg.png', bounds);
-        overlay.setMap(this.mainMap);
+        new google.maps.GroundOverlay(
+                'data/pics/tungvekter/kart_bg.png',
+                bounds,
+                {
+                    clickable: false,
+                    map: this.mainMap
+                }
+        );
 
         this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
             // zoom: 16,
