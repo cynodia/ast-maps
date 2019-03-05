@@ -151,7 +151,7 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/eventyrskogen.gpx',
                 title: 'Eventyrskogen',
                 level: 1,
-                findStartText: "Du finner et piknikbord langs lysløypa. Her går det en sti paralellt med lysløypa inn like veld bordet.",
+                findStartText: "Du finner et piknikbord langs lysløypa. Her går det en sti paralellt med lysløypa inn like ved bordet.",
                 infoText: "Dette er en relativt enkel sti som starter ut med en nedoverbakke som ender i en krapp høyresving. Så skal en over en liten bro før stien fortsetter i en vakker furuskog.",
                 images: {
                     trailStart: 'image5.jpeg'
