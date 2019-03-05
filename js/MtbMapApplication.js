@@ -99,22 +99,17 @@ class MtbMapApplication {
             disableDefaultUI: true
         });
 
-
-        let bounds = {
-            north: 58.496152,
-            south: 58.474754,
-            east: 8.805641,
-            west:8.770476
-        };
-
-        new google.maps.GroundOverlay(
-                'data/pics/tungvekter/kart_bg.png',
-                bounds,
-                {
-                    clickable: false,
-                    map: this.mainMap
-                }
-        );
+        if(this.config.hasOwnProperty('background') &&
+                this.config.background.hasOwnProperty('pos')) {
+            let overlay = new google.maps.GroundOverlay(
+                    this.config.background.src,
+                    this.config.background.pos,
+                    {
+                        clickable: false,
+                        map: this.mainMap
+                    }
+            );
+        }
 
         this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
             // zoom: 16,

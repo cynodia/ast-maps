@@ -30,6 +30,19 @@ const mmConfigurations = {
         },
 
         /**
+         * Only define background if there is an available background
+         */
+        background: {
+            pos: {
+                north: 58.496152,
+                south: 58.474754,
+                east: 8.805641,
+                west:8.770476
+            },
+            src: 'data/pics/tungvekter/kart_bg.png'
+        },
+
+        /**
          * Markers you want on the map
          * title: Helptext displayed when hovering the marker
          * icon: The marker icon use
