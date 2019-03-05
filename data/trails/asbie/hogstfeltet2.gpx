@@ -962,6 +962,78 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
+   <trkpt lat="58.4567550" lon="8.7372940">
+    <ele>19.1</ele>
+    <time>2019-03-05T16:54:18Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4567690" lon="8.7373070">
+    <ele>21.1</ele>
+    <time>2019-03-05T16:54:20Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4567080" lon="8.7374950">
+    <ele>16.0</ele>
+    <time>2019-03-05T16:54:32Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4566830" lon="8.7378230">
+    <ele>7.2</ele>
+    <time>2019-03-05T16:55:13Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4566780" lon="8.7379120">
+    <ele>5.8</ele>
+    <time>2019-03-05T16:55:15Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4566720" lon="8.7380070">
+    <ele>4.7</ele>
+    <time>2019-03-05T16:55:17Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4566700" lon="8.7380600">
+    <ele>4.6</ele>
+    <time>2019-03-05T16:55:18Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+   <trkpt lat="58.4566670" lon="8.7381250">
+    <ele>4.2</ele>
+    <time>2019-03-05T16:55:19Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>143</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
 		</trkseg>
 	</trk>
 </gpx>
