@@ -35,7 +35,7 @@ const mmConfigurations = {
         background: {
             pos: {
                 north: 58.496152,
-                south: 58.474754,
+                south: 58.474954,
                 east: 8.805641,
                 west:8.770476
             },
