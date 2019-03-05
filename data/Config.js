@@ -325,6 +325,26 @@ const mmConfigurations = {
                 images: {
                     trailStart: 'image1.jpeg'
                 }
+            },
+            {
+                url: 'data/trails/asbie/hogstfeltet2.gpx',
+                title: 'Hogstfeltet downhill 2',
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/storeskogvei.gpx',
+                title: 'Store skogvei',
+                level: 2,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
             }
         ]
     }
