@@ -108,11 +108,14 @@ class MtbMapApplication {
                     this.config.background.src,
                     this.config.background.pos,
                     {
-                        clickable: false,
-                        map: this.mainMap
+                        clickable: false
                     }
             );
-            this.mapBgActive = true;
+
+            if(localStorage['mtbmaps.settings.showMapBg'] !== "false") {
+                this.mapBgActive = true;
+                this.mapBg.setMap(this.mainMap);
+            }
         }
 
         this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
@@ -240,7 +243,7 @@ class MtbMapApplication {
             this.toggleButton.setAttribute("class", "topButton");
             this.toggleButton.style.fontSize = "16px";
             this.toggleButton.style.cursor = "pointer";
-            this.toggleButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>";
+            this.toggleButton.innerHTML = (this.mapBgActive ? "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>" : "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-off\"></i>");
             this.toggleButton.onclick = this.toggleBackground.bind(this);
 
             btnDiv.appendChild(this.toggleButton);
@@ -260,10 +263,13 @@ class MtbMapApplication {
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
     }
 
-    toggleBackground(btn) {
+    toggleBackground() {
         this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
         this.mapBgActive = !this.mapBgActive;
         this.toggleButton.innerHTML = (this.mapBgActive ? "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>" : "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-off\"></i>");
+        if(localStorage) {
+            localStorage['mtbmaps.settings.showMapBg'] = this.mapBgActive;
+        }
     }
 
     generateGraph3d(trail) {
