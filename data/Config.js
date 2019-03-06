@@ -348,7 +348,7 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/flatbanker.gpx',
+                url: 'data/trails/tungvekter/flatan.gpx',
                 title: 'Flatan',
                 level: 1,
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
