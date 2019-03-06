@@ -8,60 +8,6 @@
 		<name>downhillen</name>
 		<number>1</number>
 		<trkseg>
-   <trkpt lat="58.4851760" lon="8.7880690">
-    <ele>82.7</ele>
-    <time>2018-12-11T09:35:39Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4852070" lon="8.7880700">
-    <ele>83.1</ele>
-    <time>2018-12-11T09:35:41Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4852370" lon="8.7880480">
-    <ele>83.4</ele>
-    <time>2018-12-11T09:35:43Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4852670" lon="8.7880390">
-    <ele>83.7</ele>
-    <time>2018-12-11T09:35:45Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4853030" lon="8.7880570">
-    <ele>84.1</ele>
-    <time>2018-12-11T09:35:47Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4853360" lon="8.7880800">
-    <ele>84.4</ele>
-    <time>2018-12-11T09:35:49Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>155</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
    <trkpt lat="58.4853840" lon="8.7881120">
     <ele>84.9</ele>
     <time>2018-12-11T09:35:51Z</time>
