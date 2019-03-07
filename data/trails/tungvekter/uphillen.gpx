@@ -233,6 +233,33 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
+      <trkpt lat="58.4853840" lon="8.7881120">
+       <ele>84.9</ele>
+       <time>2018-12-11T09:35:51Z</time>
+       <extensions>
+        <gpxtpx:TrackPointExtension>
+         <gpxtpx:hr>155</gpxtpx:hr>
+        </gpxtpx:TrackPointExtension>
+       </extensions>
+      </trkpt>
+      <trkpt lat="58.4854270" lon="8.7881540">
+       <ele>84.7</ele>
+       <time>2018-12-11T09:35:53Z</time>
+       <extensions>
+        <gpxtpx:TrackPointExtension>
+         <gpxtpx:hr>155</gpxtpx:hr>
+        </gpxtpx:TrackPointExtension>
+       </extensions>
+      </trkpt>
+      <trkpt lat="58.4854630" lon="8.7881900">
+       <ele>84.6</ele>
+       <time>2018-12-11T09:35:55Z</time>
+       <extensions>
+        <gpxtpx:TrackPointExtension>
+         <gpxtpx:hr>155</gpxtpx:hr>
+        </gpxtpx:TrackPointExtension>
+       </extensions>
+      </trkpt>
 		</trkseg>
 	</trk>
 </gpx>
