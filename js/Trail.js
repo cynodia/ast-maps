@@ -21,6 +21,10 @@ class Trail {
         return this.config.findStartText;
     }
 
+    getStartImage() {
+        return "data/pics/" + this.config.images.trailStart;
+    }
+
     getLevel() {
         return this.config.level;
     }

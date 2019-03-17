@@ -376,7 +376,7 @@ class MtbMapApplication {
         //this.trailMap.setCenter(new google.maps.LatLng(coords[0].lat, coords[0].lng));
 
         //let info = "<img width=\"100%\" align=\"center\" src=\"data/pics/" + trailData[key].images.trailStart + "\"/><br>";
-        $('#entranceimg').attr("src", "data/pics/start.jpg");
+        $('#entranceimg').attr("src", trail.getStartImage());
         $('#trailentrance').html(trail.getFindStartText());
         $("#trailinfotext").html(trail.getInfoText());
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
