@@ -1,6 +1,7 @@
 class Trail {
-    constructor(config, levelColors) {
+    constructor(config, levelColors, id) {
         this.config = config;
+        this.id = id;
         this.heightDiff = 0;
         this.coordinates = [];
         this.altitudes = [];
@@ -11,6 +12,10 @@ class Trail {
         this.clickCb = null;
         this.levelColors = levelColors;
         this.bounds = null;
+    }
+
+    getId() {
+        return this.id;
     }
 
     getInfoText() {

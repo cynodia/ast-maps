@@ -64,6 +64,7 @@ class MtbMapApplication {
         this.currDetailTrail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
+        window.location.hash = "";
     }
 
     hideInfo() {
@@ -139,11 +140,19 @@ class MtbMapApplication {
 
             }
         }
+        let trailToLoad = null;
+        let trailIdxToLoad = -1;
+        if(typeof window.location.hash === 'string' && window.location.hash.length > 1) {
+            trailIdxToLoad = parseInt(window.location.hash.substr(1));
+        }
 
         /** Add trails */
         let trailsToLoad = this.config.trails.length;
         for (let i = 0; i < this.config.trails.length; i++) {
-            let t = new Trail(this.config.trails[i], this.config.main.levelColors);
+            let t = new Trail(this.config.trails[i], this.config.main.levelColors, i);
+            if(i === trailIdxToLoad) {
+                trailToLoad = t;
+            }
             t.loadTrail(function (trail) {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
                 this.mainBounds.union(trail.getBounds());
@@ -159,6 +168,9 @@ class MtbMapApplication {
 
         this.addHelpOverlays();
         this.hideInfo();
+        if(trailToLoad) {
+            this.onMapElemClicked(trailToLoad);
+        }
     }
 
     getClosestTrailStart(lat, lng) {
@@ -367,6 +379,7 @@ class MtbMapApplication {
     onMapElemClicked(trail) {
         this.currDetailTrail = trail;
 
+        window.location.hash = trail.getId();
         //$("html, body").animate({ scrollTop: 0 }, "slow");
 
         $("#trailinfoheader").html(trail.getTitle());
