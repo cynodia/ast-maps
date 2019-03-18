@@ -206,7 +206,7 @@ class MtbMapApplication {
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                 "<hr><i style='color: #ffffff;' class=\"fa fa-circle\"></i> Start";
         if(mobilecheck()) {
-            infoDiv1.innerHTML += "<br><i style='color: #f00;' class='fa fa-circle'></i> Deg";
+            infoDiv1.innerHTML += "<br><i style='color: #0f0;' class='fa fa-circle'></i> Deg";
         }
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);

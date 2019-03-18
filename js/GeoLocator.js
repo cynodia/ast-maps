@@ -61,7 +61,7 @@ class GeoLocator {
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
                     scale: 6,
-                    strokeColor: '#F00',
+                    strokeColor: '#0f0',
                 }
             });
         }
@@ -75,7 +75,7 @@ class GeoLocator {
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
                     scale: 6,
-                    strokeColor: '#F00',
+                    strokeColor: '#0f0',
                 }
             });
         }
