@@ -39,6 +39,7 @@ task deploy(dependsOn: [ 'build' ]) {
                             "aws s3 cp index.html s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp index_mobile.html s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp common.css s3://mtbmaps.net/ --acl public-read;" +
+                                    "aws s3 cp favicon.ico s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp index.js s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp mtbmaps.min.js s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp data s3://mtbmaps.net/data --recursive --acl public-read;" +
