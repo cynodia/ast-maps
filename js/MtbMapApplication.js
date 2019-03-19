@@ -131,7 +131,7 @@ class MtbMapApplication {
                     title: this.config.markers[key].title,
                     icon: {
                         url: this.config.markers[key].icon,
-                        scaledSize: new google.maps.Size(40, 40)
+                        scaledSize: new google.maps.Size(30, 30)
                     }
                 });
                 this.mainBounds.extend(new google.maps.LatLng(this.config.markers[key].position.lat, this.config.markers[key].position.lng));
