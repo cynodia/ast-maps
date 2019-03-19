@@ -13,20 +13,13 @@ const mmConfigurations = {
             mainHeaderMobile: "Tungvekteren",
             mainHeaderDesktop: "Arendal Singletrack - Tungvekteren",
             infoText: "<h2>Tungvekter</h2>Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>" +
-                    "På denne siden Kan du finne detaljert informasjon om de fleste kjente stier i området, samt forslag til ruter du kan ta.<h2>Adkomst</h2>Om du ankommer med bil er parkeringsplassen på Dråbelia, markert med <img height=\"18\" width=\"18\" src=\"data/imgs/marker_parking.png\">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nås fra alle kanter." +
+                    "På denne siden Kan du finne detaljert informasjon om de fleste kjente stier i området, samt forslag til ruter du kan ta.<h2>Adkomst</h2>Om du ankommer med bil er parkeringsplassen på Dråbelia, markert med <img height=\"25\" width=\"25\" src=\"data/imgs/marker_parking.png\">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nås fra alle kanter." +
                     "<h2>Arendal Singletrack</h2>Arendal Singletrack(AST) er en stisykkelklubb med ca. 100 medlemmer. Mer info på <a href='https://www.arendalsingletrack.com/'>arendalsingletrack.com</a>",
             levelColors: {
                 1: '#ffdd33',
                 2: '#00f',
                 3: '#f00'
-            },
-            bgPics: [
-                "data/pics/tungvekter/image1.jpeg",
-                "data/pics/tungvekter/image2.jpeg",
-                "data/pics/tungvekter/image3.jpeg",
-                "data/pics/tungvekter/image4.jpeg",
-                "data/pics/tungvekter/image5.jpeg"
-            ]
+            }
         },
 
         /**
@@ -601,14 +594,7 @@ const mmConfigurations = {
                 1: '#0f0',
                 2: '#00f',
                 3: '#f00'
-            },
-            bgPics: [
-                "data/pics/asbie/img2.jpg",
-                "data/pics/asbie/img3.jpg",
-                "data/pics/asbie/img4.jpg",
-                "data/pics/asbie/img5.jpg",
-                "data/pics/asbie/img1.jpg"
-            ]
+            }
         },
 
         // background: {

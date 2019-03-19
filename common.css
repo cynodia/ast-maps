@@ -3,6 +3,43 @@ body {
     color: black;
 }
 
+#outer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    /* Set block height using the viewport height unit, and force it to be full height, even if the containing content does not require it */
+    min-height: 100vh;
+    /* center this block for larger viewports */
+    margin: 0;
+    /* Use min-width to prevent your design from being scrunched up in tiny viewports (and instead be replaced with horizontal scroll bars)
+    */
+    min-width: 18.75em;
+}
+#map {
+    width: 100%;
+    padding: 0;
+    flex: 1;
+}
+
+#infopopup {
+    position: absolute;
+    z-index: 20;
+    bottom: 30px;
+    left: 10%;
+    width: 80%;
+    background: rgba(255,255,255,.75);
+    padding: 8px;
+    font-size: 24px;
+    border-radius: 6px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
 .topButton {
     background: #dddddd;
     border-right: 1px solid white;

@@ -25,6 +25,10 @@ function getUrlParameter(sParam) {
 function initTrails() {
     console.log("Init app");
 
+    $('#closeinfobtn').click(function() {
+        $('#infotext').fadeOut(750);
+    });
+
     /* Wait until app is ready to ensure the right sequence */
     const headID = document.getElementsByTagName("head")[0];
     const newScript = document.createElement('script');
@@ -43,9 +47,6 @@ function initTrails() {
     }
     console.log("Using configuration: " + config);
     window.application = new MtbMapApplication(mmConfigurations[config]);
-    if(!mobilecheck()) {
-        $.backstretch(mmConfigurations[config].main.bgPics, {duration: 8000, fade: 2000});
-    }
 }
 
 /* GMaps callback */

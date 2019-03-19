@@ -43,6 +43,11 @@ class GeoLocator {
     updatePosition(pos) {
         this.lastData = { lat: pos.coords.latitude, lng: pos.coords.longitude };
 
+        const icon = {
+            url: 'data/imgs/marker_you.png',
+            scaledSize: new google.maps.Size(40, 40)
+        };
+
         console.log(this.lastData);
         if(this.mainLocationMarker) {
             this.mainLocationMarker.setPosition(this.lastData);
@@ -58,11 +63,7 @@ class GeoLocator {
             this.mainLocationMarker = new google.maps.Marker({
                 position: this.lastData,
                 map: this.app.getMainMap(),
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 6,
-                    strokeColor: '#0f0',
-                }
+                icon: icon
             });
         }
 
@@ -72,11 +73,7 @@ class GeoLocator {
             this.trailLocationMarker = new google.maps.Marker({
                 position: this.lastData,
                 map: this.app.getTrailMap(),
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 6,
-                    strokeColor: '#0f0',
-                }
+                icon: icon
             });
         }
         if(this.geoId === null) {

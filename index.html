@@ -14,7 +14,6 @@
     </script>
 
     <script src="lib/jquery-3.3.1.min.js"></script>
-    <script src="lib/jquery.backstretch.min.js"></script>
     <script src="lib/vis.min.js"></script>
     <link href="common.css" rel="stylesheet">
     <link href="lib/vis.min.css" rel="stylesheet">
@@ -34,24 +33,11 @@
         body {
             margin: 0;
         }
-        #outer {
-            position: absolute;
-            width: 900px;
-            height: 100%;
-            left: 50%;
-            margin: 0 0 0 -450px;
-            background: rgba(255, 255, 255, .90);
-            padding: 0 40px;
-            overflow-y: scroll;
-        }
-        #map {
-            width: 100%;
-            height: 620px;
-        }
+
         #trailinfo {
             padding: 8px;
         }
-        #trailheader {
+        .windowheader {
             font-size: 36px;
             padding: 5px 8px;
             height: 40px;
@@ -70,7 +56,7 @@
             height: 300px;
             background: #dddddd;
         }
-        #trailwindow {
+        .windowed {
             position: absolute;
             display: none;
             left: 50%;
@@ -115,21 +101,6 @@
             border: 0;
             background-color: #ccc;
         }
-        #infopopup {
-            position: absolute;
-            z-index: 20;
-            background: rgba(255,255,255,.75);
-            padding: 8px;
-            font-size: 24px;
-            border-radius: 6px;
-            border: 1px solid white;
-            cursor: pointer;
-            top: 50%;
-            width: 500px;
-            left: 50%;
-            margin-left: -250px;
-            text-align: center;
-        }
     </style>
 <script>
 
@@ -143,15 +114,18 @@
 </script>
 </head>
 <body onload="init()">
-<div class="shadowed" id="outer">
-    <div id="headertext" style="padding-top: 20px; font-size: 42px; text-align:  center;"></div>
-    <br>
-    <div class="shadowed" id="map"></div>
+<div id="outer">
+    <div id="map"></div>
+</div>
+<div class="shadowed windowed" id="infotext">
+    <div class="windowheader">
+        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+    </div>
     <div id="infotextcontent">
     </div>
 </div>
-<div class="shadowed" id="trailwindow">
-    <div id="trailheader">
+<div class="shadowed windowed" id="trailwindow">
+    <div class="windowheader">
         <span id="trailinfoheader"></span>
         <button id="closetrailinfo" style="font-size: 30px; border: none; background: transparent; float: right;"><i class="fa fa-times-circle"></i></button>
     </div>

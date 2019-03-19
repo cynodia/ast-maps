@@ -31,14 +31,9 @@ class MtbMapApplication {
                 "Tilgjengelige områder: <br><ul>" +
                 "<li><a href=\"https://www.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
                 "<li><a href=\"https://www.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
-                "</ul>" +
-                "<br>" +
-                (mobilecheck() ? "Du ser nå på mobilutgaven av webapplikasjonen." : "Du ser nå på desktoputgaven av webapplikasjonen. <a href=\"index_mobile.html?c=" +
-                                (getUrlParameter("c") ? getUrlParameter("c") : "tungvekter") + "&mobile=true\">Mobilversjon</a>")
+                "</ul>"
         );
-        if(!mobilecheck()) {
-            $('#headertext').html(mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
-        }
+        document.title = (mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
     }
 
     infoPopupClicked() {
@@ -134,7 +129,10 @@ class MtbMapApplication {
                     position: this.config.markers[key].position,
                     map: this.mainMap,
                     title: this.config.markers[key].title,
-                    icon: this.config.markers[key].icon
+                    icon: {
+                        url: this.config.markers[key].icon,
+                        scaledSize: new google.maps.Size(40, 40)
+                    }
                 });
                 this.mainBounds.extend(new google.maps.LatLng(this.config.markers[key].position.lat, this.config.markers[key].position.lng));
 
@@ -205,47 +203,43 @@ class MtbMapApplication {
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                 "<hr><i style='color: #ffffff;' class=\"fa fa-circle\"></i> Start";
-        if(mobilecheck()) {
-            infoDiv1.innerHTML += "<br><i style='color: #0f0;' class='fa fa-circle'></i> Deg";
-        }
+        infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
 
         const btnDiv = document.createElement('div');
 
-        if(mobilecheck()) {
-            const infoButton = document.createElement('button');
-            infoButton.style.background = "rgba(255,255,255,.6)";
-            infoButton.style.padding = "12px";
-            infoButton.style.marginRight = "10px";
-            infoButton.style.fontSize = "16px";
-            infoButton.style.cursor = "pointer";
-            infoButton.setAttribute("class", "topButton");
-            infoButton.index = 3;
-            infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
-            infoButton.onclick = function() {
-                $('#infotext').fadeIn(500, function() {
-                    $("html, body").animate({scrollTop: 0}, "slow");
-                });
-            };
+        const infoButton = document.createElement('button');
+        infoButton.style.background = "rgba(255,255,255,.6)";
+        infoButton.style.padding = "12px";
+        infoButton.style.marginRight = "10px";
+        infoButton.style.fontSize = "16px";
+        infoButton.style.cursor = "pointer";
+        infoButton.setAttribute("class", "topButton");
+        infoButton.index = 3;
+        infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
+        infoButton.onclick = function() {
+            $('#infotext').fadeIn(500, function() {
+                $("html, body").animate({scrollTop: 0}, "slow");
+            });
+        };
 
-            btnDiv.appendChild(infoButton);
+        btnDiv.appendChild(infoButton);
 
-            const locationButton = document.createElement('button');
-            locationButton.style.background = "rgba(255,255,255,.6)";
-            locationButton.style.padding = "12px";
-            locationButton.style.marginRight = "10px";
-            locationButton.style.fontSize = "16px";
-            locationButton.style.cursor = "pointer";
-            locationButton.setAttribute("class", "topButton");
-            locationButton.index = 2;
-            locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-            locationButton.onclick = function () {
-                this.geoLocator.mapUserLocation();
-            }.bind(this);
+        const locationButton = document.createElement('button');
+        locationButton.style.background = "rgba(255,255,255,.6)";
+        locationButton.style.padding = "12px";
+        locationButton.style.marginRight = "10px";
+        locationButton.style.fontSize = "16px";
+        locationButton.style.cursor = "pointer";
+        locationButton.setAttribute("class", "topButton");
+        locationButton.index = 2;
+        locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+        locationButton.onclick = function () {
+            this.geoLocator.mapUserLocation();
+        }.bind(this);
 
-            btnDiv.appendChild(locationButton);
-        }
+        btnDiv.appendChild(locationButton);
 
         if(this.mapBg) {
             this.toggleButton = document.createElement('button');
