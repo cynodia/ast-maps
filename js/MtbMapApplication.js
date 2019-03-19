@@ -172,10 +172,10 @@ class MtbMapApplication {
     }
 
     getClosestTrailStart(lat, lng) {
-        let closestDist = this.trails[0].distanceToStart(lat, lng);
+        let closestDist = this.trails[0].distanceTo(lat, lng);
         let closestTrail = this.trails[0];
         for(let i = 1; i < this.trails.length; i++) {
-            const dist = this.trails[i].distanceToStart(lat, lng);
+            const dist = this.trails[i].distanceTo(lat, lng);
             if(dist < closestDist) {
                 closestDist = dist;
                 closestTrail = this.trails[i];
@@ -202,7 +202,7 @@ class MtbMapApplication {
         infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                 "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
-                "<hr><i style='color: #ffffff;' class=\"fa fa-circle\"></i> Start";
+                "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
         infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
         this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);

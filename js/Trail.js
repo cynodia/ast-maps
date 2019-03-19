@@ -162,8 +162,14 @@ class Trail {
         });
     }
 
-    distanceToStart(lat, lng) {
-        return this.calcCrow(lat, lng, this.coordinates[0].lat, this.coordinates[0].lng);
+    distanceTo(lat, lng) {
+        if(this.config.bidirectional) {
+            const toStart = this.calcCrow(lat, lng, this.coordinates[0].lat, this.coordinates[0].lng);
+            const toEnd = this.calcCrow(lat, lng, this.coordinates[this.coordinates.length - 1].lat, this.coordinates[this.coordinates.length - 1].lng)
+            return Math.min(toStart, toEnd);
+        } else {
+            return this.calcCrow(lat, lng, this.coordinates[0].lat, this.coordinates[0].lng);
+        }
     }
 
     patchClicked() {
@@ -178,20 +184,21 @@ class Trail {
      * @param callback
      */
     renderTo(gMap, callback) {
-        if(!this.startMarker) {
-            this.startMarker = new google.maps.Marker({
-                position: this.coordinates[0],
-                map: gMap,
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 4,
-                    strokeColor: '#ffffff',
-                },
-                title: "START " + this.getTitle()
-            });
-            this.startMarker.addListener('click', this.patchClicked.bind(this));
-        } else {
-            this.startMarker.setMap(gMap);
+        if(this.config.bidirectional === false) {
+            if (!this.startMarker) {
+                this.startMarker = new google.maps.Marker({
+                    position: this.coordinates[0],
+                    map: gMap,
+                    icon: {
+                        url: 'data/imgs/marker_start.png',
+                        scaledSize: new google.maps.Size(30, 30)
+                    },
+                    title: "START " + this.getTitle()
+                });
+                this.startMarker.addListener('click', this.patchClicked.bind(this));
+            } else {
+                this.startMarker.setMap(gMap);
+            }
         }
 
         if(!this.path) {
