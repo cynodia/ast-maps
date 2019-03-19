@@ -388,7 +388,8 @@ class MtbMapApplication {
         $("#trailinfotext").html(trail.getInfoText());
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
                 "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
-                "Vanskelighetsgrad: " + trail.getLevelAsText());
+                "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
+                "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, function() {
             trail.renderTo(this.trailMap);
             this.trailMap.fitBounds(trail.getBounds(), 6);

@@ -14,6 +14,10 @@ class Trail {
         this.bounds = null;
     }
 
+    isBidirectional() {
+        return this.config.bidirectional;
+    }
+
     getId() {
         return this.id;
     }
