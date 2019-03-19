@@ -108,7 +108,7 @@ class MtbMapApplication {
                     }
             );
 
-            if(localStorage['mtbmaps.settings.showMapBg'] !== "false") {
+            if(localStorage['mtbmaps.settings.showMapBg'] === "true") {
                 this.mapBgActive = true;
                 this.mapBg.setMap(this.mainMap);
             }
