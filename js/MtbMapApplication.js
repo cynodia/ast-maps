@@ -88,6 +88,7 @@ class MtbMapApplication {
     initMap() {
         console.log("Setting up maps...");
 
+        this.infoWindow = new google.maps.InfoWindow();
         this.mainBounds = new google.maps.LatLngBounds();
 
         this.mainMap = new google.maps.Map(document.getElementById('map'), {
@@ -147,7 +148,7 @@ class MtbMapApplication {
         /** Add trails */
         let trailsToLoad = this.config.trails.length;
         for (let i = 0; i < this.config.trails.length; i++) {
-            let t = new Trail(this.config.trails[i], this.config.main.levelColors, i);
+            let t = new Trail(this.config.trails[i], this.config.main.levelColors, i, this.infoWindow);
             if(i === trailIdxToLoad) {
                 trailToLoad = t;
             }
@@ -368,6 +369,10 @@ class MtbMapApplication {
         }
         $("#trailchart").empty();
         this.generateGraph2d(this.currDetailTrail);
+    }
+
+    openTrail(id) {
+        this.onMapElemClicked(this.trails[id]);
     }
 
     onMapElemClicked(trail) {

@@ -22,6 +22,10 @@ function getUrlParameter(sParam) {
     }
 }
 
+function openTrail(id) {
+    window.application.openTrail(id);
+}
+
 function initTrails() {
     console.log("Init app");
 

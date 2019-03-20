@@ -1,5 +1,5 @@
 class Trail {
-    constructor(config, levelColors, id) {
+    constructor(config, levelColors, id, infoWindow) {
         this.config = config;
         this.id = id;
         this.heightDiff = 0;
@@ -12,6 +12,7 @@ class Trail {
         this.clickCb = null;
         this.levelColors = levelColors;
         this.bounds = null;
+        this.infoWindow = infoWindow;
     }
 
     isBidirectional() {
@@ -215,6 +216,21 @@ class Trail {
                 strokeWeight: 6
             });
             this.path.addListener('click', this.patchClicked.bind(this));
+            if(!mobilecheck()) {
+                this.path.addListener('mouseover', function (e) {
+                    this.infoWindow.setPosition(e.latLng);
+                    this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
+                            "<br>Lengde: " + Math.floor(this.getLength() * 10000) / 10 + "m" +
+                            "<br>Høydeforskjell: " + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" +
+                            "<br>Vanskelighetsgrad: " + this.getLevelAsText() +
+                            "<br>Enveis: " + (this.isBidirectional() ? "Nei" : "Ja") +
+                            "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
+                    this.infoWindow.open(gMap);
+                }.bind(this));
+                this.path.addListener('mouseout', function () {
+                    this.infoWindow.close();
+                }.bind(this));
+            }
         } else {
             this.path.setMap(gMap);
         }
