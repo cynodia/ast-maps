@@ -105,9 +105,11 @@ class MtbMapApplication {
                 ]
             } ]
         });
-        this.mainMap.addListener('click', function() {
-            this.infoWindow.close();
-        }.bind(this));
+        if(!mobilecheck()) {
+            this.mainMap.addListener('click', function () {
+                this.infoWindow.close();
+            }.bind(this));
+        }
 
         if(this.config.hasOwnProperty('background') &&
                 this.config.background.hasOwnProperty('pos')) {
