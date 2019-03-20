@@ -228,7 +228,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/sti1.gpx',
-                title: 'En sti',
+                title: 'Froskedammen',
                 level: 2,
                 bidirectional: false,
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
@@ -239,7 +239,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/sti2.gpx',
-                title: 'En anna sti',
+                title: 'Muldvarpen',
                 level: 3,
                 bidirectional: false,
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
