@@ -56,6 +56,16 @@ const mmConfigurations = {
                 title: 'Parkering - Ribbervann',
                 icon: 'data/imgs/marker_parking.png',
                 position: {lat: 58.478306, lng: 8.780056}
+            },
+            "sykkelparken": {
+                title: 'Sykkelparken',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.485566, lng: 8.796820}
+            },
+            "kremtoppen": {
+                title: 'Kremtoppen',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.485446, lng: 8.788034}
             }
         },
 
