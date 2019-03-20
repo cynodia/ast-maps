@@ -46,6 +46,16 @@ const mmConfigurations = {
                 title: 'Parkering - Dråbelia',
                 icon: 'data/imgs/marker_parking.png',
                 position: {lat: 58.478971, lng: 8.794247}
+            },
+            "parking_tennisbanen": {
+                title: 'Parkering - Tennisbanen',
+                icon: 'data/imgs/marker_parking.png',
+                position: {lat: 58.471307, lng: 8.779526 }
+            },
+            "parking_ribbervann": {
+                title: 'Parkering - Ribbervann',
+                icon: 'data/imgs/marker_parking.png',
+                position: {lat: 58.478306, lng: 8.780056}
             }
         },
 
