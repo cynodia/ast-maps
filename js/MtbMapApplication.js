@@ -96,7 +96,14 @@ class MtbMapApplication {
             // center: this.config.main.mapCenter,
             mapTypeId: 'hybrid',
             mapTypeControl: false,
-            disableDefaultUI: true
+            disableDefaultUI: true,
+            styles: [ {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            } ]
         });
 
         if(this.config.hasOwnProperty('background') &&
