@@ -228,7 +228,7 @@ class Trail {
                     this.infoWindow.open(gMap);
                 }.bind(this));
                 this.path.addListener('mouseout', function () {
-                    this.infoWindow.close();
+                    //this.infoWindow.close();
                 }.bind(this));
             }
         } else {
