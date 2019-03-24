@@ -391,7 +391,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/langemyrtilvegen.gpx',
-                title: 'Langemyr ut',
+                title: 'Puddingen',
                 bidirectional: false,
                 level: 2,
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
@@ -404,6 +404,17 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/forbidammen.gpx',
                 title: 'Forbi dammen',
                 level: 1,
+                bidirectional: false,
+                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                images: {
+                    trailStart: 'image5.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/elgdriden.gpx',
+                title: 'Elgdriden',
+                level: 2,
                 bidirectional: false,
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -490,11 +501,11 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/hftilskauen.gpx',
-                title: 'Til skauen',
-                level: 1,
+                title: null,
+                level: 0,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                findStartText: null,
+                infoText: null,
                 images: {
                     trailStart: 'image5.jpeg'
                 }
@@ -665,11 +676,11 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/topptiltopp.gpx',
-                title: 'Topp til topp',
-                level: 2,
+                title: null,
+                level: 0,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                findStartText: null,
+                infoText: null,
                 images: {
                     trailStart: 'image5.jpeg'
                 }

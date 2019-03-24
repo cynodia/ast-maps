@@ -68,6 +68,9 @@ class Trail {
 
 
     getTrailColor() {
+        if(this.config.level === 0) {
+            return 'gray';
+        }
         if(this.levelColors.hasOwnProperty(this.config.level)) {
             return this.levelColors[this.config.level];
         }
@@ -215,21 +218,23 @@ class Trail {
                 strokeOpacity: 0.8,
                 strokeWeight: 6
             });
-            this.path.addListener('click', this.patchClicked.bind(this));
-            if(!mobilecheck()) {
-                this.path.addListener('mouseover', function (e) {
-                    this.infoWindow.setPosition(e.latLng);
-                    this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
-                            "<br>Lengde: " + Math.floor(this.getLength() * 10000) / 10 + "m" +
-                            "<br>Høydeforskjell: " + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" +
-                            "<br>Vanskelighetsgrad: " + this.getLevelAsText() +
-                            "<br>Enveis: " + (this.isBidirectional() ? "Nei" : "Ja") +
-                            "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
-                    this.infoWindow.open(gMap);
-                }.bind(this));
-                this.path.addListener('mouseout', function () {
-                    //this.infoWindow.close();
-                }.bind(this));
+            if(this.config.title != null) {
+                this.path.addListener('click', this.patchClicked.bind(this));
+                if (!mobilecheck()) {
+                    this.path.addListener('mouseover', function (e) {
+                        this.infoWindow.setPosition(e.latLng);
+                        this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
+                                "<br>Lengde: " + Math.floor(this.getLength() * 10000) / 10 + "m" +
+                                "<br>Høydeforskjell: " + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" +
+                                "<br>Vanskelighetsgrad: " + this.getLevelAsText() +
+                                "<br>Enveis: " + (this.isBidirectional() ? "Nei" : "Ja") +
+                                "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
+                        this.infoWindow.open(gMap);
+                    }.bind(this));
+                    this.path.addListener('mouseout', function () {
+                        //this.infoWindow.close();
+                    }.bind(this));
+                }
             }
         } else {
             this.path.setMap(gMap);
