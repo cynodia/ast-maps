@@ -203,6 +203,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/eventyrrunde.gpx',
+                title: 'Eventyrskogen runde',
+                level: 2,
+                bidirectional: true,
+                findStartText: ".....",
+                infoText: "En fin liten rundsti på myk et mykt furunålsteppe. Litt opp og ned, men ganske snilt.",
+                images: {
+                    trailStart: 'tungvekter/trails/5.jpg'
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/lilleribbervann.gpx',
                 title: 'Lille Ribbervann',
                 level: 1,
