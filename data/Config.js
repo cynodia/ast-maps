@@ -324,7 +324,7 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/ostsnarvei.gpx',
+                url: 'data/trails/tungvekter/asylet.gpx',
                 title: '3D/Asylet',
                 level: 3,
                 bidirectional: true,
