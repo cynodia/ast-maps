@@ -817,6 +817,61 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/politistien.gpx',
+                title: 'Politistien',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/krempartiet.gpx',
+                title: 'Krempartiet',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/krysset_duppedalen.gpx',
+                title: 'Krysset til duppedalen',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/krysset_hogstfeltet.gpx',
+                title: 'Krysset til hogstfeltet',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/langekjerr_stien.gpx',
+                title: 'Langekjerr til stien',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/langekjerr.gpx',
                 title: 'Langekjerr',
                 level: 1,
