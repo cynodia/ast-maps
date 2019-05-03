@@ -806,6 +806,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/krakefot.gpx',
+                title: 'Kråkefotstien',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/langekjerr.gpx',
                 title: 'Langekjerr',
                 level: 1,
