@@ -752,9 +752,64 @@ const mmConfigurations = {
         trails: [
             {
                 url: 'data/trails/asbie/jordvepsen.gpx',
-                title: 'Jordvepsen',
+                title: 'Jordvepsen-Padda-Kantarellen',
                 level: 3,
                 bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/hoppene.gpx',
+                title: 'Hoppene',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/hogstfeltet_duppedalen.gpx',
+                title: 'Hogstfeltet til Duppedalen',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/duppedalen_jordet.gpx',
+                title: 'Duppedalen til Jordet',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/syretoppen.gpx',
+                title: 'Syretoppen',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/langekjerr.gpx',
+                title: 'Langekjerr',
+                level: 1,
+                bidirectional: true,
                 findStartText: "",
                 infoText: "",
                 images: {
@@ -775,6 +830,39 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/hogstfeltet1.gpx',
                 title: 'Hogstfeltet Downhill 1',
+                bidirectional: false,
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/mariaasen_dh1.gpx',
+                title: 'Mariåsen Downhill 1',
+                bidirectional: false,
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/mariaasen_dh2.gpx',
+                title: 'Mariåsen Downhill 2',
+                bidirectional: false,
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/steingjerdet_tempelet.gpx',
+                title: 'Steingjerdet til tempelet',
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
@@ -810,6 +898,28 @@ const mmConfigurations = {
                 title: 'Polititoppen',
                 bidirectional: false,
                 level: 2,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/aasbieflyt.gpx',
+                title: 'Åsbieflyt',
+                bidirectional: false,
+                level: 3,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/steingjerdet_stien.gpx',
+                title: 'Steingjerdet til stien',
+                bidirectional: false,
+                level: 3,
                 findStartText: "",
                 infoText: "",
                 images: {
