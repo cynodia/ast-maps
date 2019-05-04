@@ -817,6 +817,72 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/gruvestien.gpx',
+                title: 'Gruvestien',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/langekjerr_stikk.gpx',
+                title: 'Snarvei',
+                level: 0,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/paralellen.gpx',
+                title: 'Paralellen',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/besseggen.gpx',
+                title: 'Besseggen',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/opp_til_hogstfeltet.gpx',
+                title: 'Opp til hogstfeltet',
+                level: 0,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/langekjerr_vedlaget.gpx',
+                title: 'Langekjerr til vedlaget',
+                level: 1,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/politistien.gpx',
                 title: 'Politistien',
                 level: 1,
@@ -861,9 +927,9 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/asbie/langekjerr_stien.gpx',
-                title: 'Langekjerr til stien',
-                level: 2,
+                url: 'data/trails/asbie/flykraesjet.gpx',
+                title: 'Flykræsjet',
+                level: 1,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -876,6 +942,17 @@ const mmConfigurations = {
                 title: 'Langekjerr',
                 level: 1,
                 bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/fly_stikk.gpx',
+                title: 'Fly til kermpart',
+                level: 3,
+                bidirectional: false,
                 findStartText: "",
                 infoText: "",
                 images: {
