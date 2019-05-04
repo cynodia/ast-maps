@@ -88,7 +88,7 @@ class MtbMapApplication {
     initMap() {
         console.log("Setting up maps...");
 
-        this.infoWindow = new google.maps.InfoWindow();
+        this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
         this.mainBounds = new google.maps.LatLngBounds();
 
         this.mainMap = new google.maps.Map(document.getElementById('map'), {

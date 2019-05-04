@@ -757,10 +757,15 @@ const mmConfigurations = {
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.453028, lng: 8.736232}
             },
+            "krysset": {
+                title: 'Krysset',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.458194, lng: 8.729518}
+            },
             "hogstfelttoppen": {
                 title: 'Hogstfelttoppen',
                 icon: 'data/imgs/marker_star.png',
-                position: {lat: 58.458454, lng: 8.729318}
+                position: {lat: 58.459054, lng: 8.732818}
             }
         },
 
@@ -770,8 +775,8 @@ const mmConfigurations = {
                 title: 'Jordvepsen-Padda-Kantarellen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre for å unngå dette. Pass på å ta til høyre ned mot Biejordene etter nedkjøringene i Padda.",
+                findStartText: "Denne starter på høyeste punkt på østsiden av hoved-grusvegen. Her er det et ommråde med et gammel piknikkbord. Kjør inn her så ser du stien til høyre for bordet.",
+                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Pass på å ta til høyre ned mot Biejordene etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -781,8 +786,19 @@ const mmConfigurations = {
                 title: 'Hoppene',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Denne stien starter med en nedoverbakke til venstre et lite stykke opp i <i>Opp Vedlaget</i> om en kjører mot Stoa. Det finnes også en alternativ sti opp fra Langekjerr, men denne ender i dumpa etter den første nedoverbakken.",
                 infoText: "En relativt kort sti som ineholder en del hopp og dropp. Avsluttes inn i Langekjerr med det flotte oppbygde hoppet der! Det skumleste hoppet kommer i bakken ned inn i Langekjerr, dette kan en fint kjøre til venstre for.",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/opp_speiderleir.gpx',
+                title: 'Opp til speiderleiren',
+                level: 2,
+                bidirectional: false,
+                findStartText: "Denne kommer litt brått på fra stien langs biebekken. ca 20-30 meter fra der en krysser bekken nedenfor speiderleiren gå stien rett opp skråningen.",
+                infoText: "En artig liten sikk-sakk-klatring opp fra Biebekken til speiderleiren. Teknisk utfordrende med hårnålssvinger.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -792,7 +808,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet til Duppedalen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Ta deg opp til Hogstfeltet via <i>Krysset til Hogstfeltet</i>. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på <i>Hogstfeltet dwonhill 1/2</i> følger du på rett frem. Ta også rett frem i nedste kryss(<i>Hogstfeltet Downhill 3</i>).",
                 infoText: "En flott kobling fra hogstfeltet og ned til Duppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -803,7 +819,7 @@ const mmConfigurations = {
                 title: 'Duppedalen til Jordet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg en av stiene som ender i eller går via Duppedalen. Du kan også følge grusvegen inn til Duppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken.",
                 infoText: "En fin nedkjøring fra Doppedalen ned til Biejordene. en starter ut med nedkjøring fra Doppedalen over til steingjerdet, pass på å ta over steingjerdet(venstre) og følg stien videre nedover. Mot slutten passerer en Speiderleiren og ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -814,7 +830,7 @@ const mmConfigurations = {
                 title: 'Syretoppen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg <i>Store skogvei</i> og videre <i>Steingjerdet til stien</i>. På toppen av den bratte klatringen i <i>Steingjerdet til stien</i> går det en sti inn mot høyre. Dette er starten på Syretoppen. Alternativt kan an ta av inn mot den bratte klatringen fra grusvegen.",
                 infoText: "Når en først har karret seg opp til startpunktet for denne stien kjenner en det allerede i beina - men her er det bare å gønne på videre opp, opp, opp. Når du først kommer til toppen venter en morsom nedkjøring med litt tekniske utfordringer som ender opp i nedkjøringen mot stien ved Biefeltet, evt Collsdroppet.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -825,8 +841,8 @@ const mmConfigurations = {
                 title: 'Kråkefotstien',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som Hogstfeltet Downhilen. Den siste biten er fartfylt med et lite hopp, og noen flotte broer. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
+                findStartText: "Fra pumpehuste i bunnen av vegen inn fra Myrene følger du grusvegen oppover. Følg så den bratte stien til venstre opp mot Solbergvannet. Like etter broen i starten av vannet tar du mot venstre og følger opp mot et rødt hus. Stien starter inn mot skogen til høyre i enden av innkjørselen. Ha respekt for beboerene.",
+                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som Hogstfeltet Downhilen. Den siste biten er fartfylt med et lite hopp, og noen flotte broer. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -836,7 +852,7 @@ const mmConfigurations = {
                 title: 'Gruvestien',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Omtrent midt i <i>Vedlaget opp</i> går det en sti inn i skauen mot høyre om du kjører mot Stoa.",
                 infoText: "En spennende liten sti som binder sammen stien fra vedlaget over til en av stiene opp mot hogstfeltet. Her kan en se rester etter gammel gruvedrift! Mot slutten kommer en bratt oppkjøring - her er det en fordel med litt fart inn!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1001,7 +1017,7 @@ const mmConfigurations = {
                 title: 'Vibeveien downhill',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Fra krysset ved barnehagen følger du ærfuglvegen til krysset mot Vibevegen. Fortsett rett frem over gresset mellom garasjonene og huset. Du kommer ned på en parkeringsplass hvor du tar til høyre gjennom hekken over til en annen parkeringsplass. Hold til venstre ned på stien.",
                 infoText: "Starter du turen fra Gåsåsen så er denne obligatorisk! En heftig nedkjøring med mye steiner og ganske god høyde ut på høyresiden. Her går det fort, så pass på for gående!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1012,7 +1028,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet Downhill 1',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En fantastisk nedkjøring fra Hogstfeletet til Biejordene. Denne går via den flotte seksjonen i starten med dumper og doserte svinger. Når du kommer ned til en steinete seksjon som ender i et krys så hold mot venstre over bakketoppen og ta så mot høyre inn i Kråkefotstien. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1023,7 +1039,7 @@ const mmConfigurations = {
                 title: 'Mariåsen Downhill 1',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Finn blokkene på Mariåsen. Kjør til inngangene og ta mot høyre over gresset. Her starter stien.",
                 infoText: "En flott start på turen om du kommer inn fra Strømmen. En skikkelig bratt nedkjøring med et dropp gjennom et steingjerde mot slutten.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1034,7 +1050,7 @@ const mmConfigurations = {
                 title: 'Mariåsen Downhill 2',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Finn blokkene på Mariåsen. Kjør nedenfor blokkene ved et bolighus ut på stien foran blokkene.",
                 infoText: "En spennende start på turen om du kommer inn fra Strømmen. Her skal du over et parti og ned en nedkjøring med et relativt høyt stup ned mot venstre side. Tunga rett i munnen!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1045,7 +1061,7 @@ const mmConfigurations = {
                 title: 'Steingjerdet til tempelet',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Følg <i>Store skogvei til steingjerdet. Ta så videre over steingjerdet.</i>",
                 infoText: "Alternativ slutt på skogsløpypa i østkanten. En spennende nedkjøring som desverre ender i et område uten noen gode koblinger videre mot andre stier. Kjører du elektrisk så freser du bare opp igjen :-)",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1056,7 +1072,7 @@ const mmConfigurations = {
                 title: 'Scottløypa del1',
                 bidirectional: true,
                 level: 1,
-                findStartText: "",
+                findStartText: "Starten på denne går rett over grusvegen fra Parkeringen på Stoa.",
                 infoText: "En trivelig liten sti som kan være en flott start på turen om du kommer inn fra parkeringen på Stoa. Kan f.eks. kobles opp mot Sotre skogveg.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1078,7 +1094,7 @@ const mmConfigurations = {
                 title: 'Polititoppen',
                 bidirectional: false,
                 level: 2,
-                findStartText: "",
+                findStartText: "Følg <i>Politistien</i> ca 10-15 meter inn og ta til venstre.",
                 infoText: "En artig rundløype som byr på tekniske utfordringer både oppover og nedover.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1089,7 +1105,7 @@ const mmConfigurations = {
                 title: 'Åsbieflyt',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Ca midt i stien, i en liten topp, i <i>Krysset til Duppedalen</i> går det en bratt sti opp til venstre om en kjører i retning Duppedalen.",
                 infoText: "En <b>fantastisk</b> flytsti som går via Duppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1100,7 +1116,7 @@ const mmConfigurations = {
                 title: 'Steingjerdet til stien',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Følg <i>Store Skogvei</i> til du når toppen med steingjerdet. Ikke ta over steingjerdet, men følg stien mot venstre.",
                 infoText: "En naturlig og fartsfylt avslutning på Store skogveg. Denne starter med en flott utforkjøring med flere hopp tekniske godbiter. Så kommer et klatreparti opp mot starten på Syretoppen. Om en vil føge stien videre holder en rett frem. en ender opp i nedkjøringen mot grusvegen ved Biefeltet, her kan en alternativt gå for Colls-droppet om en føler det er dagen for det!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1111,8 +1127,19 @@ const mmConfigurations = {
                 title: 'Hogstfeltet downhill 2',
                 bidirectional: false,
                 level: 3,
-                findStartText: "",
+                findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En alternativ nedkjøring fra Hogstfeltet til Biejordene. En føger samme flotte, parti ned mot krysset etter den steinete seksjonen. Her holder en mot høyre og følger en flott flytsti, med mye røtter og stein, nedover mot Speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/hogstfeltet3.gpx',
+                title: 'Hogstfeltet downhill 3',
+                bidirectional: false,
+                level: 3,
+                findStartText: "Følg <i>Krysset til Hogstfeltet</i> og fortsett rett frem i krysset hvor en tar av opp mot Hogstfelttoppen. Ta så første sti mot venstre lengre oppe. Alternativt kan en kjøre denne stien opp fra Biejordene - men det fordrer at en kjenner stien.",
+                infoText: "En tredje sti ned fra Hogstfeltet til Biejordene. Denne starter ikke på samme sted som de to andre og følger en egen sti i starten før den kommer inn på stien ned mot speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1122,7 +1149,7 @@ const mmConfigurations = {
                 title: 'Store skogvei',
                 level: 2,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Om du kjører mot Stoa på grusvegen opp fra Biefeltet, så vil du se en sti som går krapt inn mot venstre et like stykke før du når krysset mot veien langs Stoa. NB: Det går mange stier in mot venstre fra vegen, men dette er den siste!",
                 infoText: "Et <i>must</i> når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
                 images: {
                     trailStart: 'image1.jpeg'

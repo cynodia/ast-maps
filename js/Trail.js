@@ -224,10 +224,11 @@ class Trail {
                     this.path.addListener('mouseover', function (e) {
                         this.infoWindow.setPosition(e.latLng);
                         this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
-                                "<br>Lengde: " + Math.floor(this.getLength() * 10000) / 10 + "m" +
-                                "<br>Høydeforskjell: " + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" +
-                                "<br>Vanskelighetsgrad: " + this.getLevelAsText() +
-                                "<br>Enveis: " + (this.isBidirectional() ? "Nei" : "Ja") +
+                                "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
+                                "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
+                                "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
+                                "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
+                                "<br>" + this.getInfoText() +
                                 "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
                         this.infoWindow.open(gMap);
                     }.bind(this));
