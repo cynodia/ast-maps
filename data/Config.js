@@ -850,6 +850,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/engelundveien.gpx',
+                title: 'Ned fra Engelundveien',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/langs_bekken.gpx',
                 title: 'Langs bekken',
                 level: 1,
