@@ -1002,7 +1002,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Starter du turen fra Gåsåsen så er denne obligatorisk! En heftig nedkjøring med mye steiner og ganske god høyde ut på høyresiden. Her går det fort, så pass på for gående!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1013,7 +1013,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En fantastisk nedkjøring fra Hogstfeletet til Biejordene. Denne går via den flotte seksjonen i starten med dumper og doserte svinger. Når du kommer ned til en steinete seksjon som ender i et krys så hold mot venstre over bakketoppen og ta så mot høyre inn i Kråkefotstien. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1024,7 +1024,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En flott start på turen om du kommer inn fra Strømmen. En skikkelig bratt nedkjøring med et dropp gjennom et steingjerde mot slutten.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1035,7 +1035,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En spennende start på turen om du kommer inn fra Strømmen. Her skal du over et parti og ned en nedkjøring med et relativt høyt stup ned mot venstre side. Tunga rett i munnen!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1046,7 +1046,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "Alternativ slutt på skogsløpypa i østkanten. En spennende nedkjøring som desverre ender i et område uten noen gode koblinger videre mot andre stier. Kjører du elektrisk så freser du bare opp igjen :-)",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1057,7 +1057,7 @@ const mmConfigurations = {
                 bidirectional: true,
                 level: 1,
                 findStartText: "",
-                infoText: "",
+                infoText: "En trivelig liten sti som kan være en flott start på turen om du kommer inn fra parkeringen på Stoa. Kan f.eks. kobles opp mot Sotre skogveg.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1068,7 +1068,7 @@ const mmConfigurations = {
                 bidirectional: true,
                 level: 2,
                 findStartText: "",
-                infoText: "",
+                infoText: "En spennende sti som går fra grusvegen mot Duppedalen opp til nordenden av Langekjerr. Her er det utfordernde partier både oppover og nedover. Det er også mulig å ta av mot Hoppløypa eller Gruvestien.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1079,7 +1079,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 2,
                 findStartText: "",
-                infoText: "",
+                infoText: "En artig rundløype som byr på tekniske utfordringer både oppover og nedover.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1090,7 +1090,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En <b>fantastisk</b> flytsti som går via Duppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1101,7 +1101,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En naturlig og fartsfylt avslutning på Store skogveg. Denne starter med en flott utforkjøring med flere hopp tekniske godbiter. Så kommer et klatreparti opp mot starten på Syretoppen. Om en vil føge stien videre holder en rett frem. en ender opp i nedkjøringen mot grusvegen ved Biefeltet, her kan en alternativt gå for Colls-droppet om en føler det er dagen for det!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1112,7 +1112,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "",
-                infoText: "",
+                infoText: "En alternativ nedkjøring fra Hogstfeltet til Biejordene. En føger samme flotte, parti ned mot krysset etter den steinete seksjonen. Her holder en mot høyre og følger en flott flytsti, med mye røtter og stein, nedover mot Speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1123,7 +1123,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "Et <i>must</i> når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
