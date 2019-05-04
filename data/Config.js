@@ -746,6 +746,21 @@ const mmConfigurations = {
                 title: 'Parkering - Bjønnes',
                 icon: 'data/imgs/marker_parking.png',
                 position: {lat: 58.461755, lng: 8.743530}
+            },
+            "collsdroppet": {
+                title: 'Collsdroppet',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.450178, lng: 8.733563}
+            },
+            "rytterspranget": {
+                title: 'Rytterspranget',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.453028, lng: 8.736232}
+            },
+            "hogstfelttoppen": {
+                title: 'Hogstfelttoppen',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.458454, lng: 8.729318}
             }
         },
 
@@ -756,7 +771,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre for å unngå dette. Pass på å ta til høyre ned mot Biejordene etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -767,7 +782,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En relativt kort sti som ineholder en del hopp og dropp. Avsluttes inn i Langekjerr med det flotte oppbygde hoppet der! Det skumleste hoppet kommer i bakken ned inn i Langekjerr, dette kan en fint kjøre til venstre for.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -778,7 +793,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En flott kobling fra hogstfeltet og ned til Duppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -789,7 +804,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En fin nedkjøring fra Doppedalen ned til Biejordene. en starter ut med nedkjøring fra Doppedalen over til steingjerdet, pass på å ta over steingjerdet(venstre) og følg stien videre nedover. Mot slutten passerer en Speiderleiren og ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -800,7 +815,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Når en først har karret seg opp til startpunktet for denne stien kjenner en det allerede i beina - men her er det bare å gønne på videre opp, opp, opp. Når du først kommer til toppen venter en morsom nedkjøring med litt tekniske utfordringer som ender opp i nedkjøringen mot stien ved Biefeltet, evt Collsdroppet.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -811,7 +826,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som Hogstfeltet Downhilen. Den siste biten er fartfylt med et lite hopp, og noen flotte broer. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -822,7 +837,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En spennende liten sti som binder sammen stien fra vedlaget over til en av stiene opp mot hogstfeltet. Her kan en se rester etter gammel gruvedrift! Mot slutten kommer en bratt oppkjøring - her er det en fordel med litt fart inn!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -842,9 +857,9 @@ const mmConfigurations = {
                 url: 'data/trails/asbie/paralellen.gpx',
                 title: 'Paralellen',
                 level: 3,
-                bidirectional: false,
+                bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "En artig sti som er et alternetiv til den ofte sølefylte, starten på Langekjerr. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -855,7 +870,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En gøyal start på turen om du kommer inn fra Maxis. En kort liten sti med steiner og humper som tar deg ned til grusveien ved Biejordene.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -866,7 +881,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "Alle nedkjøringene som ender opp mot Biejordene ender ut i denne stien. Men den er ikke kun en exit fra nedkjøringne, den er et flott alternativ til sykling på grusvegen langs Biejordene! En veldig god start på turen som også er veldig nybegynnervennlig!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -877,7 +892,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En spennende og utfordrende sti som inneholder et parti over en steinegg. Ender opp i Langekjerr og kan naturlig kobles sammen med Paralellen.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -899,7 +914,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Fin kobling fra krysset i i Langekjerr hvor hoppløypa og Krempartiet kommer inn, over til vedlaget med en eventuell exit mot Besseggen.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -910,7 +925,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "Et veldig godt innganspunkt mot alle de flotte nedkjøringene fra hogstfeltet eller for å følge stien ned til Duppedalen. Bør kombineres med en runde rundt Polititoppen!",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -921,7 +936,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En fartsylt og kupert sti fra grusvegen og over til Langekjerr. Ender i en bratt nedkjøring inn i Langekjerr med en naturlig overgang tidere til stien mot Vedlaget(evt Besseggen).",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -932,7 +947,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "En fin sti nedover fra Politistien mot grusvegen ved Duppedalen. Her er det også mulighet for å at av mot Åsbieflyt.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -943,7 +958,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "Om en tar til venstre i enden av Politistien ender en på denne stien mot hogstfeltet. Men dette er ikke bare en transportetappe, men inneholder artige nedkjøringer og steinete seksjoner som byr på utfordringer.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -954,7 +969,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "En trivelig sti som er et spennende alternativ til grusvegen ned fra parkeringen ved Stoa. Ca midt i stien er det et ommråde hvor et fly styrtet på 50-tallet. Det er et avstikk til langekjerr og et mot Krempartiet. En flott start om en kommer fra parkeringen på Stoa.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -965,18 +980,18 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "En av hovedfartsårene i Åsbieskogen foruten grusvegen. En flott sti hvor flere andre stier kobles til. Stien byr på et par utfordringer, sårlig om den kjøres nordover.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
             },
             {
                 url: 'data/trails/asbie/fly_stikk.gpx',
-                title: 'Fly til kermpart',
+                title: 'Fly til krempart',
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Et avstikk fra Flykræsjet som starter med er bratt oppoverparti og byr på et par små dropp før det ender opp i slutten av Krempartiet.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
