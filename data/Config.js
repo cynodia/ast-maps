@@ -850,6 +850,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/langs_bekken.gpx',
+                title: 'Langs bekken',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/besseggen.gpx',
                 title: 'Besseggen',
                 level: 3,
