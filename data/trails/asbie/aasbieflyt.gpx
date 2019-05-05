@@ -1403,15 +1403,6 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4527470" lon="8.7351000">
-    <ele>25.1</ele>
-    <time>2019-05-03T19:00:04Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>108</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
 		</trkseg>
 	</trk>
 </gpx>

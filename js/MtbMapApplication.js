@@ -182,6 +182,11 @@ class MtbMapApplication {
         if(trailToLoad) {
             this.onMapElemClicked(trailToLoad);
         }
+
+        if(mobilecheck()) {
+            this.showInfo("Klikk på stier for mer informasjon", 5);
+        }
+
     }
 
     getClosestTrailStart(lat, lng) {

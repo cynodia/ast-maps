@@ -755,7 +755,7 @@ const mmConfigurations = {
             "rytterspranget": {
                 title: 'Rytterspranget',
                 icon: 'data/imgs/marker_star.png',
-                position: {lat: 58.453028, lng: 8.736232}
+                position: {lat: 58.452628, lng: 8.735032}
             },
             "krysset": {
                 title: 'Krysset',

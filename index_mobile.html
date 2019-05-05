@@ -144,7 +144,11 @@
     </style>
     <script>
         function init() {
-            initTrails();
+            if(!mobilecheck()) {
+                location.assign("index.html?c=" + (getUrlParameter("c") ? getUrlParameter("c") : ""));
+            } else {
+                initTrails();
+            }
         }
     </script>
 </head>
