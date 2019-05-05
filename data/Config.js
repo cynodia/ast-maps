@@ -800,7 +800,7 @@ const mmConfigurations = {
                 findStartText: "Denne kommer litt brått på fra stien langs biebekken. ca 20-30 meter fra der en krysser bekken nedenfor speiderleiren gå stien rett opp skråningen.",
                 infoText: "En artig liten sikk-sakk-klatring opp fra Biebekken til speiderleiren. Teknisk utfordrende med hårnålssvinger.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_204453_7837.JPG'
                 }
             },
             {
@@ -940,10 +940,10 @@ const mmConfigurations = {
                 title: 'Politistien',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Følg grusvegen lang med Solborgvannet videre mot Stoa. Etter en del oppover ender du på en høyde hvor stien går over i en nedoverbakke mot Stoa. Her går det en sti inn i skogen mot venstre.",
                 infoText: "Et veldig godt innganspunkt mot alle de flotte nedkjøringene fra hogstfeltet eller for å følge stien ned til Duppedalen. Bør kombineres med en runde rundt Polititoppen!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203148_7826.JPG'
                 }
             },
             {
@@ -962,10 +962,10 @@ const mmConfigurations = {
                 title: 'Krysset til duppedalen',
                 level: 2,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Stien starter i krysset i slutten av <i>Politistien</i>. Her tar du til høyre.",
                 infoText: "En fin sti nedover fra Politistien mot grusvegen ved Duppedalen. Her er det også mulighet for å at av mot Åsbieflyt.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203356_7830.JPG'
                 }
             },
             {
@@ -973,10 +973,10 @@ const mmConfigurations = {
                 title: 'Krysset til hogstfeltet',
                 level: 2,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Stien starter i krysset i slutten av <i>Politistien</i>. Her tar du til venstre.",
                 infoText: "Om en tar til venstre i enden av Politistien ender en på denne stien mot hogstfeltet. Men dette er ikke bare en transportetappe, men inneholder artige nedkjøringer og steinete seksjoner som byr på utfordringer.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203344_7829.JPG'
                 }
             },
             {
@@ -987,7 +987,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "En trivelig sti som er et spennende alternativ til grusvegen ned fra parkeringen ved Stoa. Ca midt i stien er det et ommråde hvor et fly styrtet på 50-tallet. Det er et avstikk til langekjerr og et mot Krempartiet. En flott start om en kommer fra parkeringen på Stoa.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_202727_7824.JPG'
                 }
             },
             {
@@ -1020,7 +1020,7 @@ const mmConfigurations = {
                 findStartText: "Fra krysset ved barnehagen følger du ærfuglvegen til krysset mot Vibevegen. Fortsett rett frem over gresset mellom garasjonene og huset. Du kommer ned på en parkeringsplass hvor du tar til høyre gjennom hekken over til en annen parkeringsplass. Hold til venstre ned på stien.",
                 infoText: "Starter du turen fra Gåsåsen så er denne obligatorisk! En heftig nedkjøring med mye steiner og ganske god høyde ut på høyresiden. Her går det fort, så pass på for gående!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_200623_7822.JPG'
                 }
             },
             {
@@ -1031,7 +1031,7 @@ const mmConfigurations = {
                 findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En fantastisk nedkjøring fra Hogstfeletet til Biejordene. Denne går via den flotte seksjonen i starten med dumper og doserte svinger. Når du kommer ned til en steinete seksjon som ender i et krys så hold mot venstre over bakketoppen og ta så mot høyre inn i Kråkefotstien. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_205145_7838.JPG'
                 }
             },
             {
@@ -1042,7 +1042,7 @@ const mmConfigurations = {
                 findStartText: "Finn blokkene på Mariåsen. Kjør til inngangene og ta mot høyre over gresset. Her starter stien.",
                 infoText: "En flott start på turen om du kommer inn fra Strømmen. En skikkelig bratt nedkjøring med et dropp gjennom et steingjerde mot slutten.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_201913_7823.JPG'
                 }
             },
             {
@@ -1075,7 +1075,7 @@ const mmConfigurations = {
                 findStartText: "Starten på denne går rett over grusvegen fra Parkeringen på Stoa.",
                 infoText: "En trivelig liten sti som kan være en flott start på turen om du kommer inn fra parkeringen på Stoa. Kan f.eks. kobles opp mot Sotre skogveg.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203006_7825.JPG'
                 }
             },
             {
@@ -1097,7 +1097,7 @@ const mmConfigurations = {
                 findStartText: "Følg <i>Politistien</i> ca 10-15 meter inn og ta til venstre.",
                 infoText: "En artig rundløype som byr på tekniske utfordringer både oppover og nedover.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203214_7827.JPG'
                 }
             },
             {
@@ -1108,7 +1108,7 @@ const mmConfigurations = {
                 findStartText: "Ca midt i stien, i en liten topp, i <i>Krysset til Duppedalen</i> går det en bratt sti opp til venstre om en kjører i retning Duppedalen.",
                 infoText: "En <b>fantastisk</b> flytsti som går via Duppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_203444_7831.JPG'
                 }
             },
             {
@@ -1130,7 +1130,7 @@ const mmConfigurations = {
                 findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En alternativ nedkjøring fra Hogstfeltet til Biejordene. En føger samme flotte, parti ned mot krysset etter den steinete seksjonen. Her holder en mot høyre og følger en flott flytsti, med mye røtter og stein, nedover mot Speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190505_205145_7838.JPG'
                 }
             },
             {
