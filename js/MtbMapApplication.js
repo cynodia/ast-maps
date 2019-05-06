@@ -184,7 +184,7 @@ class MtbMapApplication {
         }
 
         if(mobilecheck()) {
-            this.showInfo("Klikk på stier for mer informasjon", 5);
+            this.showInfo("Klikk på stiene for mer informasjon", 5);
         }
 
     }
