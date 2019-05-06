@@ -951,7 +951,7 @@ const mmConfigurations = {
                 title: 'Krempartiet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg grusvegen fra Biefeltet opp mot Stoa. Når du kommer til toppen av bakkene er det en liten åpning med et gammelt piknikbord på høyre hånd. Stien går inn til høyre rett etter denne toppen.",
                 infoText: "En fartsylt og kupert sti fra grusvegen og over til Langekjerr. Ender i en bratt nedkjøring inn i Langekjerr med en naturlig overgang tidere til stien mot Vedlaget(evt Besseggen).",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -984,7 +984,7 @@ const mmConfigurations = {
                 title: 'Flykræsjet',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Om du følger grusvegen opp fra Biefeltet mot stoa, så går denne inn til høyre ca 100 meter etter toppen med piknikbordet som vist på bildet.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 50 meter.",
                 infoText: "En trivelig sti som er et spennende alternativ til grusvegen ned fra parkeringen ved Stoa. Ca midt i stien er det et ommråde hvor et fly styrtet på 50-tallet. Det er et avstikk til langekjerr og et mot Krempartiet. En flott start om en kommer fra parkeringen på Stoa.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_202727_7824.JPG'
@@ -995,7 +995,7 @@ const mmConfigurations = {
                 title: 'Langekjerr',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Denne er ikke vanskelig å finne! Om du følger grusvegen opp fra Biefeltet så deler den seg i to hvor veien til høyre går mot Duppedalen. Følg denne veien 10 meter så ser du stien går ut mot venstre i paralell med hovedvegen.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 100 meter.",
                 infoText: "En av hovedfartsårene i Åsbieskogen foruten grusvegen. En flott sti hvor flere andre stier kobles til. Stien byr på et par utfordringer, sårlig om den kjøres nordover.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1006,7 +1006,7 @@ const mmConfigurations = {
                 title: 'Fly til krempart',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Om du kjører <i>Flykræsjet</i> mot Stoa, så går denne stien rett frem og opp i lia i det <i>Flykræsjet</i> tar en venstresving etter ca 100 meter.",
                 infoText: "Et avstikk fra Flykræsjet som starter med er bratt oppoverparti og byr på et par små dropp før det ender opp i slutten av Krempartiet.",
                 images: {
                     trailStart: 'image1.jpeg'
