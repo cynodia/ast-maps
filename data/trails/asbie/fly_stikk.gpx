@@ -8,33 +8,6 @@
 		<name>GpsPruneTrack</name>
 		<number>1</number>
 		<trkseg>
-   <trkpt lat="58.4541720" lon="8.7273330">
-    <ele>66.2</ele>
-    <time>2019-01-17T20:13:52Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>129</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4541980" lon="8.7273800">
-    <ele>65.9</ele>
-    <time>2019-01-17T20:13:53Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>129</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4542260" lon="8.7274290">
-    <ele>65.7</ele>
-    <time>2019-01-17T20:13:54Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>132</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
    <trkpt lat="58.4542520" lon="8.7274760">
     <ele>65.7</ele>
     <time>2019-01-17T20:13:55Z</time>
@@ -134,36 +107,9 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4543710" lon="8.7281890">
+   <trkpt lat="58.4543610" lon="8.7281890">
     <ele>64.4</ele>
     <time>2019-01-17T20:14:06Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>138</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4543980" lon="8.7282590">
-    <ele>64.4</ele>
-    <time>2019-01-17T20:14:07Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>138</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4544100" lon="8.7283480">
-    <ele>63.1</ele>
-    <time>2019-01-17T20:14:08Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>138</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4544030" lon="8.7284140">
-    <ele>62.8</ele>
-    <time>2019-01-17T20:14:09Z</time>
     <extensions>
      <gpxtpx:TrackPointExtension>
       <gpxtpx:hr>138</gpxtpx:hr>

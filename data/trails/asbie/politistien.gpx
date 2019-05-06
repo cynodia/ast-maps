@@ -485,6 +485,15 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
+      <trkpt lat="58.4581790" lon="8.7294810">
+       <ele>66.0</ele>
+       <time>2018-12-04T19:38:37Z</time>
+       <extensions>
+        <gpxtpx:TrackPointExtension>
+         <gpxtpx:hr>88</gpxtpx:hr>
+        </gpxtpx:TrackPointExtension>
+       </extensions>
+      </trkpt>
 		</trkseg>
 	</trk>
 </gpx>

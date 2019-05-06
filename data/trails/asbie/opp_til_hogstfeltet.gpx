@@ -8,15 +8,6 @@
 		<name>GpsPruneTrack</name>
 		<number>1</number>
 		<trkseg>
-   <trkpt lat="58.4586440" lon="8.7322100">
-    <ele>69.3</ele>
-    <time>2019-01-17T20:19:13Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>137</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
    <trkpt lat="58.4586700" lon="8.7321960">
     <ele>69.5</ele>
     <time>2019-01-17T20:19:16Z</time>

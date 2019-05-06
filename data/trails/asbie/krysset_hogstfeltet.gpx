@@ -8,12 +8,12 @@
 		<name>GpsPruneTrack</name>
 		<number>1</number>
 		<trkseg>
-   <trkpt lat="58.4582570" lon="8.7294000">
-    <ele>65.7</ele>
-    <time>2018-12-04T20:04:40Z</time>
+   <trkpt lat="58.4581790" lon="8.7294810">
+    <ele>66.0</ele>
+    <time>2018-12-04T19:38:37Z</time>
     <extensions>
      <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>153</gpxtpx:hr>
+      <gpxtpx:hr>88</gpxtpx:hr>
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
@@ -467,7 +467,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4588650" lon="8.7320610">
+   <trkpt lat="58.4588050" lon="8.7320610">
     <ele>68.4</ele>
     <time>2018-12-04T20:05:56Z</time>
     <extensions>
@@ -476,7 +476,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4588660" lon="8.7321400">
+   <trkpt lat="58.4587660" lon="8.7321400">
     <ele>68.7</ele>
     <time>2018-12-04T20:05:58Z</time>
     <extensions>
@@ -485,7 +485,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4588760" lon="8.7321830">
+   <trkpt lat="58.4586860" lon="8.7321830">
     <ele>68.9</ele>
     <time>2018-12-04T20:06:00Z</time>
     <extensions>
@@ -494,6 +494,16 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
+   <trkpt lat="58.4586700" lon="8.7321960">
+    <ele>69.5</ele>
+    <time>2019-01-17T20:19:16Z</time>
+    <extensions>
+     <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>137</gpxtpx:hr>
+     </gpxtpx:TrackPointExtension>
+    </extensions>
+   </trkpt>
+
 		</trkseg>
 	</trk>
 </gpx>
