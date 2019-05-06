@@ -719,21 +719,21 @@ const mmConfigurations = {
                     "<h2>Adkomst</h2>Et godt utgangspunkt er parkeringsplassen på Industritoppen. Ta av fra E-18 ved skiltet avkjøring til FV-42, men kjør i motsatt retning (mot syd) rundt brannstasjon og nytt politihus og opp til toppen.<br>" +
                     "Det er også mulig å parkere på Bjønnes og sykle inn til Biejordene derfra.",
             levelColors: {
-                1: '#0f0',
+                1: '#ffdd33',
                 2: '#00f',
                 3: '#f00'
             }
         },
 
-        // background: {
-        //     pos: {
-        //         north: 58.460856,
-        //         south: 58.449055,
-        //         east: 8.750585,
-        //         west:8.715468
-        //     },
-        //     src: 'data/pics/asbie/kart_bg.png'
-        // },
+        background: {
+            pos: {
+                north: 58.460856,
+                south: 58.449055,
+                east: 8.750585,
+                west:8.715468
+            },
+            src: 'data/pics/asbie/kart_bg.png'
+        },
 
 
         markers: {
