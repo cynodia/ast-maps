@@ -27,7 +27,7 @@ class MtbMapApplication {
                 this.config.main.infoText +
                 "<h2>mtbmaps.net</h2>" +
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
-                "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>Utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>." +
+                "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>Utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>" +
                 "Tilgjengelige områder: <br><ul>" +
                 "<li><a href=\"https://www.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
                 "<li><a href=\"https://www.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
