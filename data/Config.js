@@ -775,7 +775,7 @@ const mmConfigurations = {
                 title: 'Jordvepsen-Padda-Kantarellen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikkbord. Kjør inn her så ser du stien til høyre for bordet.",
+                findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikbord. Kjør inn her så ser du stien til høyre for bordet.",
                 infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1083,7 +1083,7 @@ const mmConfigurations = {
                 title: 'Opp vedlaget',
                 bidirectional: true,
                 level: 2,
-                findStartText: "",
+                findStartText: "Inngangen i sørenden finner du fra grusvegen inn mot Duppedalen. Kjører du mot Duppedalen starter stien på toppen av den bratteste bakken. Det går to stier her, den til venstre er utgangen av <i>Langekjerr til vedlaget</i>. Stien til høyre er <i>Opp Vedlaget</i>.<br>I nordenden starter stien nesten helt i toppen av <i>Langekjerr</i>.",
                 infoText: "En spennende sti som går fra grusvegen mot Duppedalen opp til nordenden av Langekjerr. Her er det utfordernde partier både oppover og nedover. Det er også mulig å ta av mot Hoppløypa eller Gruvestien.",
                 images: {
                     trailStart: 'image1.jpeg'
