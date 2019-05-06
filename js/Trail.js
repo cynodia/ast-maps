@@ -13,6 +13,7 @@ class Trail {
         this.levelColors = levelColors;
         this.bounds = null;
         this.infoWindow = infoWindow;
+        this.infoTimeout = null;
     }
 
     isBidirectional() {
@@ -222,17 +223,25 @@ class Trail {
                 this.path.addListener('click', this.patchClicked.bind(this));
                 if (!mobilecheck()) {
                     this.path.addListener('mouseover', function (e) {
-                        this.infoWindow.setPosition(e.latLng);
-                        this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
-                                "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
-                                "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
-                                "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
-                                "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
-                                "<br>" + this.getInfoText() +
-                                "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
-                        this.infoWindow.open(gMap);
+                        this.infoWindow.close();
+                        this.infoTimeout = setTimeout(() => {
+                            this.infoTimeout = null;
+                            this.infoWindow.setPosition(e.latLng);
+                            this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
+                                    "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
+                                    "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
+                                    "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
+                                    "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
+                                    "<br>" + this.getInfoText() +
+                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
+                            this.infoWindow.open(gMap);
+                        }, 600);
                     }.bind(this));
                     this.path.addListener('mouseout', function () {
+                        if(this.infoTimeout) {
+                            clearTimeout(this.infoTimeout);
+                            this.infoTimeout = null;
+                        }
                         //this.infoWindow.close();
                     }.bind(this));
                 }

@@ -7,7 +7,7 @@ class MtbMapApplication {
         this.infoTimeout = null;
         this.trails = [];
         this.currDetailTrail = null;
-        this.show3d = false;
+        this.show3d = true; /* 3D by default */
         this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
@@ -148,7 +148,6 @@ class MtbMapApplication {
                     }
                 });
                 this.mainBounds.extend(new google.maps.LatLng(this.config.markers[key].position.lat, this.config.markers[key].position.lng));
-
             }
         }
         let trailToLoad = null;
