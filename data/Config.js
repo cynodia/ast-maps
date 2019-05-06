@@ -775,8 +775,8 @@ const mmConfigurations = {
                 title: 'Jordvepsen-Padda-Kantarellen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Denne starter på høyeste punkt på østsiden av hoved-grusvegen. Her er det et ommråde med et gammel piknikkbord. Kjør inn her så ser du stien til høyre for bordet.",
-                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Pass på å ta til høyre ned mot Biejordene etter nedkjøringene i Padda.",
+                findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikkbord. Kjør inn her så ser du stien til høyre for bordet.",
+                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -819,7 +819,7 @@ const mmConfigurations = {
                 title: 'Duppedalen til Jordet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg en av stiene som ender i eller går via Duppedalen. Du kan også følge grusvegen inn til Duppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken.",
+                findStartText: "Følg en av stiene som ender i, eller går via Duppedalen. Du kan også følge grusvegen inn til Duppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken og pass på å holde mot høyre i bunnen av dumpa som følger.",
                 infoText: "En fin nedkjøring fra Doppedalen ned til Biejordene. en starter ut med nedkjøring fra Doppedalen over til steingjerdet, pass på å ta over steingjerdet(venstre) og følg stien videre nedover. Mot slutten passerer en Speiderleiren og ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -830,7 +830,7 @@ const mmConfigurations = {
                 title: 'Syretoppen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg <i>Store skogvei</i> og videre <i>Steingjerdet til stien</i>. På toppen av den bratte klatringen i <i>Steingjerdet til stien</i> går det en sti inn mot høyre. Dette er starten på Syretoppen. Alternativt kan an ta av inn mot den bratte klatringen fra grusvegen.",
+                findStartText: "Følg <i>Store skogvei</i> og videre <i>Steingjerdet til stien</i>. På toppen av den bratte klatringen i <i>Steingjerdet til stien</i> går det en sti inn mot høyre. Dette er starten på Syretoppen. Alternativt kan en ta av rett inn til mot den bratte klatringen fra grusvegen.",
                 infoText: "Når en først har karret seg opp til startpunktet for denne stien kjenner en det allerede i beina - men her er det bare å gønne på videre opp, opp, opp. Når du først kommer til toppen venter en morsom nedkjøring med litt tekniske utfordringer som ender opp i nedkjøringen mot stien ved Biefeltet, evt Collsdroppet.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -841,7 +841,7 @@ const mmConfigurations = {
                 title: 'Kråkefotstien',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Fra pumpehuste i bunnen av vegen inn fra Myrene følger du grusvegen oppover. Følg så den bratte stien til venstre opp mot Solbergvannet. Like etter broen i starten av vannet tar du mot venstre og følger opp mot et rødt hus. Stien starter inn mot skogen til høyre i enden av innkjørselen. Ha respekt for beboerene.",
+                findStartText: "Fra pumpehuset i bunnen av grusvegen inn fra Myrene følger du vegen oppover rundt høyresvingen og videre innover. Følg så den bratte stien til venstre opp mot Solbergvannet. Like etter broen i starten av vannet tar du mot venstre og følger opp mot et rødt hus. Stien starter inn mot skogen til høyre i enden av innkjørselen. Ha respekt for beboerene.",
                 infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som Hogstfeltet Downhilen. Den siste biten er fartfylt med et lite hopp, og noen flotte broer. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -861,10 +861,10 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/langekjerr_stikk.gpx',
                 title: 'Snarvei',
-                level: 0,
+                level: 1,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "En liten sti som forbinder <i>Langekjerr</i> med <i>Flykræsjet</i>.",
+                infoText: "Om du kjører <i>Langekjerr</i> oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du <i>Flykræsjet mot Stoa går stien inn mot høyre ca. 2/3 av vegen.</i>",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -874,8 +874,8 @@ const mmConfigurations = {
                 title: 'Paralellen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "En artig sti som er et alternetiv til den ofte sølefylte, starten på Langekjerr. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier.",
+                findStartText: "Kjører du <i>Langekjerr</i> ned mot Biejordene så kommer inngangen til <i>Paralellen</i> på venstre hånd ca 100 meter etter hoppet med trepallene. Stien går bratt rett opp i skråninga.",
+                infoText: "En artig sti som er et alternetiv til den ofte sølefylte, starten på Langekjerr. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier. Kjører du mot Biejordene er det et lite dropp på toppen av første bakke med alternativ sti på venstresiden.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -896,7 +896,7 @@ const mmConfigurations = {
                 title: 'Langs bekken',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "På østsiden starter stien like bak den lille bua i bunnen av bakken opp mot fra jordene mot biefeltet. På vestsiden starter stien inn over broa etter første jordet.",
                 infoText: "Alle nedkjøringene som ender opp mot Biejordene ender ut i denne stien. Men den er ikke kun en exit fra nedkjøringne, den er et flott alternativ til sykling på grusvegen langs Biejordene! En veldig god start på turen som også er veldig nybegynnervennlig!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -907,7 +907,7 @@ const mmConfigurations = {
                 title: 'Besseggen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Starten på denne kommer brått på midt i <i>Langekjerr til Vedlaget</i>. Se etter en sti inn til høyre.",
                 infoText: "En spennende og utfordrende sti som inneholder et parti over en steinegg. Ender opp i Langekjerr og kan naturlig kobles sammen med Paralellen.",
                 images: {
                     trailStart: 'image1.jpeg'
