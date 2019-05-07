@@ -777,12 +777,45 @@ const mmConfigurations = {
 
         trails: [
             {
+                url: 'data/trails/asbie/grusvegen.gpx',
+                title: 'Grusvegen - hovedstien',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Hovedstien rundt Åsbieskogen",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/grus_doppedalen.gpx',
+                title: 'Grusvegen til Doppedalen',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Hovedstien inn til Doppedalen",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
                 url: 'data/trails/asbie/jordvepsen.gpx',
-                title: 'Jordvepsen-Padda-Kantarellen',
+                title: 'Jordvepsen',
                 level: 3,
                 bidirectional: false,
                 findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikbord. Kjør inn her så ser du stien til høyre for bordet.",
-                infoText: "Dette er en samling av tre stier som faller naturlig sammen og danner en fantastisk nedkjøring til Biejordene! Jordvepsen ender opp i bunnen av Langekjerr, og Padda fortsetter rett over stien som Langekjerr kommer ut fra.<br>Dette er en relativt røff nedkjøring som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
+                infoText: "Dette er en fantastisk nedkjøring med masse far og spenning! Det er en relativt røff sti som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Det kommer også et crux i det en skal ned på <i>Langekjerr</i> helt på slutten.",
+                images: {
+                    trailStart: 'image1.jpeg'
+                }
+            },
+            {
+                url: 'data/trails/asbie/padda_kantarellen.gpx',
+                title: 'Padda-Kantarellen',
+                level: 3,
+                bidirectional: false,
+                findStartText: "Padda starter inn mot høyre fra grusvegen mot Doppedalen, like bortenfor den sørlige starten på Langekjerr.",
+                infoText: "Disse to stiene kan kombineres med <i>Jordvepsen</i> for en fartsfylt og røff opplevelse! <br> Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -868,7 +901,7 @@ const mmConfigurations = {
                 url: 'data/trails/asbie/langekjerr_stikk.gpx',
                 title: 'Snarvei',
                 level: 1,
-                bidirectional: false,
+                bidirectional: true,
                 findStartText: "En liten sti som forbinder <i>Langekjerr</i> med <i>Flykræsjet</i>.",
                 infoText: "Om du kjører <i>Langekjerr</i> oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du <i>Flykræsjet mot Stoa går stien inn mot høyre ca. 2/3 av vegen.</i>",
                 images: {
@@ -922,10 +955,10 @@ const mmConfigurations = {
             {
                 url: 'data/trails/asbie/opp_til_hogstfeltet.gpx',
                 title: 'Opp til hogstfeltet',
-                level: 0,
+                level: 3,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter i enden av <i>Keysset til Hogstfeltet</i>.",
+                infoText: "En liten sti som går opp mot startpunktet for to av downhillene fra Hogstfeltet. Teknisk krevende med et crux ganske tidlig.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
