@@ -8,34 +8,7 @@
 		<name>GpsPruneTrack</name>
 		<number>1</number>
 		<trkseg>
-   <trkpt lat="58.4508560" lon="8.7285250">
-    <ele>75.5</ele>
-    <time>2019-04-29T18:20:27Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>142</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4508430" lon="8.7285830">
-    <ele>75.8</ele>
-    <time>2019-04-29T18:20:29Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>142</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4507990" lon="8.7286340">
-    <ele>76.4</ele>
-    <time>2019-04-29T18:20:32Z</time>
-    <extensions>
-     <gpxtpx:TrackPointExtension>
-      <gpxtpx:hr>142</gpxtpx:hr>
-     </gpxtpx:TrackPointExtension>
-    </extensions>
-   </trkpt>
-   <trkpt lat="58.4507560" lon="8.7286830">
+   <trkpt lat="58.450758806830954" lon="8.728742008598328">
     <ele>76.9</ele>
     <time>2019-04-29T18:20:34Z</time>
     <extensions>
@@ -44,7 +17,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4507020" lon="8.7286830">
+   <trkpt lat="58.450718841013256" lon="8.728784923942566">
     <ele>77.5</ele>
     <time>2019-04-29T18:20:36Z</time>
     <extensions>
@@ -53,7 +26,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4506720" lon="8.7287290">
+   <trkpt lat="58.45068603418609" lon="8.728798737434387">
     <ele>78.0</ele>
     <time>2019-04-29T18:20:38Z</time>
     <extensions>
@@ -62,7 +35,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4506330" lon="8.7287870">
+   <trkpt lat="58.450658261553144" lon="8.728829915344239">
     <ele>77.8</ele>
     <time>2019-04-29T18:20:41Z</time>
     <extensions>
@@ -71,7 +44,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4506130" lon="8.7287940">
+   <trkpt lat="58.45064387524886" lon="8.728836915344239">
     <ele>77.6</ele>
     <time>2019-04-29T18:20:47Z</time>
     <extensions>
@@ -80,7 +53,7 @@
      </gpxtpx:TrackPointExtension>
     </extensions>
    </trkpt>
-   <trkpt lat="58.4505940" lon="8.7288020">
+   <trkpt lat="58.45062206843158" lon="8.728855644180298">
     <ele>77.5</ele>
     <time>2019-04-29T18:20:48Z</time>
     <extensions>

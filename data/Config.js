@@ -766,7 +766,13 @@ const mmConfigurations = {
                 title: 'Hogstfelttoppen',
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.459054, lng: 8.732818}
+            },
+            "doppedalen": {
+                title: 'Doppedalen',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.4556230, lng: 8.7320650}
             }
+
         },
 
         trails: [
@@ -805,21 +811,21 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/asbie/hogstfeltet_duppedalen.gpx',
-                title: 'Hogstfeltet til Duppedalen',
+                title: 'Hogstfeltet til Doppedalen',
                 level: 3,
                 bidirectional: false,
                 findStartText: "Ta deg opp til Hogstfeltet via <i>Krysset til Hogstfeltet</i>. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på <i>Hogstfeltet dwonhill 1/2</i> følger du på rett frem. Ta også rett frem i nedste kryss(<i>Hogstfeltet Downhill 3</i>).",
-                infoText: "En flott kobling fra hogstfeltet og ned til Duppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
+                infoText: "En flott kobling fra hogstfeltet og ned til Doppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
             },
             {
                 url: 'data/trails/asbie/duppedalen_jordet.gpx',
-                title: 'Duppedalen til Jordet',
+                title: 'Doppedalen til Jordet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg en av stiene som ender i, eller går via Duppedalen. Du kan også følge grusvegen inn til Duppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken og pass på å holde mot høyre i bunnen av dumpa som følger.",
+                findStartText: "Følg en av stiene som ender i, eller går via Doppedalen. Du kan også følge grusvegen inn til Doppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken og pass på å holde mot høyre i bunnen av dumpa som følger.",
                 infoText: "En fin nedkjøring fra Doppedalen ned til Biejordene. en starter ut med nedkjøring fra Doppedalen over til steingjerdet, pass på å ta over steingjerdet(venstre) og følg stien videre nedover. Mot slutten passerer en Speiderleiren og ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -941,7 +947,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Følg grusvegen lang med Solborgvannet videre mot Stoa. Etter en del oppover ender du på en høyde hvor stien går over i en nedoverbakke mot Stoa. Her går det en sti inn i skogen mot venstre.",
-                infoText: "Et veldig godt innganspunkt mot alle de flotte nedkjøringene fra hogstfeltet eller for å følge stien ned til Duppedalen. Bør kombineres med en runde rundt Polititoppen!",
+                infoText: "Et veldig godt innganspunkt mot alle de flotte nedkjøringene fra hogstfeltet eller for å følge stien ned til Doppedalen. Bør kombineres med en runde rundt Polititoppen!",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203148_7826.JPG'
                 }
@@ -959,11 +965,11 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/asbie/krysset_duppedalen.gpx',
-                title: 'Krysset til duppedalen',
+                title: 'Krysset til doppedalen',
                 level: 2,
                 bidirectional: true,
                 findStartText: "Stien starter i krysset i slutten av <i>Politistien</i>. Her tar du til høyre.",
-                infoText: "En fin sti nedover fra Politistien mot grusvegen ved Duppedalen. Her er det også mulighet for å at av mot Åsbieflyt.",
+                infoText: "En fin sti nedover fra Politistien mot grusvegen ved Doppedalen. Her er det også mulighet for å at av mot Åsbieflyt.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203356_7830.JPG'
                 }
@@ -995,7 +1001,7 @@ const mmConfigurations = {
                 title: 'Langekjerr',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Denne er ikke vanskelig å finne! Om du følger grusvegen opp fra Biefeltet så deler den seg i to hvor veien til høyre går mot Duppedalen. Følg denne veien 10 meter så ser du stien går ut mot venstre i paralell med hovedvegen.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 100 meter.",
+                findStartText: "Denne er ikke vanskelig å finne! Om du følger grusvegen opp fra Biefeltet så deler den seg i to hvor veien til høyre går mot Doppedalen. Følg denne veien 10 meter så ser du stien går ut mot venstre i paralell med hovedvegen.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 100 meter.",
                 infoText: "En av hovedfartsårene i Åsbieskogen foruten grusvegen. En flott sti hvor flere andre stier kobles til. Stien byr på et par utfordringer, sårlig om den kjøres nordover.",
                 images: {
                     trailStart: 'image1.jpeg'
@@ -1083,8 +1089,8 @@ const mmConfigurations = {
                 title: 'Opp vedlaget',
                 bidirectional: true,
                 level: 2,
-                findStartText: "Inngangen i sørenden finner du fra grusvegen inn mot Duppedalen. Kjører du mot Duppedalen starter stien på toppen av den bratteste bakken. Det går to stier her, den til venstre er utgangen av <i>Langekjerr til vedlaget</i>. Stien til høyre er <i>Opp Vedlaget</i>.<br>I nordenden starter stien nesten helt i toppen av <i>Langekjerr</i>.",
-                infoText: "En spennende sti som går fra grusvegen mot Duppedalen opp til nordenden av Langekjerr. Her er det utfordernde partier både oppover og nedover. Det er også mulig å ta av mot Hoppløypa eller Gruvestien.",
+                findStartText: "Inngangen i sørenden finner du fra grusvegen inn mot Doppedalen. Kjører du mot Doppedalen starter stien på toppen av den bratteste bakken. Det går to stier her, den til venstre er utgangen av <i>Langekjerr til vedlaget</i>. Stien til høyre er <i>Opp Vedlaget</i>.<br>I nordenden starter stien nesten helt i toppen av <i>Langekjerr</i>.",
+                infoText: "En spennende sti som går fra grusvegen mot Doppedalen opp til nordenden av Langekjerr. Her er det utfordernde partier både oppover og nedover. Det er også mulig å ta av mot Hoppløypa eller Gruvestien.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
@@ -1105,8 +1111,8 @@ const mmConfigurations = {
                 title: 'Åsbieflyt',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Ca midt i stien, i en liten topp, i <i>Krysset til Duppedalen</i> går det en bratt sti opp til venstre om en kjører i retning Duppedalen.",
-                infoText: "En <b>fantastisk</b> flytsti som går via Duppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
+                findStartText: "Ca midt i stien, i en liten topp, i <i>Krysset til Doppedalen</i> går det en bratt sti opp til venstre om en kjører i retning Doppedalen.",
+                infoText: "En <b>fantastisk</b> flytsti som går via Doppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203444_7831.JPG'
                 }
