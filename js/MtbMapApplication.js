@@ -20,6 +20,14 @@ class MtbMapApplication {
         $('#trail3dBtn').click(this.showTrail3d.bind(this));
         $('#trail2dBtn').click(this.showTrail2d.bind(this));
         $('#infopopup').click(this.infoPopupClicked.bind(this));
+
+        if(this.show3d) {
+            $('#trail3dBtn').hide();
+            $('#trail2dBtn').show();
+        } else {
+            $('#trail3dBtn').show();
+            $('#trail2dBtn').hide();
+        }
     }
 
     updateStaticText() {
