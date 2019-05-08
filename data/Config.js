@@ -1036,7 +1036,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Denne er ikke vanskelig å finne! Om du følger grusvegen opp fra Biefeltet så deler den seg i to hvor veien til høyre går mot Doppedalen. Følg denne veien 10 meter så ser du stien går ut mot venstre i paralell med hovedvegen.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 100 meter.",
-                infoText: "En av hovedfartsårene i Åsbieskogen foruten grusvegen. En flott sti hvor flere andre stier kobles til. Stien byr på et par utfordringer, sårlig om den kjøres nordover.",
+                infoText: "En av hovedfartsårene i Åsbieskogen foruten grusvegen. En flott sti hvor flere andre stier kobles til. Stien byr på et par utfordringer, særlig om den kjøres nordover.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201930_7884.JPG'
                 }
