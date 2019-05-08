@@ -151,8 +151,6 @@ class Trail {
     }
 
     loadTrail(cb) {
-        const self = this;
-
         this.bounds = new google.maps.LatLngBounds();
 
         $.ajax({
@@ -160,13 +158,13 @@ class Trail {
             url: this.config.url,
             cache: false,
             dataType: "xml",
-            success: function(xml) {
-                self.parseGxp(xml);
-                cb(self);
+            success: (xml) => {
+                this.parseGxp(xml);
+                cb(this);
             },
-            error: function() {
+            error: () => {
                 console.error("Could not load trail info from " + this.config.url);
-                cb(self);
+                cb(this);
             }
         });
     }
