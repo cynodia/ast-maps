@@ -66,6 +66,11 @@ const mmConfigurations = {
                 title: 'Kremtoppen',
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.485446, lng: 8.788034}
+            },
+            "sinsenkrysset": {
+                title: 'Sinsenkrysset',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.48524334, lng: 8.792927563}
             }
         },
 
@@ -82,12 +87,34 @@ const mmConfigurations = {
          */
         trails: [
             {
+                url: 'data/trails/tungvekter/lysloypa.gpx',
+                title: 'Lysløypa',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Lysløypa i Birkenlund. De fleste stiene har en kobling til denne. Mye fotgjengere og joggere her, vær oppmerksom!",
+                images: {
+                    trailStart: ''
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/songebakken.gpx',
+                title: 'Songebakken',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Grusveg som går fra Sinsenkrysset ned mot Songe. Sykkelparken ligger ved denne vegen.",
+                images: {
+                    trailStart: ''
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/halvfire.gpx',
                 title: 'Halv Fire',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                findStartText: "Skiltet inn fra Sinsenkrysset",
+                infoText: "Glad i hopp og sprett? Da er dette runden for deg! En artig rundløype med en nedkjøringe som inneholder flere flotte hopp og doserte svinger.",
                 images: {
                     trailStart: 'image1.jpeg'
                 }
