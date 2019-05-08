@@ -784,7 +784,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "Hovedstien rundt Åsbieskogen",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -795,7 +795,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "Hovedstien inn til Doppedalen",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -861,7 +861,7 @@ const mmConfigurations = {
                 findStartText: "Følg en av stiene som ender i, eller går via Doppedalen. Du kan også følge grusvegen inn til Doppedalen, denne er skiltet. Kommer du inn fra grusvegen starter selve stien videre forbi lavoen og mot venstre. Ta så første mulige veg til høre på toppen av oppoverbakken og pass på å holde mot høyre i bunnen av dumpa som følger.",
                 infoText: "En fin nedkjøring fra Doppedalen ned til Biejordene. en starter ut med nedkjøring fra Doppedalen over til steingjerdet, pass på å ta over steingjerdet(venstre) og følg stien videre nedover. Mot slutten passerer en Speiderleiren og ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: 'asbie/IMG_20190508_200740_7876.JPG'
                 }
             },
             {
