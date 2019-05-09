@@ -190,10 +190,10 @@ const mmConfigurations = {
                 title: 'Ribberdalen',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Stien starter rett nord langs med tennisbanen fra parkeringen.",
+                infoText: "En flott start på turen om du kommer inn sørfra på sykkel, eller evt velger å parkere ved tennisbanen på Løvoldsveien. Stien tar deg inn til knutepunktet en sørenden av Store Ribbervann.",
                 images: {
-                    trailStart: 'tungvekter/trails/2.jpg'
+                    trailStart: null
                 }
             },
             {
@@ -204,7 +204,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'tungvekter/trails/2.jpg'
+                    trailStart: null
                 }
             },
             {
@@ -226,7 +226,7 @@ const mmConfigurations = {
                 findStartText: "Du finner et piknikbord langs lysløypa. Her går det en sti paralellt med lysløypa inn like ved bordet.",
                 infoText: "Dette er en relativt enkel sti som starter ut med en nedoverbakke som ender i en krapp høyresving. Så skal en over en liten bro før stien fortsetter i en vakker furuskog.",
                 images: {
-                    trailStart: 'tungvekter/trails/5.jpg'
+                    trailStart: null
                 }
             },
             {
