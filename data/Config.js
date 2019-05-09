@@ -94,7 +94,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "Lysløypa i Birkenlund. De fleste stiene har en kobling til denne. Mye fotgjengere og joggere her, vær oppmerksom!",
                 images: {
-                    trailStart: ''
+                    trailStart: null
                 }
             },
             {
@@ -105,7 +105,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "Grusveg som går fra Sinsenkrysset ned mot Songe. Sykkelparken ligger ved denne vegen.",
                 images: {
-                    trailStart: ''
+                    trailStart: null
                 }
             },
             {
@@ -113,10 +113,10 @@ const mmConfigurations = {
                 title: 'Halv Fire',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Skiltet inn fra Sinsenkrysset",
+                findStartText: "Stien er skiltet inn fra Sinsenkrysset",
                 infoText: "Glad i hopp og sprett? Da er dette runden for deg! En artig rundløype med en nedkjøringe som inneholder flere flotte hopp og doserte svinger.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -124,10 +124,10 @@ const mmConfigurations = {
                 title: 'Kun To',
                 level: 1,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Starter fra sinsenkrysset",
+                infoText: "Denne stien er desverre for tiden utilgjengelig grunnet arbeide med ny veg...",
                 images: {
-                    trailStart: 'image2.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -157,8 +157,8 @@ const mmConfigurations = {
                 title: 'Østbredden',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "I nordenden finner du stien ut fra lysløypa der hvor løypa passerer mellom store og lille Ribbervann. I sørenden starter løypa i bunnen av den bratte bakken som starter i sørenden av Store Ribbervann i Lysløypa.",
+                infoText: "Har du kun sett ett bilde fra Tungvekteren så er sjansen stor for at det er fra <i>Østbredden</i>! Dette er en perle av en sti som går langsmed Store Ribbervann tilrettelagt med vakre og spennende broer og med et par små og store hindringer som kan gi de fleste en liten utfordring. Et absolutt MUST for førstegangsreisende!",
                 images: {
                     trailStart: 'image3.jpeg'
                 }
@@ -215,7 +215,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -248,7 +248,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -259,7 +259,7 @@ const mmConfigurations = {
                 findStartText: "Følg lysløypa ca 30 meter fra sørenden av Store Ribbervann med bebyggelsen på høyre hånd. Stien tar mot venstre rett opp i Ribberåsen.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -270,7 +270,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -281,7 +281,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -292,7 +292,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -303,7 +303,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -314,7 +314,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -325,7 +325,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -336,7 +336,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -358,7 +358,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -369,7 +369,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -380,7 +380,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -391,7 +391,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -402,7 +402,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -424,7 +424,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -435,7 +435,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -446,7 +446,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -457,7 +457,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -468,7 +468,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -479,7 +479,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -490,7 +490,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -501,7 +501,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -512,7 +512,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -520,10 +520,10 @@ const mmConfigurations = {
                 title: 'Inn fra Gråen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Starter ut fra bussholdeplassen i Mauråsvegen.",
+                infoText: "En grei inngang inn til stinettverket fra nordvest-siden. Når en sykler innover ender denne opp like ved starten på <i>Vestbredden</i>.",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -534,7 +534,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -545,7 +545,18 @@ const mmConfigurations = {
                 findStartText: null,
                 infoText: null,
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/eventyrsnarvei.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: null,
+                infoText: null,
+                images: {
+                    trailStart: null
                 }
             },
             {
@@ -556,7 +567,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -567,7 +578,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -578,7 +589,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -589,7 +600,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -611,7 +622,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -633,7 +644,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -644,7 +655,7 @@ const mmConfigurations = {
                 findStartText: "Fra toppen av S-works, snu sørover.",
                 infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder S-works med Muldvarpen som et alternativ til Froskedammen.",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -655,7 +666,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -666,7 +677,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -688,7 +699,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -699,7 +710,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -710,7 +721,7 @@ const mmConfigurations = {
                 findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
                 infoText: "",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -721,18 +732,18 @@ const mmConfigurations = {
                 findStartText: null,
                 infoText: null,
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             },
             {
                 url: 'data/trails/tungvekter/frajovannsveien.gpx',
-                title: 'Ned fra Jovannsveien',
+                title: 'Mauråsveien',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Stien starter nesten i hagen til Krokstien 10. Følg det tydelige stisporet ned mot skogen fra innkjørselen.",
+                infoText: "Artig liten sti som danner en grei inngang til lysløypa fra Jovannsveien/Krokstien. Relativt humpete og fartsylt nedover samt utfordrende å kjøre opp.",
                 images: {
-                    trailStart: 'image5.jpeg'
+                    trailStart: null
                 }
             }
         ]
@@ -954,7 +965,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "En gøyal start på turen om du kommer inn fra Maxis. En kort liten sti med steiner og humper som tar deg ned til grusveien ved Biejordene.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -965,7 +976,7 @@ const mmConfigurations = {
                 findStartText: "På østsiden starter stien like bak den lille bua i bunnen av bakken opp mot fra jordene mot biefeltet. På vestsiden starter stien inn over broa etter første jordet.",
                 infoText: "Alle nedkjøringene som ender opp mot Biejordene ender ut i denne stien. Men den er ikke kun en exit fra nedkjøringne, den er et flott alternativ til sykling på grusvegen langs Biejordene! En veldig god start på turen som også er veldig nybegynnervennlig!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -976,7 +987,7 @@ const mmConfigurations = {
                 findStartText: "Starten på denne kommer brått på midt i <i>Langekjerr til Vedlaget</i>. Se etter en sti inn til høyre.",
                 infoText: "En spennende og utfordrende sti som inneholder et parti over en steinegg. Ender opp i Langekjerr og kan naturlig kobles sammen med Paralellen.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -987,7 +998,7 @@ const mmConfigurations = {
                 findStartText: "Starter i enden av <i>Keysset til Hogstfeltet</i>.",
                 infoText: "En liten sti som går opp mot startpunktet for to av downhillene fra Hogstfeltet. Teknisk krevende med et crux ganske tidlig.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -1076,7 +1087,7 @@ const mmConfigurations = {
                 findStartText: "Om du kjører <i>Flykræsjet</i> mot Stoa, så går denne stien rett frem og opp i lia i det <i>Flykræsjet</i> tar en venstresving etter ca 100 meter.",
                 infoText: "Et avstikk fra Flykræsjet som starter med er bratt oppoverparti og byr på et par små dropp før det ender opp i slutten av Krempartiet.",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -1120,7 +1131,7 @@ const mmConfigurations = {
                 findStartText: "Finn blokkene på Mariåsen. Kjør nedenfor blokkene ved et bolighus ut på stien foran blokkene.",
                 infoText: "En spennende start på turen om du kommer inn fra Strømmen. Her skal du over et parti og ned en nedkjøring med et relativt høyt stup ned mot venstre side. Tunga rett i munnen!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -1208,7 +1219,7 @@ const mmConfigurations = {
                 findStartText: "Følg <i>Krysset til Hogstfeltet</i> og fortsett rett frem i krysset hvor en tar av opp mot Hogstfelttoppen. Ta så første sti mot venstre lengre oppe. Alternativt kan en kjøre denne stien opp fra Biejordene - men det fordrer at en kjenner stien.",
                 infoText: "En tredje sti ned fra Hogstfeltet til Biejordene. Denne starter ikke på samme sted som de to andre og følger en egen sti i starten før den kommer inn på stien ned mot speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
-                    trailStart: 'image1.jpeg'
+                    trailStart: null
                 }
             },
             {

@@ -33,6 +33,9 @@ class Trail {
     }
 
     getStartImage() {
+        if(!this.config.images.trailStart) {
+            return null;
+        }
         return "data/pics/" + this.config.images.trailStart;
     }
 
