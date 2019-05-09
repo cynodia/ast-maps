@@ -135,8 +135,8 @@ const mmConfigurations = {
                 title: 'Hundetoppen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Inngangen til denne stien er litt skjult. Se etter en liten haug med singel langs lysløypa.",
+                infoText: "En teknisk utfordrende sti med litt av alt. Første halvdel er en krevende oppforkjøring med hårnålssvinger, steiner og røtter. Fra toppen er det en nedforkjøring med bratte partier og et par hopp mot slutten. Det største hoppet her et lite gap, om du ønsker å kjøre forbi er det bare å følge stien rett frem(oppet ligger på venstre hånd).",
                 images: {
                     trailStart: 'image4.jpeg'
                 }
