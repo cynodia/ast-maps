@@ -213,6 +213,9 @@ class MtbMapApplication {
         this.mainMap.fitBounds(this.mainBounds, 0);
     }
 
+    openContextMenu() {
+    }
+
     addHelpOverlays() {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
@@ -234,6 +237,21 @@ class MtbMapApplication {
 
         const btnDiv = document.createElement('div');
 
+        const locationButton = document.createElement('button');
+        locationButton.style.background = "rgba(255,255,255,.6)";
+        locationButton.style.padding = "12px";
+        locationButton.style.marginRight = "10px";
+        locationButton.style.fontSize = "16px";
+        locationButton.style.cursor = "pointer";
+        locationButton.setAttribute("class", "topButton");
+        locationButton.index = 2;
+        locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+        locationButton.onclick = () => {
+            this.geoLocator.mapUserLocation();
+        };
+
+        btnDiv.appendChild(locationButton);
+
         const infoButton = document.createElement('button');
         infoButton.style.background = "rgba(255,255,255,.6)";
         infoButton.style.padding = "12px";
@@ -250,21 +268,6 @@ class MtbMapApplication {
         };
 
         btnDiv.appendChild(infoButton);
-
-        const locationButton = document.createElement('button');
-        locationButton.style.background = "rgba(255,255,255,.6)";
-        locationButton.style.padding = "12px";
-        locationButton.style.marginRight = "10px";
-        locationButton.style.fontSize = "16px";
-        locationButton.style.cursor = "pointer";
-        locationButton.setAttribute("class", "topButton");
-        locationButton.index = 2;
-        locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-        locationButton.onclick = () => {
-            this.geoLocator.mapUserLocation();
-        };
-
-        btnDiv.appendChild(locationButton);
 
         if(this.mapBg) {
             this.toggleButton = document.createElement('button');
@@ -283,6 +286,7 @@ class MtbMapApplication {
         const reloadButton = document.createElement('button');
         reloadButton.style.background = "rgba(255,255,255,.6)";
         reloadButton.style.padding = "12px";
+        reloadButton.style.marginRight = "10px";
         reloadButton.setAttribute("class", "topButton");
         reloadButton.style.fontSize = "16px";
         reloadButton.style.cursor = "pointer";
@@ -291,7 +295,19 @@ class MtbMapApplication {
 
         btnDiv.appendChild(reloadButton);
 
+        const burgerButton = document.createElement('button');
+        burgerButton.style.background = "rgba(255,255,255,.6)";
+        burgerButton.style.padding = "12px";
+        burgerButton.setAttribute("class", "topRightButton");
+        burgerButton.style.fontSize = "16px";
+        burgerButton.style.cursor = "pointer";
+        burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
+        burgerButton.onclick = this.openContextMenu.bind(this);
+
+        btnDiv.appendChild(burgerButton);
+
         this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
+
     }
 
     toggleBackground() {
