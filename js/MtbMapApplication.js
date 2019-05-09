@@ -87,10 +87,10 @@ class MtbMapApplication {
 
         $('#infopopup').html(message);
         $('#infopopup').fadeIn(500);
-        this.infoTimeout = setTimeout(function () {
+        this.infoTimeout = setTimeout(() => {
             $('#infopopup').fadeOut(500);
             this.infoTimeout = null;
-        }.bind(this), timeout * 1000)
+        }, timeout * 1000)
     }
 
     initMap() {
@@ -114,9 +114,9 @@ class MtbMapApplication {
             } ]
         });
         if(!mobilecheck()) {
-            this.mainMap.addListener('click', function () {
+            this.mainMap.addListener('click', () => {
                 this.infoWindow.close();
-            }.bind(this));
+            });
         }
 
         if(this.config.hasOwnProperty('background') &&
@@ -171,7 +171,7 @@ class MtbMapApplication {
             if(i === trailIdxToLoad) {
                 trailToLoad = t;
             }
-            t.loadTrail(function (trail) {
+            t.loadTrail((trail) => {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
                 this.mainBounds.union(trail.getBounds());
                 trailsToLoad--;
@@ -179,7 +179,7 @@ class MtbMapApplication {
                     console.log("DONE - fit map...");
                     this.mainMap.fitBounds(this.mainBounds, 0);
                 }
-            }.bind(this));
+            });
             this.trails.push(t);
             console.log("Added trail " + t.getTitle());
         }
@@ -243,8 +243,8 @@ class MtbMapApplication {
         infoButton.setAttribute("class", "topButton");
         infoButton.index = 3;
         infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
-        infoButton.onclick = function() {
-            $('#infotext').fadeIn(500, function() {
+        infoButton.onclick = () => {
+            $('#infotext').fadeIn(500, () => {
                 $("html, body").animate({scrollTop: 0}, "slow");
             });
         };
@@ -260,9 +260,9 @@ class MtbMapApplication {
         locationButton.setAttribute("class", "topButton");
         locationButton.index = 2;
         locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-        locationButton.onclick = function () {
+        locationButton.onclick = () => {
             this.geoLocator.mapUserLocation();
-        }.bind(this);
+        };
 
         btnDiv.appendChild(locationButton);
 
@@ -334,10 +334,10 @@ class MtbMapApplication {
             xLabel: '',
             yLabel: '',
             zLabel: 'moh',
-            xValueLabel: function (x) {
+            xValueLabel: (x) => {
                 return "";
             },
-            yValueLabel: function (y) {
+            yValueLabel: (y) => {
                 return "";
             }
         };
@@ -419,7 +419,7 @@ class MtbMapApplication {
                 "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
-        $("#trailwindow").fadeIn(500, function() {
+        $("#trailwindow").fadeIn(500, () => {
             trail.renderTo(this.trailMap);
             this.trailMap.fitBounds(trail.getBounds(), 6);
             /* graph container must be visible */
@@ -428,7 +428,7 @@ class MtbMapApplication {
             } else {
                 this.generateGraph2d(trail);
             }
-        }.bind(this));
+        });
         // Instantiate our graph object.
     }
 }

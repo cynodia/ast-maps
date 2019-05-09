@@ -158,14 +158,14 @@ class Trail {
             url: this.config.url,
             cache: false,
             dataType: "xml",
-            success: (xml) => {
+            success: function(xml) {
                 this.parseGxp(xml);
                 cb(this);
-            },
-            error: () => {
+            }.bind(this),
+            error: function() {
                 console.error("Could not load trail info from " + this.config.url);
                 cb(this);
-            }
+            }.bind(this)
         });
     }
 
@@ -220,7 +220,7 @@ class Trail {
             if(this.config.title != null) {
                 this.path.addListener('click', this.patchClicked.bind(this));
                 if (!mobilecheck()) {
-                    this.path.addListener('mouseover', function (e) {
+                    this.path.addListener('mouseover', (e) => {
                         this.infoWindow.close();
                         this.infoTimeout = setTimeout(() => {
                             this.infoTimeout = null;
@@ -234,14 +234,14 @@ class Trail {
                                     "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
                             this.infoWindow.open(gMap);
                         }, 600);
-                    }.bind(this));
-                    this.path.addListener('mouseout', function () {
+                    });
+                    this.path.addListener('mouseout', () => {
                         if(this.infoTimeout) {
                             clearTimeout(this.infoTimeout);
                             this.infoTimeout = null;
                         }
                         //this.infoWindow.close();
-                    }.bind(this));
+                    });
                 }
             }
         } else {
