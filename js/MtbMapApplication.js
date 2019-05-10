@@ -40,6 +40,7 @@ class MtbMapApplication {
         $('#helptextcontent').html(
                 "<h2>Bruk</h2>" +
                 "Naviger deg rundt i kartet ved å dra for å flytte og klype for å zoome. Klikk på en sti for å få opp teknisk data, beskrivelse og informasjon om hvordan du finner stien.<br><br>" +
+                "Små hvite flagg markerer startpunktet på siter som er enveis.<br><br>" +
                 "Det er også markert interessepunkter i kartet. Disse inkluderer parkeringsmuligheter og punkter i terrenget som er sentrale eller av interesse av andre grunner." +
                 "<h2>Om mtbmaps.net</h2>" +
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
