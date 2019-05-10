@@ -80,6 +80,16 @@ body {
     cursor: pointer;
 }
 
+.ctxMenu {
+    background: rgba(255,255,255,.6);
+    border-right: 1px solid black;
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .chartBtn {
     position: absolute;
     right: 10px;

@@ -14,6 +14,7 @@ class MtbMapApplication {
         this.mapBg = null;
         this.mapBgActive = false;
         this.toggleButton = null;
+        this.ctxMenuVisible = false;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -116,6 +117,9 @@ class MtbMapApplication {
         if(!mobilecheck()) {
             this.mainMap.addListener('click', () => {
                 this.infoWindow.close();
+                if(this.ctxMenuVisible) {
+                    this.closeCtxMenu();
+                }
             });
         }
 
@@ -183,7 +187,7 @@ class MtbMapApplication {
             this.trails.push(t);
             console.log("Added trail " + t.getTitle());
         }
-
+        this.createContextMenu();
         this.addHelpOverlays();
         this.hideInfo();
         if(trailToLoad) {
@@ -214,6 +218,21 @@ class MtbMapApplication {
     }
 
     openContextMenu() {
+        console.log("Open ctx");
+        this.ctxMenuVisible = true;
+        this.ctxMenu.show();
+    }
+
+    closeContextMenu() {
+        console.log("Close ctx");
+        this.ctxMenuVisible = false;
+        this.ctxMenu.hide();
+    }
+
+    createContextMenu() {
+        this.ctxMenu = $('<div class="ctxMenu"/>mtbmaps.net<br>');
+        this.ctxMenu.appendTo(document.body);
+        this.ctxMenuVisible = false;
     }
 
     addHelpOverlays() {
