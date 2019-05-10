@@ -1,6 +1,7 @@
 const mmConfigurations = {
 
     'tungvekter': {
+        title: 'Tungvekteren',
         /**
          * The main configuration for this trail-cluster
          * mainHeaderMobile: The main page-header on the mobile version(should be short)
@@ -750,6 +751,7 @@ const mmConfigurations = {
     },
 
     'asbie': {
+        title: 'Åsbieskogen',
         main: {
             mainHeaderMobile: "Åsbieskogen",
             mainHeaderDesktop: "Åsbieskogen",

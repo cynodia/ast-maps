@@ -36,11 +36,7 @@ class MtbMapApplication {
                 this.config.main.infoText +
                 "<h2>mtbmaps.net</h2>" +
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
-                "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>Utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>" +
-                "Tilgjengelige områder: <br><ul>" +
-                "<li><a href=\"https://www.mtbmaps.net?c=tungvekter\">Arendal - Tungvekteren</a></li>" +
-                "<li><a href=\"https://www.mtbmaps.net?c=asbie\">Arendal - Åsbieskogen</a></li>" +
-                "</ul>"
+                "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>Utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>"
         );
         document.title = (mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
     }
@@ -114,14 +110,14 @@ class MtbMapApplication {
                 ]
             } ]
         });
-        if(!mobilecheck()) {
-            this.mainMap.addListener('click', () => {
+        this.mainMap.addListener('click', () => {
+            if(!mobilecheck()) {
                 this.infoWindow.close();
-                if(this.ctxMenuVisible) {
-                    this.closeCtxMenu();
-                }
-            });
-        }
+            }
+            if(this.ctxMenuVisible) {
+                this.closeContextMenu();
+            }
+        });
 
         if(this.config.hasOwnProperty('background') &&
                 this.config.background.hasOwnProperty('pos')) {
@@ -220,19 +216,66 @@ class MtbMapApplication {
     openContextMenu() {
         console.log("Open ctx");
         this.ctxMenuVisible = true;
-        this.ctxMenu.show();
+        this.ctxMenu.fadeIn();
     }
 
     closeContextMenu() {
         console.log("Close ctx");
         this.ctxMenuVisible = false;
-        this.ctxMenu.hide();
+        this.ctxMenu.fadeOut();
     }
 
     createContextMenu() {
-        this.ctxMenu = $('<div class="ctxMenu"/>mtbmaps.net<br>');
+        this.ctxMenu = $('<div class="ctxMenu"/>');
+        this.ctxMenu.append('<div class="ctxMenuHeader">mtbmaps.net</div>')
+        const ctxBackBtn = $('<button class="ctxCloseBtn"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>');
+        ctxBackBtn.on('click', () => {
+            this.closeContextMenu();
+        });
+        this.ctxMenu.append(ctxBackBtn);
+        const ctxBody = $('<div class="ctxBody"/>');
+
+        ctxBody.append($('<div class="ctxSubHeader">' + this.config.title + '</div>'));
+        const ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">om området</span></div>');
+        ctxInfo.on('click', () => {
+            $('#infotext').fadeIn(500, () => {
+                $("html, body").animate({scrollTop: 0}, "slow");
+            });
+        });
+        ctxBody.append(ctxInfo);
+
+        const ctxReset = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">tilbakestill</span></div>');
+        ctxReset.on('click', () => {
+            this.closeContextMenu();
+            this.resetMainMap();
+        });
+        ctxBody.append(ctxReset);
+
+        if(this.mapBg) {
+            this.toggleButton = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">tilbakestill</span></div>');
+            this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> vis topologikart");
+            this.toggleButton.on('click', this.toggleBackground.bind(this));
+            ctxBody.append(this.toggleButton);
+        }
+
+        ctxBody.append($('<div class="ctxSubHeader" style="padding-top: 40px;">Tilgjengelige områder</div>'));
+
+        let first = true;
+        for(let key in mmConfigurations) {
+            if (mmConfigurations.hasOwnProperty(key)) {
+                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-map\"></i> <span style="vertical-align: center;">' + mmConfigurations[key].title + '</span></div>');
+                entry.on('click', () => {
+                    window.location = "https://www.mtbmaps.net?c=" + key;
+                });
+                ctxBody.append(entry);
+                first = false;
+            }
+        }
+
+        this.ctxMenu.append(ctxBody);
         this.ctxMenu.appendTo(document.body);
         this.ctxMenuVisible = false;
+        this.ctxMenu.hide();
     }
 
     addHelpOverlays() {
@@ -271,52 +314,9 @@ class MtbMapApplication {
 
         btnDiv.appendChild(locationButton);
 
-        const infoButton = document.createElement('button');
-        infoButton.style.background = "rgba(255,255,255,.6)";
-        infoButton.style.padding = "12px";
-        infoButton.style.marginRight = "10px";
-        infoButton.style.fontSize = "16px";
-        infoButton.style.cursor = "pointer";
-        infoButton.setAttribute("class", "topButton");
-        infoButton.index = 3;
-        infoButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-info-circle\"></i>";
-        infoButton.onclick = () => {
-            $('#infotext').fadeIn(500, () => {
-                $("html, body").animate({scrollTop: 0}, "slow");
-            });
-        };
-
-        btnDiv.appendChild(infoButton);
-
-        if(this.mapBg) {
-            this.toggleButton = document.createElement('button');
-            this.toggleButton.style.background = "rgba(255,255,255,.6)";
-            this.toggleButton.style.padding = "12px";
-            this.toggleButton.style.marginRight = "10px";
-            this.toggleButton.setAttribute("class", "topButton");
-            this.toggleButton.style.fontSize = "16px";
-            this.toggleButton.style.cursor = "pointer";
-            this.toggleButton.innerHTML = (this.mapBgActive ? "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>" : "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-off\"></i>");
-            this.toggleButton.onclick = this.toggleBackground.bind(this);
-
-            btnDiv.appendChild(this.toggleButton);
-        }
-
-        const reloadButton = document.createElement('button');
-        reloadButton.style.background = "rgba(255,255,255,.6)";
-        reloadButton.style.padding = "12px";
-        reloadButton.style.marginRight = "10px";
-        reloadButton.setAttribute("class", "topButton");
-        reloadButton.style.fontSize = "16px";
-        reloadButton.style.cursor = "pointer";
-        reloadButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-home\"></i>";
-        reloadButton.onclick = this.resetMainMap.bind(this);
-
-        btnDiv.appendChild(reloadButton);
-
         const burgerButton = document.createElement('button');
         burgerButton.style.background = "rgba(255,255,255,.6)";
-        burgerButton.style.padding = "12px";
+        burgerButton.style.padding = "12px 16px";
         burgerButton.setAttribute("class", "topRightButton");
         burgerButton.style.fontSize = "16px";
         burgerButton.style.cursor = "pointer";
@@ -332,7 +332,7 @@ class MtbMapApplication {
     toggleBackground() {
         this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
         this.mapBgActive = !this.mapBgActive;
-        this.toggleButton.innerHTML = (this.mapBgActive ? "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-on\"></i>" : "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-toggle-off\"></i>");
+        this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> vis topologikart");
         if(localStorage) {
             localStorage['mtbmaps.settings.showMapBg'] = this.mapBgActive;
         }
