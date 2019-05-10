@@ -46,7 +46,7 @@ class MtbMapApplication {
                 "<h2>Om mtbmaps.net</h2>" +
                 "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
                 "<br><br>Løsningen er utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>" +
-                "All data are samlet inn på frivillig basis og kan derfor inneholde feil og være mangelfulle. Ønsker du å birda, eller har forslag til endringer - send meg en mail!"
+                "All data er samlet inn på frivillig basis og kan derfor inneholde feil og være mangelfulle. Ønsker du å bidra, eller har forslag til endringer - send meg en mail!"
         );
     }
 
