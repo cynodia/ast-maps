@@ -35,6 +35,10 @@ function initTrails() {
         $('#infotext').fadeOut(750);
     });
 
+    $('#closehelpbtn').click(function() {
+        $('#helptext').fadeOut(750);
+    });
+
     /* Wait until app is ready to ensure the right sequence */
     const headID = document.getElementsByTagName("head")[0];
     const newScript = document.createElement('script');

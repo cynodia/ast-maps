@@ -33,12 +33,19 @@ class MtbMapApplication {
 
     updateStaticText() {
         $('#infotextcontent').html(
-                this.config.main.infoText +
-                "<h2>mtbmaps.net</h2>" +
-                "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
-                "Løsningen skal være enkel å sette opp og krever ingen dynamisk serviersideteknologi.<br>Utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>"
+                this.config.main.infoText
         );
         document.title = (mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
+
+        $('#helptextcontent').html(
+                "<h2>Bruk</h2>" +
+                "Naviger deg rundt i kartet ved å dra for å flytte og klype for å zoome. Klikk på en sti for å få opp teknisk data, beskrivelse og informasjon om hvordan du finner stien.<br><br>" +
+                "Det er også markert interessepunkter i kartet. Disse inkluderer parkeringsmuligheter og punkter i terrenget som er sentrale eller av interesse av andre grunner." +
+                "<h2>Om mtbmaps.net</h2>" +
+                "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
+                "<br><br>Løsningen er utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>" +
+                "All data are samlet inn på frivillig basis og kan derfor inneholde feil og være mangelfulle. Ønsker du å birda, eller har forslag til endringer - send meg en mail!"
+        );
     }
 
     infoPopupClicked() {
@@ -236,15 +243,16 @@ class MtbMapApplication {
         const ctxBody = $('<div class="ctxBody"/>');
 
         ctxBody.append($('<div class="ctxSubHeader">' + this.config.title + '</div>'));
-        const ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">om området</span></div>');
+        const ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">Om området</span></div>');
         ctxInfo.on('click', () => {
+            this.closeContextMenu();
             $('#infotext').fadeIn(500, () => {
                 $("html, body").animate({scrollTop: 0}, "slow");
             });
         });
         ctxBody.append(ctxInfo);
 
-        const ctxReset = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">tilbakestill</span></div>');
+        const ctxReset = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">Tilbakestill</span></div>');
         ctxReset.on('click', () => {
             this.closeContextMenu();
             this.resetMainMap();
@@ -252,11 +260,18 @@ class MtbMapApplication {
         ctxBody.append(ctxReset);
 
         if(this.mapBg) {
-            this.toggleButton = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">tilbakestill</span></div>');
-            this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> vis topologikart");
+            this.toggleButton = $('<div class="ctxEntry"></div>');
+            this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
             this.toggleButton.on('click', this.toggleBackground.bind(this));
             ctxBody.append(this.toggleButton);
         }
+
+        const ctxHelp = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-question-circle\"></i> <span style="vertical-align: center;">Informasjon</span></div>');
+        ctxHelp.on('click', () => {
+            this.closeContextMenu();
+            $('#helptext').fadeIn(500);
+        });
+        ctxBody.append(ctxHelp);
 
         ctxBody.append($('<div class="ctxSubHeader" style="padding-top: 40px;">Tilgjengelige områder</div>'));
 
@@ -332,7 +347,7 @@ class MtbMapApplication {
     toggleBackground() {
         this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
         this.mapBgActive = !this.mapBgActive;
-        this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> vis topologikart");
+        this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
         if(localStorage) {
             localStorage['mtbmaps.settings.showMapBg'] = this.mapBgActive;
         }

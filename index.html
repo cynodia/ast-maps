@@ -87,7 +87,7 @@
             flex: 1;
             height: 300px;
         }
-        #infotextcontent {
+        .infotext {
             font-size: 18px;
             padding-bottom: 40px;
         }
@@ -119,9 +119,16 @@
 </div>
 <div class="shadowed windowed" id="infotext">
     <div class="windowheader">
-        <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+        <span>Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
-    <div id="infotextcontent">
+    <div id="infotextcontent" class="infotext">
+    </div>
+</div>
+<div class="shadowed windowed" id="helptext">
+    <div class="windowheader">
+        <span>Informasjon</span><button id="closehelpbtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+    </div>
+    <div id="helptextcontent" class="infotext">
     </div>
 </div>
 <div class="shadowed windowed" id="trailwindow">

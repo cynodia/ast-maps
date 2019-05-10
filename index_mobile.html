@@ -59,7 +59,7 @@
         #trailinfo {
             padding-top: 64px;
         }
-        #infotextcontent {
+        .infotext {
             padding: 70px 8px 8px 8px;
         }
         .windowheader {
@@ -119,6 +119,18 @@
             background: #fbfbff;
             overflow-y: scroll;
         }
+        #helptext {
+            z-index: 10;
+            font-size: 18px;
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            /*left: 0px;*/
+            background: #fbfbff;
+            overflow-y: scroll;
+        }
         #trailfactsmain {
             font-weight: bold;
             font-size: 22px;
@@ -160,7 +172,14 @@
     <div class="windowheader">
         <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
-    <div id="infotextcontent">
+    <div id="infotextcontent" class="infotext">
+    </div>
+</div>
+<div id="helptext">
+    <div class="windowheader">
+        <span>Informasjon</span><button id="closehelpbtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+    </div>
+    <div id="helptextcontent" class="infotext">
     </div>
 </div>
 <div id="trailwindow">
