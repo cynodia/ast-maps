@@ -767,9 +767,9 @@ const mmConfigurations = {
 
         background: {
             pos: {
-                north: 58.460856,
+                north: 58.461066,
                 south: 58.449055,
-                east: 8.750585,
+                east: 8.750050,
                 west:8.715468
             },
             src: 'data/pics/asbie/kart_bg.png'
