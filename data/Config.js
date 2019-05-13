@@ -147,7 +147,7 @@ const mmConfigurations = {
                 title: 'Vestbredden',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'image2.jpeg'
@@ -169,7 +169,7 @@ const mmConfigurations = {
                 title: 'Tungvekteren',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/1.jpg'
@@ -180,7 +180,7 @@ const mmConfigurations = {
                 title: 'X-Kjærringene',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/2.jpg'
@@ -202,7 +202,7 @@ const mmConfigurations = {
                 title: 'Sigaren',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -213,7 +213,7 @@ const mmConfigurations = {
                 title: 'Diagonalen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -246,7 +246,7 @@ const mmConfigurations = {
                 title: 'Lille Ribbervann',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -268,7 +268,7 @@ const mmConfigurations = {
                 title: 'Skauen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -279,18 +279,18 @@ const mmConfigurations = {
                 title: 'S-Works',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
                 }
             },
             {
-                url: 'data/trails/tungvekter/sti1.gpx',
+                url: 'data/trails/tungvekter/forskedammen.gpx',
                 title: 'Froskedammen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -301,7 +301,7 @@ const mmConfigurations = {
                 title: 'Muldvarpen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -312,7 +312,7 @@ const mmConfigurations = {
                 title: 'Uten navn',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -323,7 +323,7 @@ const mmConfigurations = {
                 title: 'Opp til parkeringa',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -334,7 +334,7 @@ const mmConfigurations = {
                 title: 'Ned til parken',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -345,7 +345,7 @@ const mmConfigurations = {
                 title: 'Rallarvegen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/6.jpg'
@@ -356,7 +356,7 @@ const mmConfigurations = {
                 title: '3D/Asylet',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -367,7 +367,7 @@ const mmConfigurations = {
                 title: 'Heitjenn',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -378,7 +378,7 @@ const mmConfigurations = {
                 title: 'Kvart på halv fire',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -389,7 +389,7 @@ const mmConfigurations = {
                 title: 'Langemyr Downhill',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -400,7 +400,7 @@ const mmConfigurations = {
                 title: 'Langemyr-skauen',
                 bidirectional: true,
                 level: 1,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -411,7 +411,7 @@ const mmConfigurations = {
                 title: 'Haldors gullrekke',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
@@ -422,7 +422,7 @@ const mmConfigurations = {
                 title: 'Korketrekkeren',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
                     trailStart: null
@@ -433,7 +433,7 @@ const mmConfigurations = {
                 title: 'Puddingen',
                 bidirectional: false,
                 level: 2,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -444,7 +444,7 @@ const mmConfigurations = {
                 title: 'Forbi dammen',
                 level: 1,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -455,7 +455,7 @@ const mmConfigurations = {
                 title: 'Elgdriden',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -466,8 +466,8 @@ const mmConfigurations = {
                 title: 'Opp til vegen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "",
+                infoText: "Her kan du klatre deg ut av lysløypa og opp til parkeringsplassen på Dråbelia. Tyn ut de siste kreftene i denne sluttspurten!",
                 images: {
                     trailStart: null
                 }
@@ -477,8 +477,8 @@ const mmConfigurations = {
                 title: 'Downhillen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "",
+                infoText: "Som navnet sier er dette en bratt utforkjøring. Ganske tidlig i stien kommer en til en smal bro som ligger rett bak en bakketopp. Følg godt med her.<br>Som alltid er det en fordel å ta det litt rolig første gangen en kjører ned en ny sti, selv om den er tilpasset høyt tempo!",
                 images: {
                     trailStart: null
                 }
@@ -488,7 +488,7 @@ const mmConfigurations = {
                 title: 'Bålplassen til the wall',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -499,7 +499,7 @@ const mmConfigurations = {
                 title: 'Flatan',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -510,7 +510,7 @@ const mmConfigurations = {
                 title: 'Uphillen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -532,7 +532,7 @@ const mmConfigurations = {
                 title: 'Toppen til diagonalen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -565,7 +565,7 @@ const mmConfigurations = {
                 title: 'Ut fra skauen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -576,7 +576,7 @@ const mmConfigurations = {
                 title: 'Sæden',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -587,7 +587,7 @@ const mmConfigurations = {
                 title: 'Fillip',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -598,7 +598,7 @@ const mmConfigurations = {
                 title: 'Ørretdammen',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -609,7 +609,7 @@ const mmConfigurations = {
                 title: 'Kamelen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/9.jpg'
@@ -620,18 +620,18 @@ const mmConfigurations = {
                 title: 'Gubben og gamla',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
                 }
             },
             {
-                url: 'data/trails/tungvekter/jansnye.gpx',
+                url: 'data/trails/tungvekter/einball.gpx',
                 title: 'Einball',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/3.jpg'
@@ -642,7 +642,7 @@ const mmConfigurations = {
                 title: 'Wall til Langemyr',
                 bidirectional: true,
                 level: 1,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -664,7 +664,7 @@ const mmConfigurations = {
                 title: 'Inn i furuskogen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -675,7 +675,7 @@ const mmConfigurations = {
                 title: 'Opp mot Sæden',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -686,7 +686,7 @@ const mmConfigurations = {
                 title: 'Ribberåsen ned',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: 'tungvekter/trails/7.jpg'
@@ -697,7 +697,7 @@ const mmConfigurations = {
                 title: 'Pikniktoppen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -708,8 +708,8 @@ const mmConfigurations = {
                 title: 'Til Bjørnebo',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
-                infoText: "",
+                findStartText: "Følg stien/kjerrevegen innover jordet fra piknikbordet langs lysløypa.",
+                infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM spederen. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
                 images: {
                     trailStart: null
                 }
@@ -719,7 +719,7 @@ const mmConfigurations = {
                 title: 'Snarvei',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Tekstlig informasjon om hvor en finner startpunkt samt bilde(r) av inngang til sti.",
+                findStartText: "",
                 infoText: "",
                 images: {
                     trailStart: null
