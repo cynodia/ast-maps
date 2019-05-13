@@ -477,7 +477,7 @@ const mmConfigurations = {
                 title: 'Downhillen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Downhillen starter fra Kremtoppen. Hit er det flere veier en kan ta. En er via Haldors gullrekke en annen er å følge stien opp paralelt med Kamelen fra Flatan.",
                 infoText: "Som navnet sier er dette en bratt utforkjøring. Ganske tidlig i stien kommer en til en smal bro som ligger rett bak en bakketopp. Følg godt med her.<br>Som alltid er det en fordel å ta det litt rolig første gangen en kjører ned en ny sti, selv om den er tilpasset høyt tempo!",
                 images: {
                     trailStart: null
@@ -488,8 +488,8 @@ const mmConfigurations = {
                 title: 'Bålplassen til the wall',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Fra bålplassen er det flere veier å ta for å komme inn på denne stien. En kan dra over cruxet mot den himmelske freds plass - herfra skal en opp en utfordrene start mot høyre fra plassen. Alternativt kan en holdr til høyre for cruxet fra bålplassen og komme rett inn på stien.",
+                infoText: "Denne stien kan gjøres til en utfordring i starten ved å ta via den himmelske freds plass. På slutten ender stien i <i>The wall</i> som er et crux en trenger god far inn i for å forsere. Evt tar du til venstre rett før <i>The Wall</i> og kjører en liten omvei.",
                 images: {
                     trailStart: null
                 }
