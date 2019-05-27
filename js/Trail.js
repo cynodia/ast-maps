@@ -297,7 +297,7 @@ class Trail {
                                     "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
                                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
                                     "<br>" + this.getInfoText() +
-                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
+                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span><br>");
                             this.infoWindow.openOn(lMap);
                         }, 600);
                     });

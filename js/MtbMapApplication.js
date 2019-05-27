@@ -107,7 +107,9 @@ class MtbMapApplication {
 
         this.mainBounds = new google.maps.LatLngBounds();
 
-        this.lMap = L.map('lmap').setView([58.478971, 8.794247], 12);
+        this.lMap = L.map('lmap', {
+            zoomControl: false,
+        });
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                 {
                     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -200,8 +202,6 @@ class MtbMapApplication {
                 trailToLoad = t;
             }
             t.loadTrail((trail) => {
-                trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
-                this.mainBounds.union(trail.getBounds());
                 trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
                 mapBounds.extend(L.latLng(trail.getBounds().getNorthEast().lat(), trail.getBounds().getNorthEast().lng()));
                 mapBounds.extend(L.latLng(trail.getBounds().getSouthWest().lat(), trail.getBounds().getSouthWest().lng()));
@@ -209,7 +209,6 @@ class MtbMapApplication {
                 if(trailsToLoad === 0) {
                     console.log("DONE - fit map...");
                     this.lMap.fitBounds(mapBounds);
-                    this.mainMap.fitBounds(this.mainBounds, 0);
                 }
             });
             this.trails.push(t);
@@ -325,52 +324,73 @@ class MtbMapApplication {
     addHelpOverlays() {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
-        const infoDiv1 = document.createElement('div');
-        infoDiv1.style.background = "rgba(255,255,255,.6)";
-        infoDiv1.style.padding = "6px";
-        infoDiv1.style.borderRight = "1px solid white";
-        infoDiv1.style.borderBottom = "1px solid white";
-        infoDiv1.style.fontSize = "16px";
-        infoDiv1.style.borderRadius = "0 0 6px 0";
-        infoDiv1.index = 1;
-        infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
-                "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
-                "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
-                "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
-        infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
+        const self = this;
+        L.Control.MtbMapsInfo = L.Control.extend({
+            onAdd: function(map) {
+                const infoDiv1 = document.createElement('div');
+                infoDiv1.style.background = "rgba(255,255,255,.6)";
+                infoDiv1.style.padding = "6px";
+                infoDiv1.style.borderRight = "1px solid white";
+                infoDiv1.style.borderBottom = "1px solid white";
+                infoDiv1.style.fontSize = "16px";
+                infoDiv1.style.borderRadius = "0 0 6px 0";
+                infoDiv1.index = 1;
+                infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
+                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
+                        "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
+                infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
-        this.mainMap.controls[google.maps.ControlPosition.TOP_LEFT].push(infoDiv1);
+                return infoDiv1;
+            },
+            onRemove: function(map) {
+                // Nothing to do here
+            }
+        });
 
-        const btnDiv = document.createElement('div');
+        const info = new L.Control.MtbMapsInfo({ position: 'topleft'});
+        info.addTo(this.lMap);
 
-        const locationButton = document.createElement('button');
-        locationButton.style.background = "rgba(255,255,255,.6)";
-        locationButton.style.padding = "12px";
-        locationButton.style.marginRight = "10px";
-        locationButton.style.fontSize = "16px";
-        locationButton.style.cursor = "pointer";
-        locationButton.setAttribute("class", "topButton");
-        locationButton.index = 2;
-        locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-        locationButton.onclick = () => {
-            this.geoLocator.mapUserLocation();
-        };
 
-        btnDiv.appendChild(locationButton);
+        L.Control.MtbMapsMenu = L.Control.extend({
+            onAdd: function(map) {
+                const btnDiv = document.createElement('div');
 
-        const burgerButton = document.createElement('button');
-        burgerButton.style.background = "rgba(255,255,255,.6)";
-        burgerButton.style.padding = "12px 16px";
-        burgerButton.setAttribute("class", "topRightButton");
-        burgerButton.style.fontSize = "16px";
-        burgerButton.style.cursor = "pointer";
-        burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
-        burgerButton.onclick = this.openContextMenu.bind(this);
+                const locationButton = document.createElement('button');
+                locationButton.style.background = "rgba(255,255,255,.6)";
+                locationButton.style.padding = "12px";
+                locationButton.style.marginRight = "10px";
+                locationButton.style.fontSize = "16px";
+                locationButton.style.cursor = "pointer";
+                locationButton.setAttribute("class", "topButton");
+                locationButton.index = 2;
+                locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+                locationButton.onclick = () => {
+                    self.geoLocator.mapUserLocation();
+                };
 
-        btnDiv.appendChild(burgerButton);
+                btnDiv.appendChild(locationButton);
 
-        this.mainMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnDiv);
+                const burgerButton = document.createElement('button');
+                burgerButton.style.background = "rgba(255,255,255,.6)";
+                burgerButton.style.padding = "12px 16px";
+                burgerButton.setAttribute("class", "topRightButton");
+                burgerButton.style.fontSize = "16px";
+                burgerButton.style.cursor = "pointer";
+                burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
+                burgerButton.onclick = self.openContextMenu.bind(self);
 
+                btnDiv.appendChild(burgerButton);
+
+                return btnDiv;
+            },
+            onRemove: function(map) {
+                // Nothing to do here
+            }
+        });
+
+        const buttons = new L.Control.MtbMapsMenu({ position: 'topright'});
+        buttons.addTo(this.lMap);
     }
 
     toggleBackground() {
