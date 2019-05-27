@@ -111,13 +111,21 @@ class MtbMapApplication {
         this.lMap = L.map('lmap', {
             zoomControl: false,
         });
-
+/*
         this.topologyLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                 {
                     maxNativeZoom: 16,
                     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
                 }
         );
+*/
+        this.topologyLayer = L.tileLayer('https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
+                {
+                    maxNativeZoom: 17,
+                    attribution: '<a href="http://www.kartverket.no/">Kartverket</a>'
+                }
+        );
+
 
         this.satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -154,10 +162,10 @@ class MtbMapApplication {
         this.trailMap = L.map('trailmap', {
             zoomControl: false,
         });
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+        L.tileLayer('https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
                 {
-                    maxNativeZoom: 16,
-                    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                    maxNativeZoom: 17,
+                    attribution: '<a href="http://www.kartverket.no/">Kartverket</a>'
                 }
         ).addTo(this.trailMap);
 
