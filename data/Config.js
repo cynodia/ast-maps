@@ -286,7 +286,7 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/forskedammen.gpx',
+                url: 'data/trails/tungvekter/froskedammen.gpx',
                 title: 'Froskedammen',
                 level: 2,
                 bidirectional: false,
