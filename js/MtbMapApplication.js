@@ -70,8 +70,8 @@ class MtbMapApplication {
     }
 
     closeTrailInfo() {
-        //this.currDetailTrail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
         this.currDetailTrail.removeFromLMap(this.trailMap);
+        this.currDetailTrail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
         window.location.hash = "";
@@ -505,6 +505,7 @@ class MtbMapApplication {
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, () => {
+            trail.removeFromLMap(this.lMap);
             trail.renderToLMap(this.trailMap);
             this.trailMap.fitBounds(trail.getBounds());
             /* graph container must be visible */
