@@ -219,7 +219,7 @@ class Trail {
         if(!this.lPath) {
             this.lPath = L.polyline(this.coordinates, {
                 color: this.getTrailColor(),
-                weight: 5
+                weight: 7
             });
 
             if(this.config.title != null) {

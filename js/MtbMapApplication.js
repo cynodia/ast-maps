@@ -120,9 +120,9 @@ class MtbMapApplication {
             if(!mobilecheck()) {
                 this.infoWindow.remove();
             }
-//            if(this.ctxMenuVisible) {
-                //this.closeContextMenu();
-//            }
+            if(this.ctxMenuVisible) {
+                this.closeContextMenu();
+            }
         });
 
         if(this.config.hasOwnProperty('background') &&
@@ -339,8 +339,9 @@ class MtbMapApplication {
                 locationButton.setAttribute("class", "topButton");
                 locationButton.index = 2;
                 locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-                locationButton.onclick = () => {
+                locationButton.onclick = (e) => {
                     self.geoLocator.mapUserLocation();
+                    L.DomEvent.stopPropagation(e);
                 };
 
                 btnDiv.appendChild(locationButton);
@@ -352,8 +353,9 @@ class MtbMapApplication {
                 burgerButton.style.fontSize = "16px";
                 burgerButton.style.cursor = "pointer";
                 burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
-                burgerButton.onclick = () => {
+                burgerButton.onclick = (e) => {
                     self.openContextMenu();
+                    L.DomEvent.stopPropagation(e);
                 };
 
                 btnDiv.appendChild(burgerButton);
