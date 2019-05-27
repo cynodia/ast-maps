@@ -2,7 +2,6 @@ class MtbMapApplication {
 
     constructor(config) {
         this.config = config;
-        this.mainMap = null;
         this.trailMap = null;
         this.infoTimeout = null;
         this.trails = [];
@@ -63,7 +62,7 @@ class MtbMapApplication {
     }
 
     getMainMap() {
-        return this.mainMap;
+        return this.lMap;
     }
 
     getTrailMap() {
@@ -71,7 +70,8 @@ class MtbMapApplication {
     }
 
     closeTrailInfo() {
-        this.currDetailTrail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
+        //this.currDetailTrail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
+        this.currDetailTrail.removeFromLMap(this.trailMap);
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
         window.location.hash = "";
@@ -105,8 +105,6 @@ class MtbMapApplication {
 
         //this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
 
-        this.mainBounds = new google.maps.LatLngBounds();
-
         this.lMap = L.map('lmap', {
             zoomControl: false,
         });
@@ -117,73 +115,49 @@ class MtbMapApplication {
         ).addTo(this.lMap);
         this.infoWindow = L.popup();
 
-        const imageBounds = [[this.config.background.pos.north , this.config.background.pos.east], [this.config.background.pos.south, this.config.background.pos.west]];
-        this.imageOverlay = L.imageOverlay(this.config.background.src, imageBounds);
-        this.imageOverlay.addTo(this.lMap);
-        if(localStorage['mtbmaps.settings.showMapBg'] !== "true") {
-            this.imageOverlay.setOpacity(0);
-        }
 
-        this.mainMap = new google.maps.Map(document.getElementById('gmap'), {
-            // zoom: this.config.main.mapZoom,
-            // center: this.config.main.mapCenter,
-            mapTypeId: 'hybrid',
-            mapTypeControl: false,
-            disableDefaultUI: true,
-            styles: [ {
-                featureType: "poi",
-                elementType: "labels",
-                stylers: [
-                    { visibility: "off" }
-                ]
-            } ]
-        });
-        this.mainMap.addListener('click', () => {
+        this.lMap.on('click', () => {
             if(!mobilecheck()) {
-                this.infoWindow.close();
+                this.infoWindow.remove();
             }
-            if(this.ctxMenuVisible) {
-                this.closeContextMenu();
-            }
+//            if(this.ctxMenuVisible) {
+                //this.closeContextMenu();
+//            }
         });
 
         if(this.config.hasOwnProperty('background') &&
                 this.config.background.hasOwnProperty('pos')) {
-            this.mapBg = new google.maps.GroundOverlay(
-                    this.config.background.src,
-                    this.config.background.pos,
-                    {
-                        clickable: false
-                    }
-            );
-
+            const imageBounds = [[this.config.background.pos.north , this.config.background.pos.east], [this.config.background.pos.south, this.config.background.pos.west]];
+            this.imageOverlay = L.imageOverlay(this.config.background.src, imageBounds);
             if(localStorage['mtbmaps.settings.showMapBg'] === "true") {
-                this.mapBgActive = true;
-                this.mapBg.setMap(this.mainMap);
+                this.imageOverlay.addTo(this.lMap);
             }
         }
 
-        this.trailMap = new google.maps.Map(document.getElementById('trailmap'), {
-            // zoom: 16,
-            // center: this.config.main.mapCenter,
-            mapTypeId: 'hybrid',
-            mapTypeControl: false,
-            disableDefaultUI: true
+        this.trailMap = L.map('trailmap', {
+            zoomControl: false,
         });
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+                {
+                    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                }
+        ).addTo(this.trailMap);
+
+        this.mainBounds = L.latLngBounds();
 
         /** Add markers */
         for (let key in this.config.markers) {
             if (this.config.markers.hasOwnProperty(key)) {
-                new google.maps.Marker({
-                    position: this.config.markers[key].position,
-                    map: this.mainMap,
-                    title: this.config.markers[key].title,
-                    icon: {
-                        url: this.config.markers[key].icon,
-                        scaledSize: new google.maps.Size(30, 30)
-                    }
-                });
-                this.mainBounds.extend(new google.maps.LatLng(this.config.markers[key].position.lat, this.config.markers[key].position.lng));
+                L.marker(this.config.markers[key].position, {
+                    icon: L.icon({
+                        iconUrl: this.config.markers[key].icon,
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 30]
+                    })
+                }).addTo(this.lMap);
+
+                //title: this.config.markers[key].title,
+                this.mainBounds.extend(this.config.markers[key].position.lat, this.config.markers[key].position.lng);
             }
         }
         let trailToLoad = null;
@@ -191,8 +165,6 @@ class MtbMapApplication {
         if(typeof window.location.hash === 'string' && window.location.hash.length > 1) {
             trailIdxToLoad = parseInt(window.location.hash.substr(1));
         }
-
-        const mapBounds = L.latLngBounds();
 
         /** Add trails */
         let trailsToLoad = this.config.trails.length;
@@ -203,12 +175,12 @@ class MtbMapApplication {
             }
             t.loadTrail((trail) => {
                 trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
-                mapBounds.extend(L.latLng(trail.getBounds().getNorthEast().lat(), trail.getBounds().getNorthEast().lng()));
-                mapBounds.extend(L.latLng(trail.getBounds().getSouthWest().lat(), trail.getBounds().getSouthWest().lng()));
+                this.mainBounds.extend(trail.getBounds().getNorthEast());
+                this.mainBounds.extend(trail.getBounds().getSouthWest());
                 trailsToLoad--;
                 if(trailsToLoad === 0) {
                     console.log("DONE - fit map...");
-                    this.lMap.fitBounds(mapBounds);
+                    this.lMap.fitBounds(this.mainBounds);
                 }
             });
             this.trails.push(t);
@@ -245,7 +217,7 @@ class MtbMapApplication {
     }
 
     resetMainMap() {
-        this.mainMap.fitBounds(this.mainBounds, 0);
+        this.lMap.fitBounds(this.mainBounds);
     }
 
     openContextMenu() {
@@ -287,7 +259,7 @@ class MtbMapApplication {
         });
         ctxBody.append(ctxReset);
 
-        if(this.mapBg) {
+        if(this.imageOverlay) {
             this.toggleButton = $('<div class="ctxEntry"></div>');
             this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
             this.toggleButton.on('click', this.toggleBackground.bind(this));
@@ -334,6 +306,7 @@ class MtbMapApplication {
                 infoDiv1.style.borderBottom = "1px solid white";
                 infoDiv1.style.fontSize = "16px";
                 infoDiv1.style.borderRadius = "0 0 6px 0";
+                infoDiv1.style.margin = 0;
                 infoDiv1.index = 1;
                 infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
@@ -355,6 +328,7 @@ class MtbMapApplication {
         L.Control.MtbMapsMenu = L.Control.extend({
             onAdd: function(map) {
                 const btnDiv = document.createElement('div');
+                btnDiv.style.margin = 0;
 
                 const locationButton = document.createElement('button');
                 locationButton.style.background = "rgba(255,255,255,.6)";
@@ -378,7 +352,9 @@ class MtbMapApplication {
                 burgerButton.style.fontSize = "16px";
                 burgerButton.style.cursor = "pointer";
                 burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
-                burgerButton.onclick = self.openContextMenu.bind(self);
+                burgerButton.onclick = () => {
+                    self.openContextMenu();
+                };
 
                 btnDiv.appendChild(burgerButton);
 
@@ -394,8 +370,7 @@ class MtbMapApplication {
     }
 
     toggleBackground() {
-        this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
-        this.mapBgActive ? this.imageOverlay.setOpacity(0) : this.imageOverlay.setOpacity(1);
+        this.mapBgActive ? this.imageOverlay.remove() : this.imageOverlay.addTo(this.lMap);
         this.mapBgActive = !this.mapBgActive;
         this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
         if(localStorage) {
@@ -526,8 +501,8 @@ class MtbMapApplication {
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, () => {
-            trail.renderTo(this.trailMap);
-            this.trailMap.fitBounds(trail.getBounds(), 6);
+            trail.renderToLMap(this.trailMap);
+            this.trailMap.fitBounds(trail.getBounds());
             /* graph container must be visible */
             if(this.show3d) {
                 this.generateGraph3d(trail);

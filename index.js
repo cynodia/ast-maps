@@ -39,16 +39,6 @@ function initTrails() {
         $('#helptext').fadeOut(750);
     });
 
-    /* Wait until app is ready to ensure the right sequence */
-    const headID = document.getElementsByTagName("head")[0];
-    const newScript = document.createElement('script');
-    newScript.type = 'text/javascript';
-    newScript.language = 'javascript';
-    newScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSIzHM-xchwZyZ_H0qj0f_bWiCoYBch4&callback=initMap";
-    newScript.defer = true;
-    newScript.async = true;
-    headID.appendChild(newScript);
-
     let config = "tungvekter";
 
     let urlParam = getUrlParameter("c");
@@ -57,29 +47,9 @@ function initTrails() {
     }
     console.log("Using configuration: " + config);
     window.application = new MtbMapApplication(mmConfigurations[config]);
-}
 
-/* GMaps callback */
-function initMap() {
     console.log("Init maps...");
     /* Overrides /addons */
-    google.maps.LatLng.prototype.kmTo = function (a) {
-        const e = Math, ra = e.PI / 180;
-        const b = this.lat() * ra, c = a.lat() * ra, d = b - c;
-        const g = this.lng() * ra - a.lng() * ra;
-        const f = 2 * e.asin(e.sqrt(e.pow(e.sin(d / 2), 2) + e.cos(b) * e.cos(c) * e.pow(e.sin(g / 2), 2)));
-        return f * 6378.137;
-    };
-
-    google.maps.Polyline.prototype.inKm = function (n) {
-        const a = this.getPath(n), len = a.getLength();
-        let dist = 0;
-        for (let i = 0; i < len - 1; i++) {
-            dist += a.getAt(i).kmTo(a.getAt(i + 1));
-        }
-        return dist;
-    };
-
     window.application.initMap();
 }
 

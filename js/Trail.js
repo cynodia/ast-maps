@@ -132,7 +132,7 @@ class Trail {
                                 }
                         );
                         self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
-                        self.bounds.extend(new google.maps.LatLng(lat, lng));
+                        self.bounds.extend(L.latLng(lat, lng));
                         lastLat = lat;
                         lastLng = lng;
                         let alt = 0.0;
@@ -155,7 +155,7 @@ class Trail {
     }
 
     loadTrail(cb) {
-        this.bounds = new google.maps.LatLngBounds();
+        this.bounds = L.latLngBounds();
 
         $.ajax({
             type: "GET",
@@ -189,70 +189,11 @@ class Trail {
         }
     }
 
-    /**
-     * Cal be re-used, will only generate objects the firt time
-     * @param gMap
-     * @param callback
-     */
-    renderTo(gMap, callback) {
-        if(this.config.bidirectional === false) {
-            // if (!this.startMarker) {
-            //     this.startMarker = new google.maps.Marker({
-            //         position: this.coordinates[0],
-            //         map: gMap,
-            //         icon: {
-            //             url: 'data/imgs/marker_start.png',
-            //             scaledSize: new google.maps.Size(30, 30)
-            //         },
-            //         title: "START " + this.getTitle()
-            //     });
-            //     this.startMarker.addListener('click', this.pathClicked.bind(this));
-            // } else {
-            //     this.startMarker.setMap(gMap);
-            // }
+    removeFromLMap(lMap) {
+        if(this.startMarker) {
+            this.startMarker.removeFrom(lMap);
         }
-
-        if(!this.path) {
-            this.path = new google.maps.Polyline({
-                path: this.coordinates,
-                geodesic: true,
-                map: gMap,
-                strokeColor: this.getTrailColor(),
-                strokeOpacity: 0.8,
-                strokeWeight: 6
-            });
-            if(this.config.title != null) {
-                this.path.addListener('click', this.pathClicked.bind(this));
-                // if (!mobilecheck()) {
-                //     this.path.addListener('mouseover', (e) => {
-                //         this.infoWindow.close();
-                //         this.infoTimeout = setTimeout(() => {
-                //             this.infoTimeout = null;
-                //             this.infoWindow.setPosition(e.latLng);
-                //             this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
-                //                     "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
-                //                     "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
-                //                     "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
-                //                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
-                //                     "<br>" + this.getInfoText() +
-                //                     "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
-                //             this.infoWindow.open(gMap);
-                //         }, 600);
-                //     });
-                //     this.path.addListener('mouseout', () => {
-                //         if(this.infoTimeout) {
-                //             clearTimeout(this.infoTimeout);
-                //             this.infoTimeout = null;
-                //         }
-                //         //this.infoWindow.close();
-                //     });
-                // }
-            }
-        } else {
-            this.path.setMap(gMap);
-        }
-
-        this.clickCb = callback;
+        this.lPath.removeFrom(lMap);
     }
 
     /**
@@ -280,7 +221,6 @@ class Trail {
                 color: this.getTrailColor(),
                 weight: 5
             });
-            this.lPath.addTo(lMap);
 
             if(this.config.title != null) {
                 this.lPath.on('click', this.pathClicked.bind(this));
@@ -310,10 +250,9 @@ class Trail {
                     });
                 }
             }
-        } else {
-            this.lPath.addTo(lMap);
         }
 
+        this.lPath.addTo(lMap);
         this.clickCb = callback;
     }
 

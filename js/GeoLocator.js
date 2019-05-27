@@ -43,14 +43,9 @@ class GeoLocator {
     updatePosition(pos) {
         this.lastData = { lat: pos.coords.latitude, lng: pos.coords.longitude };
 
-        const icon = {
-            url: 'data/imgs/marker_you.png',
-            scaledSize: new google.maps.Size(40, 40)
-        };
-
         console.log(this.lastData);
         if(this.mainLocationMarker) {
-            this.mainLocationMarker.setPosition(this.lastData);
+            this.mainLocationMarker.setLatLng(this.lastData);
             if(this.geoId === null) {
                 const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
                 this.app.setClosestTrail(closestTrail);
@@ -60,25 +55,31 @@ class GeoLocator {
             const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
             this.app.setClosestTrail(closestTrail);
             this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Klikk her for å åpne.<br>Din posisjon oppdateres heretter automatisk", 6);
-            this.mainLocationMarker = new google.maps.Marker({
-                position: this.lastData,
-                map: this.app.getMainMap(),
-                icon: icon
+            this.mainLocationMarker = L.marker(this.lastData, {
+                icon: L.icon({
+                    iconUrl: 'data/imgs/marker_you.png',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40]
+                })
             });
+            this.mainLocationMarker.addTo(this.app.getMainMap());
         }
 
-        if(this.trailLocationMarker) {
-            this.trailLocationMarker.setPosition(this.lastData);
-        } else {
-            this.trailLocationMarker = new google.maps.Marker({
-                position: this.lastData,
-                map: this.app.getTrailMap(),
-                icon: icon
-            });
-        }
+        // if(this.trailLocationMarker) {
+        //     this.trailLocationMarker.setLetLng(this.lastData);
+        // } else {
+        //     this.trailLocationMarker = L.marker(this.lastData, {
+        //         icon: L.icon({
+        //             iconUrl: 'data/imgs/marker_you.png',
+        //             iconSize: [40, 40],
+        //             iconAnchor: [20, 40]
+        //         })
+        //     });
+        //     this.trailLocationMarker.addTo(this.app.getTrailMap());
+        // }
         if(this.geoId === null) {
             this.geoId = navigator.geolocation.watchPosition(this.updatePosition.bind(this));
-            this.app.getMainMap().setCenter(this.lastData);
+            this.app.getMainMap().flyTo(this.lastData);
         }
     }
 
