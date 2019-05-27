@@ -8,6 +8,7 @@ class Trail {
         this.distances = [];
         this.startMarker = null;
         this.stopMarker = null;
+        this.length = 0;
         this.path = null;
         this.lPath = null;
         this.clickCb = null;
@@ -65,10 +66,7 @@ class Trail {
     }
 
     getLength() {
-        if (this.path) {
-            return this.path.inKm();
-        }
-        return 0.0;
+        return this.length;
     }
 
 
@@ -131,7 +129,9 @@ class Trail {
                                     lng: lng
                                 }
                         );
-                        self.distances.push(lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng));
+                        const dist = lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng);
+                        self.distances.push(dist);
+                        self.length += (Math.floor(dist) / 1000);
                         self.bounds.extend(L.latLng(lat, lng));
                         lastLat = lat;
                         lastLng = lng;

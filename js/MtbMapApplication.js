@@ -10,11 +10,14 @@ class MtbMapApplication {
         this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
-        this.mapBg = null;
         this.mapBgActive = false;
         this.toggleButton = null;
         this.ctxMenuVisible = false;
         this.lMap = null;
+        this.topologyLayer = null;
+        this.satelliteLayer = null;
+        this.satelliteActive = false;
+        this.satelliteButton = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -108,12 +111,25 @@ class MtbMapApplication {
         this.lMap = L.map('lmap', {
             zoomControl: false,
         });
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+
+        this.topologyLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                 {
                     maxNativeZoom: 16,
                     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
                 }
-        ).addTo(this.lMap);
+        );
+
+        this.satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        if(localStorage['mtbmaps.settings.showSatellite'] === "true") {
+            this.satelliteActive = true;
+            this.satelliteLayer.addTo(this.lMap);
+        } else {
+            this.topologyLayer.addTo(this.lMap);
+        }
+
         this.infoWindow = L.popup();
 
 
@@ -260,13 +276,18 @@ class MtbMapApplication {
             this.resetMainMap();
         });
         ctxBody.append(ctxReset);
-
+/*
         if(this.imageOverlay) {
             this.toggleButton = $('<div class="ctxEntry"></div>');
             this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
             this.toggleButton.on('click', this.toggleBackground.bind(this));
             ctxBody.append(this.toggleButton);
         }
+*/
+        this.satelliteButton = $('<div class="ctxEntry"></div>');
+        this.satelliteButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Satellittkart");
+        this.satelliteButton.on('click', this.toggleSatellite.bind(this));
+        ctxBody.append(this.satelliteButton);
 
         const ctxHelp = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-question-circle\"></i> <span style="vertical-align: center;">Informasjon</span></div>');
         ctxHelp.on('click', () => {
@@ -379,6 +400,21 @@ class MtbMapApplication {
         this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
         if(localStorage) {
             localStorage['mtbmaps.settings.showMapBg'] = this.mapBgActive;
+        }
+    }
+
+    toggleSatellite() {
+        if(this.satelliteActive) {
+            this.satelliteLayer.removeFrom(this.lMap);
+            this.topologyLayer.addTo(this.lMap);
+        } else {
+            this.topologyLayer.removeFrom(this.lMap);
+            this.satelliteLayer.addTo(this.lMap);
+        }
+        this.satelliteActive = !this.satelliteActive;
+        this.satelliteButton.html("<i class=\"ctxEntryIcon fa " + (this.satelliteActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Satellittkart");
+        if(localStorage) {
+            localStorage['mtbmaps.settings.showSatellite'] = this.mapBgActive;
         }
     }
 
