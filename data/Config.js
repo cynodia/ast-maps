@@ -610,7 +610,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Røff utforkjøring som bør prøvekjøres i roligere tempo første gangen. Går via sti og svaberg med mulighet for luft under hjula et par steder.",
                 images: {
                     trailStart: 'tungvekter/trails/9.jpg'
                 }
@@ -621,7 +621,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "Kort, men teknisk utfordrende sti som går langs grusvegen ned mot Songe og ender opp ved Sykkelparken. Starter med et relativt høyt drop(kan kjøre til høyre for dette), som følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen.",
                 images: {
                     trailStart: null
                 }
@@ -632,7 +632,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "",
-                infoText: "",
+                infoText: "En frisk sti som tar deg ned til starten av <i>Gubben og Gamla</i>. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
                 images: {
                     trailStart: 'tungvekter/trails/3.jpg'
                 }
