@@ -105,7 +105,7 @@ class MtbMapApplication {
         this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
         this.mainBounds = new google.maps.LatLngBounds();
 
-        this.mainMap = new google.maps.Map(document.getElementById('map'), {
+        this.mainMap = new google.maps.Map(document.getElementById('gmap'), {
             // zoom: this.config.main.mapZoom,
             // center: this.config.main.mapCenter,
             mapTypeId: 'hybrid',
