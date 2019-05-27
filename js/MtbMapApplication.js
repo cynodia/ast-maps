@@ -15,6 +15,7 @@ class MtbMapApplication {
         this.mapBgActive = false;
         this.toggleButton = null;
         this.ctxMenuVisible = false;
+        this.lMap = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -102,8 +103,24 @@ class MtbMapApplication {
     initMap() {
         console.log("Setting up maps...");
 
-        this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
+        //this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
+
         this.mainBounds = new google.maps.LatLngBounds();
+
+        this.lMap = L.map('lmap').setView([58.478971, 8.794247], 12);
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+                {
+                    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                }
+        ).addTo(this.lMap);
+        this.infoWindow = L.popup();
+
+        const imageBounds = [[this.config.background.pos.north , this.config.background.pos.east], [this.config.background.pos.south, this.config.background.pos.west]];
+        this.imageOverlay = L.imageOverlay(this.config.background.src, imageBounds);
+        this.imageOverlay.addTo(this.lMap);
+        if(localStorage['mtbmaps.settings.showMapBg'] !== "true") {
+            this.imageOverlay.setOpacity(0);
+        }
 
         this.mainMap = new google.maps.Map(document.getElementById('gmap'), {
             // zoom: this.config.main.mapZoom,
@@ -173,6 +190,8 @@ class MtbMapApplication {
             trailIdxToLoad = parseInt(window.location.hash.substr(1));
         }
 
+        const mapBounds = L.latLngBounds();
+
         /** Add trails */
         let trailsToLoad = this.config.trails.length;
         for (let i = 0; i < this.config.trails.length; i++) {
@@ -183,15 +202,21 @@ class MtbMapApplication {
             t.loadTrail((trail) => {
                 trail.renderTo(this.mainMap, this.onMapElemClicked.bind(this));
                 this.mainBounds.union(trail.getBounds());
+                trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
+                mapBounds.extend(L.latLng(trail.getBounds().getNorthEast().lat(), trail.getBounds().getNorthEast().lng()));
+                mapBounds.extend(L.latLng(trail.getBounds().getSouthWest().lat(), trail.getBounds().getSouthWest().lng()));
                 trailsToLoad--;
                 if(trailsToLoad === 0) {
                     console.log("DONE - fit map...");
+                    this.lMap.fitBounds(mapBounds);
                     this.mainMap.fitBounds(this.mainBounds, 0);
                 }
             });
             this.trails.push(t);
             console.log("Added trail " + t.getTitle());
         }
+
+
         this.createContextMenu();
         this.addHelpOverlays();
         this.hideInfo();
@@ -350,6 +375,7 @@ class MtbMapApplication {
 
     toggleBackground() {
         this.mapBg.setMap(this.mapBgActive ? null : this.mainMap);
+        this.mapBgActive ? this.imageOverlay.setOpacity(0) : this.imageOverlay.setOpacity(1);
         this.mapBgActive = !this.mapBgActive;
         this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
         if(localStorage) {

@@ -9,6 +9,7 @@ class Trail {
         this.startMarker = null;
         this.stopMarker = null;
         this.path = null;
+        this.lPath = null;
         this.clickCb = null;
         this.levelColors = levelColors;
         this.bounds = null;
@@ -182,7 +183,7 @@ class Trail {
         }
     }
 
-    patchClicked() {
+    pathClicked() {
         if(this.clickCb) {
             this.clickCb(this);
         }
@@ -195,20 +196,20 @@ class Trail {
      */
     renderTo(gMap, callback) {
         if(this.config.bidirectional === false) {
-            if (!this.startMarker) {
-                this.startMarker = new google.maps.Marker({
-                    position: this.coordinates[0],
-                    map: gMap,
-                    icon: {
-                        url: 'data/imgs/marker_start.png',
-                        scaledSize: new google.maps.Size(30, 30)
-                    },
-                    title: "START " + this.getTitle()
-                });
-                this.startMarker.addListener('click', this.patchClicked.bind(this));
-            } else {
-                this.startMarker.setMap(gMap);
-            }
+            // if (!this.startMarker) {
+            //     this.startMarker = new google.maps.Marker({
+            //         position: this.coordinates[0],
+            //         map: gMap,
+            //         icon: {
+            //             url: 'data/imgs/marker_start.png',
+            //             scaledSize: new google.maps.Size(30, 30)
+            //         },
+            //         title: "START " + this.getTitle()
+            //     });
+            //     this.startMarker.addListener('click', this.pathClicked.bind(this));
+            // } else {
+            //     this.startMarker.setMap(gMap);
+            // }
         }
 
         if(!this.path) {
@@ -221,13 +222,75 @@ class Trail {
                 strokeWeight: 6
             });
             if(this.config.title != null) {
-                this.path.addListener('click', this.patchClicked.bind(this));
+                this.path.addListener('click', this.pathClicked.bind(this));
+                // if (!mobilecheck()) {
+                //     this.path.addListener('mouseover', (e) => {
+                //         this.infoWindow.close();
+                //         this.infoTimeout = setTimeout(() => {
+                //             this.infoTimeout = null;
+                //             this.infoWindow.setPosition(e.latLng);
+                //             this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
+                //                     "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
+                //                     "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
+                //                     "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
+                //                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
+                //                     "<br>" + this.getInfoText() +
+                //                     "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
+                //             this.infoWindow.open(gMap);
+                //         }, 600);
+                //     });
+                //     this.path.addListener('mouseout', () => {
+                //         if(this.infoTimeout) {
+                //             clearTimeout(this.infoTimeout);
+                //             this.infoTimeout = null;
+                //         }
+                //         //this.infoWindow.close();
+                //     });
+                // }
+            }
+        } else {
+            this.path.setMap(gMap);
+        }
+
+        this.clickCb = callback;
+    }
+
+    /**
+     * Cal be re-used, will only generate objects the firt time
+     * @param gMap
+     * @param callback
+     */
+    renderToLMap(lMap, callback) {
+        if(this.config.bidirectional === false) {
+            if (!this.startMarker) {
+                this.startMarker = L.marker(this.coordinates[0], {
+                    icon: L.icon({
+                        iconUrl: 'data/imgs/marker_start.png',
+                        iconSize: [30, 30],
+                        iconAnchor: [11, 30]
+                    })
+                });
+                this.startMarker.on('click', this.pathClicked.bind(this));
+            }
+            this.startMarker.addTo(lMap)
+        }
+
+        if(!this.lPath) {
+            this.lPath = L.polyline(this.coordinates, {
+                color: this.getTrailColor(),
+                weight: 5
+            });
+            this.lPath.addTo(lMap);
+
+            if(this.config.title != null) {
+                this.lPath.on('click', this.pathClicked.bind(this));
+
                 if (!mobilecheck()) {
-                    this.path.addListener('mouseover', (e) => {
-                        this.infoWindow.close();
+                    this.lPath.on('mouseover', (e) => {
+                        this.infoWindow.remove();
                         this.infoTimeout = setTimeout(() => {
                             this.infoTimeout = null;
-                            this.infoWindow.setPosition(e.latLng);
+                            this.infoWindow.setLatLng(e.latlng);
                             this.infoWindow.setContent("<b>" + this.getTitle() + "</b>" +
                                     "<br>Lengde: <b>" + Math.floor(this.getLength() * 10000) / 10 + "m" + "</b>" +
                                     "<br>Høydeforskjell: <b>" + (Math.floor(this.getHeightDiff() * 10) / 10) + "m" + "</b>" +
@@ -235,11 +298,11 @@ class Trail {
                                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
                                     "<br>" + this.getInfoText() +
                                     "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span>");
-                            this.infoWindow.open(gMap);
+                            this.infoWindow.openOn(lMap);
                         }, 600);
                     });
-                    this.path.addListener('mouseout', () => {
-                        if(this.infoTimeout) {
+                    this.lPath.on('mouseout', () => {
+                        if (this.infoTimeout) {
                             clearTimeout(this.infoTimeout);
                             this.infoTimeout = null;
                         }
@@ -248,10 +311,11 @@ class Trail {
                 }
             }
         } else {
-            this.path.setMap(gMap);
+            this.lPath.addTo(lMap);
         }
 
         this.clickCb = callback;
     }
+
 
 }
