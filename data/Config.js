@@ -24,19 +24,6 @@ const mmConfigurations = {
         },
 
         /**
-         * Only define background if there is an available background
-         */
-        background: {
-            pos: {
-                north: 58.496152,
-                south: 58.474954,
-                east: 8.805641,
-                west:8.770476
-            },
-            src: 'data/pics/tungvekter/kart_bg.png'
-        },
-
-        /**
          * Markers you want on the map
          * title: Helptext displayed when hovering the marker
          * icon: The marker icon use
@@ -763,16 +750,6 @@ const mmConfigurations = {
                 2: '#00f',
                 3: '#f00'
             }
-        },
-
-        background: {
-            pos: {
-                north: 58.461066,
-                south: 58.449055,
-                east: 8.750050,
-                west:8.715468
-            },
-            src: 'data/pics/asbie/kart_bg.png'
         },
 
 

@@ -10,14 +10,14 @@ class MtbMapApplication {
         this.mainBounds = null;
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
-        this.mapBgActive = false;
-        this.toggleButton = null;
         this.ctxMenuVisible = false;
         this.lMap = null;
         this.topologyLayer = null;
         this.satelliteLayer = null;
         this.satelliteActive = false;
         this.satelliteButton = null;
+        this.heatmapLayer = null;
+        this.heatmapButton = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -134,11 +134,23 @@ class MtbMapApplication {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         });
 
+        this.heatmapLayer = L.tileLayer('https://heatmap-external-{s}.strava.com/tiles/ride/bluered/{zoom}/{x}/{y}.png?px=256', {
+            maxNativeZoom: 12,
+            zoom: 12,
+            attribution: 'Tiles &copy; Strava'
+        });
+
+
         if(localStorage['mtbmaps.settings.showSatellite'] === "true") {
             this.satelliteActive = true;
             this.satelliteLayer.addTo(this.lMap);
         } else {
             this.topologyLayer.addTo(this.lMap);
+        }
+
+        if(localStorage['mtbmaps.settings.showHeatmap'] === "true") {
+            this.heatmapActive = true;
+            this.heatmapLayer.addTo(this.lMap);
         }
 
         this.infoWindow = L.popup();
@@ -152,15 +164,6 @@ class MtbMapApplication {
                 this.closeContextMenu();
             }
         });
-
-        if(this.config.hasOwnProperty('background') &&
-                this.config.background.hasOwnProperty('pos')) {
-            const imageBounds = [[this.config.background.pos.north , this.config.background.pos.east], [this.config.background.pos.south, this.config.background.pos.west]];
-            this.imageOverlay = L.imageOverlay(this.config.background.src, imageBounds);
-            if(localStorage['mtbmaps.settings.showMapBg'] === "true") {
-                this.imageOverlay.addTo(this.lMap);
-            }
-        }
 
         this.trailMap = L.map('trailmap', {
             zoomControl: false,
@@ -294,18 +297,16 @@ class MtbMapApplication {
             this.resetMainMap();
         });
         ctxBody.append(ctxReset);
-/*
-        if(this.imageOverlay) {
-            this.toggleButton = $('<div class="ctxEntry"></div>');
-            this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
-            this.toggleButton.on('click', this.toggleBackground.bind(this));
-            ctxBody.append(this.toggleButton);
-        }
-*/
+
         this.satelliteButton = $('<div class="ctxEntry"></div>');
-        this.satelliteButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Satellittkart");
+        this.satelliteButton.html("<i class=\"ctxEntryIcon fa " + (this.satelliteActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Satellittkart");
         this.satelliteButton.on('click', this.toggleSatellite.bind(this));
         ctxBody.append(this.satelliteButton);
+
+        this.heatmapButton = $('<div class="ctxEntry"></div>');
+        this.heatmapButton.html("<i class=\"ctxEntryIcon fa " + (this.heatmapActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Strava heatmap");
+        this.heatmapButton.on('click', this.toggleHeatmap.bind(this));
+        ctxBody.append(this.heatmapButton);
 
         const ctxHelp = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-question-circle\"></i> <span style="vertical-align: center;">Informasjon</span></div>');
         ctxHelp.on('click', () => {
@@ -412,15 +413,6 @@ class MtbMapApplication {
         buttons.addTo(this.lMap);
     }
 
-    toggleBackground() {
-        this.mapBgActive ? this.imageOverlay.remove() : this.imageOverlay.addTo(this.lMap);
-        this.mapBgActive = !this.mapBgActive;
-        this.toggleButton.html("<i class=\"ctxEntryIcon fa " + (this.mapBgActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Vis topologikart");
-        if(localStorage) {
-            localStorage['mtbmaps.settings.showMapBg'] = this.mapBgActive;
-        }
-    }
-
     toggleSatellite() {
         if(this.satelliteActive) {
             this.satelliteLayer.removeFrom(this.lMap);
@@ -432,7 +424,21 @@ class MtbMapApplication {
         this.satelliteActive = !this.satelliteActive;
         this.satelliteButton.html("<i class=\"ctxEntryIcon fa " + (this.satelliteActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Satellittkart");
         if(localStorage) {
-            localStorage['mtbmaps.settings.showSatellite'] = this.mapBgActive;
+            localStorage['mtbmaps.settings.showSatellite'] = this.satelliteActive;
+        }
+    }
+
+    toggleHeatmap() {
+        if(this.heatmapActive) {
+            this.heatmapLayer.removeFrom(this.lMap);
+        } else {
+            this.heatmapLayer.addTo(this.lMap);
+            this.heatmapLayer.bringToFront();
+        }
+        this.heatmapActive = !this.heatmapActive;
+        this.heatmapButton.html("<i class=\"ctxEntryIcon fa " + (this.heatmapActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Strava heatmap");
+        if(localStorage) {
+            localStorage['mtbmaps.settings.showHeatmap'] = this.heatmapActive;
         }
     }
 

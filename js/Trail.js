@@ -212,6 +212,13 @@ class Trail {
                     })
                 });
                 this.startMarker.on('click', this.pathClicked.bind(this));
+                this.startMarker.bindTooltip("Start: " + this.getTitle(),
+                        {
+                            //permanent: true,
+                            direction: 'auto'
+                        }
+                );
+
             }
             this.startMarker.addTo(lMap)
         }
