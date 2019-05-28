@@ -340,7 +340,7 @@ class MtbMapApplication {
         this.uploadInput = $('<input type="file" id="fileElem" accept=".gpx" style="display:none"/>');
         ctxBody.append(this.uploadInput);
         this.uploadButton = $('<div class="ctxEntry"></div>');
-        this.uploadButton.html("<i class=\"ctxEntryIcon fa fa-upload\"></i> Upload GPX");
+        this.uploadButton.html("<i class=\"ctxEntryIcon fa fa-upload\"></i> Last opp GPX");
         this.uploadInput.on('change', (event) => {
             const files = event.target.files;
             const reader = new FileReader();

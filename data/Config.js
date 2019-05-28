@@ -898,7 +898,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Fra pumpehuset i bunnen av grusvegen inn fra Myrene følger du vegen oppover rundt høyresvingen og videre innover. Følg så den bratte stien til venstre opp mot Solbergvannet. Like etter broen i starten av vannet tar du mot venstre og følger opp mot et rødt hus. Stien starter inn mot skogen til høyre i enden av innkjørselen. Ha respekt for beboerene.",
-                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som Hogstfeltet Downhilen. Den siste biten er fartfylt med et lite hopp, og noen flotte broer. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
+                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som <i>Hogstfeltet Downhill 1</i>. Den siste biten er fartsfylt med et lite hopp og noen flotte broer. Ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'asbie/IMG_20190508_200112_7873.JPG'
                 }
