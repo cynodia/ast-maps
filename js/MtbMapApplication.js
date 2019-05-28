@@ -110,7 +110,9 @@ class MtbMapApplication {
 
         this.lMap = L.map('lmap', {
             zoomControl: false,
+            renderer: L.canvas({ padding: 0.5, tolerance: 12 })
         });
+
 /*
         this.topologyLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                 {
