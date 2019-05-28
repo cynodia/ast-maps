@@ -843,7 +843,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Denne stien starter med en nedoverbakke til venstre et lite stykke opp i <i>Opp Vedlaget</i> om en kjører mot Stoa. Det finnes også en alternativ sti opp fra Langekjerr, men denne ender i dumpa etter den første nedoverbakken.",
-                infoText: "En relativt kort sti som ineholder en del hopp og dropp. Avsluttes inn i Langekjerr med det flotte oppbygde hoppet der! Det skumleste hoppet kommer i bakken ned inn i Langekjerr, dette kan en fint kjøre til venstre for.",
+                infoText: "En relativt kort sti som ineholder en del hopp og dropp. Avsluttes inn i Langekjerr med det flotte oppbygde hoppet der! Det kanskje mest utfordrende hoppet kommer i bakken ned mot Langekjerr, dette kan en fint unngå ved å holde til venstre.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201118_7878.JPG'
                 }
