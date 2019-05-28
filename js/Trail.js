@@ -13,7 +13,7 @@ class Trail {
         this.lPath = null;
         this.clickCb = null;
         this.levelColors = levelColors;
-        this.bounds = null;
+        this.bounds = L.latLngBounds();
         this.infoWindow = infoWindow;
         this.infoTimeout = null;
     }
@@ -110,10 +110,13 @@ class Trail {
         return ((R * c) * 1000);
     }
 
-    parseGxp(xml) {
+    parseGpx(xml) {
         const self = this;
         let lowest = null;
         let highest = null;
+        if(typeof xml === 'string') {
+            xml = (new DOMParser()).parseFromString(xml,"text/xml");;
+        }
 
         $(xml).find('gpx').each(function(){
             $(this).find('trk').each(function(){
@@ -155,7 +158,6 @@ class Trail {
     }
 
     loadTrail(cb) {
-        this.bounds = L.latLngBounds();
 
         $.ajax({
             type: "GET",
@@ -163,7 +165,7 @@ class Trail {
             cache: false,
             dataType: "xml",
             success: function(xml) {
-                this.parseGxp(xml);
+                this.parseGpx(xml);
                 cb(this);
             }.bind(this),
             error: function() {
@@ -201,7 +203,7 @@ class Trail {
      * @param gMap
      * @param callback
      */
-    renderToLMap(lMap, callback) {
+    renderToLMap(lMap, callback, userUpload) {
         if(this.config.bidirectional === false) {
             if (!this.startMarker) {
                 this.startMarker = L.marker(this.coordinates[0], {
@@ -224,10 +226,13 @@ class Trail {
         }
 
         if(!this.lPath) {
-            this.lPath = L.polyline(this.coordinates, {
+            const options = {
                 color: this.getTrailColor(),
-                weight: 7
-            });
+                weight: userUpload ? 4 : 7
+            };
+            options['dashArray'] = userUpload ? "" : "16 10";
+
+            this.lPath = L.polyline(this.coordinates, options);
 
             if(this.config.title != null) {
                 this.lPath.on('click', this.pathClicked.bind(this));

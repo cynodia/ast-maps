@@ -18,6 +18,7 @@ class MtbMapApplication {
         this.satelliteButton = null;
         this.heatmapLayer = null;
         this.heatmapButton = null;
+        this.userAddedTrails = [];
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -271,6 +272,30 @@ class MtbMapApplication {
         this.ctxMenu.fadeOut();
     }
 
+    parseUserGPX(title, data) {
+        let t = new Trail({
+            url: 'data/trails/tungvekter/lysloypa.gpx',
+            title: title,
+            level: 1,
+            bidirectional: true,
+            findStartText: "",
+            infoText: "Opplastet av bruker",
+            images: {
+                trailStart: null
+            }
+
+        }, { 1: '#000000' }, 0, this.infoWindow);
+        t.parseGpx(data);
+        t.renderToLMap(this.lMap, this.onMapElemClicked.bind(this), true);
+        this.mainBounds.extend(t.getBounds().getNorthEast());
+        this.mainBounds.extend(t.getBounds().getSouthWest());
+        this.lMap.fitBounds(this.mainBounds);
+        this.userAddedTrails.push(t);
+
+        this.showInfo("Brukerdefinert sti lagt til. Denne forsvinner så snart du laster siden på nytt.", 5);
+
+    }
+
     createContextMenu() {
         this.ctxMenu = $('<div class="ctxMenu"/>');
         this.ctxMenu.append('<div class="ctxMenuHeader">mtbmaps.net</div>')
@@ -307,6 +332,23 @@ class MtbMapApplication {
         this.heatmapButton.html("<i class=\"ctxEntryIcon fa " + (this.heatmapActive ? "fa-toggle-on" : "fa-toggle-off") + "\"></i> Strava heatmap");
         this.heatmapButton.on('click', this.toggleHeatmap.bind(this));
         ctxBody.append(this.heatmapButton);
+
+
+        this.uploadInput = $('<input type="file" id="fileElem" accept=".gpx" style="display:none"/>');
+        ctxBody.append(this.uploadInput);
+        this.uploadButton = $('<div class="ctxEntry"></div>');
+        this.uploadButton.html("<i class=\"ctxEntryIcon fa fa-upload\"></i> Upload GPX");
+        this.uploadInput.on('change', (event) => {
+            const files = event.target.files;
+            const reader = new FileReader();
+            reader.onload = (evt) => this.parseUserGPX(files[0].name, evt.target.result);
+            reader.readAsText(files[0]);
+        });
+        this.uploadButton.on('click', () => {
+            this.uploadInput.click();
+            return false;
+        });
+        ctxBody.append(this.uploadButton);
 
         const ctxHelp = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-question-circle\"></i> <span style="vertical-align: center;">Informasjon</span></div>');
         ctxHelp.on('click', () => {
