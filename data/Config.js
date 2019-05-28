@@ -17,8 +17,8 @@ const mmConfigurations = {
                     "På denne siden Kan du finne detaljert informasjon om de fleste kjente stier i området, samt forslag til ruter du kan ta.<h2>Adkomst</h2>Om du ankommer med bil er parkeringsplassen på Dråbelia, markert med <img height=\"25\" width=\"25\" src=\"data/imgs/marker_parking.png\">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nås fra alle kanter." +
                     "<h2>Arendal Singletrack</h2>Arendal Singletrack(AST) er en stisykkelklubb med ca. 100 medlemmer. Mer info på <a href='https://www.arendalsingletrack.com/'>arendalsingletrack.com</a>",
             levelColors: {
-                1: '#ffdd33',
-                2: '#00f',
+                1: '#090',
+                2: '#66f',
                 3: '#f00'
             }
         },
@@ -102,7 +102,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "Stien er skiltet inn fra Sinsenkrysset",
-                infoText: "Glad i hopp og sprett? Da er dette runden for deg! En artig rundløype med en nedkjøringe som inneholder flere flotte hopp og doserte svinger.",
+                infoText: "Glad i hopp og sprett? Da er dette runden for deg! En artig rundløype med en nedkjøring som inneholder flere friske hopp og doserte svinger.",
                 images: {
                     trailStart: null
                 }
@@ -247,7 +247,7 @@ const mmConfigurations = {
                 findStartText: "Følg lysløypa ca 30 meter fra sørenden av Store Ribbervann med bebyggelsen på høyre hånd. Stien tar mot venstre rett opp i Ribberåsen.",
                 infoText: "",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/6.jpg'
                 }
             },
             {
@@ -310,8 +310,8 @@ const mmConfigurations = {
                 title: 'Opp til parkeringa',
                 level: 2,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter østover rett ut fra lysløypa ved nordenden av Heitjenn.",
+                infoText: "En heftig avslutning på sykkelturen! Denne klatreetappen opp mot parkeringsplassen byr på et par turer langs tømmerstokker og over diverse hindringer. Har du noen krefter igjen har du muligheten til å bruke dem opp her!",
                 images: {
                     trailStart: null
                 }
@@ -453,7 +453,7 @@ const mmConfigurations = {
                 title: 'Opp til vegen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
+                findStartText: "Stien starter rett ut mpt øst fra lysløypa ved sørenden av Heitjenn.",
                 infoText: "Her kan du klatre deg ut av lysløypa og opp til parkeringsplassen på Dråbelia. Tyn ut de siste kreftene i denne sluttspurten!",
                 images: {
                     trailStart: null
@@ -746,8 +746,8 @@ const mmConfigurations = {
                     "<h2>Adkomst</h2>Et godt utgangspunkt er parkeringsplassen på Industritoppen. Ta av fra E-18 ved skiltet avkjøring til FV-42, men kjør i motsatt retning (mot syd) rundt brannstasjon og nytt politihus og opp til toppen.<br>" +
                     "Det er også mulig å parkere på Bjønnes og sykle inn til Biejordene derfra.",
             levelColors: {
-                1: '#ffdd33',
-                2: '#00f',
+                1: '#090',
+                2: '#66f',
                 3: '#f00'
             }
         },
@@ -974,7 +974,7 @@ const mmConfigurations = {
                 title: 'Opp til hogstfeltet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Starter i enden av <i>Keysset til Hogstfeltet</i>.",
+                findStartText: "Starter i enden av <i>Krysset til Hogstfeltet</i>.",
                 infoText: "En liten sti som går opp mot startpunktet for to av downhillene fra Hogstfeltet. Teknisk krevende med et crux ganske tidlig.",
                 images: {
                     trailStart: null
@@ -1041,7 +1041,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Om du følger grusvegen opp fra Biefeltet mot stoa, så går denne inn til høyre ca 100 meter etter toppen med piknikbordet som vist på bildet.<br> Fra Stoa finner du stien ved å følge hovedrunden fra Parkeringsplassen østover ca 50 meter.",
-                infoText: "En trivelig sti som er et spennende alternativ til grusvegen ned fra parkeringen ved Stoa. Ca midt i stien er det et ommråde hvor et fly styrtet på 50-tallet. Det er et avstikk til langekjerr og et mot Krempartiet. En flott start om en kommer fra parkeringen på Stoa.",
+                infoText: "En trivelig sti som er et spennende alternativ til grusvegen ned fra parkeringen ved Stoa. Ca midt i stien er det et område hvor et fly styrtet på 50-tallet. Det er et avstikk til langekjerr og et mot Krempartiet. En flott start om en kommer fra parkeringen på Stoa.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_202727_7824.JPG',
                     trailStop: 'asbie/IMG_20190508_202215_7887.JPG'
