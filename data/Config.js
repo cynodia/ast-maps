@@ -931,7 +931,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: true,
                 findStartText: "Kjører du <i>Langekjerr</i> ned mot Biejordene så kommer inngangen til <i>Paralellen</i> på venstre hånd ca 100 meter etter hoppet med trepallene. Stien går bratt rett opp i skråninga.",
-                infoText: "En artig sti som er et alternetiv til den ofte sølefylte, starten på Langekjerr. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier. Kjører du mot Biejordene er det et lite dropp på toppen av første bakke med alternativ sti på venstresiden.",
+                infoText: "En artig sti som er et alternativ til, den ofte sølefylte, starten på <i>Langekjerr</i>. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier. Kjører du mot Biejordene er det et lite dropp på toppen av første bakke med alternativ sti på venstresiden.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201753_7882.JPG'
                 }

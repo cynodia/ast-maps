@@ -143,7 +143,7 @@ class MtbMapApplication {
             zoom: 12,
             attribution: 'Tiles &copy; Strava'
         });
-
+        L.control.scale({ imperial: false }).addTo(this.lMap);
 
         if(localStorage['mtbmaps.settings.showSatellite'] === "true") {
             this.satelliteActive = true;
