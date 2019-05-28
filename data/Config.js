@@ -832,7 +832,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Padda starter inn mot høyre fra grusvegen mot Doppedalen, like bortenfor den sørlige starten på Langekjerr.",
-                infoText: "Disse to stiene kan kombineres med <i>Jordvepsen</i> for en fartsfylt og røff opplevelse! <br> Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
+                infoText: "Disse to stiene kan kombineres med <i>Jordvepsen</i> for en fartsfylt og røff opplevelse! Her er det flere bratte seksjoner og et flytparti mot midten hvor en virkelig kan dra på. <br> Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201914_7883.JPG'
                 }
