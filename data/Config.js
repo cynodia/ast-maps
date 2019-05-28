@@ -476,7 +476,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Fra bålplassen er det flere veier å ta for å komme inn på denne stien. En kan dra over cruxet mot den himmelske freds plass - herfra skal en opp en utfordrene start mot høyre fra plassen. Alternativt kan en holdr til høyre for cruxet fra bålplassen og komme rett inn på stien.",
-                infoText: "Denne stien kan gjøres til en utfordring i starten ved å ta via den himmelske freds plass. På slutten ender stien i <i>The wall</i> som er et crux en trenger god far inn i for å forsere. Evt tar du til venstre rett før <i>The Wall</i> og kjører en liten omvei.",
+                infoText: "Denne stien kan gjøres til en utfordring i starten ved å ta via den himmelske freds plass. På slutten ender stien i <i>The wall</i> som er et crux en trenger god fart inn i for å forsere. Evt tar du til venstre rett før <i>The Wall</i> og kjører en liten omvei.",
                 images: {
                     trailStart: null
                 }
@@ -821,7 +821,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikbord. Kjør inn her så ser du stien til høyre for bordet.",
-                infoText: "Dette er en fantastisk nedkjøring med masse far og spenning! Det er en relativt røff sti som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Det kommer også et crux i det en skal ned på <i>Langekjerr</i> helt på slutten.",
+                infoText: "Dette er en fantastisk nedkjøring med masse fart og spenning! Det er en relativt røff sti som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Det kommer også et crux i det en skal ned på <i>Langekjerr</i> helt på slutten.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_202126_7885.JPG'
                 }
