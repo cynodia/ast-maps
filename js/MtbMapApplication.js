@@ -128,6 +128,7 @@ class MtbMapApplication {
 
 
         this.satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxNativeZoom: 16,
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         });
 
@@ -174,15 +175,22 @@ class MtbMapApplication {
         /** Add markers */
         for (let key in this.config.markers) {
             if (this.config.markers.hasOwnProperty(key)) {
-                L.marker(this.config.markers[key].position, {
+                const marker = L.marker(this.config.markers[key].position, {
                     icon: L.icon({
                         iconUrl: this.config.markers[key].icon,
                         iconSize: [30, 30],
                         iconAnchor: [15, 30]
                     })
-                }).addTo(this.lMap);
+                });
+                marker.addTo(this.lMap);
 
-                //title: this.config.markers[key].title,
+                marker.bindTooltip(this.config.markers[key].title,
+                        {
+                            //permanent: true,
+                            direction: 'auto'
+                        }
+                );
+
                 this.mainBounds.extend(this.config.markers[key].position.lat, this.config.markers[key].position.lng);
             }
         }
