@@ -909,7 +909,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "Omtrent midt i <i>Vedlaget opp</i> går det en sti inn i skauen mot høyre om du kjører mot Stoa.",
-                infoText: "En spennende liten sti som binder sammen stien fra vedlaget over til en av stiene opp mot hogstfeltet. Her kan en se rester etter gammel gruvedrift! Mot slutten kommer en bratt oppkjøring - her er det en fordel med litt fart inn!",
+                infoText: "En spennende liten sti som binder sammen stien fra vedlaget over til en av stiene opp mot hogstfeltet. Her kan en se rester etter gammel gruvedrift! Mot slutten kommer et bratt klatreparti - her er det en fordel med litt fart inn!",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201207_7879.JPG'
                 }

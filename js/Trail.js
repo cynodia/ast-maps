@@ -228,9 +228,9 @@ class Trail {
         if(!this.lPath) {
             const options = {
                 color: this.getTrailColor(),
-                weight: userUpload ? 4 : 7
+                weight: userUpload ? 4 : 5
             };
-            options['dashArray'] = userUpload ? "" : "16 10";
+            options['dashArray'] = userUpload ? "" : "14 8";
 
             this.lPath = L.polyline(this.coordinates, options);
 
