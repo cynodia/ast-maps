@@ -110,10 +110,10 @@ const mmConfigurations = {
             {
                 url: 'data/trails/tungvekter/kunto.gpx',
                 title: 'Kun To',
-                level: 1,
+                level: 2,
                 bidirectional: false,
                 findStartText: "Starter fra sinsenkrysset",
-                infoText: "Denne stien er desverre for tiden utilgjengelig grunnet arbeide med ny veg...",
+                infoText: "Kun to fikk navnet sitt basert på antallet stibyggere som dukket opp på dugnad da stien be påbegynt. Etter har stien blitt bygd om grunnet skogsarbeide og har blitt en flott sti med flere hopp, broer og doserte svinger.",
                 images: {
                     trailStart: null
                 }
@@ -134,8 +134,8 @@ const mmConfigurations = {
                 title: 'Vestbredden',
                 level: 3,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "En kan starte sørfra fra den lille gress/strand-området på vestsiden av vannet. Nordfra kan en kjøre på via <i>Sigaren</i> eller vi egen innkjøring fra lysløypa.",
+                infoText: "Vestbredden går langs store ribbervann på omtsatt side som <i>Østbredden</i>. Stien er teknisk krevende med flere bratte partier og crux. Kan kjøres begge veger og bør kombineres med <i>Sigaren</i>.",
                 images: {
                     trailStart: 'image2.jpeg'
                 }
@@ -156,8 +156,8 @@ const mmConfigurations = {
                 title: 'Tungvekteren',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter rett ut fra parkeringa på Dråbelia, opp ved infoskiltet.",
+                infoText: "En naturlig start på turen. Her er det rett på sak med et klatreparti opp mot første lille topp. Så bærer det utfor med mulighet for god fart!",
                 images: {
                     trailStart: 'tungvekter/trails/1.jpg'
                 }
@@ -189,8 +189,8 @@ const mmConfigurations = {
                 title: 'Sigaren',
                 level: 3,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Inngangen nordfra finner en fra lysløypa like vest for Store og Lille Ribbervann. Sørfra kjører en på fra <i>Vestbredden</i>",
+                infoText: "En fin liten sti som forbinder <i>Vestbredden</i> med nordenden av Store Ribbervann.",
                 images: {
                     trailStart: null
                 }
@@ -222,7 +222,7 @@ const mmConfigurations = {
                 title: 'Eventyrskogen runde',
                 level: 2,
                 bidirectional: true,
-                findStartText: ".....",
+                findStartText: "",
                 infoText: "En fin liten rundsti på myk et mykt furunålsteppe. Litt opp og ned, men ganske snilt.",
                 images: {
                     trailStart: 'tungvekter/trails/5.jpg'
@@ -234,7 +234,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
-                infoText: "",
+                infoText: "Fin tur langs østbredden av Lille Ribbervann. Litt røtter her og der og et kloppeparti i sørenden.",
                 images: {
                     trailStart: null
                 }
