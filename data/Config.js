@@ -1213,5 +1213,180 @@ const mmConfigurations = {
                 }
             }
         ]
+    },
+    'hisoy': {
+        title: 'Hisøy',
+        main: {
+            mainHeaderMobile: "Hisøy",
+            mainHeaderDesktop: "Hisøy",
+            infoText: "<h2>Hisøy</h2>Kart for Hisøy er <i>Work in Progress</i>" +
+                    "<h2>Adkomst</h2>TODO",
+            levelColors: {
+                1: '#090',
+                2: '#66f',
+                3: '#f00'
+            }
+        },
+
+        markers: {
+
+        },
+
+        trails: [
+            {
+                url: 'data/trails/hisoy/jokerbakken.gpx',
+                title: 'Grusveg - Jokerbakken',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/grusveg2.gpx',
+                title: 'Grusveg',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/svarteport.gpx',
+                title: 'Grusveg - Svarteport',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/marineveien.gpx',
+                title: 'Marineveien',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti1.gpx',
+                title: 'Sti 1',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti2.gpx',
+                title: 'Sti 2',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti3.gpx',
+                title: 'Sti 3',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti4.gpx',
+                title: 'Sti 4',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti5.gpx',
+                title: 'Sti 5',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti6.gpx',
+                title: 'Sti 6',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti7.gpx',
+                title: 'Sti 7',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti8.gpx',
+                title: 'Sti 8',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti9.gpx',
+                title: 'Sti 9',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti10.gpx',
+                title: 'Sti 10',
+                level: 3,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            }
+        ]
     }
 };
