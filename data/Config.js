@@ -713,6 +713,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/juvet.gpx',
+                title: 'Juvet',
+                level: 3,
+                bidirectional: false,
+                findStartText: "Stien starter fra kjerrevegen som går paralellt med <i>Tungvekteren</i>. Om du kjører Ned brua i enden av Tungvekteren så tar du tilv venstre tilbake kjerrevegen. Da ser du stien til venstre på toppen av bakken.",
+                infoText: "Spennende liten sti med et dropp midt i. Kan være litt vanskelig å få fart inn mot droppet, så pass på.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/topptiltopp.gpx',
                 title: null,
                 level: 0,
