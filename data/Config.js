@@ -1397,6 +1397,28 @@ const mmConfigurations = {
                 images: {
                     trailStart: null
                 }
+            },
+            {
+                url: 'data/trails/hisoy/sti11.gpx',
+                title: 'Sti 11',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/hisoy/sti12.gpx',
+                title: 'Sti 12',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
             }
         ]
     }
