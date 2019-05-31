@@ -1213,6 +1213,16 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/frosken.gpx',
+                title: 'Frosken',
+                bidirectional: false,
+                level: 2,
+                findStartText: "Følg grusvegen fra Biefeltet opp bakkene. På toppen av bakken, før krysset inn mot Doppedalen, går stien inn mot høyre.",
+                infoText: "Stien er stort sett en nedoverbakke som ender opp i en steinete passering gjennom en bekk.", images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/asbie/storeskogvei.gpx',
                 title: 'Store skogvei',
                 level: 2,
