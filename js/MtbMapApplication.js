@@ -263,7 +263,7 @@ class MtbMapApplication {
         let closestDist = this.trails[0].distanceTo(lat, lng);
         let closestTrail = this.trails[0];
         for(let i = 1; i < this.trails.length; i++) {
-            if(this.trails[i].level > 0) {
+            if(this.trails[i].getLevel() > 0) {
                 const dist = this.trails[i].distanceTo(lat, lng);
                 if (dist < closestDist) {
                     closestDist = dist;
