@@ -45,8 +45,9 @@ function initTrails() {
     if(urlParam && mmConfigurations.hasOwnProperty(urlParam)) {
         config = urlParam;
     }
+
     console.log("Using configuration: " + config);
-    window.application = new MtbMapApplication(mmConfigurations[config]);
+    window.application = new MtbMapApplication(config);
 
     console.log("Init maps...");
     /* Overrides /addons */

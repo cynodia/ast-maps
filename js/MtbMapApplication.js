@@ -1,13 +1,14 @@
 class MtbMapApplication {
 
     constructor(config) {
-        this.config = config;
+        this.config = mmConfigurations[config];
+        this.configName = config;
         this.trailMap = null;
         this.infoTimeout = null;
         this.trails = [];
         this.currDetailTrail = null;
         this.show3d = true; /* 3D by default */
-        this.mainBounds = null;
+        this.mainBounds = {};
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
         this.ctxMenuVisible = false;
@@ -179,28 +180,32 @@ class MtbMapApplication {
                 }
         ).addTo(this.trailMap);
 
-        this.mainBounds = L.latLngBounds();
-
         /** Add markers */
-        for (let key in this.config.markers) {
-            if (this.config.markers.hasOwnProperty(key)) {
-                const marker = L.marker(this.config.markers[key].position, {
-                    icon: L.icon({
-                        iconUrl: this.config.markers[key].icon,
-                        iconSize: [30, 30],
-                        iconAnchor: [15, 30]
-                    })
-                });
-                marker.addTo(this.lMap);
+        for(let config in mmConfigurations) {
+            if(mmConfigurations.hasOwnProperty(config)) {
+                const cfg = mmConfigurations[config];
+                this.mainBounds[config] = L.latLngBounds();
 
-                marker.bindTooltip(this.config.markers[key].title,
-                        {
-                            //permanent: true,
-                            direction: 'auto'
-                        }
-                );
+                for (let key in cfg.markers) {
+                    if (cfg.markers.hasOwnProperty(key)) {
+                        const marker = L.marker(cfg.markers[key].position, {
+                            icon: L.icon({
+                                iconUrl: cfg.markers[key].icon,
+                                iconSize: [30, 30],
+                                iconAnchor: [15, 30]
+                            })
+                        });
+                        marker.addTo(this.lMap);
 
-                this.mainBounds.extend(this.config.markers[key].position.lat, this.config.markers[key].position.lng);
+                        marker.bindTooltip(cfg.markers[key].title,
+                                {
+                                    //permanent: true,
+                                    direction: 'auto'
+                                }
+                        );
+                        this.mainBounds[config].extend(cfg.markers[key].position.lat, cfg.markers[key].position.lng);
+                    }
+                }
             }
         }
         let trailToLoad = null;
@@ -208,26 +213,36 @@ class MtbMapApplication {
         if(typeof window.location.hash === 'string' && window.location.hash.length > 1) {
             trailIdxToLoad = parseInt(window.location.hash.substr(1));
         }
+        let currIdx = 0;
 
         /** Add trails */
-        let trailsToLoad = this.config.trails.length;
-        for (let i = 0; i < this.config.trails.length; i++) {
-            let t = new Trail(this.config.trails[i], this.config.main.levelColors, i, this.infoWindow);
-            if(i === trailIdxToLoad) {
-                trailToLoad = t;
-            }
-            t.loadTrail((trail) => {
-                trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
-                this.mainBounds.extend(trail.getBounds().getNorthEast());
-                this.mainBounds.extend(trail.getBounds().getSouthWest());
-                trailsToLoad--;
-                if(trailsToLoad === 0) {
-                    console.log("DONE - fit map...");
-                    this.lMap.fitBounds(this.mainBounds);
+        for(let config in mmConfigurations) {
+            if (mmConfigurations.hasOwnProperty(config)) {
+                const trails = mmConfigurations[config].trails;
+                let trailsToLoad = this.config.trails.length;
+
+                for(let i = 0; i < trails.length; i++) {
+                    let t = new Trail(trails[i], this.config.main.levelColors, currIdx, this.infoWindow);
+                    if (currIdx === trailIdxToLoad) {
+                        trailToLoad = t;
+                    }
+                    t.loadTrail((trail) => {
+                        trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
+                        this.mainBounds[config].extend(trail.getBounds().getNorthEast());
+                        this.mainBounds[config].extend(trail.getBounds().getSouthWest());
+                        if(config === this.configName) {
+                            trailsToLoad--;
+                            if (trailsToLoad === 0) {
+                                console.log("DONE - fit map...");
+                                this.lMap.fitBounds(this.mainBounds[this.configName]);
+                            }
+                        }
+                    });
+                    this.trails.push(t);
+                    console.log("Added trail " + t.getTitle());
+                    currIdx++;
                 }
-            });
-            this.trails.push(t);
-            console.log("Added trail " + t.getTitle());
+            }
         }
 
 
@@ -260,7 +275,7 @@ class MtbMapApplication {
     }
 
     resetMainMap() {
-        this.lMap.fitBounds(this.mainBounds);
+        this.lMap.fitBounds(this.mainBounds[this.configName]);
     }
 
     openContextMenu() {
@@ -290,9 +305,9 @@ class MtbMapApplication {
         }, { 1: '#000000' }, 0, this.infoWindow);
         t.parseGpx(data);
         t.renderToLMap(this.lMap, this.onMapElemClicked.bind(this), true);
-        this.mainBounds.extend(t.getBounds().getNorthEast());
-        this.mainBounds.extend(t.getBounds().getSouthWest());
-        this.lMap.fitBounds(this.mainBounds);
+        this.mainBounds[this.configName].extend(t.getBounds().getNorthEast());
+        this.mainBounds[this.configName].extend(t.getBounds().getSouthWest());
+        this.lMap.fitBounds(this.mainBounds[this.configName]);
         this.userAddedTrails.push(t);
 
         this.showInfo("Brukerdefinert sti lagt til. Denne forsvinner så snart du laster siden på nytt.", 5);
@@ -309,7 +324,8 @@ class MtbMapApplication {
         this.ctxMenu.append(ctxBackBtn);
         const ctxBody = $('<div class="ctxBody"/>');
 
-        ctxBody.append($('<div class="ctxSubHeader">' + this.config.title + '</div>'));
+        this.ctxHeader = $('<div class="ctxSubHeader">' + this.config.title + '</div>');
+        ctxBody.append(this.ctxHeader);
         const ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">Om området</span></div>');
         ctxInfo.on('click', () => {
             this.closeContextMenu();
@@ -367,7 +383,12 @@ class MtbMapApplication {
             if (mmConfigurations.hasOwnProperty(key)) {
                 const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-map\"></i> <span style="vertical-align: center;">' + mmConfigurations[key].title + '</span></div>');
                 entry.on('click', () => {
-                    window.location = "https://www.mtbmaps.net?c=" + key;
+                    this.config = mmConfigurations[key];
+                    this.configName = key;
+                    this.ctxHeader.html(this.config.title);
+                    this.resetMainMap();
+                    this.updateStaticText();
+                    //window.location = "https://www.mtbmaps.net?c=" + key;
                 });
                 ctxBody.append(entry);
                 first = false;
