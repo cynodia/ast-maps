@@ -1071,11 +1071,22 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/asbie/fly_stikk.gpx',
-                title: 'Fly til krempart',
+                title: 'Fly til kremparti',
                 level: 3,
                 bidirectional: false,
                 findStartText: "Om du kjører <i>Flykræsjet</i> mot Stoa, så går denne stien rett frem og opp i lia i det <i>Flykræsjet</i> tar en venstresving etter ca 100 meter.",
                 infoText: "Et avstikk fra Flykræsjet som starter med er bratt oppoverparti og byr på et par små dropp før det ender opp i slutten av Krempartiet.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/asbie/fly_stikk2.gpx',
+                title: 'Fly til kremparti 2',
+                level: 2,
+                bidirectional: true,
+                findStartText: "Fra <i>Krempartiet</i> kan du ta mot høyre 20 meter før den bratte bakken som avslutter stien ned mot <i>Langekjerr</i>.",
+                infoText: "Denne stien binder sammen <i>Kermpartiet</i> og <i>Flykræsjet</i> og kan kjøres begge veger.",
                 images: {
                     trailStart: null
                 }
