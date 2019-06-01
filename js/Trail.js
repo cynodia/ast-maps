@@ -191,11 +191,11 @@ class Trail {
         }
     }
 
-    removeFromLMap(lMap) {
+    removeFrom(layer, markerLayer) {
         if(this.startMarker) {
-            this.startMarker.removeFrom(lMap);
+            this.startMarker.removeFrom(markerLayer ? markerLayer : layer);
         }
-        this.lPath.removeFrom(lMap);
+        this.lPath.removeFrom(layer);
     }
 
     /**

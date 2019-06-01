@@ -81,7 +81,7 @@ class MtbMapApplication {
     }
 
     closeTrailInfo() {
-        this.currDetailTrail.removeFromLMap(this.trailMap);
+        this.currDetailTrail.removeFrom(this.trailMap);
         this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
@@ -278,7 +278,7 @@ class MtbMapApplication {
                     });
                     this.trails.push(t);
                     //console.log("Added trail " + t.getTitle());
-                    if(trails[i].images.trailStart === null) {
+                    if(trails[i].images.title !== null && trails[i].images.trailStart === null) {
                         console.log(cfg.title + " Image missing for " + trails[i].title);
                     }
                     currIdx++;
@@ -675,7 +675,7 @@ class MtbMapApplication {
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, () => {
-            trail.removeFromLMap(this.lMap);
+            trail.removeFrom(this.trackLayer, this.markerLayer);
             trail.renderTo(this.trailMap);
             this.trailMap.fitBounds(trail.getBounds());
             /* graph container must be visible */

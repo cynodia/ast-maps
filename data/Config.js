@@ -730,17 +730,6 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/topptiltopp.gpx',
-                title: null,
-                level: 0,
-                bidirectional: true,
-                findStartText: null,
-                infoText: null,
-                images: {
-                    trailStart: null
-                }
-            },
-            {
                 url: 'data/trails/tungvekter/frajovannsveien.gpx',
                 title: 'Mauråsveien',
                 level: 2,
