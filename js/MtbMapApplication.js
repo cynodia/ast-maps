@@ -174,13 +174,15 @@ class MtbMapApplication {
             }
         });
 
-        this.lMap.on('click', () => {
+        this.lMap.on('click', (ev) => {
             if(!mobilecheck()) {
                 this.infoWindow.remove();
             }
             if(this.ctxMenuVisible) {
                 this.closeContextMenu();
             }
+            const latlng = this.lMap.mouseEventToLatLng(ev.originalEvent);
+            console.log(latlng.lat + ', ' + latlng.lng);
         });
 
         this.trailMap = L.map('trailmap', {

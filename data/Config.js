@@ -55,6 +55,11 @@ const mmConfigurations = {
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.485446, lng: 8.788034}
             },
+            "varden": {
+                title: 'Varden',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.481962, lng: 8.783006}
+            },
             "sinsenkrysset": {
                 title: 'Sinsenkrysset',
                 icon: 'data/imgs/marker_star.png',
@@ -152,25 +157,14 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/tungvekter.gpx',
-                title: 'Tungvekteren',
-                level: 2,
-                bidirectional: false,
-                findStartText: "Stien starter rett ut fra parkeringa på Dråbelia, opp ved infoskiltet.",
-                infoText: "En naturlig start på turen. Her er det rett på sak med et klatreparti opp mot første lille topp. Så bærer det utfor med mulighet for god fart!",
-                images: {
-                    trailStart: 'tungvekter/trails/1.jpg'
-                }
-            },
-            {
                 url: 'data/trails/tungvekter/xkjerringene.gpx',
                 title: 'X-Kjærringene',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter rett ut fra parkeringa på Dråbelia, opp ved infoskiltet.",
+                infoText: "En naturlig start på turen. Her er det rett på sak med et klatreparti opp mot første lille topp. Så bærer det utfor med mulighet for god fart! Stien går i parallell med den originale <i>Kjerringene</i> jerrevegen, og flere steder går den også via kjerrevegen.",
                 images: {
-                    trailStart: 'tungvekter/trails/2.jpg'
+                    trailStart: 'tungvekter/trails/1.jpg'
                 }
             },
             {
@@ -214,7 +208,7 @@ const mmConfigurations = {
                 findStartText: "Du finner et piknikbord langs lysløypa. Her går det en sti paralellt med lysløypa inn like ved bordet.",
                 infoText: "Dette er en relativt enkel sti som starter ut med en nedoverbakke som ender i en krapp høyresving. Så skal en over en liten bro før stien fortsetter i en vakker furuskog.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/10.jpg'
                 }
             },
             {
@@ -386,9 +380,20 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/langemyrskauen.gpx',
                 title: 'Langemyr-skauen',
                 bidirectional: true,
-                level: 1,
+                level: 2,
                 findStartText: "",
                 infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti8.gpx',
+                title: 'Langemyrskauen runde',
+                bidirectional: false,
+                level: 2,
+                findStartText: "Ca midt i <i>Langemyrskauen</i> deler stien seg i to. Følg mot venstre for denne lille akstra runden.",
+                infoText: "Artig liten sti som starter med litt klarting for så å gå nedover mot nedkjøringa til <i>Hundremeterskogen</i>.",
                 images: {
                     trailStart: null
                 }
@@ -648,7 +653,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/sti6.gpx',
-                title: 'Inn i furuskogen',
+                title: '100-meterskogen',
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
