@@ -203,7 +203,7 @@ class Trail {
      * @param gMap
      * @param callback
      */
-    renderToLMap(lMap, callback, userUpload) {
+    renderToLMap(lMap, markerLayer, callback, userUpload) {
         if(this.config.bidirectional === false) {
             if (!this.startMarker) {
                 this.startMarker = L.marker(this.coordinates[0], {
@@ -222,7 +222,7 @@ class Trail {
                 );
 
             }
-            this.startMarker.addTo(lMap)
+            this.startMarker.addTo(markerLayer ? markerLayer : lMap)
         }
 
         if(!this.lPath) {

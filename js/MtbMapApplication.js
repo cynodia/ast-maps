@@ -13,6 +13,7 @@ class MtbMapApplication {
         this.closestTrail = null;
         this.ctxMenuVisible = false;
         this.lMap = null;
+        this.markerLayer = null;
         this.topologyLayer = null;
         this.satelliteLayer = null;
         this.satelliteActive = false;
@@ -79,7 +80,7 @@ class MtbMapApplication {
 
     closeTrailInfo() {
         this.currDetailTrail.removeFromLMap(this.trailMap);
-        this.currDetailTrail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
+        this.currDetailTrail.renderToLMap(this.lMap, this.markerLayer, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
         window.location.hash = "";
@@ -144,6 +145,9 @@ class MtbMapApplication {
             zoom: 12,
             attribution: 'Tiles &copy; Strava'
         });
+
+        this.markerLayer = new L.FeatureGroup();
+
         L.control.scale({ imperial: false }).addTo(this.lMap);
 
         if(localStorage['mtbmaps.settings.showSatellite'] === "true") {
@@ -160,6 +164,15 @@ class MtbMapApplication {
 
         this.infoWindow = L.popup();
 
+
+        this.lMap.on('zoomend', () => {
+            console.log("ZOOM: " + this.lMap.getZoom());
+            if(this.lMap.getZoom() > 13) {
+                this.lMap.addLayer(this.markerLayer);
+            } else {
+                this.lMap.removeLayer(this.markerLayer);
+            }
+        });
 
         this.lMap.on('click', () => {
             if(!mobilecheck()) {
@@ -195,7 +208,7 @@ class MtbMapApplication {
                                 iconAnchor: [15, 30]
                             })
                         });
-                        marker.addTo(this.lMap);
+                        marker.addTo(this.markerLayer);
 
                         marker.bindTooltip(cfg.markers[key].title,
                                 {
@@ -227,7 +240,7 @@ class MtbMapApplication {
                         trailToLoad = t;
                     }
                     t.loadTrail((trail) => {
-                        trail.renderToLMap(this.lMap, this.onMapElemClicked.bind(this));
+                        trail.renderToLMap(this.lMap, this.markerLayer, this.onMapElemClicked.bind(this));
                         this.mainBounds[config].extend(trail.getBounds().getNorthEast());
                         this.mainBounds[config].extend(trail.getBounds().getSouthWest());
                         if(config === this.configName) {
@@ -304,7 +317,7 @@ class MtbMapApplication {
 
         }, { 1: '#000000' }, 0, this.infoWindow);
         t.parseGpx(data);
-        t.renderToLMap(this.lMap, this.onMapElemClicked.bind(this), true);
+        t.renderToLMap(this.lMap, null, this.onMapElemClicked.bind(this), true);
         this.mainBounds[this.configName].extend(t.getBounds().getNorthEast());
         this.mainBounds[this.configName].extend(t.getBounds().getSouthWest());
         this.lMap.fitBounds(this.mainBounds[this.configName]);
