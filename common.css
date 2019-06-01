@@ -153,6 +153,12 @@ body {
     cursor: pointer;
 }
 
+.title-label {
+    position: absolute;
+    width:auto;
+    font-size:14px;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }

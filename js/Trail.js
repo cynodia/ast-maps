@@ -203,7 +203,7 @@ class Trail {
      * @param gMap
      * @param callback
      */
-    renderToLMap(lMap, markerLayer, callback, userUpload) {
+    renderTo(trackLayer, markerLayer, callback, userUpload) {
         if(this.config.bidirectional === false) {
             if (!this.startMarker) {
                 this.startMarker = L.marker(this.coordinates[0], {
@@ -222,7 +222,7 @@ class Trail {
                 );
 
             }
-            this.startMarker.addTo(markerLayer ? markerLayer : lMap)
+            this.startMarker.addTo(markerLayer ? markerLayer : trackLayer)
         }
 
         if(!this.lPath) {
@@ -250,7 +250,7 @@ class Trail {
                                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
                                     "<br>" + this.getInfoText() +
                                     "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span><br>");
-                            this.infoWindow.openOn(lMap);
+                            this.infoWindow.openOn(trackLayer);
                         }, 600);
                     });
                     this.lPath.on('mouseout', () => {
@@ -264,7 +264,7 @@ class Trail {
             }
         }
 
-        this.lPath.addTo(lMap);
+        this.lPath.addTo(trackLayer);
         this.clickCb = callback;
     }
 
