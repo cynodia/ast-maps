@@ -121,7 +121,7 @@ const mmConfigurations = {
                 findStartText: "Starter fra sinsenkrysset",
                 infoText: "Kun to fikk navnet sitt basert på antallet stibyggere som dukket opp på dugnad da stien be påbegynt. Etter har stien blitt bygd om grunnet skogsarbeide og har blitt en flott sti med flere hopp, broer og doserte svinger.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/11.jpg'
                 }
             },
             {
@@ -132,7 +132,7 @@ const mmConfigurations = {
                 findStartText: "Inngangen til denne stien er litt skjult. Se etter en liten haug med singel langs lysløypa.",
                 infoText: "En teknisk utfordrende sti med litt av alt. Første halvdel er en krevende oppforkjøring med hårnålssvinger, steiner og røtter. Fra toppen er det en nedforkjøring med bratte partier og et par hopp mot slutten. Det største hoppet her et lite gap, om du ønsker å kjøre forbi er det bare å følge stien rett frem(oppet ligger på venstre hånd).",
                 images: {
-                    trailStart: 'image4.jpeg'
+                    trailStart: 'tungvekter/trails/12.jpg'
                 }
             },
             {
@@ -239,10 +239,10 @@ const mmConfigurations = {
                 title: 'Ribberveggen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Følg lysløypa ca 30 meter fra sørenden av Store Ribbervann med bebyggelsen på høyre hånd. Stien tar mot venstre rett opp i Ribberåsen.",
-                infoText: "",
+                findStartText: "Følg <i>Rallarvegen</i> til vegen deler deg ved et steingjerde. Her holder du mot venstre.",
+                infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!",
                 images: {
-                    trailStart: 'tungvekter/trails/6.jpg'
+                    trailStart: 'tungvekter/trails/12.jpg'
                 }
             },
             {
@@ -330,7 +330,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "",
                 images: {
-                    trailStart: 'tungvekter/trails/6.jpg'
+                    trailStart: 'tungvekter/trails/12.jpg'
                 }
             },
             {
@@ -396,7 +396,7 @@ const mmConfigurations = {
                 findStartText: "Ca midt i <i>Langemyrskauen</i> deler stien seg i to. Følg mot venstre for denne lille akstra runden.",
                 infoText: "Artig liten sti som starter med litt klarting for så å gå nedover mot nedkjøringa til <i>Hundremeterskogen</i>.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/12.jpg'
                 }
             },
             {
@@ -404,8 +404,8 @@ const mmConfigurations = {
                 title: 'Haldors gullrekke',
                 level: 2,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter med et flott klatreparti med fine hårnålssvinger. Når en kommer et stykke opp hvner en i furuskog mens stien fortsetter å stige over steiner og røtter. Du kan kommer helt opp til <i>Kremtoppen</i> via denne.",
+                infoText: "Denne stien starter i østlig retning fra <i>100-meterskogen</i>.",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
                 }
@@ -415,10 +415,10 @@ const mmConfigurations = {
                 title: 'Korketrekkeren',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg <i>Haldors Gullrekke</i> til topps. Like før du kommer over til <i>Downhillen</i> deler stien seg og du skal holde mot venstre.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/8.jpg'
                 }
             },
             {
@@ -682,7 +682,7 @@ const mmConfigurations = {
                 findStartText: "",
                 infoText: "",
                 images: {
-                    trailStart: 'tungvekter/trails/7.jpg'
+                    trailStart: 'tungvekter/trails/12.jpg'
                 }
             },
             {

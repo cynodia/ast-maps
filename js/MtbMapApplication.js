@@ -246,7 +246,7 @@ class MtbMapApplication {
                         iconSize: [30, 30],
                         iconAnchor: [15, 30]
                     })
-                }); //opacity may be set to zero
+                });
                 titleMarker.bindTooltip(cfg.title + '<br>' + trails.length + ' stier', {
                     permanent: true,
                     className: "title-label",
