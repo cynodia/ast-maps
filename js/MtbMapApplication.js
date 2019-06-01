@@ -277,7 +277,10 @@ class MtbMapApplication {
                         }
                     });
                     this.trails.push(t);
-                    console.log("Added trail " + t.getTitle());
+                    //console.log("Added trail " + t.getTitle());
+                    if(trails[i].images.trailStart === null) {
+                        console.log(cfg.title + " Image missing for " + trails[i].title);
+                    }
                     currIdx++;
                 }
             }
