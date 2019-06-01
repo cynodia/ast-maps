@@ -404,8 +404,8 @@ const mmConfigurations = {
                 title: 'Haldors gullrekke',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Stien starter med et flott klatreparti med fine hårnålssvinger. Når en kommer et stykke opp hvner en i furuskog mens stien fortsetter å stige over steiner og røtter. Du kan kommer helt opp til <i>Kremtoppen</i> via denne.",
-                infoText: "Denne stien starter i østlig retning fra <i>100-meterskogen</i>.",
+                findStartText: "Denne stien starter i østlig retning fra <i>100-meterskogen</i>.",
+                infoText: "Stien starter med et flott klatreparti med fine hårnålssvinger. Når en kommer et stykke opp hvner en i furuskog mens stien fortsetter å stige over steiner og røtter. Du kan kommer helt opp til <i>Kremtoppen</i> via denne.",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
                 }
