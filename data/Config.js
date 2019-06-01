@@ -143,7 +143,7 @@ const mmConfigurations = {
                 findStartText: "En kan starte sørfra fra den lille gress/strand-området på vestsiden av vannet. Nordfra kan en kjøre på via <i>Sigaren</i> eller vi egen innkjøring fra lysløypa.",
                 infoText: "Vestbredden går langs store ribbervann på omtsatt side som <i>Østbredden</i>. Stien er teknisk krevende med flere bratte partier og crux. Kan kjøres begge veger og bør kombineres med <i>Sigaren</i>.",
                 images: {
-                    trailStart: 'image2.jpeg'
+                    trailStart: null
                 }
             },
             {
@@ -261,10 +261,10 @@ const mmConfigurations = {
                 title: 'S-Works',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter like ved slutten av <i>X-Kjærringene</i> og er en naturlig vei videre på turen.",
+                infoText: "En kort sti som består av klarting gjennom en del hårnålssvinger. Teknisk utfordrende!",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/18.jpg'
                 }
             },
             {
@@ -283,8 +283,8 @@ const mmConfigurations = {
                 title: 'Muldvarpen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter ved en bro de <i>Froskedammen</i> og <i>Kila</i> slutter.",
+                infoText: "Flott sti som starter med et lite klartreparti for så å gå over i en seksjon med diverse små utfordringer av stein og tre før den ender i en nedkjøring med hopp og doserte svinger!",
                 images: {
                     trailStart: null
                 }
@@ -649,7 +649,7 @@ const mmConfigurations = {
                 findStartText: "Fra toppen av S-works, snu sørover.",
                 infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder S-works med Muldvarpen som et alternativ til Froskedammen.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/18.jpg'
                 }
             },
             {
