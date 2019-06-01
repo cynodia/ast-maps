@@ -154,7 +154,7 @@ const mmConfigurations = {
                 findStartText: "I nordenden finner du stien ut fra lysløypa der hvor løypa passerer mellom store og lille Ribbervann. I sørenden starter løypa i bunnen av den bratte bakken som starter i sørenden av Store Ribbervann i Lysløypa.",
                 infoText: "Har du kun sett ett bilde fra Tungvekteren så er sjansen stor for at det er fra <i>Østbredden</i>! Dette er en perle av en sti som går langsmed Store Ribbervann tilrettelagt med vakre og spennende broer og med et par små og store hindringer som kan gi de fleste en liten utfordring. Et absolutt MUST for førstegangsreisende!",
                 images: {
-                    trailStart: 'image3.jpeg'
+                    trailStart: 'tungvekter/trails/17.jpg'
                 }
             },
             {
@@ -473,7 +473,7 @@ const mmConfigurations = {
                 findStartText: "Downhillen starter fra Kremtoppen. Hit er det flere veier en kan ta. En er via Haldors gullrekke en annen er å følge stien opp paralelt med Kamelen fra Flatan.",
                 infoText: "Som navnet sier er dette en bratt utforkjøring. Ganske tidlig i stien kommer en til en smal bro som ligger rett bak en bakketopp. Følg godt med her.<br>Som alltid er det en fordel å ta det litt rolig første gangen en kjører ned en ny sti, selv om den er tilpasset høyt tempo!",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/16.jpg'
                 }
             },
             {
@@ -723,10 +723,10 @@ const mmConfigurations = {
                 title: 'Juvet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Stien starter fra kjerrevegen som går paralellt med <i>Tungvekteren</i>. Om du kjører Ned brua i enden av Tungvekteren så tar du tilv venstre tilbake kjerrevegen. Da ser du stien til venstre på toppen av bakken.",
+                findStartText: "Stien starter fra første toppen i <i>X-kjærringene</i>. Ta til venstre ned mot kjerrevegen(Kjerringene) og fortsett over denne.",
                 infoText: "Spennende liten sti med et dropp midt i. Kan være litt vanskelig å få fart inn mot droppet, så pass på.",
                 images: {
-                    trailStart: null
+                    trailStart: 'tungvekter/trails/8.jpg'
                 }
             },
             {
