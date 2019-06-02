@@ -74,6 +74,9 @@ class Trail {
         if(this.config.level === 0) {
             return 'gray';
         }
+        if(window.printRender) {
+            return 'black';
+        }
         if(this.levelColors.hasOwnProperty(this.config.level)) {
             return this.levelColors[this.config.level];
         }
@@ -204,7 +207,7 @@ class Trail {
      * @param callback
      */
     renderTo(trackLayer, markerLayer, callback, userUpload) {
-        if(this.config.bidirectional === false) {
+        if(!window.printRender && this.config.bidirectional === false) {
             if (!this.startMarker) {
                 this.startMarker = L.marker(this.coordinates[0], {
                     icon: L.icon({
@@ -228,9 +231,11 @@ class Trail {
         if(!this.lPath) {
             const options = {
                 color: this.getTrailColor(),
-                weight: userUpload ? 4 : 5
+                weight: userUpload ? 4 : (window.printRender ? 7 : 5)
             };
-            options['dashArray'] = userUpload ? "" : "14 8";
+            if(!window.printRender) {
+                options['dashArray'] = userUpload ? "" : "14 8";
+            }
 
             this.lPath = L.polyline(this.coordinates, options);
 

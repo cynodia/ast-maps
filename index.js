@@ -46,6 +46,13 @@ function initTrails() {
         config = urlParam;
     }
 
+    urlParam = getUrlParameter("printRender");
+    if(urlParam && urlParam === "true") {
+        window.printRender = true;
+    } else {
+        window.printRender = false;
+    }
+
     console.log("Using configuration: " + config);
     window.application = new MtbMapApplication(config);
 
