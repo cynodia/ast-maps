@@ -5,7 +5,7 @@ class GeoLocator {
         this.app = app;
         this.lastData = null;
         this.mainLocationMarker = null;
-        this.trailLocationMarker = null;
+        //this.trailLocationMarker = null;
     }
 
     mapUserLocation() {
