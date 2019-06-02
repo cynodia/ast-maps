@@ -602,7 +602,7 @@ const mmConfigurations = {
                 title: 'Gubben og gamla',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg Muldvarpen til høyeste punkt. Her deler stien seg og du skal holde mot høyre.",
                 infoText: "Stien starter i toppen av <i>Muldvarpen</i> hvor det går en nedkjøring ned til et parti som går paralellt med <i>Froskedammen</i> før den fotsetter mot Songe paralellt med grusvegen et stykke. Så krysser du en kjerreveg før du kommer inn på det siste partiet. Dette er en teknisk utfordrende bit som starter med et relativt høyt drop(kan kjøre til høyre for dette) og følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen og du er like ved Sykkelparken.",
                 images: {
                     trailStart: null
@@ -613,7 +613,7 @@ const mmConfigurations = {
                 title: 'Einball',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Stien starter til høyre ut fra <i>X-kjærringene</i> ca midtveis.",
                 infoText: "En frisk sti som tar deg ned til starten av <i>Gubben og Gamla</i>. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
                 images: {
                     trailStart: 'tungvekter/trails/3.jpg'
