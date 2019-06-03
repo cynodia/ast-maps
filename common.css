@@ -26,6 +26,20 @@ body {
     flex: 1;
 }
 
+#exportpopup {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    background: rgba(255,255,255,.75);
+    padding: 8px;
+    font-size: 24px;
+    border-radius: 6px;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    display: none;
+}
+
 #infopopup {
     position: absolute;
     z-index: 20;

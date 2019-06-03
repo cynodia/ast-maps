@@ -167,19 +167,24 @@ class MtbMapApplication {
 
         this.infoWindow = L.popup();
 
-
-        this.lMap.on('zoomend', () => {
-            console.log("ZOOM: " + this.lMap.getZoom());
-            if(this.lMap.getZoom() > 13) {
-                this.lMap.addLayer(this.markerLayer);
-                this.lMap.addLayer(this.trackLayer);
-                this.lMap.removeLayer(this.titleLayer);
-            } else {
-                this.lMap.removeLayer(this.markerLayer);
-                this.lMap.removeLayer(this.trackLayer);
-                this.lMap.addLayer(this.titleLayer);
-            }
-        });
+        if(!window.printRender) {
+            this.lMap.on('zoomend', () => {
+                console.log("ZOOM: " + this.lMap.getZoom());
+                if (this.lMap.getZoom() > 13) {
+                    this.lMap.addLayer(this.markerLayer);
+                    this.lMap.addLayer(this.trackLayer);
+                    this.lMap.removeLayer(this.titleLayer);
+                } else {
+                    this.lMap.removeLayer(this.markerLayer);
+                    this.lMap.removeLayer(this.trackLayer);
+                    this.lMap.addLayer(this.titleLayer);
+                }
+            });
+        } else {
+            this.lMap.addLayer(this.markerLayer);
+            this.lMap.addLayer(this.trackLayer);
+            this.lMap.removeLayer(this.titleLayer);
+        }
 
         this.lMap.on('click', (ev) => {
             if(!mobilecheck()) {
@@ -416,6 +421,29 @@ class MtbMapApplication {
             return false;
         });
         ctxBody.append(this.uploadButton);
+
+        if(!mobilecheck()) {
+            this.downloadButton = $('<div class="ctxEntry"></div>');
+            this.downloadButton.html('<i class="ctxEntryIcon fa fa-download"></i> Eksporter bilde');
+            this.downloadButton.append(this.downloadLink);
+            this.downloadButton.on('click', () => {
+                console.log("IMAGE");
+                const self = this;
+                $('#exportpopup').html("Genererer bilde...");
+                $('#exportpopup').fadeIn(500);
+                leafletImage(this.lMap, function (err, canvas) {
+                    canvas.toBlob(function (blob) {
+                        $('#exportpopup').html("Eksport klar<br><a href=" + URL.createObjectURL(blob) + " download=\"kart.png\">Klikk her for å laste ned</a>");
+                        $('#exportpopup a').on('click', (ev) => {
+                            $('#exportpopup').fadeOut(500);
+                            self.closeContextMenu();
+                        });
+                    });
+                });
+            });
+
+            ctxBody.append(this.downloadButton);
+        }
 
         const ctxHelp = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-question-circle\"></i> <span style="vertical-align: center;">Informasjon</span></div>');
         ctxHelp.on('click', () => {
