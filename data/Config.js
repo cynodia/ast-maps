@@ -49,7 +49,7 @@ const mmConfigurations = {
             "sykkelparken": {
                 title: 'Sykkelparken',
                 icon: 'data/imgs/marker_star.png',
-                position: {lat: 58.485566, lng: 8.796820}
+                position: {lat: 58.485002, lng: 8.797742}
             },
             "kremtoppen": {
                 title: 'Kremtoppen',
@@ -247,7 +247,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/inniskauen.gpx',
-                title: 'Skauen',
+                title: '3-kilometeren',
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
@@ -347,17 +347,6 @@ const mmConfigurations = {
             {
                 url: 'data/trails/tungvekter/kvartoverhalvfire.gpx',
                 title: 'Kvart på halv fire',
-                level: 2,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/tungvekter/langemyrdownhill.gpx',
-                title: 'Langemyr Downhill',
                 level: 2,
                 bidirectional: false,
                 findStartText: "",
@@ -470,7 +459,7 @@ const mmConfigurations = {
                 title: 'Bålplassen til the wall',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Fra bålplassen er det flere veier å ta for å komme inn på denne stien. En kan dra over cruxet mot den himmelske freds plass - herfra skal en opp en utfordrene start mot høyre fra plassen. Alternativt kan en holdr til høyre for cruxet fra bålplassen og komme rett inn på stien.",
+                findStartText: "Fra bålplassen er det flere veier å ta for å komme inn på denne stien. En kan dra over cruxet mot den Himmelske Fredsplass - herfra skal en opp en utfordrene start mot høyre fra plassen. Alternativt kan en holdr til høyre for cruxet fra bålplassen og komme rett inn på stien. Om en kjører via den Himmelske Fredsplass så er det mulig å få til en liten wallride på berget i en av svingene inn mot <i>The Wall</i>.",
                 infoText: "Denne stien kan gjøres til en utfordring i starten ved å ta via den himmelske freds plass. På slutten ender stien i <i>The wall</i> som er et crux en trenger god fart inn i for å forsere. Evt tar du til venstre rett før <i>The Wall</i> og kjører en liten omvei.",
                 images: {
                     trailStart: null
@@ -505,17 +494,6 @@ const mmConfigurations = {
                 bidirectional: true,
                 findStartText: "Starter ut fra bussholdeplassen i Mauråsvegen.",
                 infoText: "En grei inngang inn til stinettverket fra nordvest-siden. Når en sykler innover ender denne opp like ved starten på <i>Vestbredden</i>.",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/tungvekter/toppentildiagonalen.gpx',
-                title: 'Toppen til diagonalen',
-                level: 2,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
                 images: {
                     trailStart: null
                 }
@@ -624,8 +602,8 @@ const mmConfigurations = {
                 title: 'Wall til Langemyr',
                 bidirectional: true,
                 level: 1,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter fra krysset ved <i>The Wall</i>.",
+                infoText: "Gammel kjerreveg som går fra <i>The Wall</i> ned til grusvegen inn til Langemyr. Fin avslutning på nekjøring fra f.eks. <i>Kamelen</i>.",
                 images: {
                     trailStart: null
                 }
