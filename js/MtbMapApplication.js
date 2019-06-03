@@ -114,10 +114,9 @@ class MtbMapApplication {
     initMap() {
         console.log("Setting up maps...");
 
-        //this.infoWindow = new google.maps.InfoWindow({ maxWidth: 300 });
-
         this.lMap = L.map('lmap', {
             zoomControl: false,
+            preferCanvas: true,
             renderer: L.canvas({ padding: 0.5, tolerance: 12 })
         });
 
@@ -316,7 +315,7 @@ class MtbMapApplication {
     }
 
     resetMainMap() {
-        this.lMap.fitBounds(this.mainBounds[this.configName]);
+        this.lMap.flyToBounds(this.mainBounds[this.configName]);
     }
 
     openContextMenu() {
@@ -433,6 +432,7 @@ class MtbMapApplication {
                 const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-map\"></i> <span style="vertical-align: center;">' + mmConfigurations[key].title + '</span></div>');
                 entry.on('click', () => {
                     this.setConfiguration(key);
+                    this.closeContextMenu();
                 });
                 ctxBody.append(entry);
                 first = false;
