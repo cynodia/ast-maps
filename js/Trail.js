@@ -254,8 +254,9 @@ class Trail {
                                     "<br>Vanskelighetsgrad: <b>" + this.getLevelAsText() + "</b>" +
                                     "<br>Enveis: <b>" + (this.isBidirectional() ? "Nei" : "Ja") + "</b>" +
                                     "<br>" + this.getInfoText() +
-                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span><br>");
-                            this.infoWindow.openOn(trackLayer);
+                                    "<br><b>Klikk på stien for mer informasjon</b>");
+//                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span><br>");
+                            this.infoWindow.openOn(application.lMap);
                         }, 600);
                     });
                     this.lPath.on('mouseout', () => {
@@ -263,7 +264,7 @@ class Trail {
                             clearTimeout(this.infoTimeout);
                             this.infoTimeout = null;
                         }
-                        //this.infoWindow.close();
+                        this.infoWindow.remove();
                     });
                 }
             }
