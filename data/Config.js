@@ -272,8 +272,8 @@ const mmConfigurations = {
                 title: 'Froskedammen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter på toppen av <i>S-Works</i>.",
+                infoText: "En flott sti med en utfordring i midten! STarter med en litt bratt nedkjøring - du finner en enklere rute til venstre. Litt over midten kommer du til Froskedammen og her skal det kjøres på bro! Denne kanskje mest en utfordring mentalt - hold farten og hold blikket fremover :-)",
                 images: {
                     trailStart: null
                 }
