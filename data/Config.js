@@ -631,25 +631,14 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/motsaeden.gpx',
-                title: 'Opp mot Sæden',
-                level: 1,
-                bidirectional: true,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
                 url: 'data/trails/tungvekter/nedfraribberaasen.gpx',
                 title: 'Ribberåsen ned',
-                level: 2,
+                level: 3,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter fra Varden på toppen av Ribberåsen. <i></i>Rallarvegen</i> og <i>Ribberveggen</i> leder begge hit.",
+                infoText: "Downhill med masse fart! Denne tar deg ned fra Ribberåsen i løpet av kun et par hundre meter. Her er det mye røtter og stiener du skal komme deg over!",
                 images: {
-                    trailStart: 'tungvekter/trails/12.jpg'
+                    trailStart: 'tungvekter/trails/15.jpg'
                 }
             },
             {
