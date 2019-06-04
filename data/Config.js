@@ -56,6 +56,11 @@ const mmConfigurations = {
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.485446, lng: 8.788034}
             },
+            "baalplassen": {
+                title: 'Bålplassen',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.482499, lng: 8.791263}
+            },
             "varden": {
                 title: 'Varden',
                 icon: 'data/imgs/marker_star.png',
