@@ -547,6 +547,7 @@ class MtbMapApplication {
                     entry.on('click', () => {
                         this.closeTrailMenu();
                         this.lMap.flyToBounds(t.getBounds());
+                        this.onMapElemClicked(t);
                     });
                     this.trailBody.append(entry);
                     id++;

@@ -695,8 +695,8 @@ const mmConfigurations = {
                 title: 'Pikniktoppen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter til høyre like etter inngangen til <i>Eventyrskogen</i> fra Piknikbordet.",
+                infoText: "Liten sti som går over en topp med litt klatring og tette svinger. Nedkjøring på nordsiden inn mot <i>Eventyrskogen</i>.",
                 images: {
                     trailStart: null
                 }
