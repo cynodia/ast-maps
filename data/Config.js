@@ -284,6 +284,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/storevelta.gpx',
+                title: 'Størevelta',
+                level: 2,
+                bidirectional: false,
+                findStartText: "Stien starter på toppen av <i>S-Works</i>.",
+                infoText: "En flott sti med et par hhopp og doserte svinger fra <i>S-works</i> ned til <i>Froskedammen</i>.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/froskedammen.gpx',
                 title: 'Froskedammen',
                 level: 2,
@@ -652,7 +663,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Følg Muldvarpen til høyeste punkt. Her deler stien seg og du skal holde mot høyre.",
-                infoText: "Stien starter i toppen av <i>Muldvarpen</i> hvor det går en nedkjøring ned til et parti som går paralellt med <i>Froskedammen</i> før den fotsetter mot Songe paralellt med grusvegen et stykke. Så krysser du en kjerreveg før du kommer inn på det siste partiet. Dette er en teknisk utfordrende bit som starter med et relativt høyt drop(kan kjøre til høyre for dette) og følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen og du er like ved Sykkelparken.",
+                infoText: "Stien starter i toppen av <i>Muldvarpen</i> hvor det går en nedkjøring ned til et parti som går paralellt med <i>Froskedammen/Størevelta</i> før den fotsetter mot Songe paralellt med grusvegen et stykke. Så krysser du en kjerreveg før du kommer inn på det siste partiet. Dette er en teknisk utfordrende bit som starter med et relativt høyt drop(kan kjøre til høyre for dette) og følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen og du er like ved Sykkelparken.",
                 images: {
                     trailStart: null
                 }
@@ -685,7 +696,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "Fra toppen av S-works, snu sørover.",
-                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder <i>S-works</i> med <i>Kranglefanten</i> som et alternativ til Froskedammen.",
+                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder <i>S-works</i> med <i>Kranglefanten</i> som et alternativ til Størevelta/Froskedammen.",
                 images: {
                     trailStart: 'tungvekter/trails/18.jpg'
                 }
