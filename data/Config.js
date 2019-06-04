@@ -486,8 +486,19 @@ const mmConfigurations = {
                 title: 'Flatan',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Starter fra <i>The Wall</i>",
+                findStartText: "Stien starter i fortsettelse av <i>Aleèn</i> evt motsatt retning fra toppen av hårnålssvingene i <i>Haldors Gullrekke</i>.",
                 infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du <i>Korketrekkeren</i> og det blir litt humpete.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/aleen.gpx',
+                title: 'Aleèn',
+                level: 1,
+                bidirectional: true,
+                findStartText: "Starter fra <i>The Wall</i>",
+                infoText: "Stien går gjennom flott furuskog med noen småhindringer i starten. Ender i en naturlig overgang til <i>Flatan</i>, eller opp mot Kremtoppen via <i>Uphillen</i>.",
                 images: {
                     trailStart: null
                 }
