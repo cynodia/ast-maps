@@ -179,7 +179,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "Stien starter rett nord langs med tennisbanen fra parkeringen.",
-                infoText: "En flott start på turen om du kommer inn sørfra på sykkel, eller evt velger å parkere ved tennisbanen på Løvoldsveien. Stien tar deg inn til knutepunktet en sørenden av Store Ribbervann.",
+                infoText: "En flott start på turen om du kommer inn sørfra på sykkel, eller evt velger å parkere ved tennisbanen på Løvoldsveien. Stien tar deg inn til knutepunktet i sørenden av Store Ribbervann.",
                 images: {
                     trailStart: null
                 }
@@ -519,6 +519,17 @@ const mmConfigurations = {
                 title: 'Uphillen',
                 level: 2,
                 bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/ostforlille.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
                 findStartText: "",
                 infoText: "",
                 images: {

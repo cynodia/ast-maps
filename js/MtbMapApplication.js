@@ -488,7 +488,8 @@ class MtbMapApplication {
                 infoDiv1.style.borderRadius = "0 0 6px 0";
                 infoDiv1.style.margin = 0;
                 infoDiv1.index = 1;
-                infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
+                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                         "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
