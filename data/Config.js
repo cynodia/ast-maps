@@ -592,7 +592,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "Stien starter til høyre ut fra <i>X-kjærringene</i> ca midtveis.",
-                infoText: "En frisk sti som tar deg ned til starten av <i>Gubben og Gamla</i>. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
+                infoText: "En frisk sti som tar deg ned til siste partiet av <i>Gubben og Gamla</i> eller evt rett ut til Sykkelparken. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
                 images: {
                     trailStart: 'tungvekter/trails/3.jpg'
                 }
