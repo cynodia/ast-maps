@@ -103,6 +103,9 @@ body {
     right: 0;
     top: 0;
     font-size: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .ctxMenuHeader {
@@ -121,6 +124,8 @@ body {
 
 .ctxBody {
     padding: 8px;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .ctxEntryFirst {

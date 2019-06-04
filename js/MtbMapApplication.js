@@ -12,6 +12,9 @@ class MtbMapApplication {
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
         this.ctxMenuVisible = false;
+        this.trailMenu = null;
+        this.trailMenuVisible = false;
+        this.trailBody = null;
         this.lMap = null;
         this.titleLayer = null;
         this.trackLayer = null;
@@ -190,9 +193,8 @@ class MtbMapApplication {
             if(!mobilecheck()) {
                 this.infoWindow.remove();
             }
-            if(this.ctxMenuVisible) {
-                this.closeContextMenu();
-            }
+            this.closeContextMenu();
+            this.closeTrailMenu();
             const latlng = this.lMap.mouseEventToLatLng(ev.originalEvent);
             console.log(latlng.lat + ', ' + latlng.lng);
         });
@@ -292,7 +294,9 @@ class MtbMapApplication {
 
 
         this.createContextMenu();
-        this.addHelpOverlays();
+        this.createTrailMenu();
+        this.populateTrailMenu();
+        this.addUIOverlays();
         this.hideInfo();
         if(trailToLoad) {
             this.onMapElemClicked(trailToLoad);
@@ -324,15 +328,35 @@ class MtbMapApplication {
     }
 
     openContextMenu() {
-        console.log("Open ctx");
-        this.ctxMenuVisible = true;
-        this.ctxMenu.fadeIn();
+        if(!this.ctxMenuVisible) {
+            console.log("Open ctx");
+            this.ctxMenuVisible = true;
+            this.ctxMenu.fadeIn();
+        }
     }
 
     closeContextMenu() {
-        console.log("Close ctx");
-        this.ctxMenuVisible = false;
-        this.ctxMenu.fadeOut();
+        if(this.ctxMenuVisible) {
+            console.log("Close ctx");
+            this.ctxMenuVisible = false;
+            this.ctxMenu.fadeOut();
+        }
+    }
+
+    openTrailMenu() {
+        if(!this.trailMenuVisible) {
+            console.log("Open trail");
+            this.trailMenuVisible = true;
+            this.trailMenu.fadeIn();
+        }
+    }
+
+    closeTrailMenu() {
+        if(this.trailMenuVisible) {
+            console.log("Close ctx");
+            this.trailMenuVisible = false;
+            this.trailMenu.fadeOut();
+        }
     }
 
     parseUserGPX(title, data) {
@@ -365,6 +389,7 @@ class MtbMapApplication {
         this.ctxHeader.html(this.config.title);
         this.resetMainMap();
         this.updateStaticText();
+        this.populateTrailMenu();
     }
 
     createContextMenu() {
@@ -473,7 +498,66 @@ class MtbMapApplication {
         this.ctxMenu.hide();
     }
 
-    addHelpOverlays() {
+    createTrailMenu() {
+        this.trailMenu = $('<div class="ctxMenu"/>');
+        this.trailMenu.append('<div class="ctxMenuHeader">Stier</div>')
+        const trailBackBtn = $('<button class="ctxCloseBtn"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>');
+        trailBackBtn.on('click', () => {
+            this.closeTrailMenu();
+        });
+        this.trailMenu.append(trailBackBtn);
+
+        const wrapper = $('<div style="display: flex; flex: 1; min-height: 0px;"/>');
+        const content = $('<div style="flex: 1; overflow-y: scroll;"/>');
+
+        this.trailBody = $('<div class="ctxBody"/>');
+        content.append(this.trailBody);
+        wrapper.append(content);
+
+        this.trailMenu.append(wrapper);
+        this.trailMenu.appendTo(document.body);
+        this.trailMenuVisible = false;
+        this.trailMenu.hide();
+    }
+
+    populateTrailMenu() {
+        this.trailBody.empty();
+        const trailHeader = $('<div class="ctxSubHeader">' + this.config.title + '</div>');
+        this.trailBody.append(trailHeader);
+        let id = 0;
+
+        /** Need to loop trough all configs to find IDs */
+        for (let config in mmConfigurations) {
+            if (mmConfigurations.hasOwnProperty(config)) {
+                const trails = mmConfigurations[config].trails;
+                if (config != this.configName) {
+                    id += trails.length;
+                    continue;
+                }
+
+                let first = true;
+                for (let i = 0; i < trails.length; i++) {
+                    let trail = trails[i];
+                    if (trail.level === 0 || trail.title === null) {
+                        id++;
+                        continue;
+                    }
+                    const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + trail.title + '</span></div>');
+                    const t = this.trails[id];
+                    entry.on('click', () => {
+                        this.closeTrailMenu();
+                        this.lMap.flyToBounds(t.getBounds());
+                        this.onMapElemClicked(t);
+                    });
+                    this.trailBody.append(entry);
+                    id++;
+                    first = false;
+                }
+            }
+        }
+    }
+
+    addUIOverlays() {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
         const self = this;
@@ -488,7 +572,8 @@ class MtbMapApplication {
                 infoDiv1.style.borderRadius = "0 0 6px 0";
                 infoDiv1.style.margin = 0;
                 infoDiv1.index = 1;
-                infoDiv1.innerHTML = "<i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
+                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                         "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
@@ -525,6 +610,22 @@ class MtbMapApplication {
                 };
 
                 btnDiv.appendChild(locationButton);
+
+                const trailListButton = document.createElement('button');
+                trailListButton.style.background = "rgba(255,255,255,.6)";
+                trailListButton.style.padding = "12px";
+                trailListButton.style.marginRight = "10px";
+                trailListButton.style.fontSize = "16px";
+                trailListButton.style.cursor = "pointer";
+                trailListButton.setAttribute("class", "topButton");
+                trailListButton.index = 2;
+                trailListButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-road\"></i>";
+                trailListButton.onclick = (e) => {
+                    self.openTrailMenu();
+                    L.DomEvent.stopPropagation(e);
+                };
+
+                btnDiv.appendChild(trailListButton);
 
                 const burgerButton = document.createElement('button');
                 burgerButton.style.background = "rgba(255,255,255,.6)";

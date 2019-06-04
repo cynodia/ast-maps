@@ -56,6 +56,11 @@ const mmConfigurations = {
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.485446, lng: 8.788034}
             },
+            "baalplassen": {
+                title: 'Bålplassen',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.482499, lng: 8.791263}
+            },
             "varden": {
                 title: 'Varden',
                 icon: 'data/imgs/marker_star.png',
@@ -64,7 +69,7 @@ const mmConfigurations = {
             "sinsenkrysset": {
                 title: 'Sinsenkrysset',
                 icon: 'data/imgs/marker_star.png',
-                position: {lat: 58.48524334, lng: 8.792927563}
+                position: {lat: 58.485243, lng: 8.792927}
             }
         },
 
@@ -174,7 +179,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "Stien starter rett nord langs med tennisbanen fra parkeringen.",
-                infoText: "En flott start på turen om du kommer inn sørfra på sykkel, eller evt velger å parkere ved tennisbanen på Løvoldsveien. Stien tar deg inn til knutepunktet en sørenden av Store Ribbervann.",
+                infoText: "En flott start på turen om du kommer inn sørfra på sykkel, eller evt velger å parkere ved tennisbanen på Løvoldsveien. Stien tar deg inn til knutepunktet i sørenden av Store Ribbervann.",
                 images: {
                     trailStart: null
                 }
@@ -249,6 +254,17 @@ const mmConfigurations = {
                 url: 'data/trails/tungvekter/inniskauen.gpx',
                 title: '3-kilometeren',
                 level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/snarveibaal.gpx',
+                title: null,
+                level: 0,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -396,7 +412,7 @@ const mmConfigurations = {
                 findStartText: "Følg <i>Haldors Gullrekke</i> til topps. Like før du kommer over til <i>Downhillen</i> deler stien seg og du skal holde mot venstre.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
-                    trailStart: 'tungvekter/trails/8.jpg'
+                    trailStart: 'tungvekter/trails/6.jpg'
                 }
             },
             {
@@ -426,8 +442,8 @@ const mmConfigurations = {
                 title: 'Elgdriden',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter i starten av <i>Downhillen</i> like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot <i>Haldors gullrekke</i>, så holder du rett frem.",
+                infoText: "Stien starter med et litt krevende segment hvor en skal over litt hindringer og klatre enda litt. Etter ca 150m begynner nedkjøringen - her er det både bratt og svingete med et par hopp mot slutten før en ender opp helt nede i løysløpa!",
                 images: {
                     trailStart: null
                 }
@@ -468,7 +484,29 @@ const mmConfigurations = {
             {
                 url: 'data/trails/tungvekter/flatan.gpx',
                 title: 'Flatan',
-                level: 1,
+                level: 2,
+                bidirectional: true,
+                findStartText: "Starter fra <i>The Wall</i>",
+                infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du <i>Korketrekkeren</i> og det blir litt humpete.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/skog1.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/skog2.gpx',
+                title: null,
+                level: 0,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -481,6 +519,17 @@ const mmConfigurations = {
                 title: 'Uphillen',
                 level: 2,
                 bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/ostforlille.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
                 findStartText: "",
                 infoText: "",
                 images: {
@@ -646,8 +695,8 @@ const mmConfigurations = {
                 title: 'Pikniktoppen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter til høyre like etter inngangen til <i>Eventyrskogen</i> fra Piknikbordet.",
+                infoText: "Liten sti som går over en topp med litt klatring og tette svinger. Nedkjøring på nordsiden inn mot <i>Eventyrskogen</i>.",
                 images: {
                     trailStart: null
                 }
@@ -659,17 +708,6 @@ const mmConfigurations = {
                 bidirectional: true,
                 findStartText: "Følg stien/kjerrevegen innover jordet fra piknikbordet langs lysløypa.",
                 infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM spederen. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/tungvekter/sti7.gpx',
-                title: 'Snarvei',
-                level: 2,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
                 images: {
                     trailStart: null
                 }
