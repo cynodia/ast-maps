@@ -257,6 +257,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/snarveibaal.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/s-works.gpx',
                 title: 'S-Works',
                 level: 2,
@@ -396,7 +407,7 @@ const mmConfigurations = {
                 findStartText: "Følg <i>Haldors Gullrekke</i> til topps. Like før du kommer over til <i>Downhillen</i> deler stien seg og du skal holde mot venstre.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
-                    trailStart: 'tungvekter/trails/8.jpg'
+                    trailStart: 'tungvekter/trails/6.jpg'
                 }
             },
             {
