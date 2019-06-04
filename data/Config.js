@@ -252,7 +252,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/inniskauen.gpx',
-                title: '3-kilometeren',
+                title: 'Paralellen i skauen',
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
@@ -328,6 +328,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/tredjejanuar.gpx',
+                title: 'Tredje Januar',
+                level: 2,
+                bidirectional: false,
+                findStartText: "Stien starter og slutter i <i>Kranglefanten</i>",
+                infoText: "En kort nedkjøring med et par hopp. Du kjører opp igjen via <i>Kranglefanten</i>.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/sti3.gpx',
                 title: 'Uten navn',
                 level: 2,
@@ -387,6 +398,17 @@ const mmConfigurations = {
                 title: 'Kvart på halv fire',
                 level: 2,
                 bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti2.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
                 findStartText: "",
                 infoText: "",
                 images: {
@@ -494,11 +516,22 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/balplassentilveggen.gpx',
-                title: 'Bålplassen til the wall',
-                level: 1,
+                title: 'The Wall',
+                level: 3,
                 bidirectional: true,
-                findStartText: "Fra bålplassen er det flere veier å ta for å komme inn på denne stien. En kan dra over cruxet mot den Himmelske Fredsplass - herfra skal en opp en utfordrene start mot høyre fra plassen. Alternativt kan en holdr til høyre for cruxet fra bålplassen og komme rett inn på stien. Om en kjører via den Himmelske Fredsplass så er det mulig å få til en liten wallride på berget i en av svingene inn mot <i>The Wall</i>.",
-                infoText: "Denne stien kan gjøres til en utfordring i starten ved å ta via den himmelske freds plass. På slutten ender stien i <i>The wall</i> som er et crux en trenger god fart inn i for å forsere. Evt tar du til venstre rett før <i>The Wall</i> og kjører en liten omvei.",
+                findStartText: "Stien starter fra Bålplassen.",
+                infoText: "Stien går via et crux fra bålplassen til Den Himmelske Fredsplass. Videre opp fra Fredsplassen er det et nytt crux. Om disse blir for heftige finnes det en snarvei inn til høyre før det første cruxet som tar deg rett over til The Wall som er en liten naturlig wallride. Stien ender opp i enda et crux før den ender inn i <i>3-kilometeren</i>, her med mulighet for å ta til venstre for å kjøre rundt.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti7.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
                 images: {
                     trailStart: null
                 }
@@ -519,7 +552,7 @@ const mmConfigurations = {
                 title: 'Aleèn',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Starter fra <i>The Wall</i>",
+                findStartText: "Starter fra krysset hvor <i>The Wall</i> kommer inn på <i>3-kilometeren</i>",
                 infoText: "Stien går gjennom flott furuskog med noen småhindringer i starten. Ender i en naturlig overgang til <i>Flatan</i>, eller opp mot Kremtoppen via <i>Uphillen</i>.",
                 images: {
                     trailStart: null
@@ -684,7 +717,7 @@ const mmConfigurations = {
                 title: 'Wall til Langemyr',
                 bidirectional: true,
                 level: 1,
-                findStartText: "Starter fra krysset ved <i>The Wall</i>.",
+                findStartText: "Er dette slutten på 3-kilometeren??",
                 infoText: "Gammel kjerreveg som går fra <i>The Wall</i> ned til grusvegen inn til Langemyr. Fin avslutning på nekjøring fra f.eks. <i>Kamelen</i>.",
                 images: {
                     trailStart: null
@@ -741,6 +774,17 @@ const mmConfigurations = {
                 bidirectional: true,
                 findStartText: "Følg stien/kjerrevegen innover jordet fra piknikbordet langs lysløypa.",
                 infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM spederen. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti1.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
                 images: {
                     trailStart: null
                 }
