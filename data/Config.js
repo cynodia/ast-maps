@@ -442,8 +442,8 @@ const mmConfigurations = {
                 title: 'Elgdriden',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Starter i starten av <i>Downhillen</i> like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot <i>Haldors gullrekke</i>, så holder du rett frem.",
+                infoText: "Stien starter med et litt krevende segment hvor en skal over litt hindringer og klatre enda litt. Etter ca 150m begynner nedkjøringen - her er det både bratt og svingete med et par hopp mot slutten før en ender opp helt nede i løysløpa!",
                 images: {
                     trailStart: null
                 }
