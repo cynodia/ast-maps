@@ -295,12 +295,23 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/sti2.gpx',
+                url: 'data/trails/tungvekter/muldvarpen.gpx',
                 title: 'Muldvarpen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Stien starter ved en bro de <i>Froskedammen</i> og <i>Kila</i> slutter.",
-                infoText: "Flott sti som starter med et lite klartreparti for så å gå over i en seksjon med diverse små utfordringer av stein og tre før den ender i en nedkjøring med hopp og doserte svinger!",
+                findStartText: "Stien starter på toppen av <i>Kranglefanten</i>.",
+                infoText: "Fartsfylt sti som ender i en nedkjøring med hopp og doserte svinger!",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/kranglefanten.gpx',
+                title: 'Kranglefanten',
+                level: 2,
+                bidirectional: false,
+                findStartText: "Stien starter ved broen i slutten av <i>Froskedammen</i> og <i>Kila</i>.",
+                infoText: "Flott sti som starter med et lite klartreparti med hårnålssvinger og vortsetter oppover mot <i>Tredje Januar</i>, <i>Gubben og Gamla</i> og <i>Muldvarpen</i>",
                 images: {
                     trailStart: null
                 }
@@ -674,7 +685,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "Fra toppen av S-works, snu sørover.",
-                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder S-works med Muldvarpen som et alternativ til Froskedammen.",
+                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder <i>S-works</i> med <i>Kranglefanten</i> som et alternativ til Froskedammen.",
                 images: {
                     trailStart: 'tungvekter/trails/18.jpg'
                 }
