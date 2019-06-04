@@ -69,7 +69,7 @@ const mmConfigurations = {
             "sinsenkrysset": {
                 title: 'Sinsenkrysset',
                 icon: 'data/imgs/marker_star.png',
-                position: {lat: 58.48524334, lng: 8.792927563}
+                position: {lat: 58.485243, lng: 8.792927}
             }
         },
 
@@ -484,7 +484,29 @@ const mmConfigurations = {
             {
                 url: 'data/trails/tungvekter/flatan.gpx',
                 title: 'Flatan',
-                level: 1,
+                level: 2,
+                bidirectional: true,
+                findStartText: "Starter fra <i>The Wall</i>",
+                infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du <i>Korketrekkeren</i> og det blir litt humpete.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/skog1.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/skog2.gpx',
+                title: null,
+                level: 0,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -675,17 +697,6 @@ const mmConfigurations = {
                 bidirectional: true,
                 findStartText: "Følg stien/kjerrevegen innover jordet fra piknikbordet langs lysløypa.",
                 infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM spederen. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/tungvekter/sti7.gpx',
-                title: 'Snarvei',
-                level: 2,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
                 images: {
                     trailStart: null
                 }
