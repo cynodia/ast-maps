@@ -591,34 +591,35 @@ class MtbMapApplication {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
         const self = this;
-        L.Control.MtbMapsInfo = L.Control.extend({
-            onAdd: function(map) {
-                const infoDiv1 = document.createElement('div');
-                infoDiv1.style.background = "rgba(255,255,255,.6)";
-                infoDiv1.style.padding = "6px";
-                infoDiv1.style.borderRight = "1px solid white";
-                infoDiv1.style.borderBottom = "1px solid white";
-                infoDiv1.style.fontSize = "16px";
-                infoDiv1.style.borderRadius = "0 0 6px 0";
-                infoDiv1.style.margin = 0;
-                infoDiv1.index = 1;
-                infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
-                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
-                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
-                        "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
-                        "<hr><img style=\"width: 20px; height: 20px; padding: 0 2px;\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
-                infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
+        if(!window.printRender) {
+            L.Control.MtbMapsInfo = L.Control.extend({
+                onAdd: function (map) {
+                    const infoDiv1 = document.createElement('div');
+                    infoDiv1.style.background = "rgba(255,255,255,.6)";
+                    infoDiv1.style.padding = "6px";
+                    infoDiv1.style.borderRight = "1px solid white";
+                    infoDiv1.style.borderBottom = "1px solid white";
+                    infoDiv1.style.fontSize = "16px";
+                    infoDiv1.style.borderRadius = "0 0 6px 0";
+                    infoDiv1.style.margin = 0;
+                    infoDiv1.index = 1;
+                    infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
+                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
+                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
+                            "<hr><img style=\"width: 20px; height: 20px; padding: 0 2px;\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
+                    infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
-                return infoDiv1;
-            },
-            onRemove: function(map) {
-                // Nothing to do here
-            }
-        });
+                    return infoDiv1;
+                },
+                onRemove: function (map) {
+                    // Nothing to do here
+                }
+            });
 
-        const info = new L.Control.MtbMapsInfo({ position: 'topleft'});
-        info.addTo(this.lMap);
-
+            const info = new L.Control.MtbMapsInfo({position: 'topleft'});
+            info.addTo(this.lMap);
+        }
 
         L.Control.MtbMapsMenu = L.Control.extend({
             onAdd: function(map) {

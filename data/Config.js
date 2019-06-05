@@ -434,7 +434,7 @@ const mmConfigurations = {
                 findStartText: "Ca midt i <i>Langemyrskauen</i> deler stien seg i to. Følg mot venstre for denne lille akstra runden.",
                 infoText: "Artig liten sti som starter med litt klarting for så å gå nedover mot nedkjøringa til <i>Hundremeterskogen</i>.",
                 images: {
-                    trailStart: 'tungvekter/trails/12.jpg'
+                    trailStart: null
                 }
             },
             {
