@@ -268,6 +268,7 @@ class Trail {
                     });
                 }
             }
+            //this.lPath.setText(this.getTitle());
         }
 
         this.lPath.addTo(trackLayer);
