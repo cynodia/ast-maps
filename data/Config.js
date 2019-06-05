@@ -252,7 +252,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/inniskauen.gpx',
-                title: 'Paralellen i skauen',
+                title: 'Paralellen',
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
@@ -263,6 +263,17 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/snarveibaal.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti9.gpx',
                 title: null,
                 level: 0,
                 bidirectional: true,
@@ -713,12 +724,12 @@ const mmConfigurations = {
                 }
             },
             {
-                url: 'data/trails/tungvekter/walltillangemyr.gpx',
-                title: 'Wall til Langemyr',
+                url: 'data/trails/tungvekter/3kilometeren.gpx',
+                title: '3-kilometeren',
                 bidirectional: true,
                 level: 1,
-                findStartText: "Er dette slutten på 3-kilometeren??",
-                infoText: "Gammel kjerreveg som går fra <i>The Wall</i> ned til grusvegen inn til Langemyr. Fin avslutning på nekjøring fra f.eks. <i>Kamelen</i>.",
+                findStartText: "",
+                infoText: "",
                 images: {
                     trailStart: null
                 }

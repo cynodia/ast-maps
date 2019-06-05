@@ -18,6 +18,7 @@ class Trail {
         this.bounds = L.latLngBounds();
         this.infoWindow = infoWindow;
         this.infoTimeout = null;
+        //this.config.title = this.config.url;
     }
 
     isBidirectional() {

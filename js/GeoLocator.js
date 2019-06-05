@@ -54,7 +54,7 @@ class GeoLocator {
         } else {
             const closestTrail = this.app.getClosestTrailStart(pos.coords.latitude, pos.coords.longitude);
             this.app.setClosestTrail(closestTrail);
-            this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Klikk her for å åpne.<br>Din posisjon oppdateres heretter automatisk", 6);
+            this.app.showInfo("Posisjon funnet<hr>Nærmeste sti: <b>" + closestTrail.getTitle() + "</b><br>Klikk her for å åpne."/*<br>Din posisjon oppdateres heretter automatisk"*/, 6);
             this.mainLocationMarker = L.marker(this.lastData, {
                 icon: L.icon({
                     iconUrl: 'data/imgs/marker_you.png',
@@ -65,22 +65,10 @@ class GeoLocator {
             this.mainLocationMarker.addTo(this.app.getMainMap());
         }
 
-        // if(this.trailLocationMarker) {
-        //     this.trailLocationMarker.setLetLng(this.lastData);
-        // } else {
-        //     this.trailLocationMarker = L.marker(this.lastData, {
-        //         icon: L.icon({
-        //             iconUrl: 'data/imgs/marker_you.png',
-        //             iconSize: [40, 40],
-        //             iconAnchor: [20, 40]
-        //         })
-        //     });
-        //     this.trailLocationMarker.addTo(this.app.getTrailMap());
-        // }
-        if(this.geoId === null) {
-            this.geoId = navigator.geolocation.watchPosition(this.updatePosition.bind(this));
+//        if(this.geoId === null) {
+//            this.geoId = navigator.geolocation.watchPosition(this.updatePosition.bind(this));
             this.app.getMainMap().flyTo(this.lastData);
-        }
+//        }
     }
 
 
