@@ -8,22 +8,6 @@
 		<name>GpsPruneTrack</name>
 		<number>1</number>
 		<trkseg>
-      <trkpt lat="58.48183341" lon="8.794748783">
-        <ele>70.000000</ele>
-        <time>2010-01-01T00:00:00Z</time>
-      </trkpt>
-      <trkpt lat="58.48189500" lon="8.794829000">
-        <ele>70.000000</ele>
-        <time>2010-01-01T00:00:29Z</time>
-      </trkpt>
-      <trkpt lat="58.48187900" lon="8.794798000">
-        <ele>70.000000</ele>
-        <time>2010-01-01T00:00:38Z</time>
-      </trkpt>
-      <trkpt lat="58.48190100" lon="8.794795000">
-        <ele>70.000000</ele>
-        <time>2010-01-01T00:00:47Z</time>
-      </trkpt>
       <trkpt lat="58.48192600" lon="8.794803000">
         <ele>70.000000</ele>
         <time>2010-01-01T00:00:57Z</time>

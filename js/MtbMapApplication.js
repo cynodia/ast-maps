@@ -84,8 +84,8 @@ class MtbMapApplication {
     }
 
     closeTrailInfo() {
-        this.currDetailTrail.removeFrom(this.trailMap);
-        this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
+        this.currDetailTrail.removeFromTrackInfo(this.trailMap);
+        //this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
         $("#trailwindow").fadeOut(500);
         window.location.hash = "";
@@ -173,8 +173,12 @@ class MtbMapApplication {
         if(!window.printRender) {
             this.lMap.on('zoomend', () => {
                 console.log("ZOOM: " + this.lMap.getZoom());
-                if (this.lMap.getZoom() > 13) {
+                if (this.lMap.getZoom() > 15) {
                     this.lMap.addLayer(this.markerLayer);
+                    this.lMap.addLayer(this.trackLayer);
+                    this.lMap.removeLayer(this.titleLayer);
+                } else if (this.lMap.getZoom() > 13) {
+                    this.lMap.removeLayer(this.markerLayer);
                     this.lMap.addLayer(this.trackLayer);
                     this.lMap.removeLayer(this.titleLayer);
                 } else {
@@ -233,7 +237,8 @@ class MtbMapApplication {
                                 iconAnchor: [15, 30]
                             })
                         });
-                        marker.addTo(this.markerLayer);
+                        /** Add them to the path layer */
+                        marker.addTo(this.trackLayer);
 
                         marker.bindTooltip(cfg.markers[key].title,
                                 {
@@ -271,7 +276,7 @@ class MtbMapApplication {
                         trailToLoad = t;
                     }
                     t.loadTrail((trail) => {
-                        trail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
+                        trail.renderToMap(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
                         this.mainBounds[config].extend(trail.getBounds().getNorthEast());
                         this.mainBounds[config].extend(trail.getBounds().getSouthWest());
                         if(config === this.configName) {
@@ -373,7 +378,7 @@ class MtbMapApplication {
 
         }, { 1: '#000000' }, 0, this.infoWindow);
         t.parseGpx(data);
-        t.renderTo(this.trackLayer, null, this.onMapElemClicked.bind(this), true);
+        t.renderToMap(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this), true);
         this.mainBounds[this.configName].extend(t.getBounds().getNorthEast());
         this.mainBounds[this.configName].extend(t.getBounds().getSouthWest());
         this.lMap.fitBounds(this.mainBounds[this.configName]);
@@ -576,7 +581,7 @@ class MtbMapApplication {
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
-                        "<hr><img width=\"24\" height=\"24\" src=\"data/imgs/marker_start.png\"/> Start(enveis)";
+                        "<hr><img style=\"padding: 0 2px;\" width=\"20\" height=\"20\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
                 infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
                 return infoDiv1;
@@ -804,8 +809,8 @@ class MtbMapApplication {
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, () => {
-            trail.removeFrom(this.trackLayer, this.markerLayer);
-            trail.renderTo(this.trailMap);
+            //trail.removeFrom(this.trackLayer, this.markerLayer);
+            trail.renderToTrackInfo(this.trailMap);
             this.trailMap.fitBounds(trail.getBounds());
             /* graph container must be visible */
             if(this.show3d) {

@@ -10,7 +10,9 @@ class Trail {
         this.stopMarker = null;
         this.length = 0;
         this.path = null;
-        this.lPath = null;
+        this.mapPath = null;
+        this.infoPath = null;
+        this.decoration = null;
         this.clickCb = null;
         this.levelColors = levelColors;
         this.bounds = L.latLngBounds();
@@ -198,22 +200,22 @@ class Trail {
         if(this.startMarker) {
             this.startMarker.removeFrom(markerLayer ? markerLayer : layer);
         }
-        this.lPath.removeFrom(layer);
+        this.mapPath.removeFrom(layer);
     }
 
     /**
-     * Cal be re-used, will only generate objects the firt time
+     * Can be re-used, will only generate objects the first time
      * @param gMap
      * @param callback
      */
-    renderTo(trackLayer, markerLayer, callback, userUpload) {
+    renderToMap(trackLayer, markerLayer, callback, userUpload) {
         if(!window.printRender && this.config.bidirectional === false) {
             if (!this.startMarker) {
                 this.startMarker = L.marker(this.coordinates[0], {
                     icon: L.icon({
-                        iconUrl: 'data/imgs/marker_start.png',
-                        iconSize: [30, 30],
-                        iconAnchor: [11, 30]
+                        iconUrl: 'data/imgs/marker_start2.png',
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10]
                     })
                 });
                 this.startMarker.on('click', this.pathClicked.bind(this));
@@ -225,10 +227,10 @@ class Trail {
                 );
 
             }
-            this.startMarker.addTo(markerLayer ? markerLayer : trackLayer)
+            this.startMarker.addTo(markerLayer)
         }
 
-        if(!this.lPath) {
+        if(!this.mapPath) {
             const options = {
                 color: this.getTrailColor(),
                 weight: userUpload ? 4 : (window.printRender ? 7 : 5)
@@ -237,13 +239,14 @@ class Trail {
                 options['dashArray'] = userUpload ? "" : "14 8";
             }
 
-            this.lPath = L.polyline(this.coordinates, options);
+            this.mapPath = L.polyline(this.coordinates, options);
 
             if(this.config.title != null) {
-                this.lPath.on('click', this.pathClicked.bind(this));
+
+                this.mapPath.on('click', this.pathClicked.bind(this));
 
                 if (!mobilecheck()) {
-                    this.lPath.on('mouseover', (e) => {
+                    const displayInfoWindow = (e) => {
                         this.infoWindow.remove();
                         this.infoTimeout = setTimeout(() => {
                             this.infoTimeout = null;
@@ -258,22 +261,45 @@ class Trail {
 //                                    "<br><span style=\"float:right;\"><a href=\"#\" onclick=\"openTrail(" + this.getId() + ");return false;\">Åpne</a></span><br>");
                             this.infoWindow.openOn(application.lMap);
                         }, 600);
-                    });
-                    this.lPath.on('mouseout', () => {
+                    };
+                    const hideInfoWindow = () => {
                         if (this.infoTimeout) {
                             clearTimeout(this.infoTimeout);
                             this.infoTimeout = null;
                         }
                         this.infoWindow.remove();
-                    });
+                    };
+                    this.mapPath.on('mouseover', displayInfoWindow);
+                    this.mapPath.on('mouseout', hideInfoWindow);
                 }
             }
-            //this.lPath.setText(this.getTitle());
         }
 
-        this.lPath.addTo(trackLayer);
+        this.mapPath.addTo(trackLayer);
         this.clickCb = callback;
     }
 
+    /**
+     * Can be re-used, will only generate objects the first time
+     * @param gMap
+     * @param callback
+     */
+    renderToTrackInfo(layer, userUpload) {
+
+        if(!this.infoPath) {
+            const options = {
+                color: this.getTrailColor(),
+                weight: userUpload ? 4 : (window.printRender ? 7 : 5)
+            };
+
+            this.infoPath = L.polyline(this.coordinates, options);
+        }
+
+        this.infoPath.addTo(layer);
+    }
+
+    removeFromTrackInfo(layer) {
+        this.infoPath.removeFrom(layer);
+    }
 
 }
