@@ -209,7 +209,9 @@ class Trail {
             this.mapPath.bindTooltip(this.getTitle(),
                     {
                         permanent: true,
-                        direction: 'auto'
+                        direction: 'auto',
+                        interactive: true,
+                        opacity: 0.7
                     }
             );
         }
