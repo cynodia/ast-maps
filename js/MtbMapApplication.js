@@ -606,7 +606,7 @@ class MtbMapApplication {
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
                         "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
-                        "<hr><img style=\"padding: 0 2px;\" width=\"20\" height=\"20\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
+                        "<hr><img style=\"width: 20px; height: 20px; padding: 0 2px;\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
                 infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
                 return infoDiv1;

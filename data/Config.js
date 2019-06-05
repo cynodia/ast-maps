@@ -87,7 +87,7 @@ const mmConfigurations = {
         trails: [
             {
                 url: 'data/trails/tungvekter/lysloypa.gpx',
-                title: 'Lysløypa',
+                title: null,
                 level: 0,
                 bidirectional: true,
                 findStartText: "",
@@ -98,7 +98,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/songebakken.gpx',
-                title: 'Songebakken',
+                title: null,
                 level: 0,
                 bidirectional: true,
                 findStartText: "",
@@ -244,10 +244,10 @@ const mmConfigurations = {
                 title: 'Ribberveggen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Følg <i>Rallarvegen</i> til vegen deler deg ved et steingjerde. Her holder du mot venstre.",
-                infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!",
+                findStartText: "Stien starter i bunnen av bakken ved Songe i lysløypa. Rett inn ved skiltet.",
+                infoText: "En bratt og utfordrende klatresti som tar deg helt opp til toppen av Ribberåsen! Ca 50m inn kommer en til et fantastisk parti med bro og hårnålssvinger - både teknisk utfordrende og fantastisk flott opparbeidet!",
                 images: {
-                    trailStart: 'tungvekter/trails/12.jpg'
+                    trailStart: null
                 }
             },
             {
@@ -365,10 +365,10 @@ const mmConfigurations = {
                 title: 'Rallarvegen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Følg <i>Ribberveggen</i> til stien deler deg ved et steingjerde. Her holder du mot venstre.",
+                infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!",
                 images: {
-                    trailStart: 'tungvekter/trails/12.jpg'
+                    trailStart: 'tungvekter/trails/14.jpg'
                 }
             },
             {
