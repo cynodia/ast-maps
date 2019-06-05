@@ -203,6 +203,24 @@ class Trail {
         this.mapPath.removeFrom(layer);
     }
 
+    displayToolTip() {
+        if(this.config.title != null) {
+            this.mapPath.unbindTooltip();
+            this.mapPath.bindTooltip(this.getTitle(),
+                    {
+                        permanent: true,
+                        direction: 'auto'
+                    }
+            );
+        }
+    }
+
+    removeToolTip() {
+        if(this.config.title != null) {
+            this.mapPath.unbindTooltip();
+        }
+    }
+
     /**
      * Can be re-used, will only generate objects the first time
      * @param gMap
@@ -221,7 +239,7 @@ class Trail {
                 this.startMarker.on('click', this.pathClicked.bind(this));
                 this.startMarker.bindTooltip("Start: " + this.getTitle(),
                         {
-                            //permanent: true,
+                            permanent: false,
                             direction: 'auto'
                         }
                 );

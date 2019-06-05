@@ -26,6 +26,8 @@ class MtbMapApplication {
         this.heatmapLayer = null;
         this.heatmapButton = null;
         this.userAddedTrails = [];
+        this.showingTooltips = false;
+        this.tooltipTimer = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -172,7 +174,30 @@ class MtbMapApplication {
 
         if(!window.printRender) {
             this.lMap.on('zoomend', () => {
+                if(this.tooltipTimer) {
+                    clearTimeout(this.tooltipTimer);
+                    this.tooltipTimer = null;
+                }
                 console.log("ZOOM: " + this.lMap.getZoom());
+                if (this.lMap.getZoom() > 16) {
+                    if (!this.showingTooltips) {
+                        this.tooltipTimer = setTimeout(() => {
+                            this.tooltipTimer = null;
+                            this.showingTooltips = true;
+                            this.trails.forEach((t) => {
+                                t.displayToolTip();
+                            });
+                        }, 200);
+                    }
+                } else {
+                    if(this.showingTooltips) {
+                        this.showingTooltips = false;
+                        this.trails.forEach((t) => {
+                            t.removeToolTip();
+                        });
+                    }
+                }
+
                 if (this.lMap.getZoom() > 15) {
                     this.lMap.addLayer(this.markerLayer);
                     this.lMap.addLayer(this.trackLayer);
