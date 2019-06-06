@@ -72,7 +72,6 @@ class Trail {
         return this.length;
     }
 
-
     getTrailColor() {
         if(this.config.level === 0) {
             return 'gray';
@@ -163,21 +162,22 @@ class Trail {
         this.heightDiff = highest - lowest;
     }
 
-    loadTrail(cb) {
-
-        $.ajax({
-            type: "GET",
-            url: this.config.url,
-            cache: false,
-            dataType: "xml",
-            success: function(xml) {
-                this.parseGpx(xml);
-                cb(this);
-            }.bind(this),
-            error: function() {
-                console.error("Could not load trail info from " + this.config.url);
-                cb(this);
-            }.bind(this)
+    loadTrail() {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                type: "GET",
+                url: this.config.url,
+                cache: false,
+                dataType: "xml",
+                success: function (xml) {
+                    this.parseGpx(xml);
+                    resolve(this);
+                }.bind(this),
+                error: function () {
+                    console.error("Could not load trail info from " + this.config.url);
+                    reject(this);
+                }.bind(this)
+            });
         });
     }
 
@@ -226,8 +226,6 @@ class Trail {
 
     /**
      * Can be re-used, will only generate objects the first time
-     * @param gMap
-     * @param callback
      */
     renderToMap(trackLayer, markerLayer, callback, userUpload) {
         if(!window.printRender && this.config.bidirectional === false) {
@@ -302,8 +300,6 @@ class Trail {
 
     /**
      * Can be re-used, will only generate objects the first time
-     * @param gMap
-     * @param callback
      */
     renderToTrackInfo(layer, userUpload) {
 

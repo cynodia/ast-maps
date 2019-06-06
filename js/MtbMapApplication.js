@@ -300,11 +300,13 @@ class MtbMapApplication {
                     if (currIdx === trailIdxToLoad) {
                         trailToLoad = t;
                     }
-                    t.loadTrail((trail) => {
+                    t.loadTrail().then((trail) => {
                         trail.renderToMap(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
                         this.mainBounds[config].extend(trail.getBounds().getNorthEast());
                         this.mainBounds[config].extend(trail.getBounds().getSouthWest());
-                        if(config === this.configName) {
+                    }, () => {
+                    }).finally(() => {
+                        if (config === this.configName) {
                             trailsToLoad--;
                             if (trailsToLoad === 0) {
                                 console.log("DONE - fit map...");
