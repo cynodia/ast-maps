@@ -145,8 +145,8 @@ const mmConfigurations = {
                 title: 'Vestbredden',
                 level: 3,
                 bidirectional: true,
-                findStartText: "En kan starte sørfra fra den lille gress/strand-området på vestsiden av vannet. Nordfra kan en kjøre på via <i>Sigaren</i> eller vi egen innkjøring fra lysløypa.",
-                infoText: "Vestbredden går langs store ribbervann på omtsatt side som <i>Østbredden</i>. Stien er teknisk krevende med flere bratte partier og crux. Kan kjøres begge veger og bør kombineres med <i>Sigaren</i>.",
+                findStartText: "En kan starte sørfra fra den lille gress/strand-området på vestsiden av vannet. Nordfra kan en kjøre på via [Sigaren] eller vi egen innkjøring fra lysløypa.",
+                infoText: "Vestbredden går langs store ribbervann på omtsatt side som [Østbredden]. Stien er teknisk krevende med flere bratte partier og crux. Kan kjøres begge veger og bør kombineres med [Sigaren].",
                 images: {
                     trailStart: null
                 }
@@ -157,7 +157,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "I nordenden finner du stien ut fra lysløypa der hvor løypa passerer mellom store og lille Ribbervann. I sørenden starter løypa i bunnen av den bratte bakken som starter i sørenden av Store Ribbervann i Lysløypa.",
-                infoText: "Har du kun sett ett bilde fra Tungvekteren så er sjansen stor for at det er fra <i>Østbredden</i>! Dette er en perle av en sti som går langsmed Store Ribbervann tilrettelagt med vakre og spennende broer og med et par små og store hindringer som kan gi de fleste en liten utfordring. Et absolutt MUST for førstegangsreisende!",
+                infoText: "Har du kun sett ett bilde fra Tungvekteren så er sjansen stor for at det er fra [Østbredden]! Dette er en perle av en sti som går langsmed Store Ribbervann tilrettelagt med vakre og spennende broer og med et par små og store hindringer som kan gi de fleste en liten utfordring. Et absolutt MUST for førstegangsreisende!",
                 images: {
                     trailStart: 'tungvekter/trails/17.jpg'
                 }
@@ -168,7 +168,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: false,
                 findStartText: "Stien starter rett ut fra parkeringa på Dråbelia, opp ved infoskiltet.",
-                infoText: "En naturlig start på turen. Her er det rett på sak med et klatreparti opp mot første lille topp. Så bærer det utfor med mulighet for god fart! Stien går i parallell med den originale <i>Kjerringene</i> jerrevegen, og flere steder går den også via kjerrevegen.",
+                infoText: "En naturlig start på turen. Her er det rett på sak med et klatreparti opp mot første lille topp. Så bærer det utfor med mulighet for god fart! Stien går i parallell med den originale [Kjerringene] jerrevegen, og flere steder går den også via kjerrevegen.",
                 images: {
                     trailStart: 'tungvekter/trails/1.jpg'
                 }
@@ -189,8 +189,8 @@ const mmConfigurations = {
                 title: 'Sigaren',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Inngangen nordfra finner en fra lysløypa like vest for Store og Lille Ribbervann. Sørfra kjører en på fra <i>Vestbredden</i>",
-                infoText: "En fin liten sti som forbinder <i>Vestbredden</i> med nordenden av Store Ribbervann.",
+                findStartText: "Inngangen nordfra finner en fra lysløypa like vest for Store og Lille Ribbervann. Sørfra kjører en på fra [Vestbredden]",
+                infoText: "En fin liten sti som forbinder [Vestbredden] med nordenden av Store Ribbervann.",
                 images: {
                     trailStart: null
                 }
@@ -288,7 +288,7 @@ const mmConfigurations = {
                 title: 'S-Works',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter like ved slutten av <i>X-Kjærringene</i> og er en naturlig vei videre på turen.",
+                findStartText: "Stien starter like ved slutten av [X-Kjærringene] og er en naturlig vei videre på turen.",
                 infoText: "En kort sti som består av klarting gjennom en del hårnålssvinger. Teknisk utfordrende!",
                 images: {
                     trailStart: 'tungvekter/trails/18.jpg'
@@ -299,8 +299,8 @@ const mmConfigurations = {
                 title: 'Størevelta',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter på toppen av <i>S-Works</i>.",
-                infoText: "En flott sti med et par hhopp og doserte svinger fra <i>S-works</i> ned til <i>Froskedammen</i>.",
+                findStartText: "Stien starter på toppen av [S-Works].",
+                infoText: "En flott sti med et par hhopp og doserte svinger fra [S-works] ned til [Froskedammen].",
                 images: {
                     trailStart: null
                 }
@@ -310,7 +310,7 @@ const mmConfigurations = {
                 title: 'Froskedammen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter på toppen av <i>S-Works</i>.",
+                findStartText: "Stien starter på toppen av [S-Works].",
                 infoText: "En flott sti med en utfordring i midten! STarter med en litt bratt nedkjøring - du finner en enklere rute til venstre. Litt over midten kommer du til Froskedammen og her skal det kjøres på bro! Denne kanskje mest en utfordring mentalt - hold farten og hold blikket fremover :-)",
                 images: {
                     trailStart: null
@@ -321,7 +321,7 @@ const mmConfigurations = {
                 title: 'Muldvarpen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Stien starter på toppen av <i>Kranglefanten</i>.",
+                findStartText: "Stien starter på toppen av [Kranglefanten].",
                 infoText: "Fartsfylt sti som ender i en nedkjøring med hopp og doserte svinger!",
                 images: {
                     trailStart: null
@@ -332,8 +332,8 @@ const mmConfigurations = {
                 title: 'Kranglefanten',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter ved broen i slutten av <i>Froskedammen</i> og <i>Kila</i>.",
-                infoText: "Flott sti som starter med et lite klartreparti med hårnålssvinger og vortsetter oppover mot <i>Tredje Januar</i>, <i>Gubben og Gamla</i> og <i>Muldvarpen</i>",
+                findStartText: "Stien starter ved broen i slutten av [Froskedammen] og [Kila].",
+                infoText: "Flott sti som starter med et lite klartreparti med hårnålssvinger og vortsetter oppover mot [Tredje Januar], [Gubben og Gamla] og [Muldvarpen]",
                 images: {
                     trailStart: null
                 }
@@ -343,8 +343,8 @@ const mmConfigurations = {
                 title: 'Tredje Januar',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter og slutter i <i>Kranglefanten</i>",
-                infoText: "En kort nedkjøring med et par hopp. Du kjører opp igjen via <i>Kranglefanten</i>.",
+                findStartText: "Stien starter og slutter i [Kranglefanten]",
+                infoText: "En kort nedkjøring med et par hopp. Du kjører opp igjen via [Kranglefanten].",
                 images: {
                     trailStart: null
                 }
@@ -376,7 +376,7 @@ const mmConfigurations = {
                 title: 'Rallarvegen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Følg <i>Ribberveggen</i> til stien deler deg ved et steingjerde. Her holder du mot venstre.",
+                findStartText: "Følg [Ribberveggen] til stien deler deg ved et steingjerde. Her holder du mot venstre.",
                 infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!",
                 images: {
                     trailStart: 'tungvekter/trails/14.jpg'
@@ -442,8 +442,8 @@ const mmConfigurations = {
                 title: 'Langemyrskauen runde',
                 bidirectional: false,
                 level: 2,
-                findStartText: "Ca midt i <i>Langemyrskauen</i> deler stien seg i to. Følg mot venstre for denne lille akstra runden.",
-                infoText: "Artig liten sti som starter med litt klarting for så å gå nedover mot nedkjøringa til <i>Hundremeterskogen</i>.",
+                findStartText: "Ca midt i [Langemyrskauen] deler stien seg i to. Følg mot venstre for denne lille akstra runden.",
+                infoText: "Artig liten sti som starter med litt klarting for så å gå nedover mot nedkjøringa til [Hundremeterskogen].",
                 images: {
                     trailStart: null
                 }
@@ -453,7 +453,7 @@ const mmConfigurations = {
                 title: 'Haldors gullrekke',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Denne stien starter i østlig retning fra <i>100-meterskogen</i>.",
+                findStartText: "Denne stien starter i østlig retning fra [100-meterskogen].",
                 infoText: "Stien starter med et flott klatreparti med fine hårnålssvinger. Når en kommer et stykke opp hvner en i furuskog mens stien fortsetter å stige over steiner og røtter. Du kan kommer helt opp til <i>Kremtoppen</i> via denne.",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
@@ -464,7 +464,7 @@ const mmConfigurations = {
                 title: 'Korketrekkeren',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg <i>Haldors Gullrekke</i> til topps. Like før du kommer over til <i>Downhillen</i> deler stien seg og du skal holde mot venstre.",
+                findStartText: "Følg [Haldors Gullrekke] til topps. Like før du kommer over til [Downhillen] deler stien seg og du skal holde mot venstre.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
                     trailStart: 'tungvekter/trails/6.jpg'
@@ -497,7 +497,7 @@ const mmConfigurations = {
                 title: 'Elgdriden',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Starter i starten av <i>Downhillen</i> like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot <i>Haldors gullrekke</i>, så holder du rett frem.",
+                findStartText: "Starter i starten av [Downhillen] like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot [Haldors gullrekke], så holder du rett frem.",
                 infoText: "Stien starter med et litt krevende segment hvor en skal over litt hindringer og klatre enda litt. Etter ca 150m begynner nedkjøringen - her er det både bratt og svingete med et par hopp mot slutten før en ender opp helt nede i løysløpa!",
                 images: {
                     trailStart: null
@@ -531,7 +531,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: true,
                 findStartText: "Stien starter fra Bålplassen.",
-                infoText: "Stien går via et crux fra bålplassen til Den Himmelske Fredsplass. Videre opp fra Fredsplassen er det et nytt crux. Om disse blir for heftige finnes det en snarvei inn til høyre før det første cruxet som tar deg rett over til The Wall som er en liten naturlig wallride. Stien ender opp i enda et crux før den ender inn i <i>3-kilometeren</i>, her med mulighet for å ta til venstre for å kjøre rundt.",
+                infoText: "Stien går via et crux fra bålplassen til Den Himmelske Fredsplass. Videre opp fra Fredsplassen er det et nytt crux. Om disse blir for heftige finnes det en snarvei inn til høyre før det første cruxet som tar deg rett over til The Wall som er en liten naturlig wallride. Stien ender opp i enda et crux før den ender inn i [3-kilometeren], her med mulighet for å ta til venstre for å kjøre rundt.",
                 images: {
                     trailStart: null
                 }
@@ -552,8 +552,8 @@ const mmConfigurations = {
                 title: 'Flatan',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Stien starter i fortsettelse av <i>Aleèn</i> evt motsatt retning fra toppen av hårnålssvingene i <i>Haldors Gullrekke</i>.",
-                infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du <i>Korketrekkeren</i> og det blir litt humpete.",
+                findStartText: "Stien starter i fortsettelse av [Aleèn] evt motsatt retning fra toppen av hårnålssvingene i [Haldors Gullrekke].",
+                infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du [Korketrekkeren] og det blir litt humpete.",
                 images: {
                     trailStart: null
                 }
@@ -563,8 +563,8 @@ const mmConfigurations = {
                 title: 'Aleèn',
                 level: 1,
                 bidirectional: true,
-                findStartText: "Starter fra krysset hvor <i>The Wall</i> kommer inn på <i>3-kilometeren</i>",
-                infoText: "Stien går gjennom flott furuskog med noen småhindringer i starten. Ender i en naturlig overgang til <i>Flatan</i>, eller opp mot Kremtoppen via <i>Uphillen</i>.",
+                findStartText: "Starter fra krysset hvor [The Wall] kommer inn på [3-kilometeren]",
+                infoText: "Stien går gjennom flott furuskog med noen småhindringer i starten. Ender i en naturlig overgang til [Flatan], eller opp mot Kremtoppen via [Uphillen].",
                 images: {
                     trailStart: null
                 }
@@ -619,7 +619,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Starter ut fra bussholdeplassen i Mauråsvegen.",
-                infoText: "En grei inngang inn til stinettverket fra nordvest-siden. Når en sykler innover ender denne opp like ved starten på <i>Vestbredden</i>.",
+                infoText: "En grei inngang inn til stinettverket fra nordvest-siden. Når en sykler innover ender denne opp like ved starten på [Vestbredden].",
                 images: {
                     trailStart: null
                 }
@@ -707,7 +707,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Følg Muldvarpen til høyeste punkt. Her deler stien seg og du skal holde mot høyre.",
-                infoText: "Stien starter i toppen av <i>Muldvarpen</i> hvor det går en nedkjøring ned til et parti som går paralellt med <i>Froskedammen/Størevelta</i> før den fotsetter mot Songe paralellt med grusvegen et stykke. Så krysser du en kjerreveg før du kommer inn på det siste partiet. Dette er en teknisk utfordrende bit som starter med et relativt høyt drop(kan kjøre til høyre for dette) og følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen og du er like ved Sykkelparken.",
+                infoText: "Stien starter i toppen av [Muldvarpen] hvor det går en nedkjøring ned til et parti som går paralellt med [Froskedammen/Størevelta] før den fotsetter mot Songe paralellt med grusvegen et stykke. Så krysser du en kjerreveg før du kommer inn på det siste partiet. Dette er en teknisk utfordrende bit som starter med et relativt høyt drop(kan kjøre til høyre for dette) og følges opp av et hopp og en litt vrang venstresving før stien fortsetter ned til grusvegen og du er like ved Sykkelparken.",
                 images: {
                     trailStart: null
                 }
@@ -717,8 +717,8 @@ const mmConfigurations = {
                 title: 'Einball',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Stien starter til høyre ut fra <i>X-kjærringene</i> ca midtveis.",
-                infoText: "En frisk sti som tar deg ned til siste partiet av <i>Gubben og Gamla</i> eller evt rett ut til Sykkelparken. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
+                findStartText: "Stien starter til høyre ut fra [X-kjærringene] ca midtveis.",
+                infoText: "En frisk sti som tar deg ned til siste partiet av [Gubben og Gamla] eller evt rett ut til Sykkelparken. Her er det potensiale for god fart med en del utfordrende partier underveis. Stien krysser/går via andre stier et par steder, så vær oppmerksom!",
                 images: {
                     trailStart: 'tungvekter/trails/3.jpg'
                 }
@@ -740,7 +740,7 @@ const mmConfigurations = {
                 bidirectional: false,
                 level: 3,
                 findStartText: "Fra toppen av S-works, snu sørover.",
-                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder <i>S-works</i> med <i>Kranglefanten</i> som et alternativ til Størevelta/Froskedammen.",
+                infoText: "Artig liten sti som starter ut med et dropp og følger på med et par hopp. Forbinder [S-works] med [Kranglefanten] som et alternativ til Størevelta/Froskedammen.",
                 images: {
                     trailStart: 'tungvekter/trails/18.jpg'
                 }
@@ -761,7 +761,7 @@ const mmConfigurations = {
                 title: 'Ribberåsen ned',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Starter fra Varden på toppen av Ribberåsen. <i></i>Rallarvegen</i> og <i>Ribberveggen</i> leder begge hit.",
+                findStartText: "Starter fra Varden på toppen av Ribberåsen. []Rallarvegen] og [Ribberveggen] leder begge hit.",
                 infoText: "Downhill med masse fart! Denne tar deg ned fra Ribberåsen i løpet av kun et par hundre meter. Her er det mye røtter og stiener du skal komme deg over!",
                 images: {
                     trailStart: 'tungvekter/trails/15.jpg'
@@ -772,8 +772,8 @@ const mmConfigurations = {
                 title: 'Pikniktoppen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Starter til høyre like etter inngangen til <i>Eventyrskogen</i> fra Piknikbordet.",
-                infoText: "Liten sti som går over en topp med litt klatring og tette svinger. Nedkjøring på nordsiden inn mot <i>Eventyrskogen</i>.",
+                findStartText: "Starter til høyre like etter inngangen til [Eventyrskogen] fra Piknikbordet.",
+                infoText: "Liten sti som går over en topp med litt klatring og tette svinger. Nedkjøring på nordsiden inn mot [Eventyrskogen].",
                 images: {
                     trailStart: null
                 }
@@ -805,7 +805,7 @@ const mmConfigurations = {
                 title: 'Juvet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Stien starter fra første toppen i <i>X-kjærringene</i>. Ta til venstre ned mot kjerrevegen(Kjerringene) og fortsett over denne.",
+                findStartText: "Stien starter fra første toppen i [X-kjærringene]. Ta til venstre ned mot kjerrevegen(Kjerringene) og fortsett over denne.",
                 infoText: "Spennende liten sti med et dropp midt i. Kan være litt vanskelig å få fart inn mot droppet, så pass på.",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
@@ -910,7 +910,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Denne starter på høyeste punkt på østsiden av hovedgrusvegen. Her er det et område med et gammel piknikbord. Kjør inn her så ser du stien til høyre for bordet.",
-                infoText: "Dette er en fantastisk nedkjøring med masse fart og spenning! Det er en relativt røff sti som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Det kommer også et crux i det en skal ned på <i>Langekjerr</i> helt på slutten.",
+                infoText: "Dette er en fantastisk nedkjøring med masse fart og spenning! Det er en relativt røff sti som starter med et godt dropp - kjør til venstre om du ønsker å unngå dette. Det kommer også et crux i det en skal ned på [Langekjerr] helt på slutten.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_202126_7885.JPG'
                 }
@@ -921,7 +921,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Padda starter inn mot høyre fra grusvegen mot Doppedalen, like bortenfor den sørlige starten på Langekjerr.",
-                infoText: "Disse to stiene kan kombineres med <i>Jordvepsen</i> for en fartsfylt og røff opplevelse! Her er det flere bratte seksjoner og et flytparti mot midten hvor en virkelig kan dra på. <br> Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
+                infoText: "Disse to stiene kan kombineres med [Jordvepsen] for en fartsfylt og røff opplevelse! Her er det flere bratte seksjoner og et flytparti mot midten hvor en virkelig kan dra på. <br> Pass på å ta til høyre ned mot Biejordene på toppen etter nedkjøringene i Padda.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201914_7883.JPG'
                 }
@@ -931,7 +931,7 @@ const mmConfigurations = {
                 title: 'Hoppene',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Denne stien starter med en nedoverbakke til venstre et lite stykke opp i <i>Opp Vedlaget</i> om en kjører mot Stoa. Det finnes også en alternativ sti opp fra Langekjerr, men denne ender i dumpa etter den første nedoverbakken.",
+                findStartText: "Denne stien starter med en nedoverbakke til venstre et lite stykke opp i [Opp Vedlaget] om en kjører mot Stoa. Det finnes også en alternativ sti opp fra Langekjerr, men denne ender i dumpa etter den første nedoverbakken.",
                 infoText: "En relativt kort sti som ineholder en del hopp og dropp. Avsluttes inn i Langekjerr med det flotte oppbygde hoppet der! Det kanskje mest utfordrende hoppet kommer i bakken ned mot Langekjerr, dette kan en fint unngå ved å holde til venstre.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201118_7878.JPG'
@@ -953,7 +953,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet til Doppedalen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Ta deg opp til Hogstfeltet via <i>Krysset til Hogstfeltet</i>. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på <i>Hogstfeltet dwonhill 1/2</i> følger du på rett frem. Ta også rett frem i nedste kryss(<i>Hogstfeltet Downhill 3</i>).",
+                findStartText: "Ta deg opp til Hogstfeltet via [Krysset til Hogstfeltet]. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på [Hogstfeltet dwonhill 1/2] følger du på rett frem. Ta også rett frem i nedste kryss([Hogstfeltet Downhill 3]).",
                 infoText: "En flott kobling fra hogstfeltet og ned til Doppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_200429_7875.JPG'
@@ -975,7 +975,7 @@ const mmConfigurations = {
                 title: 'Syretoppen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg <i>Store skogvei</i> og videre <i>Steingjerdet til stien</i>. På toppen av den bratte klatringen i <i>Steingjerdet til stien</i> går det en sti inn mot høyre. Dette er starten på Syretoppen. Alternativt kan en ta av rett inn til mot den bratte klatringen fra grusvegen.",
+                findStartText: "Følg [Store skogvei] og videre [Steingjerdet til stien]. På toppen av den bratte klatringen i [Steingjerdet til stien] går det en sti inn mot høyre. Dette er starten på Syretoppen. Alternativt kan en ta av rett inn til mot den bratte klatringen fra grusvegen.",
                 infoText: "Når en først har karret seg opp til startpunktet for denne stien kjenner en det allerede i beina - men her er det bare å gønne på videre opp, opp, opp. Når du først kommer til toppen venter en morsom nedkjøring med litt tekniske utfordringer som ender opp i nedkjøringen mot stien ved Biefeltet, evt Collsdroppet.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_204437_7891.JPG'
@@ -987,7 +987,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Fra pumpehuset i bunnen av grusvegen inn fra Myrene følger du vegen oppover rundt høyresvingen og videre innover. Følg så den bratte stien til venstre opp mot Solbergvannet. Like etter broen i starten av vannet tar du mot venstre og følger opp mot et rødt hus. Stien starter inn mot skogen til høyre i enden av innkjørselen. Ha respekt for beboerene.",
-                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som <i>Hogstfeltet Downhill 1</i>. Den siste biten er fartsfylt med et lite hopp og noen flotte broer. Ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
+                infoText: "En fartsfylt sti som starter på flotte furuskogs-stier og etter hvert går over i et litt røffere parti før stien krysser inn på samme sport som [Hogstfeltet Downhill 1]. Den siste biten er fartsfylt med et lite hopp og noen flotte broer. Ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NB - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'asbie/IMG_20190508_200112_7873.JPG'
                 }
@@ -997,7 +997,7 @@ const mmConfigurations = {
                 title: 'Gruvestien',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Omtrent midt i <i>Vedlaget opp</i> går det en sti inn i skauen mot høyre om du kjører mot Stoa.",
+                findStartText: "Omtrent midt i [Vedlaget opp] går det en sti inn i skauen mot høyre om du kjører mot Stoa.",
                 infoText: "En spennende liten sti som binder sammen stien fra vedlaget over til en av stiene opp mot hogstfeltet. Her kan en se rester etter gammel gruvedrift! Mot slutten kommer et bratt klatreparti - her er det en fordel med litt fart inn!",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201207_7879.JPG'
@@ -1008,8 +1008,8 @@ const mmConfigurations = {
                 title: 'Snarvei',
                 level: 1,
                 bidirectional: true,
-                findStartText: "En liten sti som forbinder <i>Langekjerr</i> med <i>Flykræsjet</i>.",
-                infoText: "Om du kjører <i>Langekjerr</i> oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du <i>Flykræsjet mot Stoa går stien inn mot høyre ca. 2/3 av vegen.</i>",
+                findStartText: "En liten sti som forbinder [Langekjerr] med [Flykræsjet].",
+                infoText: "Om du kjører [Langekjerr] oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du [Flykræsjet mot Stoa går stien inn mot høyre ca. 2/3 av vegen.]",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201448_7880.JPG'
                 }
@@ -1019,8 +1019,8 @@ const mmConfigurations = {
                 title: 'Paralellen',
                 level: 3,
                 bidirectional: true,
-                findStartText: "Kjører du <i>Langekjerr</i> ned mot Biejordene så kommer inngangen til <i>Paralellen</i> på venstre hånd ca 100 meter etter hoppet med trepallene. Stien går bratt rett opp i skråninga.",
-                infoText: "En artig sti som er et alternativ til, den ofte sølefylte, starten på <i>Langekjerr</i>. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier. Kjører du mot Biejordene er det et lite dropp på toppen av første bakke med alternativ sti på venstresiden.",
+                findStartText: "Kjører du [Langekjerr] ned mot Biejordene så kommer inngangen til [Paralellen] på venstre hånd ca 100 meter etter hoppet med trepallene. Stien går bratt rett opp i skråninga.",
+                infoText: "En artig sti som er et alternativ til, den ofte sølefylte, starten på [Langekjerr]. Er mest spennende i retning nedover(mot Biejordene) - men kan fint kjøres begge veier. Kjører du mot Biejordene er det et lite dropp på toppen av første bakke med alternativ sti på venstresiden.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201753_7882.JPG'
                 }
@@ -1052,7 +1052,7 @@ const mmConfigurations = {
                 title: 'Besseggen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Starten på denne kommer brått på midt i <i>Langekjerr til Vedlaget</i>. Se etter en sti inn til høyre.",
+                findStartText: "Starten på denne kommer brått på midt i [Langekjerr til Vedlaget]. Se etter en sti inn til høyre.",
                 infoText: "En spennende og utfordrende sti som inneholder et parti over en steinegg. Ender opp i Langekjerr og kan naturlig kobles sammen med Paralellen.",
                 images: {
                     trailStart: null
@@ -1063,7 +1063,7 @@ const mmConfigurations = {
                 title: 'Opp til hogstfeltet',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Starter i enden av <i>Krysset til Hogstfeltet</i>.",
+                findStartText: "Starter i enden av [Krysset til Hogstfeltet].",
                 infoText: "En liten sti som går opp mot startpunktet for to av downhillene fra Hogstfeltet. Teknisk krevende med et crux ganske tidlig.",
                 images: {
                     trailStart: null
@@ -1107,7 +1107,7 @@ const mmConfigurations = {
                 title: 'Krysset til doppedalen',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Stien starter i krysset i slutten av <i>Politistien</i>. Her tar du til høyre.",
+                findStartText: "Stien starter i krysset i slutten av [Politistien]. Her tar du til høyre.",
                 infoText: "En fin sti nedover fra Politistien mot grusvegen ved Doppedalen. Her er det også mulighet for å at av mot Åsbieflyt.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203356_7830.JPG'
@@ -1118,7 +1118,7 @@ const mmConfigurations = {
                 title: 'Krysset til hogstfeltet',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Stien starter i krysset i slutten av <i>Politistien</i>. Her tar du til venstre.",
+                findStartText: "Stien starter i krysset i slutten av [Politistien]. Her tar du til venstre.",
                 infoText: "Om en tar til venstre i enden av Politistien ender en på denne stien mot hogstfeltet. Men dette er ikke bare en transportetappe, men inneholder artige nedkjøringer og steinete seksjoner som byr på utfordringer.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203344_7829.JPG'
@@ -1152,7 +1152,7 @@ const mmConfigurations = {
                 title: 'Fly til kremparti',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Om du kjører <i>Flykræsjet</i> mot Stoa, så går denne stien rett frem og opp i lia i det <i>Flykræsjet</i> tar en venstresving etter ca 100 meter.",
+                findStartText: "Om du kjører [Flykræsjet] mot Stoa, så går denne stien rett frem og opp i lia i det [Flykræsjet] tar en venstresving etter ca 100 meter.",
                 infoText: "Et avstikk fra Flykræsjet som starter med er bratt oppoverparti og byr på et par små dropp før det ender opp i slutten av Krempartiet.",
                 images: {
                     trailStart: null
@@ -1163,8 +1163,8 @@ const mmConfigurations = {
                 title: 'Fly til kremparti 2',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Fra <i>Krempartiet</i> kan du ta mot høyre 20 meter før den bratte bakken som avslutter stien ned mot <i>Langekjerr</i>.",
-                infoText: "Denne stien binder sammen <i>Kermpartiet</i> og <i>Flykræsjet</i> og kan kjøres begge veger.",
+                findStartText: "Fra [Krempartiet] kan du ta mot høyre 20 meter før den bratte bakken som avslutter stien ned mot [Langekjerr].",
+                infoText: "Denne stien binder sammen [Kermpartiet] og [Flykræsjet] og kan kjøres begge veger.",
                 images: {
                     trailStart: null
                 }
@@ -1185,7 +1185,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet Downhill 1',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
+                findStartText: "Ta deg opp til Hogstfeltet enten via [Krysset til Hogstfeltet] eller evt ved å kjøre opp [Hogstfeltet Downhill 3]. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En fantastisk nedkjøring fra Hogstfeletet til Biejordene. Denne går via den flotte seksjonen i starten med dumper og doserte svinger. Når du kommer ned til en steinete seksjon som ender i et krys så hold mot venstre over bakketoppen og ta så mot høyre inn i Kråkefotstien. Siste biten ned mot jordene holder du mot venstre og krysser til sist over mot høyre hvor en stein utgjør et naturlig siste hopp før en er ute på jordet. NP - PASS PÅ mot slutten da dette er et område hvor det ferdes mye folk(og hunder) til fots!",
                 images: {
                     trailStart: 'asbie/IMG_20190505_205145_7838.JPG'
@@ -1218,7 +1218,7 @@ const mmConfigurations = {
                 title: 'Steingjerdet til tempelet',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Følg <i>Store skogvei til steingjerdet. Ta så videre over steingjerdet.</i>",
+                findStartText: "Følg [Store skogvei til steingjerdet. Ta så videre over steingjerdet.]",
                 infoText: "Alternativ slutt på skogsløpypa i østkanten. En spennende nedkjøring som desverre ender i et område uten noen gode koblinger videre mot andre stier. Kjører du elektrisk så freser du bare opp igjen :-)",
                 images: {
                     trailStart: 'asbie/IMG_20190508_204311_7890.JPG'
@@ -1240,7 +1240,7 @@ const mmConfigurations = {
                 title: 'Opp vedlaget',
                 bidirectional: true,
                 level: 2,
-                findStartText: "Inngangen i sørenden finner du fra grusvegen inn mot Doppedalen. Kjører du mot Doppedalen starter stien på toppen av den bratteste bakken. Det går to stier her, den til venstre er utgangen av <i>Langekjerr til vedlaget</i>. Stien til høyre er <i>Opp Vedlaget</i>.<br>I nordenden starter stien nesten helt i toppen av <i>Langekjerr</i>.",
+                findStartText: "Inngangen i sørenden finner du fra grusvegen inn mot Doppedalen. Kjører du mot Doppedalen starter stien på toppen av den bratteste bakken. Det går to stier her, den til venstre er utgangen av [Langekjerr til vedlaget]. Stien til høyre er [Opp Vedlaget].<br>I nordenden starter stien nesten helt i toppen av [Langekjerr].",
                 infoText: "En spennende sti som går fra grusvegen mot Doppedalen opp til nordenden av Langekjerr. Her er det utfordernde partier både oppover og nedover. Det er også mulig å ta av mot Hoppløypa eller Gruvestien.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_200911_7877.JPG'
@@ -1251,7 +1251,7 @@ const mmConfigurations = {
                 title: 'Polititoppen',
                 bidirectional: false,
                 level: 2,
-                findStartText: "Følg <i>Politistien</i> ca 10-15 meter inn og ta til venstre.",
+                findStartText: "Følg [Politistien] ca 10-15 meter inn og ta til venstre.",
                 infoText: "En artig rundløype som byr på tekniske utfordringer både oppover og nedover.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203214_7827.JPG'
@@ -1262,7 +1262,7 @@ const mmConfigurations = {
                 title: 'Åsbieflyt',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Ca midt i stien, i en liten topp, i <i>Krysset til Doppedalen</i> går det en bratt sti opp til venstre om en kjører i retning Doppedalen.",
+                findStartText: "Ca midt i stien, i en liten topp, i [Krysset til Doppedalen] går det en bratt sti opp til venstre om en kjører i retning Doppedalen.",
                 infoText: "En <b>fantastisk</b> flytsti som går via Doppedalen ned til Rytterspranget. Denne er fartsfylt og en kan flyte gjennom de mange bratte oppoverbakkene om en utnytter terrenget. Ender opp i Åsbiesogens drøyeste nedover som igjen utgjør tilløpet til Rytterspranget.",
                 images: {
                     trailStart: 'asbie/IMG_20190505_203444_7831.JPG'
@@ -1273,7 +1273,7 @@ const mmConfigurations = {
                 title: 'Steingjerdet til stien',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Følg <i>Store Skogvei</i> til du når toppen med steingjerdet. Ikke ta over steingjerdet, men følg stien mot venstre.",
+                findStartText: "Følg [Store Skogvei] til du når toppen med steingjerdet. Ikke ta over steingjerdet, men følg stien mot venstre.",
                 infoText: "En naturlig og fartsfylt avslutning på Store skogveg. Denne starter med en flott utforkjøring med flere hopp tekniske godbiter. Så kommer et klatreparti opp mot starten på Syretoppen. Om en vil føge stien videre holder en rett frem. en ender opp i nedkjøringen mot grusvegen ved Biefeltet, her kan en alternativt gå for Colls-droppet om en føler det er dagen for det!",
                 images: {
                     trailStart: 'asbie/IMG_20190508_204305_7889.JPG'
@@ -1284,7 +1284,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet downhill 2',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Ta deg opp til Hogstfeltet enten via <i>Krysset til Hogstfeltet</i> eller evt ved å kjøre opp <i>Hogstfeltet Downhill 3</i>. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
+                findStartText: "Ta deg opp til Hogstfeltet enten via [Krysset til Hogstfeltet] eller evt ved å kjøre opp [Hogstfeltet Downhill 3]. Følg stien opp mot Hogstfelttoppen og start nedkjøringen herfra! Har du dårlig tid så kan nedkjøringen startes direkte fra krysset opp mot Hogstfelttoppen.",
                 infoText: "En alternativ nedkjøring fra Hogstfeltet til Biejordene. En føger samme flotte, parti ned mot krysset etter den steinete seksjonen. Her holder en mot høyre og følger en flott flytsti, med mye røtter og stein, nedover mot Speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: 'asbie/IMG_20190505_205145_7838.JPG'
@@ -1295,7 +1295,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet downhill 3',
                 bidirectional: false,
                 level: 3,
-                findStartText: "Følg <i>Krysset til Hogstfeltet</i> og fortsett rett frem i krysset hvor en tar av opp mot Hogstfelttoppen. Ta så første sti mot venstre lengre oppe. Alternativt kan en kjøre denne stien opp fra Biejordene - men det fordrer at en kjenner stien.",
+                findStartText: "Følg [Krysset til Hogstfeltet] og fortsett rett frem i krysset hvor en tar av opp mot Hogstfelttoppen. Ta så første sti mot venstre lengre oppe. Alternativt kan en kjøre denne stien opp fra Biejordene - men det fordrer at en kjenner stien.",
                 infoText: "En tredje sti ned fra Hogstfeltet til Biejordene. Denne starter ikke på samme sted som de to andre og følger en egen sti i starten før den kommer inn på stien ned mot speiderleiren. Stien ender opp i en bratt nedkjøring ned mot bekken. Finn et godt spor her og hold det!",
                 images: {
                     trailStart: null
@@ -1317,7 +1317,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "Om du kjører mot Stoa på grusvegen opp fra Biefeltet, så vil du se en sti som går krapt inn mot venstre et like stykke før du når krysset mot veien langs Stoa. NB: Det går mange stier in mot venstre fra vegen, men dette er den siste!",
-                infoText: "Et <i>must</i> når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
+                infoText: "Et [must] når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_202327_7888.JPG'
                 }
@@ -1329,7 +1329,7 @@ const mmConfigurations = {
         main: {
             mainHeaderMobile: "Hisøy",
             mainHeaderDesktop: "Hisøy",
-            infoText: "<h2>Hisøy</h2>Kart for Hisøy er <i>Work in Progress</i>" +
+            infoText: "<h2>Hisøy</h2>Kart for Hisøy er [Work in Progress]" +
                     "<h2>Adkomst</h2>TODO",
             levelColors: {
                 1: '#090',

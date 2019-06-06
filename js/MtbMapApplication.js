@@ -85,7 +85,7 @@ class MtbMapApplication {
         return this.trailMap;
     }
 
-    closeTrailInfo() {
+    closeTrailInfo(instant) {
         this.currDetailTrail.removeFromTrackInfo(this.trailMap);
         //this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
         this.currDetailTrail = null;
@@ -808,6 +808,18 @@ class MtbMapApplication {
 
     openTrail(id) {
         this.onMapElemClicked(this.trails[id]);
+    }
+
+    openTrailByName(name) {
+        name = name.toLowerCase();
+        for(let i = 0; i < this.trails.length; i++) {
+            if(this.trails[i].getTitle() && this.trails[i].getTitle().toLowerCase() === name) {
+                this.currDetailTrail.removeFromTrackInfo(this.trailMap);
+                this.currDetailTrail = null;
+                this.openTrail(i);
+                return;
+            }
+        }
     }
 
     onMapElemClicked(trail) {

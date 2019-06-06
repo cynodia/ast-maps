@@ -28,6 +28,10 @@ function openTrail(id) {
     window.application.openTrail(id);
 }
 
+function openTrailByName(name) {
+    window.application.openTrailByName(name);
+}
+
 function initTrails() {
     console.log("Init app");
 

@@ -19,6 +19,14 @@ class Trail {
         this.infoWindow = infoWindow;
         this.infoTimeout = null;
         //this.config.title = this.config.url;
+
+        try {
+            const replacePattern = /\[(.*?)\]/gim;
+            config.findStartText = config.findStartText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>');
+            config.infoText = config.infoText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>');
+        } catch(e) {
+            console.error(e);
+        }
     }
 
     isBidirectional() {
