@@ -648,8 +648,8 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/skauenut.gpx',
-                title: 'Ut fra skauen',
-                level: 1,
+                title: null,
+                level: 0,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
