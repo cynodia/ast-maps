@@ -32,6 +32,18 @@ task build(dependsOn: [ 'minify' ]) {
     }
 }
 
+task deployConfig(dependsOn: [ 'build' ]) {
+    doLast {
+        exec {
+            commandLine = [ '/bin/bash', '-c',
+                            "aws s3 cp data/Config.js s3://mtbmaps.net/data/Config.js --acl public-read;" +
+                                    "aws cloudfront create-invalidation --distribution-id E1XAG5EBVMQWWB --paths \"/data/Config.js\";" +
+                                    "aws cloudfront create-invalidation --distribution-id E32C96K56BB5FT --paths \"/data/Config.js\";"
+            ]
+        }
+    }
+}
+
 task deploy(dependsOn: [ 'build' ]) {
     doLast {
         exec {
