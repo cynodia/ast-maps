@@ -7,7 +7,6 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="viewport" content="width=device-width, initial-scale=0.71, user-scalable=no"/>
 
-
     <meta charset="utf-8">
     <title>MTBMaps</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -30,10 +29,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
     <script src="lib/leaflet-image.js"></script>
-    <!--script src="lib/leaflet-textpath.js"></script-->
     <script src="data/Config.js"></script>
     <script src="mtbmaps.min.js"></script>
-
 <!--    <script src="js/Trail.js"></script>-->
 <!--    <script src="js/MtbMapApplication.js"></script>-->
 <!--    <script src="js/GeoLocator.js"></script>-->
@@ -41,12 +38,23 @@
 
     <style>
 
-        body {
-            margin: 0;
+        html,body {
+            box-sizing: border-box;
         }
+        *, *:before, *:after { box-sizing: inherit; }
 
-        #trailinfo {
-            padding: 8px;
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            color: black;
+            margin: 0;
+            /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
+            min-height: 100%;
+            /* needed to prevent unwanted scroll-bars */
+            padding: 0;
         }
         .windowheader {
             font-size: 36px;
@@ -56,10 +64,6 @@
         }
         .shadowed {
             box-shadow: 0 0 6px #2b2b2b;
-        }
-        #elevationchart {
-            width: 500px;
-            height: 200px;
         }
         #trailchart {
             margin: 5px;

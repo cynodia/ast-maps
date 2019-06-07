@@ -9,7 +9,6 @@
 
     <meta charset="utf-8">
     <title>MTBMaps</title>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135266495-1"></script>
     <script>
@@ -28,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script src="lib/leaflet-image.js"></script>
     <script src="data/Config.js"></script>
     <script src="mtbmaps.min.js"></script>
     <!--<script src="js/Trail.js"></script>-->
@@ -52,9 +52,17 @@
             margin: 0;
             /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
             min-height: 100%;
-
             /* needed to prevent unwanted scroll-bars */
             padding: 0;
+        }
+        .windowheader {
+            font-size: 34px;
+            padding: 12px 8px;
+            border-bottom: 1px solid gray;
+            background: white;
+            top: 0;
+            left: 0;
+            right: 0;
         }
         .infotext {
             padding: 8px;
@@ -67,16 +75,6 @@
             top: 0;
             left: 0;
             background: #fbfbff;
-        }
-        .windowheader {
-            z-index: 2;
-            font-size: 34px;
-            padding: 12px 8px;
-            border-bottom: 1px solid gray;
-            background: white;
-            top: 0;
-            left: 0;
-            right: 0;
         }
         #trailchart {
             width: 100%;
