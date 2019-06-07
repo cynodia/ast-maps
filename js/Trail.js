@@ -20,10 +20,11 @@ class Trail {
         this.infoTimeout = null;
         //this.config.title = this.config.url;
 
+        const replacePattern = /\[(.*?)\]/gim;
         try {
-            const replacePattern = /\[(.*?)\]/gim;
-            config.findStartText = config.findStartText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>');
-            config.infoText = config.infoText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>');
+
+            if(config.findStartText) { config.findStartText = config.findStartText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>'); }
+            if(config.infoText) { config.infoText = config.infoText.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>'); }
         } catch(e) {
             console.error(e);
         }

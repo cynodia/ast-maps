@@ -64,38 +64,34 @@
         .infotext {
             padding: 70px 8px 8px 8px;
         }
+        .windowed {
+            font-size: 18px;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #fbfbff;
+        }
         .windowheader {
-            z-index: 1;
+            z-index: 2;
             font-size: 34px;
-            padding: 8px;
-            height: 64px;
+            padding: 12px 8px;
             border-bottom: 1px solid gray;
             background: white;
-            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-        }
-        #elevationchart {
-            width: 100%;
-            height: 200px;
         }
         #trailchart {
             width: 100%;
             height: 300px;
             background: #dddddd;
         }
-        #trailwindow {
-            z-index: 10;
-            position: absolute;
-            display: none;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: #fbfbff;
-        }
         #trailfacts {
             padding: 8px;
+            font-weight: bold;
+            font-size: 18px;
             /*height: 174px;*/
         }
         #trailinfotext {
@@ -108,34 +104,6 @@
         }
         #trailmap {
             height: 380px;
-        }
-        #infotext {
-            z-index: 10;
-            font-size: 18px;
-            position: absolute;
-            display: none;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            /*left: 0px;*/
-            background: #fbfbff;
-            overflow-y: scroll;
-        }
-        #helptext {
-            z-index: 10;
-            font-size: 18px;
-            position: absolute;
-            display: none;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            /*left: 0px;*/
-            background: #fbfbff;
-            overflow-y: scroll;
-        }
-        #trailfactsmain {
-            font-weight: bold;
-            font-size: 22px;
         }
         .shadowed {
             box-shadow: 0 0 6px #2b2b2b;
@@ -170,42 +138,44 @@
 <div id="outer">
     <div style="height: 100%; width: 100%;" id="lmap"></div>
 </div>
-<div id="infotext">
+<div class="windowed hasInnerScroller" id="infotext" style="display: none;">
     <div class="windowheader">
         <span id="infoinfoheader">Info</span><button id="closeinfobtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
-    <div id="infotextcontent" class="infotext">
+    <div class="scrollerWrapper">
+        <div class="scrollingContent">
+            <div id="infotextcontent" class="infotext"></div>
+        </div>
     </div>
 </div>
-<div id="helptext">
+<div class="windowed hasInnerScroller" id="helptext" style="display: none;">
     <div class="windowheader">
         <span>Informasjon</span><button id="closehelpbtn" style="text-align: right; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
     <div id="helptextcontent" class="infotext">
     </div>
 </div>
-<div id="trailwindow">
+<div class="windowed hasInnerScroller" id="trailwindow" style="display: none;">
     <div class="windowheader">
         <span id="trailinfoheader" style="white-space: nowrap; overflow: hidden;"></span><button id="closetrailinfo" style="background: white; position: absolute; top: 8px; right: 8px; font-size: 40px; border: none; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
     </div>
-    <div id="trailinfo">
-        <div class="trailinfosection">
-            <div class="shadowed" id="trailmap"></div>
-            <!--div id="elevationchart"></div-->
-            <div id="trailfactsmain">
+    <div class="scrollerWrapper">
+        <div class="scrollingContent">
+            <div class="trailinfosection">
+                <div class="shadowed" id="trailmap"></div>
+                <!--div id="elevationchart"></div-->
                 <div id="trailfacts"></div>
-                <button id="trail3dBtn" class="chartBtn">Vis 3D <i class="fa fa-cube"></i></button>
-                <button id="trail2dBtn" class="chartBtn" style="display: none;">Vis 2D <i class="fa fa-chart-bar"></i></button>
-                <div class="shadowed" id="trailchart"></div>
+                <div style="position: relative;">
+                    <button id="trail3dBtn" class="chartBtn">Vis 3D <i class="fa fa-cube"></i></button>
+                    <button id="trail2dBtn" class="chartBtn" style="display: none;">Vis 2D <i class="fa fa-chart-bar"></i></button>
+                    <div class="shadowed" id="trailchart"></div>
+                </div>
+                <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
+                <div id="trailinfotext"></div>
+                <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
+                <img id="entranceimg" class="shadowed" width="100%" align="center" src=""/>
+                <div id="trailentrance"></div>
             </div>
-            <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
-            <div id="trailinfotext"></div>
-            <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
-            <img id="entranceimg" class="shadowed" width="100%" align="center" src=""/>
-            <div id="trailentrance">
-            </div>
-        </div>
-        <div class="trailinfosection">
         </div>
     </div>
 </div>

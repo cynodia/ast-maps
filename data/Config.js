@@ -784,7 +784,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "Følg stien/kjerrevegen innover jordet fra piknikbordet langs lysløypa.",
-                infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM spederen. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
+                infoText: "Bjørnebo er en gård som eies av Arendal kommune og disponeres av KFUK/KFUM speideren. Enkelte søndager er det åpent med servering av vafler og varme drikker.<br>Videre nordover fra Bjørnebo finner en flere flotte stier i skogområdene.",
                 images: {
                     trailStart: null
                 }

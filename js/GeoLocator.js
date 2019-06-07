@@ -26,7 +26,7 @@ class GeoLocator {
     geolocationFail(error) {
         switch(error.code) {
             case error.PERMISSION_DENIED:
-                this.app.showInfo("Brukeren avsol forespørsel om posisjon.");
+                this.app.showInfo("Brukeren avslo forespørsel om posisjon.");
                 break;
             case error.POSITION_UNAVAILABLE:
                 this.app.showInfo("Posisjonsinformasjon ikke tilgjengelig.");

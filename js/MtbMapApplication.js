@@ -86,9 +86,11 @@ class MtbMapApplication {
     }
 
     closeTrailInfo(instant) {
-        this.currDetailTrail.removeFromTrackInfo(this.trailMap);
-        //this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
-        this.currDetailTrail = null;
+        if(this.currDetailTrail) {
+            this.currDetailTrail.removeFromTrackInfo(this.trailMap);
+            //this.currDetailTrail.renderTo(this.trackLayer, this.markerLayer, this.onMapElemClicked.bind(this));
+            this.currDetailTrail = null;
+        }
         $("#trailwindow").fadeOut(500);
         window.location.hash = "";
     }
@@ -531,7 +533,7 @@ class MtbMapApplication {
     }
 
     createTrailMenu() {
-        this.trailMenu = $('<div class="ctxMenu"/>');
+        this.trailMenu = $('<div class="ctxMenu hasInnerScroller"/>');
         this.trailMenu.append('<div class="ctxMenuHeader">Stier</div>')
         const trailBackBtn = $('<button class="ctxCloseBtn"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>');
         trailBackBtn.on('click', () => {
@@ -539,8 +541,8 @@ class MtbMapApplication {
         });
         this.trailMenu.append(trailBackBtn);
 
-        const wrapper = $('<div style="display: flex; flex: 1; min-height: 0px;"/>');
-        const content = $('<div style="flex: 1; overflow-y: scroll;"/>');
+        const wrapper = $('<div class="scrollerWrapper"/>');
+        const content = $('<div class="scrollingContent"/>');
 
         this.trailBody = $('<div class="ctxBody"/>');
         content.append(this.trailBody);
@@ -814,8 +816,10 @@ class MtbMapApplication {
         name = name.toLowerCase();
         for(let i = 0; i < this.trails.length; i++) {
             if(this.trails[i].getTitle() && this.trails[i].getTitle().toLowerCase() === name) {
-                this.currDetailTrail.removeFromTrackInfo(this.trailMap);
-                this.currDetailTrail = null;
+                if(this.currDetailTrail) {
+                    this.currDetailTrail.removeFromTrackInfo(this.trailMap);
+                    this.currDetailTrail = null;
+                }
                 this.openTrail(i);
                 return;
             }
