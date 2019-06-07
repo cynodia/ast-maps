@@ -8,102 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.71, user-scalable=no"/>
 
     <meta charset="utf-8">
-    <title>MTBMaps</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135266495-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-135266495-1');
-    </script>
+    <title>MTBMaps - redirect</title>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="lib/vis.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <link href="common.css" rel="stylesheet">
-    <link href="lib/vis.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
-    <script src="lib/leaflet-image.js"></script>
-    <script src="data/Config.js"></script>
-    <script src="mtbmaps.min.js"></script>
     <!--<script src="js/Trail.js"></script>-->
     <!--<script src="js/MtbMapApplication.js"></script>-->
     <!--<script src="js/GeoLocator.js"></script>-->
-    <script src="index.js"></script>
 
-    <style>
-
-        .windowheader {
-            font-size: 34px;
-            padding: 12px 8px;
-            border-bottom: 1px solid gray;
-            background: white;
-        }
-        .infotext {
-            padding: 8px;
-        }
-        #trailchart {
-            width: 100%;
-            height: 300px;
-            background: #dddddd;
-        }
-        .windowed {
-            font-size: 18px;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: #fbfbff;
-        }
-        #trailfacts {
-            padding: 8px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        #trailmap {
-            height: 380px;
-        }
-        .trailinfosection {
-            width: 100%;
-            padding: 10px;
-        }
-    </style>
     <script>
         function init() {
+            function getUrlParameter(sParam) {
+                const sPageURL = window.location.search.substring(1);
+                let sURLVariables = sPageURL.split('&');
+
+                for (let i = 0; i < sURLVariables.length; i++) {
+                    const sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+            }
+
             location.assign("index.html?c=" + (getUrlParameter("c") ? getUrlParameter("c") : ""));
         }
     </script>
 </head>
 <body onload="init()">
-<div class="windowed hasInnerScroller" id="trailwindow" style="display: none;">
-    <div class="windowheader">
-        <span id="trailinfoheader" style="white-space: nowrap; overflow: hidden;"></span><button id="closetrailinfo" style="background: white; position: absolute; top: 8px; right: 8px; font-size: 40px; border: none; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
-    </div>
-    <div class="scrollerWrapper">
-        <div class="scrollingContent">
-            <div class="trailinfosection">
-                <div class="shadowed" id="trailmap"></div>
-                <!--div id="elevationchart"></div-->
-                <div id="trailfacts"></div>
-                <div style="position: relative;">
-                    <button id="trail3dBtn" class="chartBtn">Vis 3D <i class="fa fa-cube"></i></button>
-                    <button id="trail2dBtn" class="chartBtn" style="display: none;">Vis 2D <i class="fa fa-chart-bar"></i></button>
-                    <div class="shadowed" id="trailchart"></div>
-                </div>
-                <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-info-circle"></i> Litt om stien</div>
-                <div id="trailinfotext"></div>
-                <div style="padding: 10px 0; font-size: 28px;"><i class="fa fa-compass"></i> Adkomst</div>
-                <img id="entranceimg" class="shadowed" width="100%" align="center" src=""/>
-                <div id="trailentrance"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
+Videresender...
 </body>
 </html>

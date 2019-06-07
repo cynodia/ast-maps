@@ -49,7 +49,6 @@ task deploy(dependsOn: [ 'build' ]) {
         exec {
             commandLine = [ '/bin/bash', '-c',
                             "aws s3 cp index.html s3://mtbmaps.net/ --acl public-read;" +
-                                    "aws s3 cp index_mobile.html s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp common.css s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp favicon.ico s3://mtbmaps.net/ --acl public-read;" +
                                     "aws s3 cp index.js s3://mtbmaps.net/ --acl public-read;" +
