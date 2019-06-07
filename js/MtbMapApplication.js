@@ -54,7 +54,8 @@ class MtbMapApplication {
                 "<h2>Bruk</h2>" +
                 "Naviger deg rundt i kartet ved å dra for å flytte og klype for å zoome. Klikk på en sti for å få opp teknisk data, beskrivelse og informasjon om hvordan du finner stien.<br><br>" +
                 "Små hvite flagg markerer startpunktet på stier som er enveis.<br><br>" +
-                "Om du slår på geo-lokasjon(\"siktet\" oppe i høyre hjørne), så vil appen kunne tracke hvor du befinner deg. For hver gang du trykker på denne knappen vil appen også beregne hva som er nærmeste sti-inngang i forhold til din posisjon.<br><br>" +
+                "Om du trykker på geo-lokasjon(\"siktet\" oppe i høyre hjørne), så vil appen vise hvor du befinner deg. For hver gang du trykker på denne knappen vil appen også beregne hva som er nærmeste sti-inngang i forhold til din posisjon." +
+                "Av hensyn til batteribruk vil posisjonen din ikke oppdateres automatisk.<br><br>" +
                 "Det er også markert interessepunkter i kartet. Disse inkluderer parkeringsmuligheter og punkter i terrenget som er sentrale eller av interesse av andre grunner.<br><br>" +
                 "Du kan veksle mellom topologikart fra <i>Statkart</i> eller sattelittbilde fra <i>ArcGIS</i>. Det er også mulig å legge på et sykkel-heatmap fra Strava - dette er ganske " +
                 "lavoppløst, men gir fremdeles en god ide om hvor det er mye aktivitet.<br>" +
