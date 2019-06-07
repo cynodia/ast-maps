@@ -231,8 +231,7 @@ class MtbMapApplication {
         });
 
         this.trailMap = L.map('trailmap', {
-            zoomControl: false,
-            dragging: !mobilecheck()
+            zoomControl: false
         });
         L.tileLayer('https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
                 {
