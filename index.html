@@ -38,32 +38,16 @@
 
     <style>
 
-        html,body {
-            box-sizing: border-box;
-        }
-        *, *:before, *:after { box-sizing: inherit; }
-
-        html {
-            height: 100%;
-            width: 100%;
-        }
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            color: black;
-            margin: 0;
-            /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
-            min-height: 100%;
-            /* needed to prevent unwanted scroll-bars */
-            padding: 0;
-        }
         .windowheader {
             font-size: 36px;
             padding: 5px 8px;
             border-bottom: 1px solid gray;
             margin-bottom: 6px;
+            background: white;
         }
-        .shadowed {
-            box-shadow: 0 0 6px #2b2b2b;
+        .infotext {
+            font-size: 18px;
+            padding-bottom: 40px;
         }
         #trailchart {
             margin: 5px;
@@ -85,42 +69,25 @@
         #trailfacts {
             padding: 8px;
             font-weight: bold;
-            /*height: 174px;*/
-        }
-        #trailinfotext {
-            font-size: 18px;
-            padding: 8px;
-        }
-        #trailentrance {
-            font-size: 18px;
-            padding: 8px;
         }
         #trailmap {
             margin: 5px;
             flex: 1;
             height: 300px;
         }
-        .infotext {
-            font-size: 18px;
-            padding-bottom: 40px;
-        }
         .trailinfosection {
             flex: 1;
             padding: 10px 0;
-        }
-        hr {
-            margin: 10px 0;
-            height: 1px;
-            border: 0;
-            background-color: #ccc;
         }
     </style>
 <script>
 
     function init() {
         if(mobilecheck()) {
+//            $("#includedContent").load("mobile.html");
             location.assign("index_mobile.html?c=" + (getUrlParameter("c") ? getUrlParameter("c") : ""));
         } else {
+//            $("#includedContent").load("desktop.html");
             initTrails();
         }
     }
