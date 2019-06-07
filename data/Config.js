@@ -385,10 +385,10 @@ const mmConfigurations = {
             {
                 url: 'data/trails/tungvekter/asylet.gpx',
                 title: '3D/Asylet',
-                level: 3,
+                level: 2,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Kjører du sørover på [Vestbredden] så kommer du ca 2/3 på vegen, til et punkt hvor stien deler seg. [Vestbredden] fortsetter over en liten steinbro, mens denne stien går videre rett frem.",
+                infoText: "Sti som kobler [Vestbredden] sammen med [Rallarvegen] på en sømløs måte. Litt klatring og lit teknisk med en del svinger.",
                 images: {
                     trailStart: null
                 }
@@ -761,7 +761,7 @@ const mmConfigurations = {
                 title: 'Ribberåsen ned',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Starter fra Varden på toppen av Ribberåsen. []Rallarvegen] og [Ribberveggen] leder begge hit.",
+                findStartText: "Starter fra Varden på toppen av [Ribberåsen]. [Rallarvegen] og [Ribberveggen] leder begge hit.",
                 infoText: "Downhill med masse fart! Denne tar deg ned fra Ribberåsen i løpet av kun et par hundre meter. Her er det mye røtter og stiener du skal komme deg over!",
                 images: {
                     trailStart: 'tungvekter/trails/15.jpg'
@@ -953,7 +953,7 @@ const mmConfigurations = {
                 title: 'Hogstfeltet til Doppedalen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Ta deg opp til Hogstfeltet via [Krysset til Hogstfeltet]. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på [Hogstfeltet dwonhill 1/2] følger du på rett frem. Ta også rett frem i nedste kryss([Hogstfeltet Downhill 3]).",
+                findStartText: "Ta deg opp til Hogstfeltet via [Krysset til Hogstfeltet]. I krysset hvor en kan kjøre opp til Hogstfelttoppen og starten på [Hogstfeltet dwonhill 1]/[Hogstfeltet dwonhill 2] følger du på rett frem. Ta også rett frem i nedste kryss([Hogstfeltet Downhill 3]).",
                 infoText: "En flott kobling fra hogstfeltet og ned til Doppedalen som gir mulighet for kombinasjon med mange andre stier! Denner har et crux ca 1/3 inn. Her kan en enten kjøre rett ned, finne et spor litt til høyre i ura eller velge å kjøre lengre inn til høyre, ned gjennom skauen.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_200429_7875.JPG'
@@ -1009,7 +1009,7 @@ const mmConfigurations = {
                 level: 1,
                 bidirectional: true,
                 findStartText: "En liten sti som forbinder [Langekjerr] med [Flykræsjet].",
-                infoText: "Om du kjører [Langekjerr] oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du [Flykræsjet mot Stoa går stien inn mot høyre ca. 2/3 av vegen.]",
+                infoText: "Om du kjører [Langekjerr] oppover mot Stoa så kommer denne på venstre hånd ca 3/4 på vei. Kjører du [Flykræsjet] mot Stoa går stien inn mot høyre ca. 2/3 av vegen.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_201448_7880.JPG'
                 }
@@ -1317,7 +1317,7 @@ const mmConfigurations = {
                 level: 2,
                 bidirectional: true,
                 findStartText: "Om du kjører mot Stoa på grusvegen opp fra Biefeltet, så vil du se en sti som går krapt inn mot venstre et like stykke før du når krysset mot veien langs Stoa. NB: Det går mange stier in mot venstre fra vegen, men dette er den siste!",
-                infoText: "Et [must] når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
+                infoText: "Et <i>must</i> når en besøker Åsbieskogen. Dette er en flott sti gjennom skogspartiet øst i Åsbieskogen. Denne byr på flere teknisker utfordringer, og litt over halvveis finner du en liten rundløype som ender opp i et dropp over en trestokk. Her kan du også fortsette ned mot grusvegen over et par hopp. Stien går så videre opp mot høyre gjenom flere spennende seksjoner før den ender opp på en topp ved et steigjerde. Her kan en enten følge den fantastiske nedkjøringen mot stien(evt via Syretoppen), eller en kan fortsette over steingjerdet mot Tempelet.",
                 images: {
                     trailStart: 'asbie/IMG_20190508_202327_7888.JPG'
                 }
