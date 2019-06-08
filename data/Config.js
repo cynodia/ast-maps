@@ -377,7 +377,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: true,
                 findStartText: "Følg [Ribberveggen] til stien deler deg ved et steingjerde. Her holder du mot venstre.",
-                infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!",
+                infoText: "En fantastisk flott tilrettelagt sti som går langs ribberåsen. Her er det lagt ned mye arbeide og du vil kjøre over stenpartier hvor en bare må beundre håndverket i steinleggingen! Denne er ikke noe for deg med høydeskrekk!<br>Tar deg til [Diagonalen] eller videre opp mot Varden og [Ribberåsen ned]/[Ribberveggen].",
                 images: {
                     trailStart: 'tungvekter/trails/14.jpg'
                 }
@@ -409,8 +409,8 @@ const mmConfigurations = {
                 title: 'Kvart på halv fire',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter ut mot venstre på toppen av [Halv fire].",
+                infoText: "Fin sti som tar deg fra [Halv fire] ned til Lysløypa ved Store Heitjenn.",
                 images: {
                     trailStart: null
                 }
@@ -806,7 +806,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: false,
                 findStartText: "Stien starter fra første toppen i [X-kjærringene]. Ta til venstre ned mot kjerrevegen(Kjerringene) og fortsett over denne.",
-                infoText: "Spennende liten sti med et dropp midt i. Kan være litt vanskelig å få fart inn mot droppet, så pass på.",
+                infoText: "Spennende liten sti med et dropp midt i. Kan være litt vanskelig å få fart inn mot droppet, så pass på.<br>Ender i [Opp til parkeringa].",
                 images: {
                     trailStart: 'tungvekter/trails/8.jpg'
                 }
