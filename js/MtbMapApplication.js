@@ -537,7 +537,7 @@ class MtbMapApplication {
 
     createTrailMenu() {
         this.trailMenu = $('<div class="ctxMenu hasInnerScroller"/>');
-        this.trailMenu.append('<div class="ctxMenuHeader">Stier</div>')
+        this.trailMenu.append('<div id="trailList" class="ctxMenuHeader">-</div>')
         const trailBackBtn = $('<button class="ctxCloseBtn"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>');
         trailBackBtn.on('click', () => {
             this.closeTrailMenu();
@@ -559,8 +559,14 @@ class MtbMapApplication {
 
     populateTrailMenu() {
         this.trailBody.empty();
-        const trailHeader = $('<div class="ctxSubHeader">' + this.config.title + '</div>');
-        this.trailBody.append(trailHeader);
+        $('#trailList').html(this.config.title);
+
+        if(this.config.hasOwnProperty('routes') && this.config.routes.length > 0) {
+            this.trailBody.append($('<div class="ctxSubHeader">Turforslag</div>'));
+
+        }
+
+        this.trailBody.append($('<div class="ctxSubHeader">Stier</div>'));
         let id = 0;
 
         /** Need to loop trough all configs to find IDs */
@@ -657,7 +663,7 @@ class MtbMapApplication {
                 trailListButton.style.cursor = "pointer";
                 trailListButton.setAttribute("class", "topButton");
                 trailListButton.index = 2;
-                trailListButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-road\"></i>";
+                trailListButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-directions\"></i>";
                 trailListButton.onclick = (e) => {
                     self.openTrailMenu();
                     L.DomEvent.stopPropagation(e);

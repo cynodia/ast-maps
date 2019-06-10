@@ -73,6 +73,14 @@ const mmConfigurations = {
             }
         },
 
+        routes: [
+            {
+                title: 'Fra dråbelia',
+                description: 'Start i Dråbelia og følg stien til Sinsenkrysset. Fortsett videre gjennom stien “Halv re” til du kommer til “Grillhytta”. Følg stien skarpt til høyre mot “Kremtoppen”. Midt i bakkene opp mot “Kremtoppen” kan du velge mellom å fortsette oppover til topps, eller ta “Flatan” rundt og ned til "100-meterskogen" Fra toppen av “Kremtoppen” kan du ta stien "Downhillen" ned som er en liten utforløype. I "100-meterskogen" kan du velge å fortsette mot Ribbervann eller ta deg opp mot “Varden”. Du kan sykle på begge sider av Ribbervannene. Så er det bare å velge hvilken sti du vil ta tilbake.',
+                url: ''
+            }
+        ],
+
         /**
          * The trails you wish to display
          *
