@@ -32,6 +32,7 @@
     <script src="data/Config.js"></script>
     <script src="mtbmaps.min.js"></script>
 <!--    <script src="js/Trail.js"></script>-->
+<!--    <script src="js/Route.js"></script>-->
 <!--    <script src="js/MtbMapApplication.js"></script>-->
 <!--    <script src="js/GeoLocator.js"></script>-->
     <script src="index.js"></script>
@@ -163,7 +164,12 @@
 <div id="exportpopup"></div>
 <div id="infopopup">Laster kartdata...</div>
 
-<div id="routewindow"><span id="routeinfo"></span><button id="closeroutebtn" style="text-align: right; height: 42px; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button></div>
+<div id="routewindow">
+    <button id="prevroutebtn" style="text-align: left; width: 50px; font-size: 50px; border: none; background: transparent; float: left;"><i style="cursor: pointer;" class="fa fa-caret-left"></i></button>
+    <span id="routeinfo" style="flex: 1;"></span>
+    <button id="nextroutebtn" style="text-align: right; width: 50px; font-size: 50px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-caret-right"></i></button>
+    <button id="closeroutebtn" style="text-align: right; height: 42px; font-size: 40px; border: none; background: transparent; float: right;"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>
+</div>
 
 </body>
 </html>

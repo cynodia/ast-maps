@@ -9,16 +9,29 @@ class Route {
         this.stopMarker = null;
         this.length = 0;
         this.path = null;
+        this.segmentLayer = {
+            path: null,
+            start: null,
+            stop: null,
+            bounds: null
+        };
         this.mapPath = null;
         this.clickCb = null;
         this.bounds = L.latLngBounds();
 
+        if(config.description) { this.config.description = this.replaceLinks(this.config.description); }
+        for(let i = 0; i < this.config.segments.length; i++) {
+            this.config.segments[i].text = this.replaceLinks(this.config.segments[i].text);
+        }
+    }
+
+    replaceLinks(str) {
         const replacePattern = /\[(.*?)\]/gim;
         try {
-
-            if(config.description) { config.description = config.description.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>'); }
+            return str.replace(replacePattern, '<a href=\'#\' onclick=\'openTrailByName("$1")\'>$1</a>');
         } catch(e) {
             console.error(e);
+            return str;
         }
     }
 
@@ -28,6 +41,17 @@ class Route {
 
     getLevel() {
         return this.config.level;
+    }
+
+    getCurrSegmentBounds() {
+        return this.segmentLayer.bounds;
+    }
+
+    getSegment(idx) {
+        if(idx >= 0 && idx < this.config.segments.length) {
+            return this.config.segments[idx];
+        }
+        return null;
     }
 
     getTitle() {
@@ -204,6 +228,57 @@ class Route {
         if(this.config.title != null) {
             this.mapPath.unbindTooltip();
         }
+    }
+
+    removeCurrentSegment(trackLayer, markerLayer) {
+        if(this.segmentLayer.path) {
+            this.segmentLayer.path.removeFrom(trackLayer);
+        }
+        if(this.segmentLayer.start) {
+            this.segmentLayer.start.removeFrom(markerLayer);
+        }
+        if(this.segmentLayer.stop) {
+            this.segmentLayer.stop.removeFrom(markerLayer);
+        }
+        this.segmentLayer = {
+            path: null,
+            start: null,
+            stop: null,
+            bounds: L.latLngBounds()
+        };
+    }
+
+    renderSegmentMap(idx, trackLayer, markerLayer) {
+        this.removeCurrentSegment(trackLayer, markerLayer);
+        const segment = this.config.segments[idx];
+
+        this.segmentLayer.start = L.marker(this.coordinates[segment.start], {
+            icon: L.icon({
+                iconUrl: 'data/imgs/marker_start2.png',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            })
+        });
+        this.segmentLayer.start.addTo(markerLayer)
+
+        this.segmentLayer.stop = L.marker(this.coordinates[segment.stop], {
+            icon: L.icon({
+                iconUrl: 'data/imgs/marker_start2.png',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            })
+        });
+        this.segmentLayer.stop.addTo(markerLayer)
+
+        const options = {
+            color: 'red',
+            weight: 4
+        };
+
+        const coords = this.coordinates.slice(segment.start, segment.stop);
+        this.segmentLayer.path = L.polyline(coords, options);
+        this.segmentLayer.bounds.extend(coords);
+        this.segmentLayer.path.addTo(trackLayer);
     }
 
     /**

@@ -29,6 +29,7 @@ class MtbMapApplication {
         this.showingTooltips = false;
         this.tooltipTimer = null;
         this.currRoute = null;
+        this.currRouteIdx = 0;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -351,6 +352,29 @@ class MtbMapApplication {
                 this.currRoute.removeFrom(this.trackLayer, this.markerLayer);
                 $('#routewindow').fadeOut(500);
                 this.currRoute = null;
+                this.currRouteIdx = 0;
+            }
+        });
+        $('#prevroutebtn').on('click', () => {
+            if(this.currRoute && this.currRouteIdx > 0) {
+                const segment = this.currRoute.getSegment(this.currRouteIdx - 1);
+                if(segment) {
+                    this.currRouteIdx--;
+                    $('#routeinfo').html(segment.text);
+                    this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
+                    this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
+                }
+            }
+        });
+        $('#nextroutebtn').on('click', () => {
+            if(this.currRoute) {
+                const segment = this.currRoute.getSegment(this.currRouteIdx + 1);
+                if(segment) {
+                    this.currRouteIdx++;
+                    $('#routeinfo').html(segment.text);
+                    this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
+                    this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
+                }
             }
         });
 
@@ -581,6 +605,7 @@ class MtbMapApplication {
                 const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
                 entry.on('click', () => {
                     this.currRoute = new Route(route);
+                    this.currRouteIdx = -1;
                     this.closeTrailMenu();
                     this.currRoute.loadTrail().then(() => {
                         this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
