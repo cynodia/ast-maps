@@ -28,12 +28,15 @@ class MtbMapApplication {
         this.userAddedTrails = [];
         this.showingTooltips = false;
         this.tooltipTimer = null;
+        this.currRoute = null;
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
         $('#trail3dBtn').click(this.showTrail3d.bind(this));
         $('#trail2dBtn').click(this.showTrail2d.bind(this));
         $('#infopopup').click(this.infoPopupClicked.bind(this));
+
+        $('#routewindow').hide();
 
         if(this.show3d) {
             $('#trail3dBtn').hide();
@@ -343,6 +346,14 @@ class MtbMapApplication {
             this.showInfo("Klikk på stiene for mer informasjon", 5);
         }
 
+        $('#closeroutebtn').on('click', () => {
+            if(this.currRoute) {
+                this.currRoute.removeFrom(this.trackLayer, this.markerLayer);
+                $('#routewindow').fadeOut(500);
+                this.currRoute = null;
+            }
+        });
+
     }
 
     getClosestTrailStart(lat, lng) {
@@ -564,6 +575,23 @@ class MtbMapApplication {
         if(this.config.hasOwnProperty('routes') && this.config.routes.length > 0) {
             this.trailBody.append($('<div class="ctxSubHeader">Turforslag</div>'));
 
+            let first = true;
+            for(let i = 0; i < this.config.routes.length; i++) {
+                const route = this.config.routes[i];
+                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
+                entry.on('click', () => {
+                    this.currRoute = new Route(route);
+                    this.closeTrailMenu();
+                    this.currRoute.loadTrail().then(() => {
+                        this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
+                        this.lMap.flyToBounds(this.currRoute.getBounds());
+                    });
+                    $('#routeinfo').html(this.currRoute.getDescription());
+                    $('#routewindow').fadeIn(500);
+                });
+                this.trailBody.append(entry);
+                first = false;
+            }
         }
 
         this.trailBody.append($('<div class="ctxSubHeader">Stier</div>'));

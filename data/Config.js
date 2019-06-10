@@ -75,9 +75,30 @@ const mmConfigurations = {
 
         routes: [
             {
-                title: 'Fra dråbelia',
-                description: 'Start i Dråbelia og følg stien til Sinsenkrysset. Fortsett videre gjennom stien “Halv re” til du kommer til “Grillhytta”. Følg stien skarpt til høyre mot “Kremtoppen”. Midt i bakkene opp mot “Kremtoppen” kan du velge mellom å fortsette oppover til topps, eller ta “Flatan” rundt og ned til "100-meterskogen" Fra toppen av “Kremtoppen” kan du ta stien "Downhillen" ned som er en liten utforløype. I "100-meterskogen" kan du velge å fortsette mot Ribbervann eller ta deg opp mot “Varden”. Du kan sykle på begge sider av Ribbervannene. Så er det bare å velge hvilken sti du vil ta tilbake.',
-                url: ''
+                title: 'Fra Dråbelia',
+                description: 'Start i Dråbelia og følg [X-kjærringene], [S-works], [Størevelta], [Froskedammen], [Kranglefanten] og [Muldvarpen] ned til Sinsenkrysset. <br>' +
+                        'Her tar du en runde i [Halv Fire] før du sykler gjennom [Kun To].' +
+                        'Så fortsetter du rett over lysløypa og inn i [Paralellen]. Denne følger du til du kommer til bålplassen ved Lille Heitjenn.<br>' +
+                        'Følg så [The Wall] og videre på kryss av [3-kilometeren] og inn i [Aleèn]. Fortsett gjennom hele [Flatan] til den ender midt i [Haldors Gullrekke].<br>' +
+                        'Kjør gullrekka til topps og ta over i [Korketrekkeren]. Ta ut til venstre tilbake til Lysløypa i bunnen av [Korketrekkeren].<br>' +
+                        'Kryss så Lysløypa igjen og du står i starten på [Hundetoppen]. Ved piknikkbordet i enden av [Hundetoppen] Forsetter du inn i [Eventyrskogen].<br>' +
+                        'Etter å ha kjørt gjennom [Eventyrskogen] finner du inngangen til [Lille Ribbervann]. Følg denne helt til endes og kryss atter en gang Lysløypa.<br>' +
+                        'Nå står du i starten av den fantastiske [Østbredden]. Kjør langs hele Store Ribbervann til du kommer ut på Lysløypa igjen. Ta mot venstre og etter 20 meter står du ved starten av [Ribberveggen].<br>' +
+                        'Følg [Ribbervegen] til stien deler seg og du holder til venstre mot [Rallarvegen]. Følg rallarvegen helt til topps og ta rett inn til høyre på toppen.<br>' +
+                        'Følg denne stien og ta til høyre i krysset ved enden av stien. Nå ender du opp i toppen av [Ribberveggen] og kan finne Varden litt innover på toppen.<br>' +
+                        'Fra Varden kjører du [Ribberåsen ned] og følger på med [Langemyrskauen] helt inn i [100-meterskogen]. Ta mot [Haldors gullrekke] og kjør igjen til topps.<br>' +
+                        'Denne gangen tar du ikke av mot Korketrekkeren, men følger stien opp til Kremtoppen. Fra Kremtoppen kjører du ned [Kamelen] og ender opp i [3-kilometeren].<br>' +
+                        'Ta til venstre inn mot den mindre stien når du kommer til slutten av [Kamaelen] dvs. [3-kilometeren]. Følg [3-kilometeren] ut til lysløypa og ta til høyre.' +
+                        'Følg lysløypa gjennom sinsenkrysset og over noen bakketopper helt til du nærmer deg Store Heitjenn på høyre hånd. Her finner du inngangen til [Opp til parkeringa] på' +
+                        'venstre hånd. Følg stien over et par stokker og videre oppover klatringa til du ender opp på Dråbelia.',
+                level: 2,
+                url: 'data/routes/tungvekter/route1.gpx',
+            },
+            {
+                title: 'Fra Tennisbanen',
+                description: '',
+                level: 2,
+                url: 'data/trails/tungvekter/halvfire.gpx',
             }
         ],
 
