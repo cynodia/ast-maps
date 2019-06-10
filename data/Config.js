@@ -255,8 +255,8 @@ const mmConfigurations = {
                 title: 'Paralellen',
                 level: 1,
                 bidirectional: true,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Stien starter inn til venstre fra lysløypa ca 150m nordover fra Sinsenkrysset.",
+                infoText: "Fin skogssti som for det meste går over furubunn og klopper. Ender opp ved bålplassen ved Lille Heitjenn.",
                 images: {
                     trailStart: null
                 }
@@ -531,7 +531,7 @@ const mmConfigurations = {
                 level: 3,
                 bidirectional: true,
                 findStartText: "Stien starter fra Bålplassen.",
-                infoText: "Stien går via et crux fra bålplassen til Den Himmelske Fredsplass. Videre opp fra Fredsplassen er det et nytt crux. Om disse blir for heftige finnes det en snarvei inn til høyre før det første cruxet som tar deg rett over til The Wall som er en liten naturlig wallride. Stien ender opp i enda et crux før den ender inn i [3-kilometeren], her med mulighet for å ta til venstre for å kjøre rundt.",
+                infoText: "Stien går via et crux fra bålplassen til Den Himmelske Fredsplass. Videre opp fra Fredsplassen er det et nytt crux. Om disse blir for heftige finnes det en snarvei inn til høyre før det første cruxet som tar deg rett over til The Wall som er en liten naturlig wallride. Stien ender opp i enda et crux før den ender inn i [3-kilometeren].",
                 images: {
                     trailStart: null
                 }
@@ -596,8 +596,8 @@ const mmConfigurations = {
                 title: 'Uphillen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Følg [Aleèn] nordover eller [Flatan] sørover. Stien starter like sør for der [Kamelen] krysser.",
+                infoText: "Bratt klatresti som tar det til Kremtoppen.",
                 images: {
                     trailStart: null
                 }
@@ -728,8 +728,8 @@ const mmConfigurations = {
                 title: '3-kilometeren',
                 bidirectional: true,
                 level: 1,
-                findStartText: "",
-                infoText: "",
+                findStartText: "Fra lysløypa starter stien inn mot venstre ca 200m nord fra Sinsenkrysset.",
+                infoText: "Ei fin skogsløype som for det aller meste går over flat mark. Ganske smal sti på deler av vegen. Forbindelse til mange andre stier: [Korketrekkeren] og [Kamelen] ender begge opp her, og en kan ta av til både [Flatan], [Aleèn] og [The Wall].",
                 images: {
                     trailStart: null
                 }
