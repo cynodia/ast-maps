@@ -130,24 +130,23 @@ class MtbMapApplication {
         this.lMap = L.map('lmap', {
             zoomControl: false,
             preferCanvas: true,
-            renderer: L.canvas({ padding: 0.5, tolerance: 12 }) // L.svg()
+            renderer: L.canvas({padding: 0.5, tolerance: 12}) // L.svg()
         });
 
-/*
-        this.topologyLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-                {
-                    maxNativeZoom: 16,
-                    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-                }
-        );
-*/
+        /*
+                this.topologyLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+                        {
+                            maxNativeZoom: 16,
+                            attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                        }
+                );
+        */
         this.topologyLayer = L.tileLayer('https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
                 {
                     maxNativeZoom: 17,
                     attribution: '<a href="http://www.kartverket.no/">Kartverket</a>'
                 }
         );
-
 
         this.satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxNativeZoom: 16,
@@ -164,25 +163,25 @@ class MtbMapApplication {
         this.titleLayer = new L.FeatureGroup();
         this.markerLayer = new L.FeatureGroup();
 
-        L.control.scale({ imperial: false }).addTo(this.lMap);
+        L.control.scale({imperial: false}).addTo(this.lMap);
 
-        if(localStorage['mtbmaps.settings.showSatellite'] === "true") {
+        if (localStorage['mtbmaps.settings.showSatellite'] === "true") {
             this.satelliteActive = true;
             this.satelliteLayer.addTo(this.lMap);
         } else {
             this.topologyLayer.addTo(this.lMap);
         }
 
-        if(localStorage['mtbmaps.settings.showHeatmap'] === "true") {
+        if (localStorage['mtbmaps.settings.showHeatmap'] === "true") {
             this.heatmapActive = true;
             this.heatmapLayer.addTo(this.lMap);
         }
 
         this.infoWindow = L.popup();
 
-        if(!window.printRender) {
+        if (!window.printRender) {
             this.lMap.on('zoomend', () => {
-                if(this.tooltipTimer) {
+                if (this.tooltipTimer) {
                     clearTimeout(this.tooltipTimer);
                     this.tooltipTimer = null;
                 }
@@ -198,7 +197,7 @@ class MtbMapApplication {
                         }, 200);
                     }
                 } else {
-                    if(this.showingTooltips) {
+                    if (this.showingTooltips) {
                         this.showingTooltips = false;
                         this.trails.forEach((t) => {
                             t.removeToolTip();
@@ -227,7 +226,7 @@ class MtbMapApplication {
         }
 
         this.lMap.on('click', (ev) => {
-            if(!mobilecheck()) {
+            if (!mobilecheck()) {
                 this.infoWindow.remove();
             }
             this.closeContextMenu();
@@ -250,12 +249,12 @@ class MtbMapApplication {
 
         let trailToLoad = null;
         let trailIdxToLoad = -1;
-        if(typeof window.location.hash === 'string' && window.location.hash.length > 1) {
+        if (typeof window.location.hash === 'string' && window.location.hash.length > 1) {
             trailIdxToLoad = parseInt(window.location.hash.substr(1));
         }
         let currIdx = 0;
 
-        for(let config in mmConfigurations) {
+        for (let config in mmConfigurations) {
             if (mmConfigurations.hasOwnProperty(config)) {
                 const trails = mmConfigurations[config].trails;
                 let trailsToLoad = this.config.trails.length;
@@ -305,7 +304,7 @@ class MtbMapApplication {
                 });
 
                 /** Add trails */
-                for(let i = 0; i < trails.length; i++) {
+                for (let i = 0; i < trails.length; i++) {
                     let t = new Trail(trails[i], this.config.main.levelColors, currIdx, this.infoWindow);
                     if (currIdx === trailIdxToLoad) {
                         trailToLoad = t;
@@ -326,7 +325,7 @@ class MtbMapApplication {
                     });
                     this.trails.push(t);
                     //console.log("Added trail " + t.getTitle());
-                    if(trails[i].images.title !== null && trails[i].images.trailStart === null) {
+                    if (trails[i].images.title !== null && trails[i].images.trailStart === null) {
                         console.log(cfg.title + " Image missing for " + trails[i].title);
                     }
                     currIdx++;
@@ -334,20 +333,22 @@ class MtbMapApplication {
             }
         }
 
-
         this.createContextMenu();
         this.createTrailMenu();
         this.populateTrailMenu();
         this.addUIOverlays();
         this.hideInfo();
-        if(trailToLoad) {
+        if (trailToLoad) {
             this.onMapElemClicked(trailToLoad);
         }
 
-        if(mobilecheck()) {
+        if (mobilecheck()) {
             this.showInfo("Klikk på stiene for mer informasjon", 5);
         }
+        this.configureRouteEvents();
+    }
 
+    configureRouteEvents() {
         $('#closeroutebtn').on('click', () => {
             if(this.currRoute) {
                 this.currRoute.removeFrom(this.trackLayer, this.markerLayer);
@@ -615,7 +616,7 @@ class MtbMapApplication {
             let first = true;
             for(let i = 0; i < this.config.routes.length; i++) {
                 const route = this.config.routes[i];
-                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
+                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.config.main.levelColors[route.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
                 entry.on('click', () => {
                     this.currRoute = new Route(route);
                     this.currRouteSegment = -1;
@@ -654,7 +655,7 @@ class MtbMapApplication {
                         id++;
                         continue;
                     }
-                    const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + trail.title + '</span></div>');
+                    const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.config.main.levelColors[trail.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + trail.title + '</span></div>');
                     const t = this.trails[id];
                     entry.on('click', () => {
                         this.closeTrailMenu();

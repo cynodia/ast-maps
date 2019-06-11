@@ -75,7 +75,7 @@ const mmConfigurations = {
 
         routes: [
             {
-                title: 'Fra Dråbelia',
+                title: 'Tøff tur fra Dråbelia',
                 description: 'Denne turen starter og ender ved parkeringen på Dråbelia. Det er en god økt som er innom alt fra flotte furubunnsstier til heftige nedkjøringer og viser mye av variasjonen i Tungvekteren.',
                 segments: [
                     {
@@ -159,7 +159,7 @@ const mmConfigurations = {
                         stop: 772
                     }
                 ],
-                level: 2,
+                level: 3,
                 url: 'data/routes/tungvekter/route1.gpx',
             }
         ],
