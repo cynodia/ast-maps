@@ -154,7 +154,7 @@ const mmConfigurations = {
                         stop: 723
                     },
                     {
-                        text: 'Følg lysløypa gjennom sinsenkrysset og over noen bakketopper helt til du nærmer deg Store Heitjenn på høyre hånd. Her finner du inngangen til [Opp til parkeringa] på venstre hånd. Følg stien over et par stokker og videre oppover klatringa til du ender opp på Dråbelia.',
+                        text: 'Følg lysløypa gjennom sinsenkrysset og over noen bakketopper helt til du nærmer deg Store Heitjenn på høyre hånd. Her finner du inngangen til [Opp til parkeringa] på venstre hånd. Følg stien over et par stokker og videre oppover klatringa til du ender opp på Dråbelia.<br><b>Takk for turen :-)</b>',
                         start: 723,
                         stop: 772
                     }
