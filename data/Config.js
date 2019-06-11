@@ -1020,6 +1020,134 @@ const mmConfigurations = {
                 ],
                 level: 1,
                 url: 'data/routes/asbie/route1.gpx',
+            },
+            {
+                title: 'Røff tur fra Stoa',
+                description: 'Denne turen starter og ender ved parkeringen Stoa. Det er en tur som innebærer det meste av røffe nedkjøringer i Åsbieskogen. Det er et par stier som ikke ble med, men noe må en spare til senere :-)',
+                segments: [
+                    {
+                        text: 'Start ut fra parkeringen på Stoa',
+                        start: 0,
+                        stop: 46
+                    },
+                    {
+                        text: '',
+                        start: 46,
+                        stop: 100
+                    },
+                    {
+                        text: '',
+                        start: 100,
+                        stop: 136
+                    },
+                    {
+                        text: '',
+                        start: 136,
+                        stop: 192
+                    },
+                    {
+                        text: '',
+                        start: 192,
+                        stop: 252
+                    },
+                    {
+                        text: '',
+                        start: 252,
+                        stop: 292
+                    },
+                    {
+                        text: '',
+                        start: 292,
+                        stop: 321
+                    },
+                    {
+                        text: '',
+                        start: 321,
+                        stop: 358
+                    },
+                    {
+                        text: '',
+                        start: 358,
+                        stop: 421
+                    },
+                    {
+                        text: '',
+                        start: 421,
+                        stop: 436
+                    },
+                    {
+                        text: '',
+                        start: 436,
+                        stop: 465
+                    },
+                    {
+                        text: '',
+                        start: 465,
+                        stop: 518
+                    },
+                    {
+                        text: '',
+                        start: 518,
+                        stop: 537
+                    },
+                    {
+                        text: '',
+                        start: 537,
+                        stop: 583
+                    },
+                    {
+                        text: '',
+                        start: 583,
+                        stop: 642
+                    },
+                    {
+                        text: '',
+                        start: 642,
+                        stop: 665
+                    },
+                    {
+                        text: '',
+                        start: 665,
+                        stop: 693
+                    },
+                    {
+                        text: '',
+                        start: 693,
+                        stop: 744
+                    },
+                    {
+                        text: '',
+                        start: 744,
+                        stop: 784
+                    },
+                    {
+                        text: '',
+                        start: 784,
+                        stop: 834
+                    },
+                    {
+                        text: '',
+                        start: 834,
+                        stop: 852
+                    },
+                    {
+                        text: '',
+                        start: 852,
+                        stop: 894
+                    },
+                    {
+                        text: '',
+                        start: 894,
+                        stop: 911
+                    },
+                    {
+                        text: '',
+                        start: 911,
+                        stop: 935
+                    }
+                ],
+                level: 3,
+                url: 'data/routes/asbie/route2.gpx',
             }
         ],
 
