@@ -30,6 +30,7 @@ class MtbMapApplication {
         this.tooltipTimer = null;
         this.currRoute = null;
         this.currRouteIdx = 0;
+        this.routeHelpText = '<br>Trykk <i style="cursor: pointer;" class="fa fa-caret-right"></i> for å starte turen.';
 
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
@@ -363,6 +364,10 @@ class MtbMapApplication {
                     $('#routeinfo').html(segment.text);
                     this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
                     this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
+                    $('#nextroutebtn').show();
+                    if(this.currRouteIdx === 0) {
+                        $('#prevroutebtn').hide();
+                    }
                 }
             }
         });
@@ -374,6 +379,12 @@ class MtbMapApplication {
                     $('#routeinfo').html(segment.text);
                     this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
                     this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
+                }
+                if(this.currRouteIdx > 0) {
+                    $('#prevroutebtn').show();
+                }
+                if(this.currRoute.getSegmentCount() === this.currRouteIdx + 1) {
+                    $('#nextroutebtn').hide();
                 }
             }
         });
@@ -607,11 +618,12 @@ class MtbMapApplication {
                     this.currRoute = new Route(route);
                     this.currRouteIdx = -1;
                     this.closeTrailMenu();
+                    $('#prevroutebtn').hide();
                     this.currRoute.loadTrail().then(() => {
                         this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
                         this.lMap.flyToBounds(this.currRoute.getBounds());
                     });
-                    $('#routeinfo').html(this.currRoute.getDescription());
+                    $('#routeinfo').html(this.currRoute.getDescription() + this.routeHelpText);
                     $('#routewindow').fadeIn(500);
                 });
                 this.trailBody.append(entry);

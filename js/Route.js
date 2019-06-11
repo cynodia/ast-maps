@@ -11,8 +11,6 @@ class Route {
         this.path = null;
         this.segmentLayer = {
             path: null,
-            start: null,
-            stop: null,
             bounds: null
         };
         this.mapPath = null;
@@ -45,6 +43,10 @@ class Route {
 
     getCurrSegmentBounds() {
         return this.segmentLayer.bounds;
+    }
+
+    getSegmentCount() {
+        return this.config.segments.length;
     }
 
     getSegment(idx) {
@@ -234,16 +236,8 @@ class Route {
         if(this.segmentLayer.path) {
             this.segmentLayer.path.removeFrom(trackLayer);
         }
-        if(this.segmentLayer.start) {
-            this.segmentLayer.start.removeFrom(markerLayer);
-        }
-        if(this.segmentLayer.stop) {
-            this.segmentLayer.stop.removeFrom(markerLayer);
-        }
         this.segmentLayer = {
             path: null,
-            start: null,
-            stop: null,
             bounds: L.latLngBounds()
         };
     }
@@ -252,30 +246,12 @@ class Route {
         this.removeCurrentSegment(trackLayer, markerLayer);
         const segment = this.config.segments[idx];
 
-        this.segmentLayer.start = L.marker(this.coordinates[segment.start], {
-            icon: L.icon({
-                iconUrl: 'data/imgs/marker_start2.png',
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
-            })
-        });
-        this.segmentLayer.start.addTo(markerLayer)
-
-        this.segmentLayer.stop = L.marker(this.coordinates[segment.stop], {
-            icon: L.icon({
-                iconUrl: 'data/imgs/marker_start2.png',
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
-            })
-        });
-        this.segmentLayer.stop.addTo(markerLayer)
-
         const options = {
             color: 'red',
             weight: 4
         };
 
-        const coords = this.coordinates.slice(segment.start, segment.stop);
+        const coords = this.coordinates.slice(segment.start, Math.min(segment.stop, this.coordinates.length - 1));
         this.segmentLayer.path = L.polyline(coords, options);
         this.segmentLayer.bounds.extend(coords);
         this.segmentLayer.path.addTo(trackLayer);

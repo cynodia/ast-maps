@@ -101,7 +101,6 @@ hr {
     padding: 8px;
     width: 100%;
     background: rgba(255,255,255,.75);
-    display: flex;
 }
 
 .topRightButton {
