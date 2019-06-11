@@ -351,6 +351,7 @@ class MtbMapApplication {
         $('#closeroutebtn').on('click', () => {
             if(this.currRoute) {
                 this.currRoute.removeFrom(this.trackLayer, this.markerLayer);
+                this.currRoute.removeCurrentSegment(this.trackLayer, this.markerLayer);
                 $('#routewindow').fadeOut(500);
                 this.currRoute = null;
                 this.currRouteIdx = 0;
