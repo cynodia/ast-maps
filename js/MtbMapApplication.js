@@ -29,7 +29,7 @@ class MtbMapApplication {
         this.showingTooltips = false;
         this.tooltipTimer = null;
         this.currRoute = null;
-        this.currRouteIdx = 0;
+        this.currRouteSegment = 0;
         this.routeHelpText = '<br>Trykk <i style="cursor: pointer;" class="fa fa-caret-right"></i> for å starte turen.';
 
         this.updateStaticText();
@@ -130,7 +130,7 @@ class MtbMapApplication {
         this.lMap = L.map('lmap', {
             zoomControl: false,
             preferCanvas: true,
-            renderer: L.canvas({ padding: 0.5, tolerance: 12 })
+            renderer: L.canvas({ padding: 0.5, tolerance: 12 }) // L.svg()
         });
 
 /*
@@ -354,19 +354,19 @@ class MtbMapApplication {
                 this.currRoute.removeCurrentSegment(this.trackLayer, this.markerLayer);
                 $('#routewindow').fadeOut(500);
                 this.currRoute = null;
-                this.currRouteIdx = 0;
+                this.currRouteSegment = 0;
             }
         });
         $('#prevroutebtn').on('click', () => {
-            if(this.currRoute && this.currRouteIdx > 0) {
-                const segment = this.currRoute.getSegment(this.currRouteIdx - 1);
+            if(this.currRoute && this.currRouteSegment > 0) {
+                const segment = this.currRoute.getSegment(this.currRouteSegment - 1);
                 if(segment) {
-                    this.currRouteIdx--;
+                    this.currRouteSegment--;
                     $('#routeinfo').html(segment.text);
-                    this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
+                    this.currRoute.renderSegmentMap(this.currRouteSegment, this.trackLayer, this.markerLayer);
                     this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
                     $('#nextroutebtn').show();
-                    if(this.currRouteIdx === 0) {
+                    if(this.currRouteSegment === 0) {
                         $('#prevroutebtn').hide();
                     }
                 }
@@ -374,17 +374,17 @@ class MtbMapApplication {
         });
         $('#nextroutebtn').on('click', () => {
             if(this.currRoute) {
-                const segment = this.currRoute.getSegment(this.currRouteIdx + 1);
+                const segment = this.currRoute.getSegment(this.currRouteSegment + 1);
                 if(segment) {
-                    this.currRouteIdx++;
+                    this.currRouteSegment++;
                     $('#routeinfo').html(segment.text);
-                    this.currRoute.renderSegmentMap(this.currRouteIdx, this.trackLayer, this.markerLayer);
+                    this.currRoute.renderSegmentMap(this.currRouteSegment, this.trackLayer, this.markerLayer);
                     this.lMap.flyToBounds(this.currRoute.getCurrSegmentBounds());
                 }
-                if(this.currRouteIdx > 0) {
+                if(this.currRouteSegment > 0) {
                     $('#prevroutebtn').show();
                 }
-                if(this.currRoute.getSegmentCount() === this.currRouteIdx + 1) {
+                if(this.currRoute.getSegmentCount() === this.currRouteSegment + 1) {
                     $('#nextroutebtn').hide();
                 }
             }
@@ -617,8 +617,9 @@ class MtbMapApplication {
                 const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
                 entry.on('click', () => {
                     this.currRoute = new Route(route);
-                    this.currRouteIdx = -1;
+                    this.currRouteSegment = -1;
                     this.closeTrailMenu();
+                    this.hideInfo();
                     $('#prevroutebtn').hide();
                     $('#nextroutebtn').show();
                     this.currRoute.loadTrail().then(() => {

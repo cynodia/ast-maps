@@ -306,7 +306,7 @@ class Trail {
                 }
             }
         }
-
+        //this.mapPath.setText(this.getTitle() + "                   ", { repeat: true, attributes: { x: 10 }});
         this.mapPath.addTo(trackLayer);
         this.clickCb = callback;
     }

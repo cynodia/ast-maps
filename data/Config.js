@@ -124,7 +124,7 @@ const mmConfigurations = {
                         stop: 542
                     },
                     {
-                        text: 'Følg [Ribbervegen] til stien deler seg og du holder til venstre mot [Rallarvegen]. Følg rallarvegen helt til topps og ta rett inn til høyre på toppen.',
+                        text: 'Følg [Ribbervegen] til stien deler seg og du holder til venstre mot [Rallarvegen]. Følg rallarvegen helt til topps.',
                         start: 542,
                         stop: 586
                     },
