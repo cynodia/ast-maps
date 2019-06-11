@@ -129,7 +129,7 @@ const mmConfigurations = {
                         stop: 586
                     },
                     {
-                        text: 'Følg denne stien og ta til høyre i krysset ved enden av stien. Nå ender du opp i toppen av [Ribberveggen] og kan finne Varden litt innover på toppen.',
+                        text: 'Akkurat da du trodde du var ferdig med klatringen skal du ta rett opp til høyre i krysset på toppen av [Rallarvegen]! Følg den flotte utsiktsstien her og ta mot høyre i første kryss. Nå ender du opp i toppen av [Ribberveggen] og kan finne Varden litt innover på toppen.',
                         start: 586,
                         stop: 615
                     },

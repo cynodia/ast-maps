@@ -620,6 +620,7 @@ class MtbMapApplication {
                     this.currRouteIdx = -1;
                     this.closeTrailMenu();
                     $('#prevroutebtn').hide();
+                    $('#nextroutebtn').show();
                     this.currRoute.loadTrail().then(() => {
                         this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
                         this.lMap.flyToBounds(this.currRoute.getBounds());
