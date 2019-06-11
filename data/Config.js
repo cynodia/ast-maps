@@ -975,7 +975,7 @@ const mmConfigurations = {
         routes: [
             {
                 title: 'Snill tur fra Stoa',
-                description: 'Denne turen starter og ender ved parkeringen Stoa. Det er en tur som for det meste går over stier uten noe særlig klarting eller utfor.<br>En grei introduksjon til skogen som ikke krever fulldemper med masse vandring.',
+                description: 'Denne turen starter og ender ved parkeringen Stoa. Det er en tur som for det meste går over stier uten noe særlig klarting eller utfor.<br>En fin introduksjon til Åsbie som fint kan kjøres på en vanlig terrengsykkel.',
                 segments: [
                     {
                         text: 'Start ut fra parkeringen på Stoa og inn på [Scottløypa]. Kjør denne til du er tilbake på grusvegen - her tar du til venstre.',
