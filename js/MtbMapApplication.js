@@ -355,6 +355,7 @@ class MtbMapApplication {
                 $('#routewindow').fadeOut(500);
                 this.currRoute = null;
                 this.currRouteSegment = 0;
+                this.resetMainMap();
             }
         });
         $('#prevroutebtn').on('click', () => {

@@ -972,6 +972,57 @@ const mmConfigurations = {
 
         },
 
+        routes: [
+            {
+                title: 'Snill tur fra Stoa',
+                description: 'Denne turen starter og ender ved parkeringen Stoa. Det er en tur som for det meste går over stier uten noe særlig klarting eller utfor.<br>En grei introduksjon til skogen som ikke krever fulldemper med masse vandring.',
+                segments: [
+                    {
+                        text: 'Start ut fra parkeringen på Stoa og inn på [Scottløypa]. Kjør denne til du er tilbake på grusvegen - her tar du til venstre.',
+                        start: 0,
+                        stop: 25
+                    },
+                    {
+                        text: 'Følg grusvegen ca 150 meter og ta inn til venstre på [Flykræsjet]. Kjør stien til du igjen kommer inn på grusvegen oppe ved Stoa. Ta til høyre her.',
+                        start:25,
+                        stop: 75
+                    },
+                    {
+                        text: 'Følg grusvegen til [Langekjerr](inn mot høyre). Nå skal du kjøre ned hele [Langekjerr]. Her er det noen små utfordringer mot slutten. Ta så til venstre på grusvegen mot Doppedalen.',
+                        start: 75,
+                        stop: 120
+                    },
+                    {
+                        text: 'Følg grusvegen og ta inn til venstre på [Opp vedlaget]. Følg stien helt til du igjen kommer ut i toppen av [Langekjerr]. Det blir litt humpete mot slutten her. Ta til høyre på [Langekjerr] opp til grusvegen.',
+                        start: 120,
+                        stop: 168
+                    },
+                    {
+                        text: 'Ta til høyre ut på grusvegen og følg denne opp til høyden ved Politistasjonen. Her tar du inn på [Politistien] og kjører denne til Krysset.',
+                        start: 169,
+                        stop: 198
+                    },
+                    {
+                        text: 'Følg [Krysset til Doppedalen] til du er tilbake på grusvegen ved Doppedalen. Det er et par utfordringer på denne stien. Følg så grusvegen til [Opp Vedlaget].',
+                        start: 197,
+                        stop: 223
+                    },
+                    {
+                        text: 'Ta inn på [Langekjerr til Vedlaget] - dette er stien som går til venstre for [Opp Vedlaget] som du kjørte tidligere. Følg stien ned til [Langekjerr].',
+                        start: 223,
+                        stop: 235
+                    },
+                    {
+                        text: 'Følg [Langekjerr] opp til [Snarvei]en som går inn til venstre og tar deg over i [Flykræsjet]. Hold til høyre opp [Flykræsjet]. Ta til venstre på grusvegen og du er tilbake på parkeringsplassen!<br><b>Takk for turen :-)</b>',
+                        start: 235,
+                        stop: 269
+                    }
+                ],
+                level: 1,
+                url: 'data/routes/asbie/route1.gpx',
+            }
+        ],
+
         trails: [
             {
                 url: 'data/trails/asbie/grusvegen.gpx',
@@ -1317,7 +1368,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/asbie/scott1.gpx',
-                title: 'Scottløypa del1',
+                title: 'Scottløypa',
                 bidirectional: true,
                 level: 1,
                 findStartText: "Starten på denne går rett over grusvegen fra Parkeringen på Stoa.",
