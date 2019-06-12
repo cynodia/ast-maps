@@ -1026,37 +1026,37 @@ const mmConfigurations = {
                 description: 'Denne turen starter og ender ved parkeringen Stoa. Det er en tur som innebærer det meste av røffe nedkjøringer i Åsbieskogen. Det er et par stier som ikke ble med, men noe må en spare til senere :-)',
                 segments: [
                     {
-                        text: 'Start ut fra parkeringen på Stoa',
+                        text: 'Start ut fra parkeringen på Stoa. Følg grusvegen mot venstre til toppen ved Politistasjonen. Her finner du starten på [Politistien]. Følg [Politistien] til den ender i Krysset.',
                         start: 0,
                         stop: 46
                     },
                     {
-                        text: '',
+                        text: 'Hold til venstre inn i [Krysset til Hogstfeltet]. Følg denne stien rett frem til den går over i [Hogstfeltet til Doppedalen]. Her kommer du til et Crux som kan kjøres ned enten rett frem eller via et spor ut mot høyre. Cruxet kan også ommgåes ved å ta ned i skogen mot høyre.<br>Følg stien til du ender opp i grusvegen ved Doppedalen.',
                         start: 46,
                         stop: 100
                     },
                     {
-                        text: '',
+                        text: 'Følg grusvegen ca 100m til du kommer til starten på [Opp vedlaget] inn mot høyre. Ca halvvegs gjennom [Opp vedlaget] finner du [Gruvestien] rett ut mot høyre. Følg denne til endes og hold mot venstre.',
                         start: 100,
                         stop: 136
                     },
                     {
-                        text: '',
+                        text: 'Nå kommer du til den fantastiske [Åsbieflyt]! Stien starter rett opp mot høyre i skråninga. Følg på og hold mot venstre for å fortsette stien når du kommer til Doppedalen.<br>På slutten av stien har du tre valg. Her kan du enten kjøre ned mot høyre bunnen av siste dumpa - dette er den enkleste nedkjøringa. Alternativt kjører du videre opp skråninga og tar inn mot høyre på toppen - her er det et par ganske bratte spor nedover. Om du har lyst til å teste noe VIRKELIG bratt så fortsetter du rett frem og ned heia... Alle nedkjøringene ender opp ved Rytterspranget(hopp) ved et bekkefar.',
                         start: 136,
                         stop: 192
                     },
                     {
-                        text: '',
+                        text: 'Følg stien ut og hold mot venstre. Etter ca 500m går det en sti opp mot venstre. Pass på, for denne er lett å overse!<br>Følg hårnålssvingene opp til Speiderleiren. Kjør så gjennom leiren og følg siten som krysser bekkefaret. Følg denne stien til første kryss. I krysset tar du til venstre og klatrer helt til topps. Her har du vært før!',
                         start: 192,
                         stop: 252
                     },
                     {
-                        text: '',
+                        text: 'Følg på nytt [Hogstfeltet til Doppedalen] ned til grusvegen og fortsett til [Opp vedlaget].',
                         start: 252,
                         stop: 292
                     },
                     {
-                        text: '',
+                        text: 'Følg [Opp vedlaget] ca 200m',
                         start: 292,
                         stop: 321
                     },
