@@ -1056,92 +1056,92 @@ const mmConfigurations = {
                         stop: 292
                     },
                     {
-                        text: 'Følg [Opp vedlaget] ca 200m',
+                        text: 'Følg [Opp vedlaget] ca 200m til du finner starten på [Hoppene] ned mot venstre. Denne starter med en tur ned i et lite søkk og opp igjen før nedkjøringen med en del forskjellige hopp starter. Følg på ut i [Langekjerr] og ta siste hoppet der.',
                         start: 292,
                         stop: 321
                     },
                     {
-                        text: '',
+                        text: 'Etter hoppet snur du og kjører tilbake oppover [Langekjerr] 300-400m til du ser en sti inn mot venstre. Følg [Snarveien] over til [Flykjæsjet] og ta til venstre og følg stien til du er ute på grusvegen igjen.',
                         start: 321,
                         stop: 358
                     },
                     {
-                        text: '',
+                        text: 'Ta til høyre på grusvegen til du kommer til starten på [Store skogvei]. Husk å ta til venstre i første kryss og til høyre på første kryssende sti.',
                         start: 358,
                         stop: 421
                     },
                     {
-                        text: '',
+                        text: 'Ca. midt i [Store skogvei] kommer du til et ommråde med et dropp og et par hopp. Her tar du runden rundt toppen til venstre for deg og fortsetter rett frem helt ned til grusvegen.',
                         start: 421,
                         stop: 436
                     },
                     {
-                        text: '',
+                        text: 'Fra grusvegen snur du og kjører inn igjen på [Store skogvei] på stien som går til venstre for der du kom ut. Følg stien til den ender ved steingjerdet på før [Steingjerdet til stien].',
                         start: 436,
                         stop: 465
                     },
                     {
-                        text: '',
+                        text: 'Nå begynner en artig liten utforkjøring! Etter hver kommer du til en bratt klatreseksjon. På toppen av denne skal du ta inn til høyre til [Syretoppen]. Følg over toppen og hold til venstre i første kryss.<br>Kjør stien helt ned til grusvegen. På slutten er det en ganske bratt nedkjøring, alternativt kan du ta <i>Collsdroppet</i> - men kjør ned og sjekk forholdene først!',
                         start: 465,
                         stop: 518
                     },
                     {
-                        text: '',
+                        text: 'Da bærer det oppover langs grusvegen. Du skal til topps hvor du vil se et gammelt piknikkbord inn mot høyre.',
                         start: 518,
                         stop: 537
                     },
                     {
-                        text: '',
+                        text: 'Nå starter [Jordvepsen]! Kjør inn til høyre for piknikkbordet. Her kommer det et dropp ganske tidlig, du kan evt holde til venstre for å unngå dette. Nå er det bare nedover helt til du kommer ut i bunnen av [Langekjerr].<br> Kjør ut til den første grusvegen ut fra [Langekjerr] og ta til venstre ca 10 meter. Her starter [Padda-Kantarellen] som tar deg tilbake ned til Rytterspranget!',
                         start: 537,
                         stop: 583
                     },
                     {
-                        text: '',
+                        text: 'Etter denne fantastiske nedkjøringa er det på tide å klatre litt. Følg stien til høyre denne gangen. Du kommer ut på grusvegen igjen og følger bakken opp mot biefeltet. Hold til høyre og følg på opp bakkene. Ta inn i [Langekjerr] og tråkk opp til ommrådet med hoppet. Her tar du inn til høyre og følger [Langekjerr til vedlaget].',
                         start: 583,
                         stop: 642
                     },
                     {
-                        text: '',
+                        text: 'Atter en gang står du i starten av [Opp vedlaget]. Igjen skal du følger denne opp og gjennom [Gruvestien].',
                         start: 642,
                         stop: 665
                     },
                     {
-                        text: '',
+                        text: 'Denne gangen fortsetter du oppover stien mov <i>Krysset</i>. Kjør [Krysset til hogstfeltet], og ta til venstre [Opp til hogstfeltet]. Her er det et Crux ca midt på.<br>Ta så til venstre helt opp på toppen av Hogstfeltet(du må nok dra sykkelen med deg opp siste skrenten).<br>Ta en pause og nyt utsikten!',
                         start: 665,
                         stop: 693
                     },
                     {
-                        text: '',
+                        text: 'Da er det [Hogstfeltet downhill 1] som står for tur! Kjør ned fra toppen, hold videre til høyre. Her kommer en flott seksjon med doserte svinger og noen rufsete utfordringer. Når du kommer ned til et steinete parti hvor stien deler seg så hold mot venstre. Hold så mot høyre i det du kommer inn på [Kråkefotstien] og kjør denne til du ender opp nede på Biejordene.',
                         start: 693,
                         stop: 744
                     },
                     {
-                        text: '',
+                        text: 'Nå kommer en liten transportetappe... Tråkk opp mot pumpehuset i nordenden av jordet. Følg stien mot høyre for så å ta videre til venstre på grusvegen. Ta til høyre i første kryss i <i>Egelundvegen</i> og tråkk oppover rundt svingen til du ser en sti i skråningen ned mot venstre.',
                         start: 744,
                         stop: 784
                     },
                     {
-                        text: '',
+                        text: 'Kjør ned skråningen, forbi huset og ut på vegen igjen. Ta til høyre i tredje krysset, og ta til høyre i første kryssende gate. I enden av gata starter [Mariåsen Downhill 2].',
                         start: 784,
                         stop: 834
                     },
                     {
-                        text: '',
+                        text: 'Denne stien går foran blokkene på Mariåsen og har et relativt høyt stup ned på venstre hånd. Tunga rett i munnen :-)',
                         start: 834,
                         stop: 852
                     },
                     {
-                        text: '',
+                        text: 'Igjen havner du på grusvegen. Følg grusvegen oppover samme rute som tidligere opp til toppen med piknikkbordet.',
                         start: 852,
                         stop: 894
                     },
                     {
-                        text: '',
+                        text: '5 meter forbi ommrådet med piknikkbordet starter [Krempartiet] inn mot høyre. Følg stien ned til [Langekjerr] og du er tilbake i ommrådet med hoppet.',
                         start: 894,
                         stop: 911
                     },
                     {
-                        text: '',
+                        text: 'Ta til høyre og tråkk [Langekjerr] til den ender opp i grusvegen ved Stoa. Her holder du til venstre og du er tilbake på parkeringsplassen!<br><b>Takk for turen :-)</b>',
                         start: 911,
                         stop: 935
                     }
@@ -1275,7 +1275,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/asbie/langekjerr_stikk.gpx',
-                title: 'Snarvei',
+                title: 'Snarveien',
                 level: 1,
                 bidirectional: true,
                 findStartText: "En liten sti som forbinder [Langekjerr] med [Flykræsjet].",
