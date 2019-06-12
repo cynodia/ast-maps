@@ -476,9 +476,8 @@ class MtbMapApplication {
         this.resetMainMap();
         this.updateStaticText();
         this.populateTrailMenu();
-        if (history.pushState) {
-            const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?c=' + key;
-            window.history.pushState({path:newurl},'',newurl);
+        if (history.replaceState) {
+            window.history.replaceState(null, '', '?c=' + key);
         }
     }
 
