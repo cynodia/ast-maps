@@ -99,7 +99,7 @@ const mmConfigurations = {
                         stop: 268
                     },
                     {
-                        text: 'Følg så [The Wall] og videre på kryss av [3-kilometeren] og inn i [Aleèn]. Fortsett gjennom hele [Flatan] til den ender midt i [Haldors Gullrekke].',
+                        text: 'Følg så [The Wall] og videre på kryss av [3-kilometeren] og inn i [Aleèn]. Fortsett gjennom hele [Flatan] til den ender midt i [Gullrekka til Haldor].',
                         start: 268,
                         stop: 351
                     },
@@ -139,7 +139,7 @@ const mmConfigurations = {
                         stop: 643
                     },
                     {
-                        text: 'Ta til høyre mot [Haldors gullrekke] og kjør igjen til topps.',
+                        text: 'Ta til høyre mot [Gullrekka til Haldor] og kjør igjen til topps.',
                         start: 643,
                         stop: 676
                     },
@@ -541,7 +541,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/haldors.gpx',
-                title: 'Haldors gullrekke',
+                title: 'Gullrekka til Haldor',
                 level: 2,
                 bidirectional: true,
                 findStartText: "Denne stien starter i østlig retning fra [100-meterskogen].",
@@ -555,7 +555,7 @@ const mmConfigurations = {
                 title: 'Korketrekkeren',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Følg [Haldors Gullrekke] til topps. Like før du kommer over til [Downhillen] deler stien seg og du skal holde mot venstre.",
+                findStartText: "Følg [Gullrekka til Haldor] til topps. Like før du kommer over til [Downhillen] deler stien seg og du skal holde mot venstre.",
                 infoText: "En smårøff nedkjøring. En kan velge å start helt fra toppen av knausen nedkjøringen går fra. Her finner en en ekstra utfordrende seksjon. Eventuelt kan en begynne bak denne knabben for en litt enklere start.",
                 images: {
                     trailStart: 'tungvekter/trails/6.jpg'
@@ -588,7 +588,7 @@ const mmConfigurations = {
                 title: 'Elgdriden',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Starter i starten av [Downhillen] like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot [Haldors gullrekke], så holder du rett frem.",
+                findStartText: "Starter i starten av [Downhillen] like ned fra Kremtoppen. Når du kommer til et kryss hvor Downhillen fortsetter mot venstre og det går en sti til høyre mot [Gullrekka til Haldor], så holder du rett frem.",
                 infoText: "Stien starter med et litt krevende segment hvor en skal over litt hindringer og klatre enda litt. Etter ca 150m begynner nedkjøringen - her er det både bratt og svingete med et par hopp mot slutten før en ender opp helt nede i løysløpa!",
                 images: {
                     trailStart: null
@@ -610,7 +610,7 @@ const mmConfigurations = {
                 title: 'Downhillen',
                 level: 3,
                 bidirectional: false,
-                findStartText: "Downhillen starter fra Kremtoppen. Hit er det flere veier en kan ta. En er via Haldors gullrekke en annen er å følge stien opp paralelt med Kamelen fra Flatan.",
+                findStartText: "Downhillen starter fra Kremtoppen. Hit er det flere veier en kan ta. En er via Gullrekka til Haldor en annen er å følge stien opp paralelt med Kamelen fra Flatan.",
                 infoText: "Som navnet sier er dette en bratt utforkjøring. Ganske tidlig i stien kommer en til en smal bro som ligger rett bak en bakketopp. Følg godt med her.<br>Som alltid er det en fordel å ta det litt rolig første gangen en kjører ned en ny sti, selv om den er tilpasset høyt tempo!",
                 images: {
                     trailStart: 'tungvekter/trails/16.jpg'
@@ -654,7 +654,7 @@ const mmConfigurations = {
                 title: 'Flatan',
                 level: 2,
                 bidirectional: true,
-                findStartText: "Stien starter i fortsettelse av [Aleèn] evt motsatt retning fra toppen av hårnålssvingene i [Haldors Gullrekke].",
+                findStartText: "Stien starter i fortsettelse av [Aleèn] evt motsatt retning fra toppen av hårnålssvingene i [Gullrekka til Haldor].",
                 infoText: "Et langt stisegment som går gjennom flott furuskog med noen småhindringer i starten. Etter hvert passerer du [Korketrekkeren] og det blir litt humpete.",
                 images: {
                     trailStart: null
