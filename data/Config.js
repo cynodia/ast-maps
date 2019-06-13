@@ -639,6 +639,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/sti10.gpx',
+                title: null,
+                level: 0,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/flatan.gpx',
                 title: 'Flatan',
                 level: 2,
@@ -687,8 +698,8 @@ const mmConfigurations = {
                 title: 'Uphillen',
                 level: 2,
                 bidirectional: false,
-                findStartText: "Følg [Aleèn] nordover eller [Flatan] sørover. Stien starter like sør for der [Kamelen] krysser.",
-                infoText: "Bratt klatresti som tar det til Kremtoppen.",
+                findStartText: "Følg [Aleèn] nordover til den deler seg og blir til [Flatan]. Hold til venstre.",
+                infoText: "Bratt klatresti som tar deg til Kremtoppen.",
                 images: {
                     trailStart: null
                 }
@@ -882,6 +893,17 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/sti1.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/sti11.gpx',
                 title: null,
                 level: 0,
                 bidirectional: true,
