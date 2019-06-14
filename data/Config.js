@@ -914,6 +914,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/tungvekter/sti12.gpx',
+                title: null,
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/juvet.gpx',
                 title: 'Juvet',
                 level: 3,
