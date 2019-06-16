@@ -497,7 +497,7 @@ const mmConfigurations = {
             },
             {
                 url: 'data/trails/tungvekter/kvartoverhalvfire.gpx',
-                title: 'Kvart på halv fire',
+                title: 'Tre til halv fire',
                 level: 2,
                 bidirectional: false,
                 findStartText: "Stien starter ut mot venstre på toppen av [Halv fire].",
