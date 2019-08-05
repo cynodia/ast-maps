@@ -1241,6 +1241,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/bukken.gpx',
+                title: 'Bukken',
+                level: 2,
+                bidirectional: false,
+                findStartText: "Denne stien starter helt i slutten av [Krempartiet] i toppen av skråningen ned mot Langekjerr. Her tar du til høyre over ei bro.",
+                infoText: "En flott sti med god flyt som starter ut over ei bro før en starter en fartsfylt ferd ned mot Langekjerr.",
+                images: {
+                    trailStart: 'asbie/bukken.JPG'
+                }
+            },
+            {
                 url: 'data/trails/asbie/opp_speiderleir.gpx',
                 title: 'Opp til speiderleiren',
                 level: 2,
