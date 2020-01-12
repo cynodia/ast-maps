@@ -1373,6 +1373,17 @@ const mmConfigurations = {
                 }
             },
             {
+                url: 'data/trails/asbie/den_hemmelige.gpx',
+                title: 'Den Hemmelige',
+                level: 3,
+                bidirectional: false,
+                findStartText: "Starter ut fra [Hogstfeltet til Doppedalen]. Ta til venstre like før Cruxet.",
+                infoText: "Denne er heftig! Og hemmelig!",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/asbie/opp_til_hogstfeltet.gpx',
                 title: 'Opp til hogstfeltet',
                 level: 3,
