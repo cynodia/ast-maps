@@ -18,6 +18,7 @@ module.exports = {
             patterns: [
                 { from: 'index.html' },
                 { from: 'index_mobile.html' },
+                { from: 'favicon.ico' },
                 { from: 'lib', to: 'lib' },
                 { from: 'html', to: 'html' },
                 { from: 'data', to: 'data' }
