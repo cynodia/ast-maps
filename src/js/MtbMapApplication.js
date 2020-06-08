@@ -1,4 +1,11 @@
-class MtbMapApplication {
+import GeoLocator from "./GeoLocator";
+import Trail from "./Trail";
+import Route from "./Route";
+import mmConfigurations from "./Config";
+import L from 'leaflet';
+import leafletImage from "leaflet-image";
+
+export default class MtbMapApplication {
 
     constructor(config) {
         this.config = mmConfigurations[config];
@@ -865,7 +872,7 @@ class MtbMapApplication {
             // start: '0',
             // end: alts.length
         };
-        new vis.Graph2d(document.getElementById('trailchart'), data, options);
+        new Graph2d(document.getElementById('trailchart'), data, options);
     }
 
     showTrail3d() {

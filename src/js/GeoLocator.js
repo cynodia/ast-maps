@@ -1,4 +1,4 @@
-class GeoLocator {
+export default class GeoLocator {
     
     constructor(app) {
         this.geoId = null;

@@ -1,4 +1,4 @@
-class Route {
+export default class Route {
     constructor(config) {
         this.config = config;
         this.heightDiff = 0;

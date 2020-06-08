@@ -1,4 +1,4 @@
-const mmConfigurations = {
+export default {
 
     'tungvekter': {
         title: 'Tungvekteren',

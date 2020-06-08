@@ -1,4 +1,4 @@
-class Trail {
+export default class Trail {
     constructor(config, levelColors, id, infoWindow) {
         this.config = config;
         this.id = id;
