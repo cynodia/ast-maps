@@ -17,6 +17,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: 'index.html' },
+                { from: 'index_mobile.html' },
                 { from: 'lib', to: 'lib' },
                 { from: 'html', to: 'html' },
                 { from: 'data', to: 'data' }

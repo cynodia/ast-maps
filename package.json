@@ -5,8 +5,7 @@
   "scripts": {
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
-    "deploy-dev": "webpack --config webpack.dev.js; bash stage_and_deploy.sh dev",
-    "deploy-prod": "webpack --config webpack.prod.js; bash stage_and_deploy.sh prod",
+    "deploy-prod": "webpack --config webpack.prod.js; bash stage_and_deploy.sh",
     "serve-dev": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {

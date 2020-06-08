@@ -872,7 +872,7 @@ export default class MtbMapApplication {
             // start: '0',
             // end: alts.length
         };
-        new Graph2d(document.getElementById('trailchart'), data, options);
+        new vis.Graph2d(document.getElementById('trailchart'), data, options);
     }
 
     showTrail3d() {
