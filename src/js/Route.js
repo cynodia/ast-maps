@@ -124,36 +124,35 @@ export default class Route {
     }
 
     parseGpx(xml) {
-        const self = this;
         let lowest = null;
         let highest = null;
         if(typeof xml === 'string') {
             xml = (new DOMParser()).parseFromString(xml,"text/xml");;
         }
 
-        $(xml).find('gpx').each(function(){
-            $(this).find('trk').each(function(){
+        $(xml).find('gpx').each((idx, elem) => {
+            $(elem).find('trk').each((idx, elem) => {
                 let lastLat = null;
                 let lastLng = null;
-                $(this).find('trkseg').each(function(){
-                    $(this).find('trkpt').each(function() {
-                        const lat = parseFloat($(this).attr('lat'));
-                        const lng = parseFloat($(this).attr('lon'));
-                        self.coordinates.push(
+                $(elem).find('trkseg').each((idx, elem) => {
+                    $(elem).find('trkpt').each((idx, elem) => {
+                        const lat = parseFloat($(elem).attr('lat'));
+                        const lng = parseFloat($(elem).attr('lon'));
+                        this.coordinates.push(
                                 {
                                     lat: lat,
                                     lng: lng
                                 }
                         );
-                        const dist = lastLat === null ? 0 : self.calcCrow(lastLat, lastLng, lat, lng);
-                        self.distances.push(dist);
-                        self.length += (Math.floor(dist) / 1000);
-                        self.bounds.extend(L.latLng(lat, lng));
+                        const dist = lastLat === null ? 0 : this.calcCrow(lastLat, lastLng, lat, lng);
+                        this.distances.push(dist);
+                        this.length += (Math.floor(dist) / 1000);
+                        this.bounds.extend(L.latLng(lat, lng));
                         lastLat = lat;
                         lastLng = lng;
                         let alt = 0.0;
-                        $(this).find('ele').each(function () {
-                            alt = parseFloat($(this).text());
+                        $(elem).find('ele').each((idx, elem) => {
+                            alt = parseFloat($(elem).text());
                             if (lowest === null) {
                                 lowest = highest = alt;
                             } else if (lowest > alt) {
@@ -162,7 +161,7 @@ export default class Route {
                                 highest = alt;
                             }
                         });
-                        self.altitudes.push(alt);
+                        this.altitudes.push(alt);
                     });
                 });
             });
@@ -177,14 +176,14 @@ export default class Route {
                 url: this.config.url,
                 cache: false,
                 dataType: "xml",
-                success: function (xml) {
+                success: (xml) => {
                     this.parseGpx(xml);
                     resolve(this);
-                }.bind(this),
-                error: function () {
+                },
+                error: () => {
                     console.error("Could not load trail info from " + this.config.url);
                     reject(this);
-                }.bind(this)
+                }
             });
         });
     }

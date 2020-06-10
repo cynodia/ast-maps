@@ -4,6 +4,7 @@ import Route from "./Route";
 import mmConfigurations from "./Config";
 import L from 'leaflet';
 import leafletImage from "leaflet-image";
+import mobile from 'is-mobile';
 
 export default class MtbMapApplication {
 
@@ -60,7 +61,7 @@ export default class MtbMapApplication {
         $('#infotextcontent').html(
                 this.config.main.infoText
         );
-        document.title = (mobilecheck() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
+        document.title = (mobile() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
 
         $('#helptextcontent').html(
                 "<h2>Bruk</h2>" +
@@ -193,7 +194,7 @@ export default class MtbMapApplication {
                     this.tooltipTimer = null;
                 }
                 console.log("ZOOM: " + this.lMap.getZoom());
-                if (this.lMap.getZoom() > 16) {
+                if (this.lMap.getZoom() > 14) {
                     if (!this.showingTooltips) {
                         this.tooltipTimer = setTimeout(() => {
                             this.tooltipTimer = null;
@@ -233,7 +234,7 @@ export default class MtbMapApplication {
         }
 
         this.lMap.on('click', (ev) => {
-            if (!mobilecheck()) {
+            if (!mobile()) {
                 this.infoWindow.remove();
             }
             this.closeContextMenu();
@@ -245,7 +246,7 @@ export default class MtbMapApplication {
         this.trailMap = L.map('trailmap', {
             zoomControl: false,
             tap: false,
-            dragging: !mobilecheck()
+            dragging: !mobile()
         });
         L.tileLayer('https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}',
                 {
@@ -325,8 +326,8 @@ export default class MtbMapApplication {
                         if (config === this.configName) {
                             trailsToLoad--;
                             if (trailsToLoad === 0) {
-                                console.log("DONE - fit map...");
-                                this.lMap.fitBounds(this.mainBounds[this.configName]);
+                                console.log("DONE - init UI elems");
+                                this.setUpUI(trailToLoad);
                             }
                         }
                     });
@@ -340,6 +341,9 @@ export default class MtbMapApplication {
             }
         }
 
+    }
+
+    setUpUI(trailToLoad) {
         this.createContextMenu();
         this.createTrailMenu();
         this.populateTrailMenu();
@@ -349,10 +353,12 @@ export default class MtbMapApplication {
             this.onMapElemClicked(trailToLoad);
         }
 
-        if (mobilecheck()) {
+        if (mobile()) {
             this.showInfo("Klikk på stiene for mer informasjon", 5);
         }
         this.configureRouteEvents();
+
+        this.lMap.fitBounds(this.mainBounds[this.configName]);
     }
 
     configureRouteEvents() {
@@ -543,21 +549,20 @@ export default class MtbMapApplication {
         });
         ctxBody.append(this.uploadButton);
 
-        if(!mobilecheck()) {
+        if(!mobile()) {
             this.downloadButton = $('<div class="ctxEntry"></div>');
             this.downloadButton.html('<i class="ctxEntryIcon fa fa-download"></i> Eksporter bilde');
             this.downloadButton.append(this.downloadLink);
             this.downloadButton.on('click', () => {
                 console.log("IMAGE");
-                const self = this;
                 $('#exportpopup').html("Genererer bilde...");
                 $('#exportpopup').fadeIn(500);
-                leafletImage(this.lMap, function (err, canvas) {
-                    canvas.toBlob(function (blob) {
+                leafletImage(this.lMap, (err, canvas) => {
+                    canvas.toBlob( (blob) => {
                         $('#exportpopup').html("Eksport klar<br><a href=" + URL.createObjectURL(blob) + " download=\"kart.png\">Klikk her for å laste ned</a>");
                         $('#exportpopup a').on('click', (ev) => {
                             $('#exportpopup').fadeOut(500);
-                            self.closeContextMenu();
+                            this.closeContextMenu();
                         });
                     });
                 });
@@ -683,10 +688,9 @@ export default class MtbMapApplication {
     addUIOverlays() {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
-        const self = this;
         if(!window.printRender) {
             L.Control.MtbMapsInfo = L.Control.extend({
-                onAdd: function (map) {
+                onAdd: (map) => {
                     const infoDiv1 = document.createElement('div');
                     infoDiv1.style.background = "rgba(255,255,255,.6)";
                     infoDiv1.style.padding = "6px";
@@ -697,9 +701,9 @@ export default class MtbMapApplication {
                     infoDiv1.style.margin = 0;
                     infoDiv1.index = 1;
                     infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
-                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
-                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
-                            "<br><i style='font-weight:bold; color: " + self.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
+                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
+                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                             "<hr><img style=\"width: 20px; height: 20px; padding: 0 2px;\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
                     infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
@@ -715,7 +719,7 @@ export default class MtbMapApplication {
         }
 
         L.Control.MtbMapsMenu = L.Control.extend({
-            onAdd: function(map) {
+            onAdd: (map) => {
                 const btnDiv = document.createElement('div');
                 btnDiv.style.margin = 0;
 
@@ -729,7 +733,7 @@ export default class MtbMapApplication {
                 locationButton.index = 2;
                 locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
                 locationButton.onclick = (e) => {
-                    self.geoLocator.mapUserLocation();
+                    this.geoLocator.mapUserLocation();
                     L.DomEvent.stopPropagation(e);
                 };
 
@@ -745,7 +749,7 @@ export default class MtbMapApplication {
                 trailListButton.index = 2;
                 trailListButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-directions\"></i>";
                 trailListButton.onclick = (e) => {
-                    self.openTrailMenu();
+                    this.openTrailMenu();
                     L.DomEvent.stopPropagation(e);
                 };
 
@@ -759,7 +763,7 @@ export default class MtbMapApplication {
                 burgerButton.style.cursor = "pointer";
                 burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
                 burgerButton.onclick = (e) => {
-                    self.openContextMenu();
+                    this.openContextMenu();
                     L.DomEvent.stopPropagation(e);
                 };
 
@@ -938,7 +942,7 @@ export default class MtbMapApplication {
         $('#trailentrance').html(trail.getFindStartText());
         $("#trailinfotext").html(trail.getInfoText());
         $("#trailfacts").html("<p style=\"margin: 0; text-align:left;\">Lengde: " + Math.floor(trail.getLength() * 10000) / 10 + "m" +
-                "<span style=\"float:right;\">" + (mobilecheck() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
+                "<span style=\"float:right;\">" + (mobile() ? "Høydefor." : "Høydeforskjell") + ": " + Math.floor(trail.getHeightDiff() * 10) / 10 + "m</span></p>" +
                 "<p style=\"margin: 0; text-align:left;\">Vanskelighetsgrad: " + trail.getLevelAsText() +
                 "<span style=\"float:right;\">Enveis: " + (trail.isBidirectional() ? "Nei" : "Ja") + "</span></p>");
         $("#trailwindow").fadeIn(500, () => {

@@ -9,6 +9,7 @@
     "serve-dev": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {
+    "is-mobile": "^2.2.1",
     "leaflet": "^1.6.0",
     "leaflet-image": "^0.4.0",
     "leaflet-textpath": "^1.2.3",
