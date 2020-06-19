@@ -6,7 +6,7 @@
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
     "deploy-prod": "webpack --config webpack.prod.js; bash stage_and_deploy.sh",
-    "serve-dev": "webpack-dev-server --open --config webpack.dev.js"
+    "serve-dev": "webpack-dev-server --config webpack.dev.js"
   },
   "dependencies": {
     "is-mobile": "^2.2.1",
