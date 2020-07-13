@@ -912,6 +912,50 @@ export default {
                 }
             },
             {
+                url: 'data/trails/tungvekter/motstolen.gpx',
+                title: null,
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "En fin kobling fra nordre ende av Lille Ribbervann opp mot stien videre tilPiltjenn.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/piltjenn.gpx',
+                title: "Piltjenn",
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Denne stien tar deg ut av Tungvekteren. En flott sti via Piltjenn som leder til nye E18 og mulighet for tur videre mot Myra.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/tillongum.gpx',
+                title: "Piltjenn til Longum",
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Denne stien lager en fin kobling mot stinettverket i Myra-området.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/tungvekter/transportlongum.gpx',
+                title: "Transport til Myra",
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Transportetappe fra Longum til Stien mot Ugleboknuten.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/tungvekter/sti12.gpx',
                 title: null,
                 level: 0,
@@ -1979,6 +2023,28 @@ export default {
                 url: 'data/trails/myra/harebakkenenduro.gpx',
                 title: 'Harebakken Enduro',
                 level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/krakstadvannet.gpx',
+                title: 'Mot Uglebo langs Krakstadvannet',
+                level: 1,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/krakstaduglebo.gpx',
+                title: 'Krakstadvannet opp til Uglebo',
+                level: 2,
                 bidirectional: false,
                 findStartText: "",
                 infoText: "",
