@@ -61,7 +61,7 @@ export default class MtbMapApplication {
         $('#infotextcontent').html(
                 this.config.main.infoText
         );
-        document.title = (mobile() ? this.config.main.mainHeaderMobile : this.config.main.mainHeaderDesktop);
+        document.title = this.config.main.mainHeader;
 
         $('#helptextcontent').html(
                 "<h2>Bruk</h2>" +
