@@ -2,6 +2,7 @@ import "./css/common.css";
 import MtbMapApplication from "./js/MtbMapApplication";
 import 'leaflet/dist/leaflet.css';
 import mobile from 'is-mobile';
+import mmConfigurations from './js/Config';
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){ dataLayer.push(arguments);}

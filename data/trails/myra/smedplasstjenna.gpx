@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="StravaGPX" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" xmlns="http://www.topografix.com/GPX/1/1">
+	<metadata>
+		<name>smedplasstjenna</name>
+		<desc>Export from GpsPrune</desc>
+	</metadata>
+	<trk>
+		<name>smedplasstjenna</name>
+		<number>1</number>
+		<trkseg>
+   <trkpt lat="58.4877640" lon="8.7233150">
+    <ele>55.7</ele>
+    <time>2020-06-22T19:25:52Z</time>
+   </trkpt>
+   <trkpt lat="58.4877520" lon="8.7232280">
+    <ele>55.2</ele>
+    <time>2020-06-22T19:25:53Z</time>
+   </trkpt>
+   <trkpt lat="58.4877540" lon="8.7231310">
+    <ele>54.7</ele>
+    <time>2020-06-22T19:25:54Z</time>
+   </trkpt>
+   <trkpt lat="58.4877400" lon="8.7230040">
+    <ele>54.0</ele>
+    <time>2020-06-22T19:25:55Z</time>
+   </trkpt>
+   <trkpt lat="58.4877380" lon="8.7228620">
+    <ele>53.3</ele>
+    <time>2020-06-22T19:25:56Z</time>
+   </trkpt>
+   <trkpt lat="58.4877330" lon="8.7227310">
+    <ele>52.7</ele>
+    <time>2020-06-22T19:25:57Z</time>
+   </trkpt>
+   <trkpt lat="58.4877460" lon="8.7225890">
+    <ele>52.3</ele>
+    <time>2020-06-22T19:25:58Z</time>
+   </trkpt>
+   <trkpt lat="58.4877680" lon="8.7224500">
+    <ele>52.1</ele>
+    <time>2020-06-22T19:25:59Z</time>
+   </trkpt>
+   <trkpt lat="58.4877740" lon="8.7223250">
+    <ele>51.9</ele>
+    <time>2020-06-22T19:26:00Z</time>
+   </trkpt>
+   <trkpt lat="58.4877850" lon="8.7222070">
+    <ele>51.8</ele>
+    <time>2020-06-22T19:26:01Z</time>
+   </trkpt>
+   <trkpt lat="58.4878030" lon="8.7221070">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:02Z</time>
+   </trkpt>
+   <trkpt lat="58.4878210" lon="8.7220160">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:03Z</time>
+   </trkpt>
+   <trkpt lat="58.4878340" lon="8.7219160">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:04Z</time>
+   </trkpt>
+   <trkpt lat="58.4878350" lon="8.7218210">
+    <ele>51.6</ele>
+    <time>2020-06-22T19:26:05Z</time>
+   </trkpt>
+   <trkpt lat="58.4878390" lon="8.7217250">
+    <ele>51.6</ele>
+    <time>2020-06-22T19:26:06Z</time>
+   </trkpt>
+   <trkpt lat="58.4878460" lon="8.7216230">
+    <ele>51.6</ele>
+    <time>2020-06-22T19:26:07Z</time>
+   </trkpt>
+   <trkpt lat="58.4878310" lon="8.7215310">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:08Z</time>
+   </trkpt>
+   <trkpt lat="58.4878180" lon="8.7214660">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:09Z</time>
+   </trkpt>
+   <trkpt lat="58.4878050" lon="8.7213980">
+    <ele>51.7</ele>
+    <time>2020-06-22T19:26:10Z</time>
+   </trkpt>
+   <trkpt lat="58.4878000" lon="8.7213400">
+    <ele>51.8</ele>
+    <time>2020-06-22T19:26:11Z</time>
+   </trkpt>
+   <trkpt lat="58.4877910" lon="8.7212640">
+    <ele>51.8</ele>
+    <time>2020-06-22T19:26:12Z</time>
+   </trkpt>
+   <trkpt lat="58.4877690" lon="8.7211870">
+    <ele>51.8</ele>
+    <time>2020-06-22T19:26:13Z</time>
+   </trkpt>
+   <trkpt lat="58.4877580" lon="8.7210740">
+    <ele>51.9</ele>
+    <time>2020-06-22T19:26:14Z</time>
+   </trkpt>
+   <trkpt lat="58.4877430" lon="8.7209640">
+    <ele>52.2</ele>
+    <time>2020-06-22T19:26:15Z</time>
+   </trkpt>
+   <trkpt lat="58.4877280" lon="8.7208990">
+    <ele>52.5</ele>
+    <time>2020-06-22T19:26:16Z</time>
+   </trkpt>
+   <trkpt lat="58.4877170" lon="8.7208270">
+    <ele>52.7</ele>
+    <time>2020-06-22T19:26:17Z</time>
+   </trkpt>
+   <trkpt lat="58.4877000" lon="8.7207260">
+    <ele>53.2</ele>
+    <time>2020-06-22T19:26:18Z</time>
+   </trkpt>
+   <trkpt lat="58.4876810" lon="8.7206530">
+    <ele>53.6</ele>
+    <time>2020-06-22T19:26:19Z</time>
+   </trkpt>
+   <trkpt lat="58.4876610" lon="8.7205780">
+    <ele>54.1</ele>
+    <time>2020-06-22T19:26:20Z</time>
+   </trkpt>
+   <trkpt lat="58.4876490" lon="8.7205230">
+    <ele>54.4</ele>
+    <time>2020-06-22T19:26:21Z</time>
+   </trkpt>
+   <trkpt lat="58.4876330" lon="8.7204630">
+    <ele>54.9</ele>
+    <time>2020-06-22T19:26:22Z</time>
+   </trkpt>
+   <trkpt lat="58.4876580" lon="8.7203500">
+    <ele>55.6</ele>
+    <time>2020-06-22T19:26:23Z</time>
+   </trkpt>
+   <trkpt lat="58.4876590" lon="8.7202690">
+    <ele>56.2</ele>
+    <time>2020-06-22T19:26:24Z</time>
+   </trkpt>
+   <trkpt lat="58.4876580" lon="8.7201970">
+    <ele>56.6</ele>
+    <time>2020-06-22T19:26:25Z</time>
+   </trkpt>
+   <trkpt lat="58.4876580" lon="8.7201210">
+    <ele>57.1</ele>
+    <time>2020-06-22T19:26:26Z</time>
+   </trkpt>
+   <trkpt lat="58.4876610" lon="8.7200490">
+    <ele>57.6</ele>
+    <time>2020-06-22T19:26:27Z</time>
+   </trkpt>
+   <trkpt lat="58.4876710" lon="8.7199770">
+    <ele>58.0</ele>
+    <time>2020-06-22T19:26:28Z</time>
+   </trkpt>
+   <trkpt lat="58.4876710" lon="8.7198990">
+    <ele>58.5</ele>
+    <time>2020-06-22T19:26:29Z</time>
+   </trkpt>
+   <trkpt lat="58.4876830" lon="8.7198420">
+    <ele>58.9</ele>
+    <time>2020-06-22T19:26:30Z</time>
+   </trkpt>
+   <trkpt lat="58.4876830" lon="8.7197800">
+    <ele>59.2</ele>
+    <time>2020-06-22T19:26:31Z</time>
+   </trkpt>
+   <trkpt lat="58.4877000" lon="8.7197180">
+    <ele>59.6</ele>
+    <time>2020-06-22T19:26:32Z</time>
+   </trkpt>
+   <trkpt lat="58.4877110" lon="8.7196320">
+    <ele>60.2</ele>
+    <time>2020-06-22T19:26:33Z</time>
+   </trkpt>
+		</trkseg>
+	</trk>
+</gpx>

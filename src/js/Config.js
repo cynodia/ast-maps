@@ -1643,6 +1643,17 @@ export default {
                 images: {
                     trailStart: 'asbie/IMG_20190508_202327_7888.JPG'
                 }
+            },
+            {
+                url: 'data/trails/asbie/overstoa.gpx',
+                title: 'Over Stoa',
+                level: 1,
+                bidirectional: true,
+                findStartText: "Fra parkeringsplassen på industritoppen tar du ut på vegen mot høyre. Etter 20 meter går det en sti opp i skauen på venstre side.",
+                infoText: "Ei flott rute å følge for å koble sammen Åsbieskogen med stiene rundt Sagvannet. Fra industritoppen til Sørsvannveien.",
+                images: {
+                    trailStart: null
+                }
             }
         ]
     },
@@ -1854,7 +1865,7 @@ export default {
                 2: '#66f',
                 3: '#f00'
             },
-            center: { lat: 58.43692953244933,lng: 8.762798309326174 }
+            center: { lat: 58.459468, lng: 8.697925 }
         },
 
         markers: {
@@ -1863,12 +1874,67 @@ export default {
 
         trails: [
             {
-                url: 'data/trails/hisoy/jokerbakken.gpx',
-                title: 'Grusveg - Jokerbakken',
+                url: 'data/trails/brastad/soletjenn.gpx',
+                title: 'Til Soletjenn',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/brastad/blokken.gpx',
+                title: 'Over Blokken',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/brastad/brastad.gpx',
+                title: 'Transport via Bråstad Stasjon',
                 level: 0,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/brastad/overskredderplassen.gpx',
+                title: 'Transport over Skredderplassen',
+                level: 0,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Transportetappe fra Særsvannsveien til Sagvannet.",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/brastad/sagvannet.gpx',
+                title: 'Rundt Sagvannene',
+                level: 2,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Fantastisk runde rundt midtre og nedre Sagvann. Flotte flytstier med noen tekniske utfordringer her og der. Mye turgjengere her!",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/brastad/loddesolveien.gpx',
+                title: 'Ned til Løddesølveien',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "Fin kobling fra broa i sørenden av nedre Sagvannet til Løddesølvegen. Følg stien ned mot Gartneriet, men ta av til høyre 50 meter før du er helt nede. Litt udefinert sti i denne delen.",
                 images: {
                     trailStart: null
                 }
@@ -1879,25 +1945,29 @@ export default {
         title: 'Myra',
         main: {
             mainHeader: "Myra",
-            infoText: "<h2>Myra</h2>Kart for Hisøy er [Work in Progress]" +
+            infoText: "<h2>Myra</h2>Dette ommrådet dekker stiene fra Heidalen i sør, over Ugleboknuten nordover og mot rv42/Stoa mot vest." +
                 "<h2>Adkomst</h2>TODO",
             levelColors: {
                 1: '#090',
                 2: '#66f',
                 3: '#f00'
             },
-            center: { lat: 58.43692953244933,lng: 8.762798309326174 }
+            center: { lat: 58.477378, lng: 8.730671 }
         },
 
         markers: {
-
+            "wallride": {
+                title: 'Anti-Playstation wallride',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.477273, lng: 8.732591}
+            }
         },
 
         trails: [
             {
-                url: 'data/trails/hisoy/jokerbakken.gpx',
-                title: 'Grusveg - Jokerbakken',
-                level: 0,
+                url: 'data/trails/myra/rodjakka.gpx',
+                title: 'Rødjakka',
+                level: 3,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -1906,9 +1976,20 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/grusveg2.gpx',
-                title: 'Grusveg',
-                level: 0,
+                url: 'data/trails/myra/harebakkenenduro.gpx',
+                title: 'Harebakken Enduro',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/skiveientillysloypa.gpx',
+                title: 'Skiveien til lysløypa',
+                level: 3,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -1917,9 +1998,9 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/svarteport.gpx',
-                title: 'Grusveg - Svarteport',
-                level: 0,
+                url: 'data/trails/myra/innvedbarnehagen.gpx',
+                title: 'Bænehagen',
+                level: 2,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
@@ -1928,8 +2009,8 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/marineveien.gpx',
-                title: 'Marineveien',
+                url: 'data/trails/myra/lyslypatilrv.gpx',
+                title: 'Lysløypa til Frolandsvegen',
                 level: 1,
                 bidirectional: true,
                 findStartText: "",
@@ -1939,8 +2020,19 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti1.gpx',
-                title: 'Sti 1',
+                url: 'data/trails/myra/tilkringlemyr.gpx',
+                title: 'Frolandsvegen til Kringlemyr',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/colabakken.gpx',
+                title: 'Colabakken',
                 level: 2,
                 bidirectional: true,
                 findStartText: "",
@@ -1950,8 +2042,8 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti2.gpx',
-                title: 'Sti 2',
+                url: 'data/trails/myra/ugleboknuten1.gpx',
+                title: 'Uglebo Downhill del 1',
                 level: 2,
                 bidirectional: false,
                 findStartText: "",
@@ -1961,8 +2053,52 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti3.gpx',
-                title: 'Sti 3',
+                url: 'data/trails/myra/tillongumvannet.gpx',
+                title: 'Uglebo Downhill til Longumvannet',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/terrasseopp1.gpx',
+                title: 'Opp fra Myra Terrasse mot Heisto alternativ 1',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/terrasseopp2.gpx',
+                title: 'Opp fra Myra Terrasse mot Heisto alternativ 2',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/heisto.gpx',
+                title: 'Til toppen ved Heisto',
+                level: 2,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/viadroppet.gpx',
+                title: 'Nedkjøring via droppet',
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
@@ -1972,8 +2108,30 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti4.gpx',
-                title: 'Sti 4',
+                url: 'data/trails/myra/heistoned.gpx',
+                title: 'Heisto Downhill',
+                level: 3,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/lyngtjenn.gpx',
+                title: 'Lyngtjenn',
+                level: 1,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/paskestien.gpx',
+                title: 'Påskestien',
                 level: 2,
                 bidirectional: true,
                 findStartText: "",
@@ -1983,63 +2141,8 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti5.gpx',
-                title: 'Sti 5',
-                level: 3,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/hisoy/sti6.gpx',
-                title: 'Sti 6',
-                level: 2,
-                bidirectional: true,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/hisoy/sti7.gpx',
-                title: 'Sti 7',
-                level: 3,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/hisoy/sti8.gpx',
-                title: 'Sti 8',
-                level: 3,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/hisoy/sti9.gpx',
-                title: 'Sti 9',
-                level: 2,
-                bidirectional: false,
-                findStartText: "",
-                infoText: "",
-                images: {
-                    trailStart: null
-                }
-            },
-            {
-                url: 'data/trails/hisoy/sti10.gpx',
-                title: 'Sti 10',
+                url: 'data/trails/myra/heidalvardetoppen.gpx',
+                title: 'Til Vardetoppen fra Heidalen',
                 level: 3,
                 bidirectional: true,
                 findStartText: "",
@@ -2049,8 +2152,8 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti11.gpx',
-                title: 'Sti 11',
+                url: 'data/trails/myra/vardetoppenned.gpx',
+                title: 'Vardetoppen ned',
                 level: 3,
                 bidirectional: false,
                 findStartText: "",
@@ -2060,9 +2163,75 @@ export default {
                 }
             },
             {
-                url: 'data/trails/hisoy/sti12.gpx',
-                title: 'Sti 12',
-                level: 2,
+                url: 'data/trails/myra/tilmyraterrasse.gpx',
+                title: 'Longumvannet til Myra Terrasse',
+                level: 1,
+                bidirectional: false,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/bakuglebo.gpx',
+                title: 'Bak Knuten',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/heidalen.gpx',
+                title: 'Over fra Heidalen',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/telttoppen.gpx',
+                title: 'Telttoppen',
+                level: 3,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/krafttoppen.gpx',
+                title: 'Krafttoppen',
+                level: 3,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/smedplasstjenna.gpx',
+                title: 'Smedplasstjenna',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
+                url: 'data/trails/myra/kringlemyr.gpx',
+                title: 'Kringlemyr',
+                level: 1,
                 bidirectional: true,
                 findStartText: "",
                 infoText: "",
