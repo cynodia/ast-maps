@@ -2053,6 +2053,17 @@ export default {
                 }
             },
             {
+                url: 'data/trails/myra/nedtileskestol.gpx',
+                title: 'Ned til Eskestølvegen',
+                level: 1,
+                bidirectional: true,
+                findStartText: "",
+                infoText: "",
+                images: {
+                    trailStart: null
+                }
+            },
+            {
                 url: 'data/trails/myra/skiveientillysloypa.gpx',
                 title: 'Skiveien til lysløypa',
                 level: 3,
