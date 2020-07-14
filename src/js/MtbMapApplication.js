@@ -495,7 +495,7 @@ export default class MtbMapApplication {
     }
 
     createContextMenu() {
-        this.ctxMenu = $('<div class="ctxMenu"/>');
+        this.ctxMenu = $('<div class="ctxMenu hasInnerScroller"/>');
         this.ctxMenu.append('<div class="ctxMenuHeader">mtbmaps.net</div>')
         const ctxBackBtn = $('<button class="ctxCloseBtn"><i style="cursor: pointer;" class="fa fa-times-circle"></i></button>');
         ctxBackBtn.on('click', () => {
@@ -692,13 +692,12 @@ export default class MtbMapApplication {
             L.Control.MtbMapsInfo = L.Control.extend({
                 onAdd: (map) => {
                     const infoDiv1 = document.createElement('div');
-                    infoDiv1.style.background = "rgba(255,255,255,.6)";
+                    infoDiv1.style.background = "rgba(255,255,255,.8)";
                     infoDiv1.style.padding = "6px";
-                    infoDiv1.style.borderRight = "1px solid white";
-                    infoDiv1.style.borderBottom = "1px solid white";
+                    infoDiv1.style.border = "1px solid white";
                     infoDiv1.style.fontSize = "16px";
-                    infoDiv1.style.borderRadius = "0 0 6px 0";
-                    infoDiv1.style.margin = 0;
+                    infoDiv1.style.borderRadius = "6px";
+                    infoDiv1.style.margin = "4px";
                     infoDiv1.index = 1;
                     infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
                             "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
@@ -724,11 +723,6 @@ export default class MtbMapApplication {
                 btnDiv.style.margin = 0;
 
                 const locationButton = document.createElement('button');
-                locationButton.style.background = "rgba(255,255,255,.6)";
-                locationButton.style.padding = "12px";
-                locationButton.style.marginRight = "10px";
-                locationButton.style.fontSize = "16px";
-                locationButton.style.cursor = "pointer";
                 locationButton.setAttribute("class", "topButton");
                 locationButton.index = 2;
                 locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
@@ -740,11 +734,6 @@ export default class MtbMapApplication {
                 btnDiv.appendChild(locationButton);
 
                 const trailListButton = document.createElement('button');
-                trailListButton.style.background = "rgba(255,255,255,.6)";
-                trailListButton.style.padding = "12px";
-                trailListButton.style.marginRight = "10px";
-                trailListButton.style.fontSize = "16px";
-                trailListButton.style.cursor = "pointer";
                 trailListButton.setAttribute("class", "topButton");
                 trailListButton.index = 2;
                 trailListButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-directions\"></i>";
@@ -756,11 +745,7 @@ export default class MtbMapApplication {
                 btnDiv.appendChild(trailListButton);
 
                 const burgerButton = document.createElement('button');
-                burgerButton.style.background = "rgba(255,255,255,.6)";
-                burgerButton.style.padding = "12px 16px";
-                burgerButton.setAttribute("class", "topRightButton");
-                burgerButton.style.fontSize = "16px";
-                burgerButton.style.cursor = "pointer";
+                burgerButton.setAttribute("class", "topButton");
                 burgerButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-bars\"></i>";
                 burgerButton.onclick = (e) => {
                     this.openContextMenu();
