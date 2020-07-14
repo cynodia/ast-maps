@@ -74,7 +74,7 @@ export default class MtbMapApplication {
                 "lavoppløst, men gir fremdeles en god ide om hvor det er mye aktivitet.<br>" +
                 "Etter turen kan du laste opp en GPX-fil for å sammenligne og se hvilke stier du var innom. Denne ligger kun i nettleseren din og vil forsvinne så snart du laster siden på nytt." +
                 "<h2>Om mtbmaps.net</h2>" +
-                "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i typiske norske stinettverk som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
+                "Målet med mtbmaps.net er å tilby en lettvekts webapplikasjon for navigasjon i stinettverk i Arendalsregionen som består av flere små segmenter i motsetning til lange sammenhengende løyper. Det er fokus på å kunne finne inngangen på stiene.<br>" +
                 "<br><br>Løsningen er utviklet og driftet av <a href=\"mailto:andreas.tonnesen@gmail.com\">Andreas Tønnesen</a>.<br>" +
                 "All data er samlet inn på frivillig basis og kan derfor inneholde feil og være mangelfulle. Ønsker du å bidra, eller har forslag til endringer - send meg en mail!"
         );

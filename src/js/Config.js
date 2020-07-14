@@ -2004,7 +2004,13 @@ export default {
                 title: 'Anti-Playstation wallride',
                 icon: 'data/imgs/marker_star.png',
                 position: {lat: 58.477273, lng: 8.732591}
-            }
+            },
+            "uglebo": {
+                title: 'Ugleboknuten',
+                icon: 'data/imgs/marker_star.png',
+                position: {lat: 58.491698, lng: 8.747491}
+            },
+
         },
 
         trails: [
@@ -2024,7 +2030,7 @@ export default {
                 title: 'Harebakken Enduro',
                 level: 3,
                 bidirectional: false,
-                findStartText: "",
+                findStartText: "Følg [Over fra Heidalen] opp en liten bakke etter gjørmehullet. Her går stien rett ut mot høyre like før [Telttoppen].",
                 infoText: "",
                 images: {
                     trailStart: null
@@ -2243,7 +2249,7 @@ export default {
                 url: 'data/trails/myra/tilmyraterrasse.gpx',
                 title: 'Longumvannet til Myra Terrasse',
                 level: 1,
-                bidirectional: false,
+                bidirectional: true,
                 findStartText: "",
                 infoText: "",
                 images: {
