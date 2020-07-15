@@ -535,19 +535,21 @@ export default class MtbMapApplication {
 
         this.uploadInput = $('<input type="file" id="fileElem" accept=".gpx" style="display:none"/>');
         ctxBody.append(this.uploadInput);
-        this.uploadButton = $('<div class="ctxEntry"></div>');
-        this.uploadButton.html("<i class=\"ctxEntryIcon fa fa-upload\"></i> Last opp GPX");
-        this.uploadInput.on('change', (event) => {
-            const files = event.target.files;
-            const reader = new FileReader();
-            reader.onload = (evt) => this.parseUserGPX(files[0].name, evt.target.result);
-            reader.readAsText(files[0]);
-        });
-        this.uploadButton.on('click', () => {
-            this.uploadInput.click();
-            return false;
-        });
-        ctxBody.append(this.uploadButton);
+        if(0) {
+            this.uploadButton = $('<div class="ctxEntry"></div>');
+            this.uploadButton.html("<i class=\"ctxEntryIcon fa fa-upload\"></i> Last opp GPX");
+            this.uploadInput.on('change', (event) => {
+                const files = event.target.files;
+                const reader = new FileReader();
+                reader.onload = (evt) => this.parseUserGPX(files[0].name, evt.target.result);
+                reader.readAsText(files[0]);
+            });
+            this.uploadButton.on('click', () => {
+                this.uploadInput.click();
+                return false;
+            });
+            ctxBody.append(this.uploadButton);
+        }
 
         if(!mobile()) {
             this.downloadButton = $('<div class="ctxEntry"></div>');
