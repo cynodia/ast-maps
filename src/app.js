@@ -34,7 +34,7 @@ $( function() {
             $('#helptext').fadeOut(750);
         });
 
-        let config = "tungvekter";
+        let config = null;
 
         let urlParam = getUrlParameter("c");
         if(urlParam && mmConfigurations.hasOwnProperty(urlParam)) {

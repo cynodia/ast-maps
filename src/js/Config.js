@@ -14,11 +14,6 @@ export default {
             infoText: "<h2>Tungvekter</h2>Tungvekteren er et stinettverk i Arendal bymark som er tilrettelagt og merket for stisykling. Som navnet på stien indikerer (Tungvekteren), så er dette et stinettverk som skal kunne gi deg noen skikkelig utfordringer. Stiene er er tilrettelagt slik at man skal kunne ha det like gøy oppover som nedover. Det skal være mulig å sykle de aller fleste stiene uten fotisett. Gjør deg godt kjent med stiene før du prøver deg på de mest tekniske partiene og vis respekt for alle brukere av stiene. Tungvekteren er bygget på dugnad av stisykkelklubben Arendal Singletrack med midler fra Gjensidigestiftelsen. Det er merket med pilskilt, refleksmerker og hvitmaling på trær.<br><br>" +
                     "På denne siden Kan du finne detaljert informasjon om de fleste kjente stier i området, samt forslag til ruter du kan ta.<h2>Adkomst</h2>Om du ankommer med bil er parkeringsplassen på Dråbelia, markert med <img height=\"25\" width=\"25\" src=\"data/imgs/marker_parking.png\">, et naturlig utgangspunkt. Om du sykler inn kan løypenettet nås fra alle kanter." +
                     "<h2>Arendal Singletrack</h2>Arendal Singletrack(AST) er en stisykkelklubb med ca. 100 medlemmer. Mer info på <a href='https://www.arendalsingletrack.com/'>arendalsingletrack.com</a>",
-            levelColors: {
-                1: '#090',
-                2: '#66f',
-                3: '#f00'
-            },
             center: { lat: 58.48290466461497, lng: 8.786959648132326 }
         },
 
@@ -998,11 +993,6 @@ export default {
             infoText: "<h2>Åsbieskogen</h2>Åsbieskogen er et turområde som brukes mye av mange, og det er derfor stier på kryss og tvers. Det er knapt mulig å kjøre seg bort her, så det er bare å utforske. Men ta hensyn til andre du måtte møte på din vei." +
                     "<h2>Adkomst</h2>Et godt utgangspunkt er parkeringsplassen på Industritoppen. Ta av fra E-18 ved skiltet avkjøring til FV-42, men kjør i motsatt retning (mot syd) rundt brannstasjon og nytt politihus og opp til toppen.<br>" +
                     "Det er også mulig å parkere på Bjønnes og sykle inn til Biejordene derfra.",
-            levelColors: {
-                1: '#090',
-                2: '#66f',
-                3: '#f00'
-            },
             center: { lat: 58.45574888827977, lng: 8.731384277343752 }
         },
 
@@ -1707,11 +1697,6 @@ export default {
             mainHeader: "Hisøy",
             infoText: "<h2>Hisøy</h2>Kart for Hisøy er [Work in Progress]" +
                     "<h2>Adkomst</h2>TODO",
-            levelColors: {
-                1: '#090',
-                2: '#66f',
-                3: '#f00'
-            },
             center: { lat: 58.43692953244933,lng: 8.762798309326174 }
         },
 
@@ -1904,11 +1889,6 @@ export default {
             mainHeader: "Bråstad",
             infoText: "<h2>Bråstad</h2>Dette området omfatter stier i skogsområdene vest for rv42 fra Stoa mot Froland" +
                 "<h2>Adkomst</h2>Det er flere muligheter her... TODO",
-            levelColors: {
-                1: '#090',
-                2: '#66f',
-                3: '#f00'
-            },
             center: { lat: 58.459468, lng: 8.697925 }
         },
 
@@ -1991,11 +1971,6 @@ export default {
             mainHeader: "Myra",
             infoText: "<h2>Myra</h2>Dette ommrådet dekker stiene fra Heidalen i sør, over Ugleboknuten nordover og mot rv42/Stoa mot vest." +
                 "<h2>Adkomst</h2>TODO",
-            levelColors: {
-                1: '#090',
-                2: '#66f',
-                3: '#f00'
-            },
             center: { lat: 58.477378, lng: 8.730671 }
         },
 

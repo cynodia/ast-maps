@@ -9,7 +9,7 @@ import mobile from 'is-mobile';
 export default class MtbMapApplication {
 
     constructor(config) {
-        this.config = mmConfigurations[config];
+        this.config = config ? mmConfigurations[config] : null;
         this.configName = config;
         this.trailMap = null;
         this.infoTimeout = null;
@@ -17,6 +17,7 @@ export default class MtbMapApplication {
         this.currDetailTrail = null;
         this.show3d = true; /* 3D by default */
         this.mainBounds = {};
+        this.areaBounds = L.latLngBounds();
         this.geoLocator = new GeoLocator(this);
         this.closestTrail = null;
         this.ctxMenuVisible = false;
@@ -40,6 +41,12 @@ export default class MtbMapApplication {
         this.currRouteSegment = 0;
         this.routeHelpText = '<br>Trykk <i style="cursor: pointer;" class="fa fa-caret-right"></i> for å starte turen.';
 
+        this.levelColors = {
+            1: '#090',
+            2: '#66f',
+            3: '#f00'
+        };
+
         this.updateStaticText();
         $('#closetrailinfo').click(this.closeTrailInfo.bind(this));
         $('#trail3dBtn').click(this.showTrail3d.bind(this));
@@ -58,10 +65,12 @@ export default class MtbMapApplication {
     }
 
     updateStaticText() {
-        $('#infotextcontent').html(
+        if(this.config) {
+            $('#infotextcontent').html(
                 this.config.main.infoText
-        );
-        document.title = this.config.main.mainHeader;
+            );
+            document.title = this.config.main.mainHeader;
+        }
 
         $('#helptextcontent').html(
                 "<h2>Bruk</h2>" +
@@ -261,11 +270,12 @@ export default class MtbMapApplication {
             trailIdxToLoad = parseInt(window.location.hash.substr(1));
         }
         let currIdx = 0;
+        let configsToLoad = Object.keys(mmConfigurations).length;
 
         for (let config in mmConfigurations) {
             if (mmConfigurations.hasOwnProperty(config)) {
                 const trails = mmConfigurations[config].trails;
-                let trailsToLoad = this.config.trails.length;
+                let trailsToLoad = 0;
                 const cfg = mmConfigurations[config];
                 this.mainBounds[config] = L.latLngBounds();
 
@@ -310,10 +320,13 @@ export default class MtbMapApplication {
                 titleMarker.on('click', () => {
                     this.setConfiguration(config);
                 });
+                this.areaBounds.extend([cfg.main.center.lat, cfg.main.center.lng]);
+
+                trailsToLoad = trails.length;
 
                 /** Add trails */
                 for (let i = 0; i < trails.length; i++) {
-                    let t = new Trail(trails[i], this.config.main.levelColors, currIdx, this.infoWindow);
+                    let t = new Trail(trails[i], this.levelColors, currIdx, this.infoWindow);
                     if (currIdx === trailIdxToLoad) {
                         trailToLoad = t;
                     }
@@ -323,9 +336,10 @@ export default class MtbMapApplication {
                         this.mainBounds[config].extend(trail.getBounds().getSouthWest());
                     }, () => {
                     }).finally(() => {
-                        if (config === this.configName) {
-                            trailsToLoad--;
-                            if (trailsToLoad === 0) {
+                        trailsToLoad--;
+                        if (trailsToLoad === 0) {
+                            configsToLoad--;
+                            if(configsToLoad === 0) {
                                 console.log("DONE - init UI elems");
                                 this.setUpUI(trailToLoad);
                             }
@@ -358,7 +372,7 @@ export default class MtbMapApplication {
         }
         this.configureRouteEvents();
 
-        this.lMap.fitBounds(this.mainBounds[this.configName]);
+        this.lMap.fitBounds(this.configName ? this.mainBounds[this.configName] : this.areaBounds);
     }
 
     configureRouteEvents() {
@@ -423,7 +437,7 @@ export default class MtbMapApplication {
     }
 
     resetMainMap() {
-        this.lMap.flyToBounds(this.mainBounds[this.configName]);
+        this.lMap.flyToBounds(this.configName ? this.mainBounds[this.configName] : this.areaBounds);
     }
 
     openContextMenu() {
@@ -486,6 +500,7 @@ export default class MtbMapApplication {
         this.config = mmConfigurations[key];
         this.configName = key;
         this.ctxHeader.html(this.config.title);
+        this.ctxInfo.show();
         this.resetMainMap();
         this.updateStaticText();
         this.populateTrailMenu();
@@ -504,16 +519,17 @@ export default class MtbMapApplication {
         this.ctxMenu.append(ctxBackBtn);
         const ctxBody = $('<div class="ctxBody"/>');
 
-        this.ctxHeader = $('<div class="ctxSubHeader">' + this.config.title + '</div>');
+        this.ctxHeader = $('<div class="ctxSubHeader">' + (this.config ? this.config.title : "Alle områder") + '</div>');
         ctxBody.append(this.ctxHeader);
-        const ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">Om området</span></div>');
-        ctxInfo.on('click', () => {
+        this.ctxInfo = $('<div class="ctxEntry ctxEntryFirst"><i class=\"ctxEntryIcon fa fa-info-circle\"></i> <span style="vertical-align: center;">Om området</span></div>');
+        this.ctxInfo.on('click', () => {
             this.closeContextMenu();
             $('#infotext').fadeIn(500, () => {
                 $("html, body").animate({scrollTop: 0}, "slow");
             });
         });
-        ctxBody.append(ctxInfo);
+        ctxBody.append(this.ctxInfo);
+        this.ctxInfo.hide();
 
         const ctxReset = $('<div class="ctxEntry"><i class=\"ctxEntryIcon fa fa-home\"></i> <span style="vertical-align: center;">Tilbakestill</span></div>');
         ctxReset.on('click', () => {
@@ -625,66 +641,81 @@ export default class MtbMapApplication {
 
     populateTrailMenu() {
         this.trailBody.empty();
-        $('#trailList').html(this.config.title);
+        let first = true;
 
-        if(this.config.hasOwnProperty('routes') && this.config.routes.length > 0) {
-            this.trailBody.append($('<div class="ctxSubHeader">Turforslag</div>'));
+        if(this.config) {
+            $('#trailList').html(this.config.title);
 
-            let first = true;
-            for(let i = 0; i < this.config.routes.length; i++) {
-                const route = this.config.routes[i];
-                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.config.main.levelColors[route.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
-                entry.on('click', () => {
-                    this.currRoute = new Route(route);
-                    this.currRouteSegment = -1;
-                    this.closeTrailMenu();
-                    this.hideInfo();
-                    $('#prevroutebtn').hide();
-                    $('#nextroutebtn').show();
-                    this.currRoute.loadTrail().then(() => {
-                        this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
-                        this.lMap.flyToBounds(this.currRoute.getBounds());
+            if (this.config.hasOwnProperty('routes') && this.config.routes.length > 0) {
+                this.trailBody.append($('<div class="ctxSubHeader">Turforslag</div>'));
+
+                for (let i = 0; i < this.config.routes.length; i++) {
+                    const route = this.config.routes[i];
+                    const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.levelColors[route.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + route.title + '</span></div>');
+                    entry.on('click', () => {
+                        this.currRoute = new Route(route);
+                        this.currRouteSegment = -1;
+                        this.closeTrailMenu();
+                        this.hideInfo();
+                        $('#prevroutebtn').hide();
+                        $('#nextroutebtn').show();
+                        this.currRoute.loadTrail().then(() => {
+                            this.currRoute.renderToMap(this.trackLayer, this.markerLayer);
+                            this.lMap.flyToBounds(this.currRoute.getBounds());
+                        });
+                        $('#routeinfo').html(this.currRoute.getDescription() + this.routeHelpText);
+                        $('#routewindow').fadeIn(500);
                     });
-                    $('#routeinfo').html(this.currRoute.getDescription() + this.routeHelpText);
-                    $('#routewindow').fadeIn(500);
+                    this.trailBody.append(entry);
+                    first = false;
+                }
+            }
+            this.trailBody.append($('<div class="ctxSubHeader">Stier</div>'));
+            let id = 0;
+
+            /** Need to loop trough all configs to find IDs */
+            for (let config in mmConfigurations) {
+                if (mmConfigurations.hasOwnProperty(config)) {
+                    const trails = mmConfigurations[config].trails;
+                    if (config === null || config != this.configName) {
+                        id += trails.length;
+                        continue;
+                    }
+
+                    let first = true;
+                    for (let i = 0; i < trails.length; i++) {
+                        let trail = trails[i];
+                        if (trail.level === 0 || trail.title === null) {
+                            id++;
+                            continue;
+                        }
+                        const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.levelColors[trail.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + trail.title + '</span></div>');
+                        const t = this.trails[id];
+                        entry.on('click', () => {
+                            this.closeTrailMenu();
+                            this.lMap.flyToBounds(t.getBounds());
+                            this.onMapElemClicked(t);
+                        });
+                        this.trailBody.append(entry);
+                        id++;
+                        first = false;
+                    }
+                }
+            }
+        } else {
+            $('#trailList').html("");
+            this.trailBody.append($('<div class="ctxSubHeader">Velg område</div>'));
+
+            for (let area in mmConfigurations) {
+                const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i class=\"ctxEntryIcon fa fa-map\"></i> <span style="vertical-align: center;">' + mmConfigurations[area].title + '</span></div>');
+                entry.on('click', () => {
+                    this.setConfiguration(area);
                 });
                 this.trailBody.append(entry);
                 first = false;
             }
         }
 
-        this.trailBody.append($('<div class="ctxSubHeader">Stier</div>'));
-        let id = 0;
-
-        /** Need to loop trough all configs to find IDs */
-        for (let config in mmConfigurations) {
-            if (mmConfigurations.hasOwnProperty(config)) {
-                const trails = mmConfigurations[config].trails;
-                if (config != this.configName) {
-                    id += trails.length;
-                    continue;
-                }
-
-                let first = true;
-                for (let i = 0; i < trails.length; i++) {
-                    let trail = trails[i];
-                    if (trail.level === 0 || trail.title === null) {
-                        id++;
-                        continue;
-                    }
-                    const entry = $('<div class="ctxEntry ' + (first ? 'ctxEntryFirst' : '') + '"><i style="color: ' + this.config.main.levelColors[trail.level] + ';" class=\"ctxEntryIcon fa fa-compass\"></i> <span style="vertical-align: center;">' + trail.title + '</span></div>');
-                    const t = this.trails[id];
-                    entry.on('click', () => {
-                        this.closeTrailMenu();
-                        this.lMap.flyToBounds(t.getBounds());
-                        this.onMapElemClicked(t);
-                    });
-                    this.trailBody.append(entry);
-                    id++;
-                    first = false;
-                }
-            }
-        }
     }
 
     requestFullscreen(elem) {
@@ -714,9 +745,9 @@ export default class MtbMapApplication {
                     infoDiv1.style.margin = "4px";
                     infoDiv1.index = 1;
                     infoDiv1.innerHTML = "<i style='font-weight:bold; color: gray;' class=\"fa fa-minus\"></i> Veg/sti" +
-                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
-                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
-                            "<br><i style='font-weight:bold; color: " + this.config.main.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
+                            "<br><i style='font-weight:bold; color: " + this.levelColors[1] + ";' class=\"fa fa-minus\"></i> Lett" +
+                            "<br><i style='font-weight:bold; color: " + this.levelColors[2] + ";' class=\"fa fa-minus\"></i> Middels" +
+                            "<br><i style='font-weight:bold; color: " + this.levelColors[3] + ";' class=\"fa fa-minus\"></i> Vanskelig" +
                             "<hr><img style=\"width: 20px; height: 20px; padding: 0 2px;\" src=\"data/imgs/marker_start2.png\"/> Start(enveis)";
                     infoDiv1.innerHTML += '<br><img width="24" height="24" src="data/imgs/marker_you.png"/> Deg';
 
@@ -747,16 +778,18 @@ export default class MtbMapApplication {
                     btnDiv.appendChild(fullscreenButton);
                 }
 
-                const locationButton = document.createElement('button');
-                locationButton.setAttribute("class", "topButton");
-                locationButton.index = 2;
-                locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
-                locationButton.onclick = (e) => {
-                    this.geoLocator.mapUserLocation();
-                    L.DomEvent.stopPropagation(e);
-                };
+                if(mobile()) {
+                    const locationButton = document.createElement('button');
+                    locationButton.setAttribute("class", "topButton");
+                    locationButton.index = 2;
+                    locationButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-crosshairs\"></i>";
+                    locationButton.onclick = (e) => {
+                        this.geoLocator.mapUserLocation();
+                        L.DomEvent.stopPropagation(e);
+                    };
 
-                btnDiv.appendChild(locationButton);
+                    btnDiv.appendChild(locationButton);
+                }
 
                 const trailListButton = document.createElement('button');
                 trailListButton.setAttribute("class", "topButton");
