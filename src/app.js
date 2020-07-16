@@ -22,7 +22,6 @@ function getUrlParameter(sParam) {
     }
 }
 
-
 $( function() {
     $('#trailcontent').load('html/trailcontent_' + (mobile() ? 'mobile' : 'desktop') + '.html', () => {
         console.log("Init app");

@@ -687,6 +687,18 @@ export default class MtbMapApplication {
         }
     }
 
+    requestFullscreen(elem) {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+    }
+
     addUIOverlays() {
         // Create the DIV to hold the control and call the CenterControl()
         // constructor passing in this DIV.
@@ -723,6 +735,17 @@ export default class MtbMapApplication {
             onAdd: (map) => {
                 const btnDiv = document.createElement('div');
                 btnDiv.style.margin = 0;
+
+                if(!mobile()) {
+                    const fullscreenButton = document.createElement('button');
+                    fullscreenButton.setAttribute("class", "topButton");
+                    fullscreenButton.index = 2;
+                    fullscreenButton.innerHTML = "<i style=\"cursor:pointer; font-size: 34px;\" class=\"fa fa-arrows-alt\"></i>";
+                    fullscreenButton.onclick = (e) => {
+                        this.requestFullscreen(document.body);
+                    };
+                    btnDiv.appendChild(fullscreenButton);
+                }
 
                 const locationButton = document.createElement('button');
                 locationButton.setAttribute("class", "topButton");
